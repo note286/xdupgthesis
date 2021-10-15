@@ -71,3 +71,51 @@ l.13 \XDUfrontmatter
 
 因此，将`XDUthesis.cls`中两处`\CTEXunderline`替换为`\underline`。
 
+# 字体修正
+
+## 中文字体
+
+[CTEX宏集手册](http://mirror.ctan.org/language/chinese/ctex/ctex.pdf)中4.3章节指出：
+
+> 如果没有指定fontset的值，CTEX宏集将自动检测用户使用的操作系统，配置相应的字体。
+
+从模板中文档类文件中可以看出仅使用了宋体和黑体，因此后续只考虑宋体和黑体的配置。学校官方的word模板中使用的是Windows自带的中易字体，包括[中易宋体](https://zh.wikipedia.org/wiki/%E4%B8%AD%E6%98%93%E5%AE%8B%E4%BD%93)和[中易黑体](https://zh.wikipedia.org/wiki/%E4%B8%AD%E6%98%93%E9%BB%91%E4%BD%93)，为了保证一致性，统一为`ctexbook`增加`fontset=windows`参数，使之可以调用中易字体，但是由于[中易宋体](https://zh.wikipedia.org/wiki/%E4%B8%AD%E6%98%93%E5%AE%8B%E4%BD%93)和[中易黑体](https://zh.wikipedia.org/wiki/%E4%B8%AD%E6%98%93%E9%BB%91%E4%BD%93)无对应的粗体字体，而在模板中出现了20次粗体命令的调用，具体为：
+
+- 宋体
+  - 各章节一级标题
+  - 首页论文标题
+  - 首页底部作者姓名、指导教师姓名、职称和申请学位类别具体内容
+  - 第3页顶部`学校代码`、`分类号`、`学号`和`密级`等字样及其具体内容
+  - 第3页中部`硕士学位论文`字样
+  - 第3页论文标题
+  - 第3页底部`作者姓名：`、`一级学科：`、`二级学科（研究方向）：`、`学位类别：`、`指导教师姓名、职称：`、`学院：`和`提交日期：`字样
+  - 第5页英文论文标题
+
+- 黑体
+  - 首页底部`作者姓名`、`指导教师姓名、职称`和`申请学位类别`字样
+  - 第3页中部`西安电子科技大学`字样
+
+因此需要使用伪粗体来实现粗体效果，但是[CTEX宏集手册](http://mirror.ctan.org/language/chinese/ctex/ctex.pdf)中版本历史v2.4.4指出：
+
+> General: 不再默认设置xeCJK的伪粗体。
+
+所以需要手动开启伪粗体，在清华大学学位论文模板[thuthesis.dtx](http://mirrors.ctan.org/macros/latex/contrib/thuthesis/thuthesis.dtx)中可以找到如下参数：
+
+> \xeCJKsetup{EmboldenFactor=3}
+
+我们参考该值设置伪粗体的粗细程度为3，即在cls文件中添加
+
+```latex
+\PassOptionsToPackage{AutoFakeBold=3}{xeCJK}
+```
+
+至此，可以使用中易字体来显示中文，同时利用伪粗体来实现粗体效果。
+
+## 英文字体
+
+从模板示例中可以看出所有英文字体均要求为Times New Roman，Times New Roman是有粗体字体的，上面设置的开启伪粗体的全局命令不会影响到Times New Roman字体，在cls文件中使用如下命令可以配置默认英文字体为Times New Roman：
+
+```latex
+\AtBeginDocument{\setmainfont{Times New Roman}}
+```
+
