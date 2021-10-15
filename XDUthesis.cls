@@ -150,9 +150,9 @@
 
 %% underline
 \def\CJKunderlinecolor{}
-\def\XDU@@underline[#1]#2{\CTEXunderline{\hbox to #1{\hfill{#2}\hfill}}}
+\def\XDU@@underline[#1]#2{\underline{\hbox to #1{\hfill{#2}\hfill}}}
 \DeclareRobustCommand{\XDU@underline}
-  {\@ifnextchar[\XDU@@underline\CTEXunderline}
+  {\@ifnextchar[\XDU@@underline\underline}
 
 \DeclareRobustCommand*{\XDU@bold}{\bfseries}
 
