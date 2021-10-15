@@ -2,89 +2,89 @@
 \ProvidesFile{XDUthesis.def}[2015/01/01 XDU, Thesis document class, version 0.1.0]
 
 % General
-\def\XDU@label@university{Î÷°²µç×Ó¿Æ¼¼´óÑ§}
+\def\XDU@label@university{è¥¿å®‰ç”µå­ç§‘æŠ€å¤§å­¦}
 \def\XDU@elabel@university{XIDIAN UNIVERSITY}
 
-% ·âÃæ
-\def\XDU@label@cover@UDC{Ñ§Ğ£´úÂë\hspace*{0.9em}}
-\def\XDU@label@cover@studentNo{Ñ§\quad{}ºÅ\hspace*{0.9em}}
-\def\XDU@label@cover@classification{·Ö\hspace*{0.5em}Àà\hspace*{0.5em}ºÅ\hspace*{0.9em}}
-\def\XDU@label@cover@confidential{ÃÜ\quad{}¼¶\hspace*{0.9em}}
-\def\XDU@label@cover@author{×÷ÕßĞÕÃû£º}
-\def\XDU@label@cover@major{Ò»¼¶Ñ§¿Æ£º}
-\def\XDU@label@cover@submajor{¶ş¼¶Ñ§¿Æ£¨ÑĞ¾¿·½Ïò£©£º}
-\def\XDU@label@cover@degree{Ñ§Î»Àà±ğ£º}
-\def\XDU@label@cover@advisor{Ö¸µ¼½ÌÊ¦ĞÕÃû¡¢Ö°³Æ£º}
+% å°é¢
+\def\XDU@label@cover@UDC{å­¦æ ¡ä»£ç \hspace*{0.9em}}
+\def\XDU@label@cover@studentNo{å­¦\quad{}å·\hspace*{0.9em}}
+\def\XDU@label@cover@classification{åˆ†\hspace*{0.5em}ç±»\hspace*{0.5em}å·\hspace*{0.9em}}
+\def\XDU@label@cover@confidential{å¯†\quad{}çº§\hspace*{0.9em}}
+\def\XDU@label@cover@author{ä½œè€…å§“åï¼š}
+\def\XDU@label@cover@major{ä¸€çº§å­¦ç§‘ï¼š}
+\def\XDU@label@cover@submajor{äºŒçº§å­¦ç§‘ï¼ˆç ”ç©¶æ–¹å‘ï¼‰ï¼š}
+\def\XDU@label@cover@degree{å­¦ä½ç±»åˆ«ï¼š}
+\def\XDU@label@cover@advisor{æŒ‡å¯¼æ•™å¸ˆå§“åã€èŒç§°ï¼š}
 \def\XDU@elabel@cover@advisor{Supervisor:~}
-\def\XDU@label@cover@school{Ñ§\hspace*{2.05em}Ôº£º}
-\def\XDU@label@cover@submit@date{Ìá½»ÈÕÆÚ£º}
+\def\XDU@label@cover@school{å­¦\hspace*{2.05em}é™¢ï¼š}
+\def\XDU@label@cover@submit@date{æäº¤æ—¥æœŸï¼š}
 
-% ÉùÃ÷ºÍ°æÈ¨
-\def\XDU@label@stat@statement{Î÷°²µç×Ó¿Æ¼¼´óÑ§\\ Ñ§Î»ÂÛÎÄ¶À´´ĞÔ£¨»ò´´ĞÂĞÔ£©ÉùÃ÷}
-\def\XDU@lable@stat@copyright{Î÷°²µç×Ó¿Æ¼¼´óÑ§\\ ¹ØÓÚÂÛÎÄÊ¹ÓÃÊÚÈ¨µÄËµÃ÷}
-\def\XDU@lable@stat@auther{±¾ÈËÇ©Ãû£º}
-\def\XDU@lable@stat@advisor{µ¼Ê¦Ç©Ãû£º}
-\def\XDU@lable@stat@date{ÈÕ\hspace*{2em}ÆÚ£º}
+% å£°æ˜å’Œç‰ˆæƒ
+\def\XDU@label@stat@statement{è¥¿å®‰ç”µå­ç§‘æŠ€å¤§å­¦\\ å­¦ä½è®ºæ–‡ç‹¬åˆ›æ€§ï¼ˆæˆ–åˆ›æ–°æ€§ï¼‰å£°æ˜}
+\def\XDU@lable@stat@copyright{è¥¿å®‰ç”µå­ç§‘æŠ€å¤§å­¦\\ å…³äºè®ºæ–‡ä½¿ç”¨æˆæƒçš„è¯´æ˜}
+\def\XDU@lable@stat@auther{æœ¬äººç­¾åï¼š}
+\def\XDU@lable@stat@advisor{å¯¼å¸ˆç­¾åï¼š}
+\def\XDU@lable@stat@date{æ—¥\hspace*{2em}æœŸï¼š}
 
-\def\XDU@value@stat@statement{±ü³ĞÑ§Ğ£ÑÏ½÷µÄÑ§·çºÍÓÅÁ¼µÄ¿ÆÑ§µÀµÂ£¬
-±¾ÈËÉùÃ÷Ëù³Ê½»µÄÂÛÎÄÊÇÎÒ¸öÈËÔÚµ¼Ê¦Ö¸µ¼ÏÂ½øĞĞµÄÑĞ¾¿¹¤×÷¼°È¡µÃµÄÑĞ¾¿
-³É¹û¡£¾¡ÎÒËùÖª£¬³ıÁËÎÄÖĞÌØ±ğ¼ÓÒÔ±ê×¢ºÍÖÂĞ»ÖĞËùÂŞÁĞµÄÄÚÈİÒÔÍâ£¬ÂÛÎÄ
-ÖĞ²»°üº¬ÆäËûÈËÒÑ¾­·¢±í»ò×«Ğ´¹ıµÄÑĞ¾¿³É¹û£»Ò²²»°üº¬Îª»ñµÃÎ÷°²µç×Ó¿Æ
-¼¼´óÑ§»òÆäËü½ÌÓı»ú¹¹µÄÑ§Î»»òÖ¤Êé¶øÊ¹ÓÃ¹ıµÄ²ÄÁÏ¡£ÓëÎÒÒ»Í¬¹¤×÷µÄÍ¬ÊÂ
-¶Ô±¾ÑĞ¾¿Ëù×öµÄÈÎºÎ¹±Ï×¾ùÒÑÔÚÂÛÎÄÖĞ×÷ÁËÃ÷È·µÄËµÃ÷²¢±íÊ¾ÁËĞ»Òâ¡£\par
-Ñ§Î»ÂÛÎÄÈôÓĞ²»ÊµÖ®´¦£¬±¾ÈË³Ğµ£Ò»ÇĞ·¨ÂÉÔğÈÎ¡£}
+\def\XDU@value@stat@statement{ç§‰æ‰¿å­¦æ ¡ä¸¥è°¨çš„å­¦é£å’Œä¼˜è‰¯çš„ç§‘å­¦é“å¾·ï¼Œ
+æœ¬äººå£°æ˜æ‰€å‘ˆäº¤çš„è®ºæ–‡æ˜¯æˆ‘ä¸ªäººåœ¨å¯¼å¸ˆæŒ‡å¯¼ä¸‹è¿›è¡Œçš„ç ”ç©¶å·¥ä½œåŠå–å¾—çš„ç ”ç©¶
+æˆæœã€‚å°½æˆ‘æ‰€çŸ¥ï¼Œé™¤äº†æ–‡ä¸­ç‰¹åˆ«åŠ ä»¥æ ‡æ³¨å’Œè‡´è°¢ä¸­æ‰€ç½—åˆ—çš„å†…å®¹ä»¥å¤–ï¼Œè®ºæ–‡
+ä¸­ä¸åŒ…å«å…¶ä»–äººå·²ç»å‘è¡¨æˆ–æ’°å†™è¿‡çš„ç ”ç©¶æˆæœï¼›ä¹Ÿä¸åŒ…å«ä¸ºè·å¾—è¥¿å®‰ç”µå­ç§‘
+æŠ€å¤§å­¦æˆ–å…¶å®ƒæ•™è‚²æœºæ„çš„å­¦ä½æˆ–è¯ä¹¦è€Œä½¿ç”¨è¿‡çš„ææ–™ã€‚ä¸æˆ‘ä¸€åŒå·¥ä½œçš„åŒäº‹
+å¯¹æœ¬ç ”ç©¶æ‰€åšçš„ä»»ä½•è´¡çŒ®å‡å·²åœ¨è®ºæ–‡ä¸­ä½œäº†æ˜ç¡®çš„è¯´æ˜å¹¶è¡¨ç¤ºäº†è°¢æ„ã€‚\par
+å­¦ä½è®ºæ–‡è‹¥æœ‰ä¸å®ä¹‹å¤„ï¼Œæœ¬äººæ‰¿æ‹…ä¸€åˆ‡æ³•å¾‹è´£ä»»ã€‚}
 
-\def\XDU@value@stat@copyright{±¾ÈËÍêÈ«ÁË½âÎ÷°²µç×Ó¿Æ¼¼´óÑ§ÓĞ¹Ø±£Áô
-ºÍÊ¹ÓÃÑ§Î»ÂÛÎÄµÄ¹æ¶¨£¬¼´£ºÑĞ¾¿ÉúÔÚĞ£¹¥¶ÁÑ§Î»ÆÚ¼äÂÛÎÄ¹¤×÷µÄÖªÊ¶²úÈ¨
-ÊôÓÚÎ÷°²µç×Ó¿Æ¼¼´óÑ§¡£Ñ§Ğ£ÓĞÈ¨±£ÁôËÍ½»ÂÛÎÄµÄ¸´Ó¡¼ş£¬ÔÊĞí²éÔÄ¡¢½èÔÄ
-ÂÛÎÄ£»Ñ§Ğ£¿ÉÒÔ¹«²¼ÂÛÎÄµÄÈ«²¿»ò²¿·ÖÄÚÈİ£¬ÔÊĞí²ÉÓÃÓ°Ó¡¡¢ËõÓ¡»òÆäËü¸´
-ÖÆÊÖ¶Î±£´æÂÛÎÄ¡£Í¬Ê±±¾ÈË±£Ö¤£¬½áºÏÑ§Î»ÂÛÎÄÑĞ¾¿³É¹ûÍê³ÉµÄÂÛÎÄ¡¢·¢Ã÷
-×¨ÀûµÈ³É¹û£¬ÊğÃûµ¥Î»ÎªÎ÷°²µç×Ó¿Æ¼¼´óÑ§¡£\par
-±£ÃÜµÄÑ§Î»ÂÛÎÄÔÚ\rule[-2pt]{1cm}{0.5pt}Äê½âÃÜºóÊÊÓÃ±¾ÊÚÈ¨Êé¡£}
+\def\XDU@value@stat@copyright{æœ¬äººå®Œå…¨äº†è§£è¥¿å®‰ç”µå­ç§‘æŠ€å¤§å­¦æœ‰å…³ä¿ç•™
+å’Œä½¿ç”¨å­¦ä½è®ºæ–‡çš„è§„å®šï¼Œå³ï¼šç ”ç©¶ç”Ÿåœ¨æ ¡æ”»è¯»å­¦ä½æœŸé—´è®ºæ–‡å·¥ä½œçš„çŸ¥è¯†äº§æƒ
+å±äºè¥¿å®‰ç”µå­ç§‘æŠ€å¤§å­¦ã€‚å­¦æ ¡æœ‰æƒä¿ç•™é€äº¤è®ºæ–‡çš„å¤å°ä»¶ï¼Œå…è®¸æŸ¥é˜…ã€å€Ÿé˜…
+è®ºæ–‡ï¼›å­¦æ ¡å¯ä»¥å…¬å¸ƒè®ºæ–‡çš„å…¨éƒ¨æˆ–éƒ¨åˆ†å†…å®¹ï¼Œå…è®¸é‡‡ç”¨å½±å°ã€ç¼©å°æˆ–å…¶å®ƒå¤
+åˆ¶æ‰‹æ®µä¿å­˜è®ºæ–‡ã€‚åŒæ—¶æœ¬äººä¿è¯ï¼Œç»“åˆå­¦ä½è®ºæ–‡ç ”ç©¶æˆæœå®Œæˆçš„è®ºæ–‡ã€å‘æ˜
+ä¸“åˆ©ç­‰æˆæœï¼Œç½²åå•ä½ä¸ºè¥¿å®‰ç”µå­ç§‘æŠ€å¤§å­¦ã€‚\par
+ä¿å¯†çš„å­¦ä½è®ºæ–‡åœ¨\rule[-2pt]{1cm}{0.5pt}å¹´è§£å¯†åé€‚ç”¨æœ¬æˆæƒä¹¦ã€‚}
 
 % chapter
-\def\XDU@chapter@prenumber{µÚ}
-\def\XDU@chapter@afternumber{ÕÂ}
+\def\XDU@chapter@prenumber{ç¬¬}
+\def\XDU@chapter@afternumber{ç« }
 
-% Í¼±íÃû³Æ
-\def\XDU@label@figure@cap{Í¼}
-\def\XDU@label@table@cap{±í}
+% å›¾è¡¨åç§°
+\def\XDU@label@figure@cap{å›¾}
+\def\XDU@label@table@cap{è¡¨}
 
-% ÕªÒª
-\def\XDU@label@abstract{ÕªÒª}
+% æ‘˜è¦
+\def\XDU@label@abstract{æ‘˜è¦}
 \def\XDU@elabel@abstract{ABSTRACT}
-\def\XDU@elabel@graphindex{²åÍ¼Ë÷Òı}
-\def\XDU@toc@abstract{ÕªÒª}
+\def\XDU@elabel@graphindex{æ’å›¾ç´¢å¼•}
+\def\XDU@toc@abstract{æ‘˜è¦}
 \def\XDU@etoc@abstract{ABSTRACT}
-\def\XDU@etoc@graphindex{²åÍ¼Ë÷Òı}
-\def\XDU@label@keywords{¹Ø¼ü´Ê£º}
+\def\XDU@etoc@graphindex{æ’å›¾ç´¢å¼•}
+\def\XDU@label@keywords{å…³é”®è¯ï¼š}
 \def\XDU@elabel@keywords{Keywords:}
 
-% Ä¿Â¼
-\def\XDU@label@listoffigures{²åÍ¼Ë÷Òı}
-\def\XDU@toc@listoffigures{²åÍ¼Ë÷Òı}
-\def\XDU@label@listoftables{±í¸ñË÷Òı}
-\def\XDU@toc@listoftables{±í¸ñË÷Òı}
-\def\XDU@label@symbollist@title{·ûºÅ¶ÔÕÕ±í}
-\def\XDU@toc@symbollist@title{·ûºÅ¶ÔÕÕ±í}
-\def\XDU@label@abbreviationlist@title{ËõÂÔÓï¶ÔÕÕ±í}
-\def\XDU@toc@abbreviationlist@title{ËõÂÔÓï¶ÔÕÕ±í}
-\def\XDU@label@content{Ä¿Â¼}
-\def\XDU@toc@content{Ä¿Â¼}
+% ç›®å½•
+\def\XDU@label@listoffigures{æ’å›¾ç´¢å¼•}
+\def\XDU@toc@listoffigures{æ’å›¾ç´¢å¼•}
+\def\XDU@label@listoftables{è¡¨æ ¼ç´¢å¼•}
+\def\XDU@toc@listoftables{è¡¨æ ¼ç´¢å¼•}
+\def\XDU@label@symbollist@title{ç¬¦å·å¯¹ç…§è¡¨}
+\def\XDU@toc@symbollist@title{ç¬¦å·å¯¹ç…§è¡¨}
+\def\XDU@label@abbreviationlist@title{ç¼©ç•¥è¯­å¯¹ç…§è¡¨}
+\def\XDU@toc@abbreviationlist@title{ç¼©ç•¥è¯­å¯¹ç…§è¡¨}
+\def\XDU@label@content{ç›®å½•}
+\def\XDU@toc@content{ç›®å½•}
 
-% ²Î¿¼ÎÄÏ×
-\def\XDU@label@ref@title{²Î¿¼ÎÄÏ×}
-\def\XDU@toc@ref@title{²Î¿¼ÎÄÏ×}
+% å‚è€ƒæ–‡çŒ®
+\def\XDU@label@ref@title{å‚è€ƒæ–‡çŒ®}
+\def\XDU@toc@ref@title{å‚è€ƒæ–‡çŒ®}
 
-% ÖÂĞ»
-\def\XDU@label@thanks{ÖÂĞ»}
-\def\XDU@toc@thanks{ÖÂĞ»}
+% è‡´è°¢
+\def\XDU@label@thanks{è‡´è°¢}
+\def\XDU@toc@thanks{è‡´è°¢}
 
-% ¼òÀú
-\def\XDU@label@resume@title{×÷Õß¼ò½é}
-\def\XDU@toc@resume@title{×÷Õß¼ò½é}
-\def\XDU@label@resume@baseinfo{»ù±¾Çé¿ö}
-\def\XDU@label@resume@name{ĞÕÃû£º}
-\def\XDU@label@resume@sex{ĞÔ±ğ£º}
-\def\XDU@label@resume@birthday{³öÉúÈÕÆÚ£º}
-\def\XDU@label@resume@place{¼®¹á£º}
+% ç®€å†
+\def\XDU@label@resume@title{ä½œè€…ç®€ä»‹}
+\def\XDU@toc@resume@title{ä½œè€…ç®€ä»‹}
+\def\XDU@label@resume@baseinfo{åŸºæœ¬æƒ…å†µ}
+\def\XDU@label@resume@name{å§“åï¼š}
+\def\XDU@label@resume@sex{æ€§åˆ«ï¼š}
+\def\XDU@label@resume@birthday{å‡ºç”Ÿæ—¥æœŸï¼š}
+\def\XDU@label@resume@place{ç±è´¯ï¼š}

@@ -93,7 +93,7 @@
 \fi
 \hb@xt@\@tempdima{\@cftbsnum #1\@cftasnum\hfil}\@cftasnumb}\makeatother}
 \AtEndOfPackage{\makeatletter\@addtoreset{equation}{chapter}\makeatother}
-\AtEndOfPackage{\makeatletter \renewcommand{\figurename}{Í¼} \renewcommand{\tablename}{±í}
+\AtEndOfPackage{\makeatletter \renewcommand{\figurename}{å›¾} \renewcommand{\tablename}{è¡¨}
  \def\@caption#1[#2]#3{%
    \par
    \addcontentsline{\csname ext@#1\endcsname}{#1}%
@@ -280,7 +280,7 @@
 
 %% table name
 \CTEXoptions[tablename={\zihao{5}\XDU@label@table@cap}]
-\newcommand{\tabincell}[2]{\begin{tabular}{@{}#1@{}}#2\end{tabular}} %×ªĞĞ
+\newcommand{\tabincell}[2]{\begin{tabular}{@{}#1@{}}#2\end{tabular}} %è½¬è¡Œ
 
 \renewcommand{\theequation}{\arabic{chapter}-\arabic{equation}}
 
@@ -301,11 +301,11 @@
     \XDU@font@zihao{4}\setlength{\baselineskip}{30pt}%
     \newlength{\linelength}
     \setlength{\linelength}{9cm-4.5em}
-    \XDU@bold\XDU@font@ht{×÷ÕßĞÕÃû~}\XDU@font@st\XDU@underline[\linelength]{\XDU@value@author@name}\\%
+    \XDU@bold\XDU@font@ht{ä½œè€…å§“å~}\XDU@font@st\XDU@underline[\linelength]{\XDU@value@author@name}\\%
     \setlength{\linelength}{9cm-9.5em}
-    \XDU@bold\XDU@font@ht{Ö¸µ¼½ÌÊ¦ĞÕÃû¡¢Ö°³Æ~}\XDU@font@st\XDU@underline[\linelength]{\XDU@value@advisor@name~\XDU@value@advisor@title}\\%
+    \XDU@bold\XDU@font@ht{æŒ‡å¯¼æ•™å¸ˆå§“åã€èŒç§°~}\XDU@font@st\XDU@underline[\linelength]{\XDU@value@advisor@name~\XDU@value@advisor@title}\\%
     \setlength{\linelength}{9cm-6.5em}
-    \XDU@bold\XDU@font@ht{ÉêÇëÑ§Î»Àà±ğ~}\XDU@font@st\XDU@underline[\linelength]{\XDU@value@degree}%
+    \XDU@bold\XDU@font@ht{ç”³è¯·å­¦ä½ç±»åˆ«~}\XDU@font@st\XDU@underline[\linelength]{\XDU@value@degree}%
     }
 \clearpage\thispagestyle{empty}\CTEXindent\cleardoublepage}}
 
@@ -479,7 +479,7 @@ By \par%
 
     \setlength{\abovecaptionskip}{0pt}
     \setlength{\belowcaptionskip}{0pt}
-    \renewcommand{\captionlabeldelim}{\ ~}%È¥Ã°ºÅ
+    \renewcommand{\captionlabeldelim}{\ ~}%å»å†’å·
     \renewcommand{\captionfont}{\XDU@font@st\XDU@font@zihao{5}}
 
 %% list of figures
