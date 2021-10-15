@@ -243,3 +243,117 @@ Package hyperref Warning: Option `a4paper' is no longer used.
 
 即关于`hyperref`宏包的所有设置仅保留上述语句。
 
+## \CTEXsetup
+
+```latex
+Package ctex Warning: Command `\CTEXsetup' is deprecated.
+```
+
+将`XDUthesis.cls`中
+
+```latex
+\CTEXsetup[name={\XDU@chapter@prenumber,\XDU@chapter@afternumber},
+           number={\chinese{chapter}},
+           format={\centering\XDU@font@ht\XDU@font@zihao{3}},
+           nameformat={},
+           numberformat={},
+           aftername={\quad},
+           titleformat={},
+           beforeskip={6pt},
+           afterskip={18pt},
+           indent={0pt}]{chapter}
+```
+
+```latex
+\CTEXsetup[name={,},
+           number={\thesection},
+           format={\raggedright\XDU@bold\XDU@font@st\XDU@font@zihao{-3}},
+           nameformat={},
+           numberformat={},
+           aftername={\quad},
+           titleformat={},
+           beforeskip={18pt plus 0pt minus 0pt},
+           afterskip={12pt},
+           indent={0pt}]{section}
+```
+
+```latex
+\CTEXsetup[name={,},
+           number={\thesubsection},
+           format={\raggedright\XDU@font@st\XDU@font@zihao{4}},
+           nameformat={},
+           numberformat={},
+           aftername={\quad},
+           titleformat={},
+           beforeskip={12pt plus 0pt minus 0pt},
+           afterskip={6pt},
+           indent={2em}]{subsection}
+```
+
+```latex
+\CTEXsetup[name={,},
+           number={\thesubsubsection},
+           format={\raggedright\XDU@font@st\XDU@font@zihao{-4}},
+           nameformat={},
+           numberformat={},
+           aftername={\quad},
+           titleformat={},
+           beforeskip={6pt plus 0pt minus 0pt},
+           afterskip={0pt},
+           indent={4em}]{subsubsection}
+```
+
+分别改为
+
+```latex
+\ctexset{chapter={name={\XDU@chapter@prenumber,\XDU@chapter@afternumber},
+           number={\chinese{chapter}},
+           format={\centering\XDU@font@ht\XDU@font@zihao{3}},
+           nameformat={},
+           numberformat={},
+           aftername={\quad},
+           titleformat={},
+           beforeskip={6pt},
+           afterskip={18pt},
+           indent={0pt}}}
+```
+
+```latex
+\ctexset{section={name={,},
+           number={\thesection},
+           format={\raggedright\XDU@bold\XDU@font@st\XDU@font@zihao{-3}},
+           nameformat={},
+           numberformat={},
+           aftername={\quad},
+           titleformat={},
+           beforeskip={18pt plus 0pt minus 0pt},
+           afterskip={12pt},
+           indent={0pt}}}
+```
+
+```latex
+\ctexset{subsection={name={,},
+           number={\thesubsection},
+           format={\raggedright\XDU@font@st\XDU@font@zihao{4}},
+           nameformat={},
+           numberformat={},
+           aftername={\quad},
+           titleformat={},
+           beforeskip={12pt plus 0pt minus 0pt},
+           afterskip={6pt},
+           indent={2em}}}
+```
+
+```latex
+\ctexset{subsubsection={name={,},
+           number={\thesubsubsection},
+           format={\raggedright\XDU@font@st\XDU@font@zihao{-4}},
+           nameformat={},
+           numberformat={},
+           aftername={\quad},
+           titleformat={},
+           beforeskip={6pt plus 0pt minus 0pt},
+           afterskip={0pt},
+           indent={4em}}}
+```
+

@@ -195,7 +195,7 @@
 \setcounter{secnumdepth}{4}
 
 %% chapter
-\CTEXsetup[name={\XDU@chapter@prenumber,\XDU@chapter@afternumber},
+\ctexset{chapter={name={\XDU@chapter@prenumber,\XDU@chapter@afternumber},
            number={\chinese{chapter}},
            format={\centering\XDU@font@ht\XDU@font@zihao{3}},
            nameformat={},
@@ -204,13 +204,13 @@
            titleformat={},
            beforeskip={6pt},
            afterskip={18pt},
-           indent={0pt}]{chapter}
+           indent={0pt}}}
 
 %% chapter without number
 \DeclareRobustCommand{\XDU@nchapter}[1]{\chapter*{#1}\markboth{#1}{}}
 
 %% section
-\CTEXsetup[name={,},
+\ctexset{section={name={,},
            number={\thesection},
            format={\raggedright\XDU@bold\XDU@font@st\XDU@font@zihao{-3}},
            nameformat={},
@@ -219,10 +219,10 @@
            titleformat={},
            beforeskip={18pt plus 0pt minus 0pt},
            afterskip={12pt},
-           indent={0pt}]{section}
+           indent={0pt}}}
 
 %% subsection
-\CTEXsetup[name={,},
+\ctexset{subsection={name={,},
            number={\thesubsection},
            format={\raggedright\XDU@font@st\XDU@font@zihao{4}},
            nameformat={},
@@ -231,10 +231,10 @@
            titleformat={},
            beforeskip={12pt plus 0pt minus 0pt},
            afterskip={6pt},
-           indent={2em}]{subsection}
+           indent={2em}}}
 
 %% subsubsection
-\CTEXsetup[name={,},
+\ctexset{subsubsection={name={,},
            number={\thesubsubsection},
            format={\raggedright\XDU@font@st\XDU@font@zihao{-4}},
            nameformat={},
@@ -243,7 +243,7 @@
            titleformat={},
            beforeskip={6pt plus 0pt minus 0pt},
            afterskip={0pt},
-           indent={4em}]{subsubsection}
+           indent={4em}}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%    figure and table
