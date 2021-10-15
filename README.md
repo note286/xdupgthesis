@@ -357,3 +357,31 @@ Package ctex Warning: Command `\CTEXsetup' is deprecated.
            indent={4em}}}
 ```
 
+## \CTEXoptions
+
+```latex
+Package ctex Warning: Command `\CTEXoptions' is deprecated.
+```
+
+将`XDUthesis.cls`中
+
+```latex
+\CTEXoptions[figurename={\zihao{5}\XDU@label@figure@cap}]
+\CTEXoptions[tablename={\zihao{5}\XDU@label@table@cap}]
+\CTEXoptions[listfigurename={\XDU@label@listoffigures}]
+\CTEXoptions[listtablename={\XDU@label@listoftables}]
+\CTEXoptions[contentsname={\XDU@label@content}]
+\CTEXoptions[bibname={\XDU@label@ref@title}]
+```
+
+分别改为
+
+```latex
+\ctexset{figurename={\zihao{5}\XDU@label@figure@cap}}
+\ctexset{tablename={\zihao{5}\XDU@label@table@cap}}
+\ctexset{listfigurename={\XDU@label@listoffigures}}
+\ctexset{listtablename={\XDU@label@listoftables}}
+\ctexset{contentsname={\XDU@label@content}}
+\ctexset{bibname={\XDU@label@ref@title}}
+```
+

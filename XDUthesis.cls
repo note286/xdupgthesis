@@ -249,10 +249,10 @@
 %%    figure and table
 
 %% figure name
-\CTEXoptions[figurename={\zihao{5}\XDU@label@figure@cap}]
+\ctexset{figurename={\zihao{5}\XDU@label@figure@cap}}
 
 %% table name
-\CTEXoptions[tablename={\zihao{5}\XDU@label@table@cap}]
+\ctexset{tablename={\zihao{5}\XDU@label@table@cap}}
 \newcommand{\tabincell}[2]{\begin{tabular}{@{}#1@{}}#2\end{tabular}} %转行
 
 \renewcommand{\theequation}{\arabic{chapter}-\arabic{equation}}
@@ -455,13 +455,13 @@ By \par%
     \renewcommand{\captionfont}{\XDU@font@st\XDU@font@zihao{5}}
 
 %% list of figures
-\CTEXoptions[listfigurename={\XDU@label@listoffigures}]
+\ctexset{listfigurename={\XDU@label@listoffigures}}
 \DeclareRobustCommand{\XDU@listoffigures}
   {\XDU@toc@add{\XDU@toc@listoffigures}%
     \listoffigures}
 
 %% list of tables
-\CTEXoptions[listtablename={\XDU@label@listoftables}]
+\ctexset{listtablename={\XDU@label@listoftables}}
 \DeclareRobustCommand{\XDU@listoftables}
   {\XDU@toc@add{\XDU@toc@listoftables}%
     \listoftables}
@@ -487,14 +487,14 @@ By \par%
   {\end{list}\CTEXindent\cleardoublepage}
 
 %% content
-\CTEXoptions[contentsname={\XDU@label@content}]
+\ctexset{contentsname={\XDU@label@content}}
 \DeclareRobustCommand{\XDU@tableofcontents}
   {\tableofcontents}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%    referrence
 \renewcommand{\UrlFont}{\XDU@font@zihao{5}}
-\CTEXoptions[bibname={\XDU@label@ref@title}]
+\ctexset{bibname={\XDU@label@ref@title}}
 \bibliographystyle{gbt7714-2005}
 
 \renewenvironment{thebibliography}[1]
