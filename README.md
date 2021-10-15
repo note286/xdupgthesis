@@ -157,3 +157,34 @@ LaTeX Warning: Unused global option(s):
 
 `XDUthesis.cls`中移除`fntef`参数。
 
+## caption2
+
+```latex
+Package caption2 Warning: ****************************************************
+(caption2)                THIS PACKAGE IS OBSOLETE:
+(caption2)                This package attempts to provide an `caption2'
+(caption2)                package v2.0/2.1 author environment so that OLD
+(caption2)                documents can be successfully processed. It should
+(caption2)                NOT be used for NEW documents! New documents should
+(caption2)                use the regular `caption' package v3.x instead.
+(caption2)                ****************************************************
+```
+
+`caption2`包已经过时，使用`caption`包来替换。
+
+`XDUthesis.cls`中移除如下设置：
+
+```latex
+\RequirePackage{caption2}
+```
+
+```latex
+\renewcommand{\captionlabeldelim}{\ ~}%去冒号
+```
+
+`XDUthesis.cls`中改为使用如下宏包：
+
+```latex
+\RequirePackage[labelsep=quad]{caption}
+```
+

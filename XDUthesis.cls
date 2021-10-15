@@ -60,7 +60,7 @@
 
 \RequirePackage[titles]{tocloft}
 
-\RequirePackage{caption2}
+\RequirePackage[labelsep=quad]{caption}
 
 %% natbib
 \ifXDU@Option@ref@sort
@@ -483,7 +483,6 @@ By \par%
 
     \setlength{\abovecaptionskip}{0pt}
     \setlength{\belowcaptionskip}{0pt}
-    \renewcommand{\captionlabeldelim}{\ ~}%去冒号
     \renewcommand{\captionfont}{\XDU@font@st\XDU@font@zihao{5}}
 
 %% list of figures
