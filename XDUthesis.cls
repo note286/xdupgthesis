@@ -47,6 +47,8 @@
 \LoadClass[a4paper,zihao=-4,twoside,openright,punct,fontset=windows]{ctexbook}
 \AtBeginDocument{\setmainfont{Times New Roman}}
 
+\RequirePackage{lmodern}
+
 \RequirePackage{fancyhdr}
 
 %% calc

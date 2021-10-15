@@ -403,3 +403,16 @@ Package ctex Warning: Command `\CTEXindent' is deprecated.
 
 将`XDUthesis.cls`中`\CTEXindent`全部替换为`\parindent=2\ccwd`。
 
+## Font size
+
+```latex
+LaTeX Font Warning: Font shape `OMX/cmex/m/n' in size <10.53937> not available
+(Font)              size <10.95> substituted on input line 14.
+```
+
+在`XDUthesis.cls`中增加如下宏包来实现任意字号
+
+```latex
+\RequirePackage{lmodern}
+```
+
