@@ -72,9 +72,9 @@
   \RequirePackage[pdftex]{hyperref}
 \else
   \ifXDU@Option@dvipdfm
-    \RequirePackage[dvipdfm]{hyperref}
+    \RequirePackage{hyperref}
   \else
-    \RequirePackage[dvips]{hyperref}
+    \RequirePackage{hyperref}
   \fi
 \fi
 
