@@ -385,3 +385,12 @@ Package ctex Warning: Command `\CTEXoptions' is deprecated.
 \ctexset{bibname={\XDU@label@ref@title}}
 ```
 
+## \CTEXnoindent
+
+```latex
+Package ctex Warning: Command `\CTEXnoindent' is deprecated.
+(ctex)                \parindent is set to 0pt.
+```
+
+将`XDUthesis.cls`中`\CTEXnoindent`全部替换为`\parindent=0pt`。
+

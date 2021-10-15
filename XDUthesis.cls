@@ -261,7 +261,7 @@
 %%    chinese  cover
 %% ql first
 \DeclareRobustCommand{\XDU@make@cover}
-{{\CTEXnoindent\thispagestyle{empty}%
+{{\parindent=0pt\thispagestyle{empty}%
     \normalfont\XDU@font@st\XDU@font@zihao{2}\setlength{\baselineskip}{30pt}%
     \makebox[\textwidth]{\rule{0pt}{12cm}}
     \rule[-3.2cm]{0pt}{3.2cm}\parbox[t]{\textwidth}{%
@@ -283,7 +283,7 @@
 \clearpage\thispagestyle{empty}\CTEXindent\cleardoublepage}}
 
 \DeclareRobustCommand{\XDU@make@title}
-  {{\cleardoublepage\CTEXnoindent\thispagestyle{empty}%
+  {{\cleardoublepage\parindent=0pt\thispagestyle{empty}%
 
     \normalfont\XDU@font@st\renewcommand{\baselinestretch}{1.2}\zihao{5}%
     \rule{0pt}{1.35cm}\parbox[b]{4.5cm}{
@@ -331,7 +331,7 @@
 %%    english  cover
 
 \DeclareRobustCommand{\XDU@make@titleenglish}
-  {{\cleardoublepage\CTEXnoindent\thispagestyle{empty}%
+  {{\cleardoublepage\parindent=0pt\thispagestyle{empty}%
     \normalfont\XDU@font@st%
 
     \rule[-3.5cm]{0pt}{3.5cm}\parbox[t]{\textwidth}{%
@@ -367,14 +367,14 @@ By \par%
 %%    statement and copyright
 
 \DeclareRobustCommand{\XDU@make@statementandcopyright}
-  {{\cleardoublepage\CTEXnoindent\thispagestyle{empty}%
+  {{\cleardoublepage\parindent=0pt\thispagestyle{empty}%
   \normalfont\XDU@font@st%
    \begin{center}%
    \bfseries\XDU@font@zihao{4}%
      \XDU@label@stat@statement%
    \end{center}%
    \XDU@font@zihao{-4}%
-   \hspace*{2em}\CTEXindent\XDU@value@stat@statement\CTEXnoindent%
+   \hspace*{2em}\CTEXindent\XDU@value@stat@statement\parindent=0pt%
   \vskip 20pt%
    \hspace*{2em}\XDU@lable@stat@auther\XDU@underline[100pt]{}\hspace*{1em}%
     \hfill \XDU@lable@stat@date\XDU@underline[100pt]{}\hspace*{1em}
@@ -384,7 +384,7 @@ By \par%
      \XDU@lable@stat@copyright%
    \end{center}%
    \XDU@font@zihao{-4}%
-   \hspace*{2em}\CTEXindent\XDU@value@stat@copyright\CTEXnoindent%
+   \hspace*{2em}\CTEXindent\XDU@value@stat@copyright\parindent=0pt%
   \vskip 20pt%
    \normalfont\XDU@font@st\XDU@font@zihao{-4}%
    \hspace*{2em}\XDU@lable@stat@auther\XDU@underline[100pt]{}\hspace*{1em}%
@@ -407,7 +407,7 @@ By \par%
 
 %% chinese keywords
 \DeclareRobustCommand{\keywords}[1]
-  {{\CTEXnoindent\vspace{20pt}%
+  {{\parindent=0pt\vspace{20pt}%
    \normalfont\XDU@font@st\bfseries\XDU@font@zihao{-4}%
    \XDU@label@keywords%
    \normalfont\XDU@font@st\XDU@font@zihao{-4}%
@@ -416,13 +416,13 @@ By \par%
 %% english abstract
 \newenvironment{englishabstract}
   {\XDU@toc@add{\XDU@etoc@abstract}\XDU@nchapter{\XDU@elabel@abstract}%
-   \vspace{-2ex}\CTEXnoindent\normalfont\XDU@font@zihao{-4}%
-   \CTEXnoindent}
+   \vspace{-2ex}\parindent=0pt\normalfont\XDU@font@zihao{-4}%
+   \parindent=0pt}
   {\cleardoublepage}
 
 %% english keywords
 \DeclareRobustCommand{\englishkeywords}[1]
-  {{\CTEXnoindent\vspace{2ex}%
+  {{\parindent=0pt\vspace{2ex}%
    \normalfont\XDU@font@st\bfseries\XDU@font@zihao{-4}%
    \XDU@elabel@keywords~%
    \normalfont\XDU@font@st\XDU@font@zihao{-4}%
@@ -468,21 +468,21 @@ By \par%
 
 %% list of Symbols
 \newenvironment{symbollist}
-  {\CTEXnoindent\XDU@toc@add{\XDU@toc@symbollist@title}%
+  {\parindent=0pt\XDU@toc@add{\XDU@toc@symbollist@title}%
    \XDU@nchapter{\XDU@label@symbollist@title}\CTEXindent%
    \begin{list}{}
     {\setlength{\topsep}{0pt}\setlength{\itemsep}{0pt}\setlength{\parsep}{0pt}
-    \CTEXnoindent\normalfont\XDU@font@st\XDU@font@zihao{-4}
+    \parindent=0pt\normalfont\XDU@font@st\XDU@font@zihao{-4}
      \setlength{\leftmargin}{0.5\labelwidth}}}
   {\end{list}\CTEXindent\cleardoublepage}
 
 %% list of abbreviations
 \newenvironment{abbreviationlist}
-  {\CTEXnoindent\XDU@toc@add{\XDU@toc@abbreviationlist@title}%
+  {\parindent=0pt\XDU@toc@add{\XDU@toc@abbreviationlist@title}%
    \XDU@nchapter{\XDU@label@abbreviationlist@title}\CTEXindent%
    \begin{list}{}
     {\setlength{\topsep}{0pt}\setlength{\itemsep}{0pt}\setlength{\parsep}{0pt}
-    \CTEXnoindent\normalfont\XDU@font@st\XDU@font@zihao{-4}
+    \parindent=0pt\normalfont\XDU@font@st\XDU@font@zihao{-4}
      \setlength{\leftmargin}{0.5\labelwidth}}}
   {\end{list}\CTEXindent\cleardoublepage}
 
@@ -526,7 +526,7 @@ By \par%
 
 %% environment
 \newenvironment{resume}
-  {\CTEXnoindent\XDU@toc@add{\XDU@toc@resume@title}%
+  {\parindent=0pt\XDU@toc@add{\XDU@toc@resume@title}%
    \XDU@nchapter{\XDU@label@resume@title}%
    \renewcommand{\thesection}{\arabic{section}}\CTEXindent}
   {\cleardoublepage}
@@ -539,14 +539,14 @@ By \par%
     {\usecounter{XDU@counter@resumelistcounter}
      \setcounter{XDU@counter@resumelistcounter}{0}
      \setlength{\topsep}{0pt}\setlength{\itemsep}{0pt}\setlength{\parsep}{0pt}
-     \CTEXnoindent\normalfont\XDU@font@st\XDU@font@zihao{-4}
+     \parindent=0pt\normalfont\XDU@font@st\XDU@font@zihao{-4}
      \setlength{\leftmargin}{2\labelwidth}}}
   {\end{list}}
 
 \newenvironment{resumelist*}
   {\begin{list}{}
     {\setlength{\topsep}{0pt}\setlength{\itemsep}{0pt}\setlength{\parsep}{0pt}
-    \CTEXnoindent\normalfont\XDU@font@st\XDU@font@zihao{-4}
+    \parindent=0pt\normalfont\XDU@font@st\XDU@font@zihao{-4}
      \setlength{\leftmargin}{\labelwidth}}}
   {\end{list}}
 
