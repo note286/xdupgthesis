@@ -394,3 +394,12 @@ Package ctex Warning: Command `\CTEXnoindent' is deprecated.
 
 将`XDUthesis.cls`中`\CTEXnoindent`全部替换为`\parindent=0pt`。
 
+## \CTEXindent
+
+```latex
+Package ctex Warning: Command `\CTEXindent' is deprecated.
+(ctex)                \parindent is set to 2\ccwd .
+```
+
+将`XDUthesis.cls`中`\CTEXindent`全部替换为`\parindent=2\ccwd`。
+

@@ -280,7 +280,7 @@
     \setlength{\linelength}{9cm-6.5em}
     \XDU@bold\XDU@font@ht{申请学位类别~}\XDU@font@st\XDU@underline[\linelength]{\XDU@value@degree}%
     }
-\clearpage\thispagestyle{empty}\CTEXindent\cleardoublepage}}
+\clearpage\thispagestyle{empty}\parindent=2\ccwd\cleardoublepage}}
 
 \DeclareRobustCommand{\XDU@make@title}
   {{\cleardoublepage\parindent=0pt\thispagestyle{empty}%
@@ -324,7 +324,7 @@
     }
    \clearpage\thispagestyle{empty}%
    \renewcommand{\baselinestretch}{1}%
-   \CTEXindent\cleardoublepage}}
+   \parindent=2\ccwd\cleardoublepage}}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -360,7 +360,7 @@ By \par%
     \end{center}%
     }
    \clearpage\thispagestyle{empty}%
-   \CTEXindent\cleardoublepage}}
+   \parindent=2\ccwd\cleardoublepage}}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -374,7 +374,7 @@ By \par%
      \XDU@label@stat@statement%
    \end{center}%
    \XDU@font@zihao{-4}%
-   \hspace*{2em}\CTEXindent\XDU@value@stat@statement\parindent=0pt%
+   \hspace*{2em}\parindent=2\ccwd\XDU@value@stat@statement\parindent=0pt%
   \vskip 20pt%
    \hspace*{2em}\XDU@lable@stat@auther\XDU@underline[100pt]{}\hspace*{1em}%
     \hfill \XDU@lable@stat@date\XDU@underline[100pt]{}\hspace*{1em}
@@ -384,7 +384,7 @@ By \par%
      \XDU@lable@stat@copyright%
    \end{center}%
    \XDU@font@zihao{-4}%
-   \hspace*{2em}\CTEXindent\XDU@value@stat@copyright\parindent=0pt%
+   \hspace*{2em}\parindent=2\ccwd\XDU@value@stat@copyright\parindent=0pt%
   \vskip 20pt%
    \normalfont\XDU@font@st\XDU@font@zihao{-4}%
    \hspace*{2em}\XDU@lable@stat@auther\XDU@underline[100pt]{}\hspace*{1em}%
@@ -394,7 +394,7 @@ By \par%
     \hfill \XDU@lable@stat@date\XDU@underline[100pt]{}\hspace*{1em}%
   \vskip \stretch{1}%
   \clearpage\thispagestyle{empty}%
-  \CTEXindent\cleardoublepage}}
+  \parindent=2\ccwd\cleardoublepage}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%    abstract
@@ -411,7 +411,7 @@ By \par%
    \normalfont\XDU@font@st\bfseries\XDU@font@zihao{-4}%
    \XDU@label@keywords%
    \normalfont\XDU@font@st\XDU@font@zihao{-4}%
-   {#1}\CTEXindent}}
+   {#1}\parindent=2\ccwd}}
 
 %% english abstract
 \newenvironment{englishabstract}
@@ -426,7 +426,7 @@ By \par%
    \normalfont\XDU@font@st\bfseries\XDU@font@zihao{-4}%
    \XDU@elabel@keywords~%
    \normalfont\XDU@font@st\XDU@font@zihao{-4}%
-   {#1}\CTEXindent}}
+   {#1}\parindent=2\ccwd}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%    content
@@ -469,22 +469,22 @@ By \par%
 %% list of Symbols
 \newenvironment{symbollist}
   {\parindent=0pt\XDU@toc@add{\XDU@toc@symbollist@title}%
-   \XDU@nchapter{\XDU@label@symbollist@title}\CTEXindent%
+   \XDU@nchapter{\XDU@label@symbollist@title}\parindent=2\ccwd%
    \begin{list}{}
     {\setlength{\topsep}{0pt}\setlength{\itemsep}{0pt}\setlength{\parsep}{0pt}
     \parindent=0pt\normalfont\XDU@font@st\XDU@font@zihao{-4}
      \setlength{\leftmargin}{0.5\labelwidth}}}
-  {\end{list}\CTEXindent\cleardoublepage}
+  {\end{list}\parindent=2\ccwd\cleardoublepage}
 
 %% list of abbreviations
 \newenvironment{abbreviationlist}
   {\parindent=0pt\XDU@toc@add{\XDU@toc@abbreviationlist@title}%
-   \XDU@nchapter{\XDU@label@abbreviationlist@title}\CTEXindent%
+   \XDU@nchapter{\XDU@label@abbreviationlist@title}\parindent=2\ccwd%
    \begin{list}{}
     {\setlength{\topsep}{0pt}\setlength{\itemsep}{0pt}\setlength{\parsep}{0pt}
     \parindent=0pt\normalfont\XDU@font@st\XDU@font@zihao{-4}
      \setlength{\leftmargin}{0.5\labelwidth}}}
-  {\end{list}\CTEXindent\cleardoublepage}
+  {\end{list}\parindent=2\ccwd\cleardoublepage}
 
 %% content
 \ctexset{contentsname={\XDU@label@content}}
@@ -528,13 +528,13 @@ By \par%
 \newenvironment{resume}
   {\parindent=0pt\XDU@toc@add{\XDU@toc@resume@title}%
    \XDU@nchapter{\XDU@label@resume@title}%
-   \renewcommand{\thesection}{\arabic{section}}\CTEXindent}
+   \renewcommand{\thesection}{\arabic{section}}\parindent=2\ccwd}
   {\cleardoublepage}
 
 %% resume list
 \newcounter{XDU@counter@resumelistcounter}
 \newenvironment{resumelist}[1]
-  {{\subsection*{\textbf{#1}}\CTEXindent}%
+  {{\subsection*{\textbf{#1}}\parindent=2\ccwd}%
    \begin{list}{[\arabic{XDU@counter@resumelistcounter}]}
     {\usecounter{XDU@counter@resumelistcounter}
      \setcounter{XDU@counter@resumelistcounter}{0}
