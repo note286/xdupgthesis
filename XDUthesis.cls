@@ -44,8 +44,10 @@
 %% book
 %%
 \PassOptionsToPackage{AutoFakeBold=3}{xeCJK}
-\LoadClass[a4paper,zihao=-4,twoside,openright,fancyhdr,fntef,punct,fontset=windows]{ctexbook}
+\LoadClass[a4paper,zihao=-4,twoside,openright,fntef,punct,fontset=windows]{ctexbook}
 \AtBeginDocument{\setmainfont{Times New Roman}}
+
+\RequirePackage{fancyhdr}
 
 %% calc
 \RequirePackage{calc}

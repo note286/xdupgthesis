@@ -130,3 +130,16 @@ Package ctex Warning: Option `cs4size' is deprecated.
 
 `XDUthesis.cls`中`cs4size`替换为`zihao=-4`。
 
+## fancyhdr
+
+```latex
+Package ctex Warning: Option `fancyhdr' is deprecated.
+(ctex)                `fancyhdr' package is loaded.
+```
+
+`XDUthesis.cls`中`ctexbook`移除选项`fancyhdr`，改为
+
+```latex
+\RequirePackage{fancyhdr}
+```
+
