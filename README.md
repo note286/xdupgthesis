@@ -119,3 +119,14 @@ l.13 \XDUfrontmatter
 \AtBeginDocument{\setmainfont{Times New Roman}}
 ```
 
+# 修复警告
+
+## cs4size
+
+```latex
+Package ctex Warning: Option `cs4size' is deprecated.
+(ctex)                Option `zihao=-4' is set.
+```
+
+`XDUthesis.cls`中`cs4size`替换为`zihao=-4`。
+
