@@ -143,3 +143,17 @@ Package ctex Warning: Option `fancyhdr' is deprecated.
 \RequirePackage{fancyhdr}
 ```
 
+## fntef
+
+```latex
+Package ctex Warning: Option `fntef' is deprecated.
+(ctex)                `xeCJKfntef' package is loaded.
+```
+
+```latex
+LaTeX Warning: Unused global option(s):
+    [xeCJKfntef].
+```
+
+`XDUthesis.cls`中移除`fntef`参数。
+
