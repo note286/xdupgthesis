@@ -188,3 +188,58 @@ Package caption2 Warning: ****************************************************
 \RequirePackage[labelsep=quad]{caption}
 ```
 
+## hyperref
+
+```latex
+Package hyperref Warning: Option `a4paper' is no longer used.
+```
+
+`XDUthesis.cls`中移除如下代码
+
+```latex
+\ifXDU@Option@PrintVersion
+  \hypersetup{
+    a4paper,
+    CJKbookmarks,
+    bookmarksnumbered,
+    plainpages    = false,
+    pdfstartview  = FitH
+  }
+\else
+  \definecolor{XDU@hypercolor@darkgreen}{rgb}{0.1,0.5,0.1}
+  \hypersetup{
+    a4paper,
+    CJKbookmarks,
+    bookmarksnumbered,
+    colorlinks,
+    linkcolor     = black,
+    anchorcolor   = black,
+    citecolor     = black,
+    urlcolor      = black,
+    plainpages    = false,
+    pdfstartview  = FitH
+  }
+\fi
+```
+
+```latex
+%% hyperref
+\ifpdf
+  \RequirePackage[pdftex]{hyperref}
+\else
+  \ifXDU@Option@dvipdfm
+    \RequirePackage{hyperref}
+  \else
+    \RequirePackage{hyperref}
+  \fi
+\fi
+```
+
+改为使用如下宏包
+
+```latex
+\RequirePackage[bookmarksnumbered]{hyperref}
+```
+
+即关于`hyperref`宏包的所有设置仅保留上述语句。
+

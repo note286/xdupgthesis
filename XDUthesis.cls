@@ -72,15 +72,7 @@
 \fi
 
 %% hyperref
-\ifpdf
-  \RequirePackage[pdftex]{hyperref}
-\else
-  \ifXDU@Option@dvipdfm
-    \RequirePackage{hyperref}
-  \else
-    \RequirePackage{hyperref}
-  \fi
-\fi
+\RequirePackage[bookmarksnumbered]{hyperref}
 
 %% color
 \ifXDU@Option@PrintVersion\relax\else
@@ -122,29 +114,6 @@
   % GBK -> Unicode
 \AtBeginDvi{\special{pdf:tounicode GBK-EUC-UCS2}}
   % setup
-\ifXDU@Option@PrintVersion
-  \hypersetup{
-    a4paper,
-    CJKbookmarks,
-    bookmarksnumbered,
-    plainpages    = false,
-    pdfstartview  = FitH
-  }
-\else
-  \definecolor{XDU@hypercolor@darkgreen}{rgb}{0.1,0.5,0.1}
-  \hypersetup{
-    a4paper,
-    CJKbookmarks,
-    bookmarksnumbered,
-    colorlinks,
-    linkcolor     = black,
-    anchorcolor   = black,
-    citecolor     = black,
-    urlcolor      = black,
-    plainpages    = false,
-    pdfstartview  = FitH
-  }
-\fi
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%   utilities
