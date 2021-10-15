@@ -45,7 +45,7 @@
 %%
 \PassOptionsToPackage{AutoFakeBold=3}{xeCJK}
 \LoadClass[a4paper,zihao=-4,twoside,openright,punct,fontset=windows]{ctexbook}
-\AtBeginDocument{\setmainfont{Times New Roman}}
+\BeforeBeginEnvironment{document}{\setmainfont{Times New Roman}}
 
 \RequirePackage{lmodern}
 

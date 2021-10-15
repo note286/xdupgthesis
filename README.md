@@ -116,7 +116,7 @@ l.13 \XDUfrontmatter
 从模板示例中可以看出所有英文字体均要求为Times New Roman，Times New Roman是有粗体字体的，上面设置的开启伪粗体的全局命令不会影响到Times New Roman字体，在cls文件中使用如下命令可以配置默认英文字体为Times New Roman：
 
 ```latex
-\AtBeginDocument{\setmainfont{Times New Roman}}
+\BeforeBeginEnvironment{document}{\setmainfont{Times New Roman}}
 ```
 
 # 修复警告
