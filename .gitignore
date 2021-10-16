@@ -3,6 +3,9 @@
 *.bbl
 *.blg
 *.dvi
+*.fdb_latexmk
+*.fls
+*.gz
 *.lof
 *.log
 *.lot
@@ -10,3 +13,4 @@
 *.pdf
 *.synctex
 *.toc
+*.xdv
