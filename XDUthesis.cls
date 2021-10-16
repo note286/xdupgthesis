@@ -84,6 +84,23 @@
 \hb@xt@\@tempdima{\@cftbsnum #1\@cftasnum\hfil}\@cftasnumb}\makeatother}
 \AtEndOfPackage{\makeatletter\@addtoreset{equation}{chapter}\makeatother}
 \AtEndOfPackage{\makeatletter \renewcommand{\figurename}{图} \renewcommand{\tablename}{表}
+\newcommand{\algorithmname}{算法}
+\newcommand{\equationname}{公式}
+\newcommand{\assumptionname}{假设}
+\newcommand{\definitionname}{定义}
+\newcommand{\propositionname}{命题}
+\newcommand{\lemmaname}{引理}
+\newcommand{\theoremname}{定理}
+\newcommand{\axiomname}{公理}
+\newcommand{\corollaryname}{推论}
+\newcommand{\exercisename}{练习}
+\newcommand{\examplename}{例}
+\newcommand{\remarkname}{注释}
+\newcommand{\problemname}{问题}
+\newcommand{\conjecturename}{猜想}
+\renewcommand{\proofname}{证明}
+\renewcommand{\chaptername}[1]{第#1章}
+\newcommand{\sectionname}[1]{第~#1~节}
  \def\@caption#1[#2]#3{%
    \par
    \addcontentsline{\csname ext@#1\endcsname}{#1}%

@@ -11,6 +11,7 @@
     + [四次编译](#四次编译)
   + [参考文献引用](#参考文献引用)
   + [中英文间空白](#中英文间空白)
+  + [交叉引用](#交叉引用)
 - [模板来源](#模板来源)
 - [编码转换](#编码转换)
 - [修复错误](#修复错误)
@@ -36,6 +37,7 @@
   - [参考文献引用样式](#参考文献引用样式)
   - [URL自动换行](#URL自动换行)
   - [教育背景时间对齐](#教育背景时间对齐)
+  - [交叉引用名称](#交叉引用名称)
 - [作者](#修改参考文献样式)
 
 # 项目名称
@@ -132,6 +134,83 @@ xelatex -synctex=1 templet
 因此，使用`xelatex`来编译中文文档，用户无需主动在中英文之间添加空格或者`~`，`XeLaTeX`会自动处理中英文间空白。
 
 为了避免用户困惑，移除了原模板中为了适应在落后引擎实现中英文间空白而添加的`~`。
+
+## 交叉引用
+
+在原模板中已定义了图表引用名称，即`\figurename`和`\tablename`，用户可以仿照如下示例使用：
+
+```latex
+具体的内容如\figurename~\ref{figu1}~所示。
+具体的内容可参考\figurename~\ref{figu2}。
+具体的内容如\tablename~\ref{tabl1}~所示。
+具体的内容可参考\tablename~\ref{tabl2}。
+```
+
+新增的算法、公式、假设、定义、命题、引理、定理、公理、推论、练习、例、注释、问题、猜想和证明等引用名称，使用方法和图表一致：
+
+```latex
+具体的内容如\algorithmname~\ref{algo1}~所示。
+具体的内容可参考\algorithmname~\ref{algo2}。
+具体的内容如\equationname~\ref{equa1}~所示。
+具体的内容可参考\equationname~\ref{equa2}。
+具体的内容如\assumptionname~\ref{assu1}~所示。
+具体的内容可参考\assumptionname~\ref{assu2}。
+具体的内容如\definitionname~\ref{defi1}~所示。
+具体的内容可参考\definitionname~\ref{defi2}。
+具体的内容如\propositionname~\ref{prop1}~所示。
+具体的内容可参考\propositionname~\ref{prop2}。
+具体的内容如\lemmaname~\ref{lemm1}~所示。
+具体的内容可参考\lemmaname~\ref{lemm2}。
+具体的内容如\theoremname~\ref{theo1}~所示。
+具体的内容可参考\theoremname~\ref{theo2}。
+具体的内容如\axiomname~\ref{axio1}~所示。
+具体的内容可参考\axiomname~\ref{axio2}。
+具体的内容如\corollaryname~\ref{coro1}~所示。
+具体的内容可参考\corollaryname~\ref{coro2}。
+具体的内容如\exercisename~\ref{exer1}~所示。
+具体的内容可参考\exercisename~\ref{exer2}。
+具体的内容如\examplename~\ref{exam1}~所示。
+具体的内容可参考\examplename~\ref{exam2}。
+具体的内容如\remarkname~\ref{rema1}~所示。
+具体的内容可参考\remarkname~\ref{rema2}。
+具体的内容如\problemname~\ref{prob1}~所示。
+具体的内容可参考\problemname~\ref{prob2}。
+具体的内容如\conjecturename~\ref{conj1}~所示。
+具体的内容可参考\conjecturename~\ref{conj2}。
+具体的内容如\proofname~\ref{proo1}~所示。
+具体的内容可参考\proofname~\ref{proo2}。
+具体的内容如\chaptername~\ref{chap1}~所示。
+具体的内容可参考\chaptername~\ref{chap2}。
+具体的内容如\sectionname~\ref{sect1}~所示。
+具体的内容可参考\sectionname~\ref{sect2}。
+```
+
+需要注意，如果`\ref{}`后有非标点的内容，需要添加`~`来增加空白。
+
+新增的章节引用名称，使用方法有少许不同，不需要手动添加`~`来增加空白，具体如下：
+
+```latex
+具体的内容如\chaptername{\ref{chap1}}所示。
+具体的内容可参考\chaptername{\ref{chap2}}。
+具体的内容如\sectionname{\ref{sect1}}所示。
+具体的内容可参考\sectionname{\ref{sect2}}。
+```
+
+其中，`chap1`和`chap1`是`\chapter{}`对应的`\label{}`值，而`sect1`和`sect2`是`\section{}`或`\subsection{}`等对应的`\label{}`值。`\chapter{}`对应的是`章`，而`\section{}`或`\subsection{}`等对应的是`节`。
+
+另外，[lshort-zh-cn.pdf](http://mirrors.ctan.org/info/lshort/chinese/lshort-zh-cn.pdf)第3.3节指出：
+
+> `\label`命令可用于记录各种类型的交叉引用，使用位置分别为：
+>
+> 章节标题：在章节标题命令`\section`等之后紧接着使用。
+>
+> 行间公式：单行公式在公式内任意位置使用；多行公式在每一行公式的任意位置使用。
+>
+> 有序列表：在`enumerate`环境的每个\item命令之后、下一个`\item`命令之前任意位置使用。
+>
+> 图表标题：在图表标题命令`\caption`之后紧接着使用。
+>
+> 定理环境：在定理环境内部任意位置使用。
 
 # 模板来源
 
@@ -582,6 +661,10 @@ LaTeX Font Warning: Font shape `OMX/cmex/m/n' in size <10.53937> not available
 原模板中使用`\hspace{3.5em}`为结束时间占位，但可能会导致上下两行的逗号无法对齐。
 
 因此改为使用幻影即`\phantom{2005.07}`来生成和上一行一样宽度的空白盒子，用户在使用过程中可以将其改为自己的上一行的结束时间以保证最准确的空白盒子宽度。
+
+## 交叉引用名称
+
+为了方便大家使用，增加了算法、公式、假设、定义、命题、引理、定理、公理、推论、练习、例、注释、问题、猜想、证明、章和节等的交叉引用名称，具体用法见[交叉引用](#交叉引用)。
 
 # 作者
 
