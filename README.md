@@ -1,3 +1,60 @@
+# 项目名称
+
+xdupgthesis-Xidian University Postgraduate Thesis
+
+西安电子科技大学研究生学位论文模板
+
+# 项目起源
+
+本项目起源于身边陆续有人使用西安电子科技大学提供的LaTeX模板，却卡在无法编译，使用时出错等问题。最近感觉LaTeX水平勉强支撑对模板的修正，因此边阅读`XDUthesis.cls`文件源码边修改，水平非常有限，难免出错或有不合适的修改，可提[Issue](https://github.com/note286/xdupgthesis/issues)来反馈。
+
+首先阅读的是压缩包内的`templet.log`文件，结合`templet.pdf`属性，推测可能的编译命令为：
+
+```shell
+latex templet
+bibtex templet
+latex templet
+latex templet
+dvipdfmx templet
+```
+
+目前已不建议使用`latex`搭配`dvipdfmx`的方式编译中文文档，甚至`pdflatex`的编译方式也不推荐，而建议使用更为先进的`xelatex`来编译中文文档，使用者最为直观的感受是无需手动在中英文之间添加空格或者`~`，`XeLaTeX`会自动处理中英文之间的显示距离。
+
+此外，我们可以发现`templet.bbl`文件是空的，且`templet.pdf`内是无参考文献条目的，这是由于该模板压缩包的发布者没有将参考文献样式文件放入主目录，根本没有测试成功，没有检查日志即PDF文件是否正常就发布了。因此我们可以在各大论坛和博客中看到介绍使用西安电子科技大学研究生学位论文模板时，需要首先将`gbt7714-2005.bst`放入`XDUthesis`文件夹内这样令人啼笑皆非的操作建议。
+
+此外在阅读`templet.log`文件的过程中发现使用者的很多宏包的版本很低，这不是一个良好的使用习惯，建议大家都使用最新版的套装并更新所有包，LaTeX也是有bug的，尤其是众多的宏包，所以不要一直使用老旧版本。
+
+在此之前有很多人已经修改了学校模板使之能够正常编译，但是绝大部分人都只是抱着能编译即可的态度去修改，没有认真阅读模板的代码，没有理解模板的逻辑，对最新的一些宏包使用方式不够了解，仅停留在了会搜索答案并修改模板使之可以编译，但不懂为何的阶段。本闲人工作学习之余花费了一些时间阅读源码和宏包手册，尽可能做到每次修改都有所依据，知其所以然。
+
+综上所述，在发现学校系统的原始模板问题多多，故整理个人的一点点工作并公开，为更多的一般LaTeX用户提供较为容易使用的模板。
+
+# 注意事项
+
+本人还未到写学位论文的阶段，因此没有十足的该模板日常使用经验，如果大家在使用过程中有任何问题或者建议，可以提[Issue](https://github.com/note286/xdupgthesis/issues)反馈。此外，关于环境配置请阅读[install-latex-guide-zh-cn.pdf](http://mirrors.ctan.org/info/install-latex-guide-zh-cn/install-latex-guide-zh-cn.pdf)，不熟悉语法的请阅读[lshort-zh-cn.pdf](http://mirrors.ctan.org/info/lshort/chinese/lshort-zh-cn.pdf)。
+
+# 使用/示例
+
+下载或克隆该仓库，可直接修改`tex`、`bib`、`cfg`等文件来进行论文的攥写。
+
+## 编译
+
+仅介绍如何使用命令编译，可选择使用`Latexmk`来快速编译或者常规的四次编译。如果喜欢使用IDE，请自行选择对应IDE中的`XeLaTeX`的编译方式，参考文献使用`BibTeX`编译。如使用命令行或者IDE无内置PDF查看器，Windows平台上推荐使用[Sumatra PDF](https://www.sumatrapdfreader.org/free-pdf-reader)，适当配置可支持正向跳转和反向跳转，在次不赘述。
+
+### latexmk
+
+```shell
+latexmk -xelatex -synctex=1 templet
+```
+
+### 四次编译
+
+```shell
+xelatex -synctex=1 templet
+bibtex templet
+xelatex -synctex=1 templet
+xelatex -synctex=1 templet
+```
+
 # 模板来源
 
 在[西安电子科技大学申请硕士学位相关资料(学术学位)-研究生院/研究生工作部-西安电子科技大学](https://gr.xidian.edu.cn/info/1047/5087.htm)中[关于发布研究生学位论文模板（2015年修订版）的通知](https://gr.xidian.edu.cn/images/16/07/15/3lz5xyf6nj/16CE9809876C6A463CF45A57AFBD1968.doc)里，有如下描述：
@@ -415,4 +472,8 @@ LaTeX Font Warning: Font shape `OMX/cmex/m/n' in size <10.53937> not available
 ```latex
 \RequirePackage{lmodern}
 ```
+
+# 作者
+
+- [@note286](https://github.com/note286)
 
