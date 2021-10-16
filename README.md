@@ -9,6 +9,7 @@
   * [编译](#编译)
     + [latexmk](#latexmk)
     + [四次编译](#四次编译)
+  + [参考文献引用](#参考文献引用)
 - [模板来源](#模板来源)
 - [编码转换](#编码转换)
 - [修复错误](#修复错误)
@@ -108,6 +109,16 @@ bibtex templet
 xelatex -synctex=1 templet
 xelatex -synctex=1 templet
 ```
+
+## 参考文献引用
+
+由于`\cite{}`已被重定义，所以直接使用即可符合学校的要求：
+
+```latex
+测试引用\cite{tang:press,wanga:medicine,CRAW:future}是否正常。
+```
+
+此外，模板中自带的bib文件中的条目写的不是很规范，不建议参考，可以使用[dblp](https://dblp.org/)生成的bib条目，[百度学术](https://xueshu.baidu.com/)和[Google Scholar](https://scholar.google.com.hk/)导出的bib文件不是很规范，经常有很大问题，感兴趣的可以去[BibTeX format explained](https://www.bibtex.com/g/bibtex-format/)了解bib文件的合法格式，遇到[dblp](https://dblp.org/)没有的条目，可以手动整理。
 
 # 模板来源
 
