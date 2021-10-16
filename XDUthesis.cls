@@ -26,13 +26,6 @@
 \newif\ifXDU@Option@info \XDU@Option@infotrue
 \DeclareOption{noinfo}{\XDU@Option@infofalse}
 
-%% ref
-\newif\ifXDU@Option@ref@sort \XDU@Option@ref@sortfalse
-\newif\ifXDU@Option@ref@compress \XDU@Option@ref@compressfalse
-\DeclareOption{refsort}{\XDU@Option@ref@sorttrue}
-\DeclareOption{refcompress}
-  {\XDU@Option@ref@sorttrue\XDU@Option@ref@compresstrue}
-
 %% others
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{ctexbook}}
 \ProcessOptions\relax
@@ -65,13 +58,10 @@
 \RequirePackage[labelsep=quad]{caption}
 
 %% natbib
-\ifXDU@Option@ref@sort
-  \ifXDU@Option@ref@compress
-    \RequirePackage[numbers,sort&compress]{natbib}
-  \else
-    \RequirePackage[numbers,sort]{natbib}
-  \fi
-\fi
+\RequirePackage[numbers,sort&compress]{natbib}
+
+\let\oldcite\cite
+\renewcommand{\cite}[1]{\textsuperscript{\oldcite{#1}}}
 
 %% hyperref
 \RequirePackage[bookmarksnumbered]{hyperref}
