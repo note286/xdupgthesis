@@ -63,6 +63,8 @@
 \let\oldcite\cite
 \renewcommand{\cite}[1]{\textsuperscript{\oldcite{#1}}}
 
+\RequirePackage{xurl}
+
 %% hyperref
 \RequirePackage[bookmarksnumbered]{hyperref}
 

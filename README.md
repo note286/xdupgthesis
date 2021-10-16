@@ -10,6 +10,7 @@
     + [latexmk](#latexmk)
     + [四次编译](#四次编译)
   + [参考文献引用](#参考文献引用)
+  + [URL自动换行](#URL自动换行)
 - [模板来源](#模板来源)
 - [编码转换](#编码转换)
 - [修复错误](#修复错误)
@@ -555,6 +556,14 @@ LaTeX Font Warning: Font shape `OMX/cmex/m/n' in size <10.53937> not available
 从中可以看出学校要求参考文献引用处右上角用方括号标注阿拉伯数字编排的序号，因此重定义了`\cite{}`命令，用户直接使用`\cite{}`命令即可产生符合要求的参考文献引用样式。
 
 此外，移除了主文件中没有必要的`refcompress`参数和cls样式文件中对应的代码，改为默认参考文献连续编号压缩。同时移除了主文件中的`\nocite{*}`，即没有引用的参考文献不在参考文献列表中显示。
+
+## URL自动换行
+
+增加了`xurl`宏包的自动调用，实现任意字符处可换行，避免出现URL上一行过于松散的情况。
+
+[xurl宏包](http://mirrors.ctan.org/macros/latex/contrib/xurl/doc/xurl.pdf)文档有如下表述：
+
+> Package xurl loads package url by default and defines possible url breaks for all alphanumerical characters and = / . : * - ~ ' "
 
 # 作者
 
