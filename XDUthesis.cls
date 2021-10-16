@@ -497,7 +497,7 @@ By \par%
 %%    referrence
 \renewcommand{\UrlFont}{\XDU@font@zihao{5}}
 \ctexset{bibname={\XDU@label@ref@title}}
-\bibliographystyle{gbt7714-2005}
+\bibliographystyle{gbt7714-numerical}
 
 \renewenvironment{thebibliography}[1]
   {\XDU@toc@add{\XDU@toc@ref@title}%
