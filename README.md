@@ -70,6 +70,24 @@ dvipdfmx templet
 
 下载或克隆该仓库，可直接修改`tex`、`bib`、`cfg`等文件来进行论文的攥写。
 
+## 安装
+
+强烈建议安装最新版[TeX Live](https://www.tug.org/texlive/)，如没有本地阅读文档的需求，可以不勾选安装文档的选项，这样会减少大约一半的磁盘占用空间，环境配置请阅读[install-latex-guide-zh-cn.pdf](http://mirrors.ctan.org/info/install-latex-guide-zh-cn/install-latex-guide-zh-cn.pdf)，并更新所有包至最新版，使用管理员权限运行[cmd](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/cmd)：
+
+### 配置镜像源
+
+```shell
+tlmgr repository set https://mirrors.ustc.edu.cn/CTAN/systems/texlive/tlnet/
+```
+
+### 更新包管理器和所有包
+
+```shell
+tlmgr update --self && tlmgr update --all
+```
+
+如果遇到更新失败，重新执行一遍。
+
 ## 编译
 
 仅介绍如何使用命令编译，可选择使用`Latexmk`来快速编译或者常规的四次编译。如果喜欢使用IDE，请自行选择对应IDE中的`XeLaTeX`的编译方式，参考文献使用`BibTeX`编译。如使用命令行或者IDE无内置PDF查看器，Windows平台上推荐使用[Sumatra PDF](https://www.sumatrapdfreader.org/free-pdf-reader)，适当配置可支持正向跳转和反向跳转，在次不赘述。
