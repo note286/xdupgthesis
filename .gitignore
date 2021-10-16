@@ -12,5 +12,6 @@
 *.out
 *.pdf
 *.synctex
+*.synctex(busy)
 *.toc
 *.xdv
