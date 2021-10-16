@@ -35,6 +35,7 @@
   - [参考文献条目样式](#参考文献条目样式)
   - [参考文献引用样式](#参考文献引用样式)
   - [URL自动换行](#URL自动换行)
+  - [教育背景时间对齐](#教育背景时间对齐)
 - [作者](#修改参考文献样式)
 
 # 项目名称
@@ -575,6 +576,12 @@ LaTeX Font Warning: Font shape `OMX/cmex/m/n' in size <10.53937> not available
 [xurl宏包](http://mirrors.ctan.org/macros/latex/contrib/xurl/doc/xurl.pdf)文档有如下表述：
 
 > Package xurl loads package url by default and defines possible url breaks for all alphanumerical characters and = / . : * - ~ ' "
+
+## 教育背景时间对齐
+
+原模板中使用`\hspace{3.5em}`为结束时间占位，但可能会导致上下两行的逗号无法对齐。
+
+因此改为使用幻影即`\phantom{2005.07}`来生成和上一行一样宽度的空白盒子，用户在使用过程中可以将其改为自己的上一行的结束时间以保证最准确的空白盒子宽度。
 
 # 作者
 
