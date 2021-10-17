@@ -79,7 +79,7 @@ dvipdfmx templet
 
 # 使用/示例
 
-下载或克隆该仓库，可直接修改`tex`、`bib`、`cfg`等文件来进行论文的攥写。
+[下载](https://github.com/note286/xdupgthesis/archive/refs/heads/main.zip)或[克隆](x-github-client://openRepo/https://github.com/note286/xdupgthesis)该仓库，可直接修改`tex`、`bib`、`cfg`等文件来进行论文的攥写。
 
 ## 卸载与安装
 
