@@ -451,8 +451,6 @@ By \par%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%    content
-    \renewcommand{\cftdot}{\ldots}
-    \renewcommand{\cftdotsep}{0.1}
     \renewcommand\p@figure{\figurename}
     \renewcommand\p@table{\tablename}
     \DeclareCaptionListFormat{listoffigtab}{#1~#2}
