@@ -179,7 +179,6 @@ xelatex -synctex=1 templet
 具体的内容可参考\conjecturename~\ref{conj2}。
 具体的内容如\proofname~\ref{proo1}~所示。
 具体的内容可参考\proofname~\ref{proo2}。
-
 ```
 
 需要注意，如果`\ref{}`后有非标点的内容，需要添加`~`来增加空白。
