@@ -67,6 +67,12 @@
 
 %% hyperref
 \RequirePackage[bookmarksnumbered]{hyperref}
+\BeforeBeginEnvironment{document}{%
+\hypersetup{%
+pdftitle={\XDU@value@thesis@title},%
+pdfauthor={\XDU@value@author@name},%
+pdfsubject={西安电子科技大学{\XDU@value@degreemark}学位论文}%
+}}
 
 %% color
 \ifXDU@Option@PrintVersion\relax\else
