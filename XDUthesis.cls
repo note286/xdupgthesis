@@ -489,25 +489,23 @@ By \par%
   {\XDU@toc@add{\XDU@toc@listoftables}%
     \listoftables}
 
+\RequirePackage{tabularx}
+
 %% list of Symbols
 \newenvironment{symbollist}
   {\parindent=0pt\XDU@toc@add{\XDU@toc@symbollist@title}%
-   \XDU@nchapter{\XDU@label@symbollist@title}\parindent=2\ccwd%
-   \begin{list}{}
-    {\setlength{\topsep}{0pt}\setlength{\itemsep}{0pt}\setlength{\parsep}{0pt}
-    \parindent=0pt\normalfont\XDU@font@st\XDU@font@zihao{-4}
-     \setlength{\leftmargin}{0.5\labelwidth}}}
-  {\end{list}\parindent=2\ccwd\cleardoublepage}
+   \XDU@nchapter{\XDU@label@symbollist@title}\parindent=.5\ccwd%
+   \renewcommand{\arraystretch}{1.6666666667}
+     \tabularx{\linewidth}{p{12em}X}}
+  {\endtabularx\parindent=2\ccwd\cleardoublepage}
 
 %% list of abbreviations
 \newenvironment{abbreviationlist}
   {\parindent=0pt\XDU@toc@add{\XDU@toc@abbreviationlist@title}%
-   \XDU@nchapter{\XDU@label@abbreviationlist@title}\parindent=2\ccwd%
-   \begin{list}{}
-    {\setlength{\topsep}{0pt}\setlength{\itemsep}{0pt}\setlength{\parsep}{0pt}
-    \parindent=0pt\normalfont\XDU@font@st\XDU@font@zihao{-4}
-     \setlength{\leftmargin}{0.5\labelwidth}}}
-  {\end{list}\parindent=2\ccwd\cleardoublepage}
+   \XDU@nchapter{\XDU@label@abbreviationlist@title}\parindent=.5\ccwd%
+   \renewcommand{\arraystretch}{1.6666666667}
+     \tabularx{\linewidth}{p{7.5em}p{7.5em}X}}
+  {\endtabularx\parindent=2\ccwd\cleardoublepage}
 
 %% content
 \ctexset{contentsname={\XDU@label@content}}
