@@ -1,6 +1,6 @@
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{XDUthesis}[2021/10/17 XDU, Thesis document class, version 0.2.0, modified by @note286, published in https://note286.github.io/xdupgthesis/]
+\ProvidesClass{XDUthesis}[2021/10/17 XDU, Thesis document class, version 0.2.1, modified by @note286, published in https://note286.github.io/xdupgthesis/]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%   class and packages
@@ -56,6 +56,10 @@
 \RequirePackage[titles]{tocloft}
 
 \RequirePackage[labelsep=quad]{caption}
+
+\RequirePackage{subfig}
+
+\captionsetup[subfloat]{subrefformat=parens}
 
 %% natbib
 \RequirePackage[numbers,sort&compress]{natbib}
@@ -467,7 +471,7 @@ By \par%
     \renewcommand{\cftlottitlefont}{\XDU@font@st\XDU@font@zihao{-4}}
     \renewcommand{\cfttabpagefont}{\XDU@font@st\XDU@font@zihao{-4}}
 
-    \setlength{\abovecaptionskip}{0pt}
+    \setlength{\abovecaptionskip}{6bp}
     \setlength{\belowcaptionskip}{0pt}
     \renewcommand{\captionfont}{\XDU@font@st\XDU@font@zihao{5}}
 

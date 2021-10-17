@@ -18,6 +18,7 @@
   - [参考文献引用](#参考文献引用)
   - [中英文间空白](#中英文间空白)
   - [交叉引用](#交叉引用)
+  - [图片](#图片)
 - [模板来源](#模板来源)
 - [编码转换](#编码转换)
 - [修复错误](#修复错误)
@@ -45,6 +46,7 @@
   - [教育背景时间对齐](#教育背景时间对齐)
   - [交叉引用名称](#交叉引用名称)
   - [PDF元数据](#pdf元数据)
+  - [子图及图片标题](#子图及图片标题)
 - [作者](#修改参考文献样式)
 
 # 项目名称
@@ -248,6 +250,62 @@ xelatex -synctex=1 templet
 > 图表标题：在图表标题命令`\caption`之后紧接着使用。
 >
 > 定理环境：在定理环境内部任意位置使用。
+
+## 图片
+
+单张图片插入示例：
+
+```latex
+\begin{figure}
+\centering
+\includegraphics[width=.3\linewidth]{figures/fig.pdf}
+\caption{方案开销}
+\label{fig1}
+\end{figure}
+```
+
+子图插入示例：
+
+```latex
+\begin{figure}
+\centering
+\subfloat[计算开销]{\includegraphics[width=.3\linewidth]{figures/fig.pdf}%
+\label{fig2}}
+\hfil
+\subfloat[通信开销]{\includegraphics[width=.3\linewidth]{figures/fig.pdf}%
+\label{fig3}}
+\caption{方案开销}
+\label{fig4}
+\end{figure}
+```
+
+即使是多个子图排成多行，依然用`\hfil`隔开即可，不需要额外操作，调整好宽度即可。
+
+子图交叉引用的使用方法依然参考[交叉引用](#交叉引用)的要求，由于子图的特殊性，如果需要以下效果，即子图字母需要括号：
+
+> 具体的内容如图 4.2(a) 所示。
+>
+> 具体的内容可参考图 4.2(a)。
+
+需要使用如下命令，即`\subref*{}`而不是`\ref{}`：
+
+```latex
+具体的内容如\figurename~\subref*{fig2}~所示。
+具体的内容可参考\figurename~\subref*{fig2}。
+```
+
+不过如果需要如下的效果：
+
+> 具体的内容如图 4.2a 所示。
+>
+> 具体的内容可参考图 4.2a。
+
+需要使用如下命令，与普通引用一致：
+
+```latex
+具体的内容如\figurename~\ref{fig2}~所示。
+具体的内容可参考\figurename~\ref{fig2}。
+```
 
 # 模板来源
 
@@ -706,6 +764,28 @@ LaTeX Font Warning: Font shape `OMX/cmex/m/n' in size <10.53937> not available
 ## PDF元数据
 
 增加了自动添加PDF元数据即文档属性的功能，包括标题、主题和作者三项，用户可以右键PDF文件查看自动添加的文档属性值。其中标题来自`XDUthesis.cfg`文件中`\XDU@value@thesis@title`值，作者来自`\XDU@value@author@name`值，而主题由`西安电子科技大学`字样、`\XDU@value@degreemark`值和`学位论文`拼接而成。该功能无需用户干预，自动实现PDF元数据的添加。
+
+## 子图及图片标题
+
+原模板中不支持子图，根据[bare_adv.tex](http://mirrors.ctan.org/macros/latex/contrib/IEEEtran/bare_adv.tex)中的示例，我们采用`subfig`宏包来实现子图的插入，具体使用方法参考[图片](#图片)。
+
+此外，本项目修正了图片标题与图片的间距过小的问题，在清华大学学位论文模板[thuthesis.dtx](http://mirrors.ctan.org/macros/latex/contrib/thuthesis/thuthesis.dtx)中可以找到如下参数：
+
+```latex
+\captionsetup{
+  font           = thu,
+  labelsep       = quad,
+  skip           = 6bp,
+  figureposition = bottom,
+  tableposition  = top,
+}
+```
+
+据此我们也将图片标题与标题之间的间距从`0pt`调整为`6bp`，在cls文件中做如下修改：
+
+```latex
+\setlength{\abovecaptionskip}{6bp}
+```
 
 # 作者
 
