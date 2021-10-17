@@ -6,32 +6,35 @@
 - [项目起源](#项目起源)
 - [注意事项](#注意事项)
 - [使用/示例](#使用示例)
-  * [编译](#编译)
-    + [latexmk](#latexmk)
-    + [四次编译](#四次编译)
-  + [参考文献引用](#参考文献引用)
-  + [中英文间空白](#中英文间空白)
-  + [交叉引用](#交叉引用)
+  - [卸载与安装](#卸载与安装)
+    - [配置镜像源](#配置镜像源)
+    - [更新包管理器和所有包](#更新包管理器和所有包)
+  - [编译](#编译)
+    - [latexmk](#latexmk)
+    - [四次编译](#四次编译)
+  - [参考文献引用](#参考文献引用)
+  - [中英文间空白](#中英文间空白)
+  - [交叉引用](#交叉引用)
 - [模板来源](#模板来源)
 - [编码转换](#编码转换)
 - [修复错误](#修复错误)
-  * [错误一](#错误一)
-  * [错误二](#错误二)
-  * [错误三](#错误三)
+  - [错误一](#错误一)
+  - [错误二](#错误二)
+  - [错误三](#错误三)
 - [字体修正](#字体修正)
-  * [中文字体](#中文字体)
-  * [英文字体](#英文字体)
+  - [中文字体](#中文字体)
+  - [英文字体](#英文字体)
 - [修复警告](#修复警告)
-  * [cs4size](#cs4size)
-  * [fancyhdr](#fancyhdr)
-  * [fntef](#fntef)
-  * [caption2](#caption2)
-  * [hyperref](#hyperref)
-  * [\CTEXsetup](#ctexsetup)
-  * [\CTEXoptions](#ctexoptions)
-  * [\CTEXnoindent](#ctexnoindent)
-  * [\CTEXindent](#ctexindent)
-  * [Font size](#font-size)
+  - [cs4size](#cs4size)
+  - [fancyhdr](#fancyhdr)
+  - [fntef](#fntef)
+  - [caption2](#caption2)
+  - [hyperref](#hyperref)
+  - [\CTEXsetup](#ctexsetup)
+  - [\CTEXoptions](#ctexoptions)
+  - [\CTEXnoindent](#ctexnoindent)
+  - [\CTEXindent](#ctexindent)
+  - [Font size](#font-size)
 - [增加功能](#增加功能)
   - [参考文献条目样式](#参考文献条目样式)
   - [参考文献引用样式](#参考文献引用样式)
@@ -78,9 +81,15 @@ dvipdfmx templet
 
 下载或克隆该仓库，可直接修改`tex`、`bib`、`cfg`等文件来进行论文的攥写。
 
-## 安装
+## 卸载与安装
 
-强烈建议安装最新版[TeX Live](https://www.tug.org/texlive/)，如没有本地阅读文档的需求，可以不勾选安装文档的选项，这样会减少大约一半的磁盘占用空间，环境配置请阅读[install-latex-guide-zh-cn.pdf](http://mirrors.ctan.org/info/install-latex-guide-zh-cn/install-latex-guide-zh-cn.pdf)，并更新所有包至最新版，使用管理员权限运行[cmd](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/cmd)：
+Windows和GNU/Linux平台使用[TeX Live](https://www.tug.org/texlive/)，macOS平台使用[MacTeX](https://www.tug.org/mactex/)，跨版本升级均需要卸载旧版。
+
+最新2021版校内睿思下载地址：[TeX Live](http://rs.xidian.edu.cn/forum.php?mod=viewthread&tid=1094234)和[MacTeX](http://rs.xidian.edu.cn/forum.php?mod=viewthread&tid=1094235)，中科大源校外下载地址：[TeX Live](https://mirrors.ustc.edu.cn/CTAN/systems/texlive/Images/texlive2021-20210325.iso)和[MacTeX](https://mirrors.ustc.edu.cn/CTAN/systems/mac/mactex/mactex-20210328.pkg)。
+
+Windows平台卸载方法请参考[install-latex-guide-zh-cn.pdf](http://mirrors.ctan.org/info/install-latex-guide-zh-cn/install-latex-guide-zh-cn.pdf)第1.2节，GNU/Linux平台卸载方法请参考[install-latex-guide-zh-cn.pdf](http://mirrors.ctan.org/info/install-latex-guide-zh-cn/install-latex-guide-zh-cn.pdf)第2.2节，macOS上卸载方法请参考[Uninstalling MacTeX](https://www.tug.org/mactex/uninstalling.html)。
+
+强烈建议安装最新版LaTeX发行版套装，后续如无特殊情况，仅以Windows举例，其他操作系统上类似。如没有本地阅读文档的需求，安装时可以不勾选安装文档的选项，这样会减少大约一半的磁盘占用空间，环境配置请阅读[install-latex-guide-zh-cn.pdf](http://mirrors.ctan.org/info/install-latex-guide-zh-cn/install-latex-guide-zh-cn.pdf)，并更新所有包至最新版，Windows平台上使用管理员权限运行[cmd](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/cmd)：
 
 ### 配置镜像源
 
