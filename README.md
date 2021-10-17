@@ -9,6 +9,9 @@
   - [卸载与安装](#卸载与安装)
     - [配置镜像源](#配置镜像源)
     - [更新包管理器和所有包](#更新包管理器和所有包)
+  - [字体配置](#字体配置)
+    - [Windows](#Windows)
+    - [GNU/Linux](#GNU/Linux)
   - [编译](#编译)
     - [latexmk](#latexmk)
     - [四次编译](#四次编译)
@@ -104,6 +107,28 @@ tlmgr update --self && tlmgr update --all
 ```
 
 如果遇到更新失败，重新执行一遍。
+
+## 字体配置
+
+### Windows
+
+Windows平台无需手动配置字体，所需字体Windows操作系统已内置。
+
+### GNU/Linux
+
+可以从Windows操作系统中`C:\Windows\Fonts`处拷贝出`simhei.ttf`、`simkai.ttf`、`simsun.ttc`、`times.ttf`、`timesbd.ttf`、`timesbi.ttf`和`timesi.ttf`共7个字体文件至GNU/Linux，并使用如下命令安装字体：
+
+```shell
+sudo cp simhei.ttf /usr/share/fonts
+sudo cp simkai.ttf /usr/share/fonts
+sudo cp simsun.ttc /usr/share/fonts
+sudo cp times.ttf /usr/share/fonts
+sudo cp timesbd.ttf /usr/share/fonts
+sudo cp timesbi.ttf /usr/share/fonts
+sudo cp timesi.ttf /usr/share/fonts
+```
+
+然后就可以根据[编译](#编译)里的方法去编译了。
 
 ## 编译
 
