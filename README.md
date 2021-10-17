@@ -11,7 +11,7 @@
     - [更新包管理器和所有包](#更新包管理器和所有包)
   - [字体安装](#字体安装)
     - [Windows](#Windows)
-    - [GNU/Linux](#GNU/Linux)
+    - [GNU/Linux](#GNULinux)
   - [编译](#编译)
     - [latexmk](#latexmk)
     - [四次编译](#四次编译)
