@@ -1,6 +1,6 @@
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{XDUthesis}[2021/10/17 XDU, Thesis document class, version 0.2.1, modified by @note286, published in https://note286.github.io/xdupgthesis/]
+\ProvidesClass{XDUthesis}[2021/10/17 XDU, Thesis document class, version 0.2.2, modified by @note286, published in https://note286.github.io/xdupgthesis/]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%   class and packages
