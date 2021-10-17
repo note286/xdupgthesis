@@ -9,7 +9,7 @@
   - [卸载与安装](#卸载与安装)
     - [配置镜像源](#配置镜像源)
     - [更新包管理器和所有包](#更新包管理器和所有包)
-  - [字体配置](#字体配置)
+  - [字体安装](#字体安装)
     - [Windows](#Windows)
     - [GNU/Linux](#GNU/Linux)
   - [编译](#编译)
@@ -108,7 +108,7 @@ tlmgr update --self && tlmgr update --all
 
 如果遇到更新失败，重新执行一遍。
 
-## 字体配置
+## 字体安装
 
 ### Windows
 
@@ -116,16 +116,22 @@ Windows平台无需手动配置字体，所需字体Windows操作系统已内置
 
 ### GNU/Linux
 
-可以从Windows操作系统中`C:\Windows\Fonts`处拷贝出`simhei.ttf`、`simkai.ttf`、`simsun.ttc`、`times.ttf`、`timesbd.ttf`、`timesbi.ttf`和`timesi.ttf`共7个字体文件至GNU/Linux，并使用如下命令安装字体：
+用户可以从Windows操作系统字体库中拷贝出`simhei.ttf`、`simkai.ttf`、`simsun.ttc`、`times.ttf`、`timesbd.ttf`、`timesbi.ttf`和`timesi.ttf`共7个字体文件至GNU/Linux，其中三个中文字体文件位于`C:\Windows\Fonts`处，Times New Roman字体的四个字体文件位于`C:\Windows\Fonts\Times New Roman`处。用户在查找字体时，可以根据Windows中英文系统内字体名称来查找，找到后复制该字体，粘贴至某个空白文件夹即可得到对应的字体文件，然后将这7个字体文件传输至GNU/Linux。
+
+| 字体名称        | 字体文件名  | Windows英文系统内字体名称   | Windows中文系统内字体名称 |
+| --------------- | ----------- | --------------------------- | ------------------------- |
+| 中易黑体        | simhei.ttf  | SimHei Regular              | 黑体 常规                 |
+| 中易楷体        | simkai.ttf  | KaiTi Regular               | 楷体常规                  |
+| 中易宋体        | simsun.ttc  | SimSun Regular              | 宋体 常规                 |
+| Times New Roman | times.ttf   | Times New Roman Regular     | Times New Roman 常规      |
+| Times New Roman | timesbd.ttf | Times New Roman Bold        | Times New Roman 粗体      |
+| Times New Roman | timesbi.ttf | Times New Roman Bold Italic | Times New Roman 粗斜体    |
+| Times New Roman | timesi.ttf  | Times New Roman Italic      | Times New Roman 斜体      |
+
+使用如下命令在GNU/Linux安装字体：
 
 ```shell
-sudo cp simhei.ttf /usr/share/fonts
-sudo cp simkai.ttf /usr/share/fonts
-sudo cp simsun.ttc /usr/share/fonts
-sudo cp times.ttf /usr/share/fonts
-sudo cp timesbd.ttf /usr/share/fonts
-sudo cp timesbi.ttf /usr/share/fonts
-sudo cp timesi.ttf /usr/share/fonts
+sudo cp simhei.ttf simkai.ttf simsun.ttc times.ttf timesbd.ttf timesbi.ttf timesi.ttf /usr/share/fonts
 ```
 
 然后就可以根据[编译](#编译)里的方法去编译了。
