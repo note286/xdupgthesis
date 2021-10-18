@@ -12,6 +12,7 @@
   - [字体安装](#字体安装)
     - [Windows](#windows)
     - [GNU/Linux](#gnulinux)
+    - [macOS](#macos)
   - [编译](#编译)
     - [latexmk](#latexmk)
     - [四次编译](#四次编译)
@@ -141,6 +142,10 @@ sudo cp simhei.ttf simkai.ttf simsun.ttc times.ttf timesbd.ttf timesbi.ttf times
 ```
 
 然后就可以根据[编译](#编译)里的方法去编译了。
+
+### macOS
+
+参考[GNU/Linux](#gnulinux)从Windows平台提取字体文件，然后在macOS上双击安装字体文件即可，然后就可以根据[编译](#编译)里的方法去编译了。
 
 ## 编译
 
