@@ -173,15 +173,15 @@ sudo cp simhei.ttf simkai.ttf simsun.ttc times.ttf timesbd.ttf timesbi.ttf times
 修改为
 
 ```latex
-\BeforeBeginEnvironment{document}{%
-\setCJKfamilyfont{zhsong}{simsun.ttc}%
-\setCJKfamilyfont{zhhei}{simhei.ttf}%
-\NewDocumentCommand\songti{}{\CJKfamily{zhsong}}%
-\NewDocumentCommand\heiti{}{\CJKfamily{zhhei}}%
-\setCJKmainfont{simsun.ttc}%
-\setmainfont{times.ttf}%
-[BoldFont=timesbd.ttf,%
-ItalicFont=timesi.ttf,%
+\BeforeBeginEnvironment{document}{
+\setCJKfamilyfont{zhsong}{simsun.ttc}
+\setCJKfamilyfont{zhhei}{simhei.ttf}
+\NewDocumentCommand\songti{}{\CJKfamily{zhsong}}
+\NewDocumentCommand\heiti{}{\CJKfamily{zhhei}}
+\setCJKmainfont{simsun.ttc}
+\setmainfont{times.ttf}
+[BoldFont=timesbd.ttf,
+ItalicFont=timesi.ttf,
 BoldItalicFont=timesbi.ttf]}
 ```
 
