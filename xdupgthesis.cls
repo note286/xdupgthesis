@@ -22,9 +22,6 @@
 \DeclareOption{pversion}{\XDU@Option@PrintVersiontrue}
 \DeclareOption{eversion}{\XDU@Option@PrintVersionfalse}
 
-%% info
-\newif\ifXDU@Option@info \XDU@Option@infotrue
-\DeclareOption{noinfo}{\XDU@Option@infofalse}
 
 %% others
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{ctexbook}}
