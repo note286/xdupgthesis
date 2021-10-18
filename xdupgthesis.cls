@@ -17,12 +17,6 @@
 \DeclareOption{dvips}{\XDU@Option@dvipdfmfalse}
 \DeclareOption{dvipdfm}{\XDU@Option@dvipdfmtrue}
 
-%% print version or electronic version
-\newif\ifXDU@Option@PrintVersion \XDU@Option@PrintVersiontrue
-\DeclareOption{pversion}{\XDU@Option@PrintVersiontrue}
-\DeclareOption{eversion}{\XDU@Option@PrintVersionfalse}
-
-
 %% others
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{ctexbook}}
 \ProcessOptions\relax
@@ -74,11 +68,6 @@ pdftitle={\XDU@value@thesis@title},%
 pdfauthor={\XDU@value@author@name},%
 pdfsubject={西安电子科技大学{\XDU@value@degreemark}学位论文}%
 }}
-
-%% color
-\ifXDU@Option@PrintVersion\relax\else
-  \RequirePackage{color}
-\fi
 
 %% config file
 \AtEndOfPackage{\makeatletter\input{xdupgthesis.def}\makeatother}
