@@ -142,10 +142,6 @@ pdfsubject={西安电子科技大学{\XDU@value@degreemark}学位论文}%
 %% family
 \DeclareRobustCommand*{\XDU@font@st}{\songti}
 \DeclareRobustCommand*{\XDU@font@ht}{\heiti}
-\DeclareRobustCommand*{\XDU@font@fs}{\fangsong}
-\DeclareRobustCommand*{\XDU@font@ks}{\kaishu}
-\DeclareRobustCommand*{\XDU@font@ls}{\lishu}
-\DeclareRobustCommand*{\XDU@font@yy}{\youyuan}
 
 %% size
 \DeclareRobustCommand*{\XDU@font@zihao}[1]{\zihao{#1}\setlength{\baselineskip}{20pt}}
