@@ -20,6 +20,7 @@
   - [中英文间空白](#中英文间空白)
   - [交叉引用](#交叉引用)
   - [图片](#图片)
+  - [论文标题](#论文标题)
 - [模板来源](#模板来源)
 - [编码转换](#编码转换)
 - [修复错误](#修复错误)
@@ -320,6 +321,19 @@ xelatex -synctex=1 xdupgthesis
 具体的内容如\figurename~\ref{fig2}~所示。
 具体的内容可参考\figurename~\ref{fig2}。
 ```
+
+## 论文标题
+
+在[PDF元数据](#pdf元数据)中介绍了本项目模板可以自动获取论文中各种元数据，并添加到PDF文档属性中，其中就包括了论文题目，其值位于`xdupgthesis.cfg`文件中的`\XDU@value@thesis@title`变量中，论文题目中可能含有换行符，如果有换行符，再添加元数据时会有如下报错：
+
+```latex
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\\' on input line 12.
+```
+
+即换行符无法作为元数据的合法字符，因此我们可以使用`\texorpdfstring{\\}{}`来替换`\\`，意思是如果是在`tex`中，则认为是`\\`，如果是在pdf字符串中，则为空。
+
+用户在使用过程中，将`\texorpdfstring{\\}{}`当作`\\`来对待即可，如果论文标题不长或者希望自动换行，不需要换行符的话，删除`\texorpdfstring{\\}{}`即可。
 
 # 模板来源
 
