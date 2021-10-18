@@ -3,8 +3,8 @@
 # 目录
 
 - [项目名称](#项目名称)
-- [项目起源](#项目起源)
 - [注意事项](#注意事项)
+- [项目起源](#项目起源)
 - [使用/示例](#使用示例)
   - [卸载与安装](#卸载与安装)
     - [配置镜像源](#配置镜像源)
@@ -60,6 +60,12 @@ xdupgthesis-Xidian University Postgraduate Thesis
 
 西安电子科技大学研究生学位论文模板
 
+# 注意事项
+
+本人还未到写学位论文的阶段，因此没有十足的该模板日常使用经验，如果大家在使用过程中有任何问题或者建议，可以提[Issue](https://github.com/note286/xdupgthesis/issues)反馈。此外，关于环境配置请阅读[install-latex-guide-zh-cn.pdf](http://mirrors.ctan.org/info/install-latex-guide-zh-cn/install-latex-guide-zh-cn.pdf)，不熟悉语法的请阅读[lshort-zh-cn.pdf](http://mirrors.ctan.org/info/lshort/chinese/lshort-zh-cn.pdf)。
+
+用户请参考[卸载与安装](#卸载与安装)安装TeX Live 2021或MacTeX 2021，终端中输入`xelatex -v`来查看版本，其他版本的报错不予处理。本项目文档都很详细，请认真阅读README。
+
 # 项目起源
 
 本项目起源于身边陆续有人使用西安电子科技大学提供的LaTeX模板，却卡在无法编译，使用时出错等问题。最近感觉LaTeX水平勉强支撑对模板的修正，因此边阅读`XDUthesis.cls`文件源码边修改，水平非常有限，难免出错或有不合适的修改，可提[Issue](https://github.com/note286/xdupgthesis/issues)来反馈。
@@ -83,10 +89,6 @@ dvipdfmx templet
 在此之前有很多人已经修改了学校模板使之能够正常编译，但是绝大部分人都只是抱着能编译即可的态度去修改，没有认真阅读模板的代码，没有理解模板的逻辑，对最新的一些宏包使用方式不够了解，仅停留在了会搜索答案并修改模板使之可以编译，但不懂为何的阶段。本闲人工作学习之余花费了一些时间阅读源码和宏包手册，尽可能做到每次修改都有所依据，知其所以然。
 
 综上所述，在发现学校系统的原始模板问题多多，故整理个人的一点点工作并公开，为更多的一般LaTeX用户提供较为容易使用的模板。
-
-# 注意事项
-
-本人还未到写学位论文的阶段，因此没有十足的该模板日常使用经验，如果大家在使用过程中有任何问题或者建议，可以提[Issue](https://github.com/note286/xdupgthesis/issues)反馈。此外，关于环境配置请阅读[install-latex-guide-zh-cn.pdf](http://mirrors.ctan.org/info/install-latex-guide-zh-cn/install-latex-guide-zh-cn.pdf)，不熟悉语法的请阅读[lshort-zh-cn.pdf](http://mirrors.ctan.org/info/lshort/chinese/lshort-zh-cn.pdf)。
 
 # 使用/示例
 
