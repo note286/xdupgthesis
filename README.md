@@ -68,6 +68,8 @@ xdupgthesis-Xidian University Postgraduate Thesis
 
 # 项目起源
 
+本节讲述本项目起源，用户不感兴趣可以跳过，直接使用本项目模板即可。
+
 本项目起源于身边陆续有人使用西安电子科技大学提供的LaTeX模板，却卡在无法编译，使用时出错等问题。最近感觉LaTeX水平勉强支撑对模板的修正，因此边阅读`XDUthesis.cls`文件源码边修改，水平非常有限，难免出错或有不合适的修改，可提[Issue](https://github.com/note286/xdupgthesis/issues)来反馈。
 
 首先阅读的是压缩包内的`templet.log`文件，结合`templet.pdf`属性，推测可能的编译命令为：
@@ -93,6 +95,8 @@ dvipdfmx templet
 # 使用/示例
 
 [下载](https://github.com/note286/xdupgthesis/archive/refs/heads/main.zip)或[克隆](x-github-client://openRepo/https://github.com/note286/xdupgthesis)该仓库，可直接修改`tex`、`bib`、`cfg`等文件来进行论文的攥写。
+
+本节介绍了一些使用本项目模板的方法，建议用户根据自身情况阅读。
 
 ## 卸载与安装
 
@@ -339,6 +343,8 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 # 模板来源
 
+本节讲述本项目模板来源，用户不感兴趣可以跳过，直接使用本项目模板即可。
+
 在[西安电子科技大学申请硕士学位相关资料(学术学位)-研究生院/研究生工作部-西安电子科技大学](https://gr.xidian.edu.cn/info/1047/5087.htm)中[关于发布研究生学位论文模板（2015年修订版）的通知](https://gr.xidian.edu.cn/images/16/07/15/3lz5xyf6nj/16CE9809876C6A463CF45A57AFBD1968.doc)里，有如下描述：
 
 > 三、新增Latex版论文模板，提高了模板整体的通用性，增加了使用者的可选择性。
@@ -361,13 +367,17 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 # 编码转换
 
+本节讲述为什么修改原西安电子科技大学学位论文模板的文件编码，用户不感兴趣可以跳过，直接使用本项目模板即可。
+
 在[CTEX宏集手册](http://mirror.ctan.org/language/chinese/ctex/ctex.pdf)中4.2章节指出：
 
 > 使用XeLaTeX、LuaLaTeX或upLaTeX编译时，CTEX宏集强制使用UTF-8编码。
 
-由于学校官方模板为GBK编码，因此将所有文件全部转换为UTF-8编码。
+由于学校官方模板为GBK编码，因此已所有文件全部转换为UTF-8编码。
 
 # 修复错误
+
+本节讲述如何修复原西安电子科技大学学位论文模板的运行错误，用户不感兴趣可以跳过，直接使用本项目模板即可。
 
 ## 错误一
 
@@ -411,6 +421,8 @@ l.13 \XDUfrontmatter
 因此，将`XDUthesis.cls`中两处`\CTEXunderline`替换为`\underline`。
 
 # 字体修正
+
+本节讲述如何修复原西安电子科技大学学位论文模板的字体问题，用户不感兴趣可以跳过，直接使用本项目模板即可。
 
 ## 中文字体
 
@@ -459,6 +471,8 @@ l.13 \XDUfrontmatter
 ```
 
 # 修复警告
+
+本节讲述如何修复原西安电子科技大学学位论文模板的警告，用户不感兴趣可以跳过，直接使用本项目模板即可。
 
 ## cs4size
 
@@ -756,6 +770,8 @@ LaTeX Font Warning: Font shape `OMX/cmex/m/n' in size <10.53937> not available
 ```
 
 # 增加功能
+
+本节讲述如何增强原西安电子科技大学学位论文模板的各种问题，用户不感兴趣可以跳过，直接使用本项目模板即可。
 
 ## 参考文献条目样式
 
