@@ -1,6 +1,6 @@
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{XDUthesis}[2021/10/17 XDU, Thesis document class, version 0.2.2, modified by @note286, published in https://note286.github.io/xdupgthesis/]
+\ProvidesClass{xdupgthesis}[2021/10/17 XDU, Thesis document class, version 0.2.2, modified by @note286, published in https://note286.github.io/xdupgthesis/]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%   class and packages
@@ -84,8 +84,8 @@ pdfsubject={西安电子科技大学{\XDU@value@degreemark}学位论文}%
 \fi
 
 %% config file
-\AtEndOfPackage{\makeatletter\input{XDUthesis.def}\makeatother}
-\AtEndOfPackage{\makeatletter\input{XDUthesis.cfg}\makeatother}
+\AtEndOfPackage{\makeatletter\input{xdupgthesis.def}\makeatother}
+\AtEndOfPackage{\makeatletter\input{xdupgthesis.cfg}\makeatother}
 \AtEndOfPackage{\makeatletter\renewcommand{\numberline}[1]{%
 \settowidth\@tempdimb{#1\hspace{0.25em}}%
 \ifdim\@tempdima<\@tempdimb%

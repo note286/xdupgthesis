@@ -149,16 +149,16 @@ sudo cp simhei.ttf simkai.ttf simsun.ttc times.ttf timesbd.ttf timesbi.ttf times
 ### latexmk
 
 ```shell
-latexmk -xelatex -synctex=1 templet
+latexmk -xelatex -synctex=1 xdupgthesis
 ```
 
 ### 四次编译
 
 ```shell
-xelatex -synctex=1 templet
-bibtex templet
-xelatex -synctex=1 templet
-xelatex -synctex=1 templet
+xelatex -synctex=1 xdupgthesis
+bibtex xdupgthesis
+xelatex -synctex=1 xdupgthesis
+xelatex -synctex=1 xdupgthesis
 ```
 
 ## 参考文献引用
