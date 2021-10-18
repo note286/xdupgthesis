@@ -64,7 +64,7 @@ xdupgthesis-Xidian University Postgraduate Thesis
 
 本人还未到写学位论文的阶段，因此没有十足的该模板日常使用经验，如果大家在使用过程中有任何问题或者建议，可以提[Issue](https://github.com/note286/xdupgthesis/issues)反馈。此外，关于环境配置请阅读[install-latex-guide-zh-cn.pdf](http://mirrors.ctan.org/info/install-latex-guide-zh-cn/install-latex-guide-zh-cn.pdf)，不熟悉语法的请阅读[lshort-zh-cn.pdf](http://mirrors.ctan.org/info/lshort/chinese/lshort-zh-cn.pdf)。
 
-用户请参考[卸载与安装](#卸载与安装)安装TeX Live 2021或MacTeX 2021，终端中输入`xelatex -v`来查看版本，其他版本的报错不予处理。本项目文档都很详细，请认真阅读README。
+用户请参考[卸载与安装](#卸载与安装)安装TeX Live 2021或MacTeX 2021，终端中输入`xelatex -v`来查看版本，低于2021版本的报错不予处理。本项目文档都很详细，请认真阅读README。
 
 # 项目起源
 
