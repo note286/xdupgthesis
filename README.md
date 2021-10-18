@@ -117,6 +117,8 @@ tlmgr update --self && tlmgr update --all
 
 ## 字体安装
 
+考虑到可能存在版权问题，故不提供字体文件或字体下载链接。
+
 ### Windows
 
 Windows平台无需手动配置字体，所需字体Windows操作系统已内置。
@@ -145,9 +147,13 @@ sudo cp simhei.ttf simkai.ttf simsun.ttc times.ttf timesbd.ttf timesbi.ttf times
 
 ### macOS
 
-参考[GNU/Linux](#gnulinux)从Windows平台提取字体文件，然后在macOS上双击安装字体文件即可，然后就可以根据[编译](#编译)里的方法去编译了。
+参考[GNU/Linux](#gnulinux)从Windows平台提取字体文件，然后在macOS上双击安装字体文件即可。注意，虽然macOS内置了Times New Roman字体，但是该内置字体版本过于老旧，有缺字的现象，建议将7个字体文件全部安装。
+
+然后就可以根据[编译](#编译)里的方法去编译了。
 
 ## 编译
+
+本项目目前仅在Windows和GNU/Linux平台上的TeX Live2021和macOS平台上的MacTeX 2021进行了测试，均更新所有包至最新版，并参考[字体安装](#字体安装)安装了缺失字体。
 
 仅介绍如何使用命令编译，可选择使用`Latexmk`来快速编译或者常规的四次编译。如果喜欢使用IDE，请自行选择对应IDE中的`XeLaTeX`的编译方式，参考文献使用`BibTeX`编译。如使用命令行或者IDE无内置PDF查看器，Windows平台上推荐使用[Sumatra PDF](https://www.sumatrapdfreader.org/free-pdf-reader)，适当配置可支持正向跳转和反向跳转，在此不赘述。
 
