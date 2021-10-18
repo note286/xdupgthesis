@@ -13,9 +13,11 @@
     - [Windows](#windows)
     - [GNU/Linux](#gnulinux)
     - [macOS](#macos)
+    - [Overleaf](#overleaf)
   - [编译](#编译)
     - [latexmk](#latexmk)
     - [四次编译](#四次编译)
+    - [Overleaf编译](#overleaf编译)
   - [参考文献引用](#参考文献引用)
   - [中英文间空白](#中英文间空白)
   - [交叉引用](#交叉引用)
@@ -158,6 +160,33 @@ sudo cp simhei.ttf simkai.ttf simsun.ttc times.ttf timesbd.ttf timesbi.ttf times
 
 然后就可以根据[编译](#编译)里的方法去编译了。
 
+### Overleaf
+
+在[Overleaf](https://www.overleaf.com/)平台使用时，由于Overleaf是安装在GNU/Linux上的最新版的TeX Live，用户无需考虑LaTeX套装版本问题，仅需要安装字体即可，用户首先将本仓库[下载](https://github.com/note286/xdupgthesis/archive/refs/heads/main.zip)，将压缩包上传至Overleaf，再根据[GNU/Linux](#gnulinux)中的方法得到字体文件，将所有的字体文件上传至主目录即可。
+
+由于Overleaf无法像在操作系统上安装字体文件那样安装字体，所以需要额外的配置。用户打开主目录下的cls文件，将其中的
+
+```latex
+\BeforeBeginEnvironment{document}{\setmainfont{Times New Roman}}
+```
+
+修改为
+
+```latex
+\BeforeBeginEnvironment{document}{%
+\setCJKfamilyfont{zhsong}{simsun.ttc}%
+\setCJKfamilyfont{zhhei}{simhei.ttf}%
+\NewDocumentCommand\songti{}{\CJKfamily{zhsong}}%
+\NewDocumentCommand\heiti{}{\CJKfamily{zhhei}}%
+\setCJKmainfont{simsun.ttc}%
+\setmainfont{times.ttf}%
+[BoldFont=timesbd.ttf,%
+ItalicFont=timesi.ttf,%
+BoldItalicFont=timesbi.ttf]}
+```
+
+再将其上方的参数`fontset=windows`修改为`fontset=none`。
+
 ## 编译
 
 本项目目前仅在Windows和GNU/Linux平台上的TeX Live 2021和macOS平台上的MacTeX 2021进行了测试，均更新所有包至最新版，并参考[字体安装](#字体安装)安装了缺失字体。
@@ -178,6 +207,28 @@ bibtex xdupgthesis
 xelatex -synctex=1 xdupgthesis
 xelatex -synctex=1 xdupgthesis
 ```
+
+### Overleaf编译
+
+根据[Overleaf](#overleaf)中关于字体安装的介绍安装好字体并修改相应的配置后，用户点击左上角的Menu修改编译器为XeLaTeX后即可正常编译。
+
+另外，由于Overleaf的[限制](https://www.overleaf.com/learn/how-to/Uploading_a_project)：
+
+> While the Overleaf editor can edit any plain text file, only uploads with the most common LaTeX file extensions (.tex, .bib, .cls, .sty, ...) will be editable on the site.
+
+因此主目录下的`xdupgthesis.cfg`文件无法在线编辑，只能通过下载在上传的方式编辑，用户可以在将本模板上传至Overleaf之前将`xdupgthesis.cfg`改名为`xdupgthesis.cfg.tex`，以便于在线编辑，再将主目录下`xdupgthesis.cls`文件中的
+
+```latex
+\AtEndOfPackage{\makeatletter\input{xdupgthesis.cfg}\makeatother}
+```
+
+改为
+
+```latex
+\AtEndOfPackage{\makeatletter\input{xdupgthesis.cfg.tex}\makeatother}
+```
+
+再上传至Overleaf平台即可。
 
 ## 参考文献引用
 
