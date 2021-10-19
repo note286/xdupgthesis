@@ -612,5 +612,5 @@ By \par%
    \mainmatter}
 
 %% back matter
-\DeclareRobustCommand{\XDUbackmatter}[1]
-  {\backmatter{}#1{}}
+\DeclareRobustCommand{\XDUbackmatter}
+  {\backmatter{}\bibliography{xdupgthesis}{}}

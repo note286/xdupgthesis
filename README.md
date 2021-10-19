@@ -97,7 +97,7 @@ dvipdfmx templet
 
 # 使用/示例
 
-[下载](https://github.com/note286/xdupgthesis/archive/refs/heads/main.zip)或[克隆](x-github-client://openRepo/https://github.com/note286/xdupgthesis)该仓库，可直接修改`tex`和`bib`等类型文件来进行论文的攥写。具体来说，用户编辑`xdupgthesis.tex`、`chapters`文件夹和`bib`文件夹下文件来攥写论文内容，修改`thesisinfo.tex`内容来更改论文信息或者个人信息。此外，`xdupgthesis.cls`和`xdupgthesis.def`文件请不要修改。
+[下载](https://github.com/note286/xdupgthesis/archive/refs/heads/main.zip)或[克隆](x-github-client://openRepo/https://github.com/note286/xdupgthesis)该仓库，可直接修改`tex`和`bib`等类型文件来进行论文的攥写。具体来说，用户编辑`xdupgthesis.tex`、`xdupgthesis.bib`、`chapters`文件夹下文件来攥写论文内容，修改`thesisinfo.tex`内容来更改论文信息或者个人信息。此外，`xdupgthesis.cls`和`xdupgthesis.def`文件请不要修改。
 
 本节介绍了一些使用本项目模板的方法，建议用户根据自身情况阅读。
 
