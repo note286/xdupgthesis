@@ -99,7 +99,7 @@
 \hypersetup{%
 pdftitle={\XDU@value@thesis@title},%
 pdfauthor={\XDU@value@author@name},%
-pdfsubject={西安电子科技大学{\XDU@value@degreemark}学位论文}%
+pdfsubject={\XDU@label@university\XDU@value@degreemark\XDU@value@cover@thesis}%
 }}
 
 %% config file
@@ -204,7 +204,7 @@ pdfsubject={西安电子科技大学{\XDU@value@degreemark}学位论文}%
 
 %% label of even page header
 \def\XDU@hdr@thesistitle
-  {\XDU@label@university\XDU@value@degreemark\XDU@value@thesis}
+  {\XDU@label@university\XDU@value@degreemark\XDU@value@cover@thesis}
 
 %% the double line under header
 \newcommand{\makeheadrule}{%
@@ -338,7 +338,7 @@ pdfsubject={西安电子科技大学{\XDU@value@degreemark}学位论文}%
     \makebox[\textwidth]{\rule{0pt}{4.5cm}\shortstack[c]{
         \XDU@bold\XDU@font@ht\XDU@font@zihao{1}\setlength{\baselineskip}{30pt}\XDU@label@university\\%
         \vspace{60pt} \\%
-        \XDU@bold\XDU@font@st\XDU@font@zihao{-1}\setlength{\baselineskip}{30pt}\XDU@value@degreemark\XDU@value@thesis%
+        \XDU@bold\XDU@font@st\XDU@font@zihao{-1}\setlength{\baselineskip}{30pt}\XDU@value@degreemark\XDU@value@cover@thesis%
     }}
     \rule{0pt}{2.7cm}%
     \rule[-3.2cm]{0pt}{3.2cm}\parbox[t]{\textwidth}{

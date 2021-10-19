@@ -3,6 +3,7 @@
 \def\XDU@elabel@university{XIDIAN UNIVERSITY}
 
 % 封面
+\def\XDU@value@cover@thesis{论文}
 \def\XDU@label@cover@UDC{学校代码\hspace*{0.9em}}
 \def\XDU@label@cover@studentNo{学\quad{}号\hspace*{0.9em}}
 \def\XDU@label@cover@classification{分\hspace*{0.5em}类\hspace*{0.5em}号\hspace*{0.9em}}
