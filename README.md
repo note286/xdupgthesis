@@ -298,12 +298,14 @@ xelatex -synctex=1 xdupgthesis
 
 ## 图片
 
+图片插入时，如果将图片文件放入`figures`文件夹，则无需添加路径，直接使用图片文件名即可，甚至扩展名也可以省略不写，可以参考如下示例。
+
 单张图片插入示例：
 
 ```latex
 \begin{figure}
 \centering
-\includegraphics[width=.3\linewidth]{figures/fig.pdf}
+\includegraphics[width=.3\linewidth]{fig1file}
 \caption{方案开销}
 \label{fig1}
 \end{figure}
@@ -314,10 +316,10 @@ xelatex -synctex=1 xdupgthesis
 ```latex
 \begin{figure}
 \centering
-\subfloat[计算开销]{\includegraphics[width=.3\linewidth]{figures/fig.pdf}%
+\subfloat[计算开销]{\includegraphics[width=.3\linewidth]{fig2file}%
 \label{fig2}}
 \hfil
-\subfloat[通信开销]{\includegraphics[width=.3\linewidth]{figures/fig.pdf}%
+\subfloat[通信开销]{\includegraphics[width=.3\linewidth]{fig3file}%
 \label{fig3}}
 \caption{方案开销}
 \label{fig4}
