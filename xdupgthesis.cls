@@ -32,8 +32,8 @@
 \ifXDU@Option@overleaf
   \LoadClass[a4paper,zihao=-4,twoside,openright,punct,fontset=none]{ctexbook}
   \BeforeBeginEnvironment{document}{
-  \setCJKfamilyfont[Path=fonts/]{zhsong}{simsun.ttc}
-  \setCJKfamilyfont[Path=fonts/]{zhhei}{simhei.ttf}
+  \setCJKfamilyfont{zhsong}[Path=fonts/]{simsun.ttc}
+  \setCJKfamilyfont{zhhei}[Path=fonts/]{simhei.ttf}
   \NewDocumentCommand\songti{}{\CJKfamily{zhsong}}
   \NewDocumentCommand\heiti{}{\CJKfamily{zhhei}}
   \setCJKmainfont[Path=fonts/]{simsun.ttc}
