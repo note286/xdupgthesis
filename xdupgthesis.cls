@@ -1,6 +1,6 @@
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{xdupgthesis}[2021/10/19 Xidian University Postgraduate Thesis document class, version 0.2.3, modified by @note286, published in https://note286.github.io/xdupgthesis/]
+\ProvidesClass{xdupgthesis}[2021/10/19 Xidian University Postgraduate Thesis document class, version 0.2.4, modified by @note286, published in https://note286.github.io/xdupgthesis/]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%   class and packages
@@ -49,6 +49,24 @@
 \RequirePackage{lmodern}
 
 \RequirePackage{fancyhdr}
+
+\RequirePackage{graphicx}
+\graphicspath{{figures/}}
+
+\RequirePackage{booktabs}
+
+\RequirePackage{amsmath}
+
+\RequirePackage{amsthm}
+
+\RequirePackage{amssymb}
+
+\RequirePackage{nicefrac}
+
+\RequirePackage{diagbox}
+
+\RequirePackage{multirow}
+
 
 %% calc
 \RequirePackage{calc}

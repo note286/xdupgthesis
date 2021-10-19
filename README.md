@@ -18,6 +18,7 @@
     - [latexmk](#latexmk)
     - [四次编译](#四次编译)
     - [Overleaf编译](#overleaf编译)
+  - [内置宏包](#内置宏包)
   - [参考文献引用](#参考文献引用)
   - [中英文间空白](#中英文间空白)
   - [交叉引用](#交叉引用)
@@ -202,6 +203,50 @@ xelatex -synctex=1 xdupgthesis
 ```
 
 后即可正常编译。
+
+## 内置宏包
+
+本项目模板已内置如下常用宏包，如果需要使用如下宏包，无需用户导入，直接使用即可。
+
+- amsmath
+
+- amssymb
+
+- amsthm
+
+- booktabs
+
+- calc
+
+- caption
+
+- diagbox
+
+- fancyhdr
+
+- graphicx
+
+- hyperref
+
+- ifpdf
+
+- ifthen
+
+- lmodern
+
+- multirow
+
+- natbib
+
+- nicefrac
+
+- subfig
+
+- tabularx
+
+- tocloft
+
+- xurl
 
 ## 参考文献引用
 
