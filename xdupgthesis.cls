@@ -1,6 +1,6 @@
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{xdupgthesis}[2021/10/19 Xidian University Postgraduate Thesis document class, version 0.2.4, modified by @note286, published in https://note286.github.io/xdupgthesis/]
+\ProvidesClass{xdupgthesis}[2021/10/19 Xidian University Postgraduate Thesis document class, version 0.2.5, modified by @note286, published in https://note286.github.io/xdupgthesis/]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%   class and packages
@@ -32,12 +32,12 @@
 \ifXDU@Option@overleaf
   \LoadClass[a4paper,zihao=-4,twoside,openright,punct,fontset=none]{ctexbook}
   \BeforeBeginEnvironment{document}{
-  \setCJKfamilyfont{zhsong}{simsun.ttc}
-  \setCJKfamilyfont{zhhei}{simhei.ttf}
+  \setCJKfamilyfont[Path=fonts/]{zhsong}{simsun.ttc}
+  \setCJKfamilyfont[Path=fonts/]{zhhei}{simhei.ttf}
   \NewDocumentCommand\songti{}{\CJKfamily{zhsong}}
   \NewDocumentCommand\heiti{}{\CJKfamily{zhhei}}
-  \setCJKmainfont{simsun.ttc}
-  \setmainfont{times.ttf}
+  \setCJKmainfont[Path=fonts/]{simsun.ttc}
+  \setmainfont[Path=fonts/]{times.ttf}
   [BoldFont=timesbd.ttf,
   ItalicFont=timesi.ttf,
   BoldItalicFont=timesbi.ttf]}
