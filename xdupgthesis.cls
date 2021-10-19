@@ -12,11 +12,6 @@
 %% disable oneside option
 \DeclareOption{oneside}{\OptionNotUsed}
 
-%% driver
-\newif\ifXDU@Option@dvipdfm \XDU@Option@dvipdfmtrue
-\DeclareOption{dvips}{\XDU@Option@dvipdfmfalse}
-\DeclareOption{dvipdfm}{\XDU@Option@dvipdfmtrue}
-
 %% others
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{ctexbook}}
 \ProcessOptions\relax
