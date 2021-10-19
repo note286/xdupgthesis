@@ -382,7 +382,7 @@ pdfsubject={西安电子科技大学{\XDU@value@degreemark}学位论文}%
     \begin{center}%
 A\space\XDU@evalue@papertype\space submitted to\par\XDU@elabel@university\par%
 in partial fulfillment of the requirements \par for the degree of\space\XDU@evalue@degree%
-\par in\space\XDU@evalue@author@submajor%
+\par in\space\XDU@evalue@author@major%
     \end{center}%
     }
     \rule{0pt}{7.2cm}%
