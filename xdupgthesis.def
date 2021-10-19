@@ -1,6 +1,3 @@
-
-\ProvidesFile{XDUthesis.def}[2015/01/01 XDU, Thesis document class, version 0.1.0]
-
 % General
 \def\XDU@label@university{西安电子科技大学}
 \def\XDU@elabel@university{XIDIAN UNIVERSITY}

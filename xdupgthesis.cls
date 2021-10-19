@@ -12,6 +12,10 @@
 %% disable oneside option
 \DeclareOption{oneside}{\OptionNotUsed}
 
+% overleaf
+\newif\ifXDU@Option@overleaf \XDU@Option@overleaffalse
+\DeclareOption{overleaf}{\XDU@Option@overleaftrue}
+
 %% others
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{ctexbook}}
 \ProcessOptions\relax
@@ -23,8 +27,24 @@
 %% book
 %%
 \PassOptionsToPackage{AutoFakeBold=3}{xeCJK}
-\LoadClass[a4paper,zihao=-4,twoside,openright,punct,fontset=windows]{ctexbook}
-\BeforeBeginEnvironment{document}{\setmainfont{Times New Roman}}
+
+%% overleaf
+\ifXDU@Option@overleaf
+  \LoadClass[a4paper,zihao=-4,twoside,openright,punct,fontset=none]{ctexbook}
+  \BeforeBeginEnvironment{document}{
+  \setCJKfamilyfont{zhsong}{simsun.ttc}
+  \setCJKfamilyfont{zhhei}{simhei.ttf}
+  \NewDocumentCommand\songti{}{\CJKfamily{zhsong}}
+  \NewDocumentCommand\heiti{}{\CJKfamily{zhhei}}
+  \setCJKmainfont{simsun.ttc}
+  \setmainfont{times.ttf}
+  [BoldFont=timesbd.ttf,
+  ItalicFont=timesi.ttf,
+  BoldItalicFont=timesbi.ttf]}
+\else
+  \LoadClass[a4paper,zihao=-4,twoside,openright,punct,fontset=windows]{ctexbook}
+  \BeforeBeginEnvironment{document}{\setmainfont{Times New Roman}}
+\fi
 
 \RequirePackage{lmodern}
 
@@ -66,7 +86,7 @@ pdfsubject={西安电子科技大学{\XDU@value@degreemark}学位论文}%
 
 %% config file
 \AtEndOfPackage{\makeatletter\input{xdupgthesis.def}\makeatother}
-\AtEndOfPackage{\makeatletter\input{xdupgthesis.cfg}\makeatother}
+\AtEndOfPackage{\makeatletter\input{thesisinfo.tex}\makeatother}
 \AtEndOfPackage{\makeatletter\renewcommand{\numberline}[1]{%
 \settowidth\@tempdimb{#1\hspace{0.25em}}%
 \ifdim\@tempdima<\@tempdimb%

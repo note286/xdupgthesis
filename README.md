@@ -96,7 +96,7 @@ dvipdfmx templet
 
 # 使用/示例
 
-[下载](https://github.com/note286/xdupgthesis/archive/refs/heads/main.zip)或[克隆](x-github-client://openRepo/https://github.com/note286/xdupgthesis)该仓库，可直接修改`tex`、`bib`、`cfg`等文件来进行论文的攥写。
+[下载](https://github.com/note286/xdupgthesis/archive/refs/heads/main.zip)或[克隆](x-github-client://openRepo/https://github.com/note286/xdupgthesis)该仓库，可直接修改`tex`和`bib`等类型文件来进行论文的攥写。具体来说，用户编辑`xdupgthesis.tex`、`chapters`文件夹和`bib`文件夹下文件来攥写论文内容，修改`thesisinfo.tex`内容来更改论文信息或者个人信息。此外，`xdupgthesis.cls`和`xdupgthesis.def`文件请不要修改。
 
 本节介绍了一些使用本项目模板的方法，建议用户根据自身情况阅读。
 
@@ -162,30 +162,9 @@ sudo cp simhei.ttf simkai.ttf simsun.ttc times.ttf timesbd.ttf timesbi.ttf times
 
 ### Overleaf
 
-在[Overleaf](https://www.overleaf.com/)平台使用时，由于Overleaf是安装在GNU/Linux上的最新版的TeX Live，用户无需考虑LaTeX套装版本问题，仅需要安装字体即可，用户首先将本仓库[下载](https://github.com/note286/xdupgthesis/archive/refs/heads/main.zip)，将压缩包上传至Overleaf，再根据[GNU/Linux](#gnulinux)中的方法得到字体文件，将所有的字体文件上传至主目录即可。
+在[Overleaf](https://www.overleaf.com/)平台使用时，由于Overleaf是安装在GNU/Linux上的最新版的TeX Live，用户无需考虑LaTeX套装版本问题，仅需要安装字体即可，用户首先将本仓库[下载](https://github.com/note286/xdupgthesis/archive/refs/heads/main.zip)，再根据[GNU/Linux](#gnulinux)中的方法得到字体文件。
 
-由于Overleaf无法像在操作系统上安装字体文件那样安装字体，所以需要额外的配置。用户打开主目录下的cls文件，将其中的
-
-```latex
-\BeforeBeginEnvironment{document}{\setmainfont{Times New Roman}}
-```
-
-修改为
-
-```latex
-\BeforeBeginEnvironment{document}{
-\setCJKfamilyfont{zhsong}{simsun.ttc}
-\setCJKfamilyfont{zhhei}{simhei.ttf}
-\NewDocumentCommand\songti{}{\CJKfamily{zhsong}}
-\NewDocumentCommand\heiti{}{\CJKfamily{zhhei}}
-\setCJKmainfont{simsun.ttc}
-\setmainfont{times.ttf}
-[BoldFont=timesbd.ttf,
-ItalicFont=timesi.ttf,
-BoldItalicFont=timesbi.ttf]}
-```
-
-再将其上方的参数`fontset=windows`修改为`fontset=none`。
+在Overleaf左上角点击`New Project`，选择Upload Project，将压缩包上传至Overleaf，会自动进入该论文模板项目，点击左上角`Upload`按钮将所有的字体文件上传。最后根据[Overleaf编译](#overleaf编译)配置如何在线编译。
 
 ## 编译
 
@@ -210,25 +189,19 @@ xelatex -synctex=1 xdupgthesis
 
 ### Overleaf编译
 
-根据[Overleaf](#overleaf)中关于字体安装的介绍安装好字体并修改相应的配置后，用户点击左上角的Menu修改编译器为XeLaTeX后即可正常编译。
-
-另外，由于Overleaf的[限制](https://www.overleaf.com/learn/how-to/Uploading_a_project)：
-
-> While the Overleaf editor can edit any plain text file, only uploads with the most common LaTeX file extensions (.tex, .bib, .cls, .sty, ...) will be editable on the site.
-
-因此主目录下的`xdupgthesis.cfg`文件无法在线编辑，只能通过下载在上传的方式编辑，用户可以在将本模板上传至Overleaf之前将`xdupgthesis.cfg`改名为`xdupgthesis.cfg.tex`，以便于在线编辑，再将主目录下`xdupgthesis.cls`文件中的
+用户首先根据[Overleaf](#overleaf)中关于字体安装的介绍安装好字体，再点击左上角的`Menu`按钮修改`Compiler`为`XeLaTeX`，最后为`xdupgthesis`文档类传入`overleaf`参数，即将`xdupgthesis.tex`中
 
 ```latex
-\AtEndOfPackage{\makeatletter\input{xdupgthesis.cfg}\makeatother}
+\documentclass{xdupgthesis}
 ```
 
 改为
 
 ```latex
-\AtEndOfPackage{\makeatletter\input{xdupgthesis.cfg.tex}\makeatother}
+\documentclass[overleaf]{xdupgthesis}
 ```
 
-再上传至Overleaf平台即可。
+后即可正常编译。
 
 ## 参考文献引用
 
@@ -381,7 +354,7 @@ xelatex -synctex=1 xdupgthesis
 
 ## 论文标题
 
-在[PDF元数据](#pdf元数据)中介绍了本项目模板可以自动获取论文中各种元数据，并添加到PDF文档属性中，其中就包括了论文题目，其值位于`xdupgthesis.cfg`文件中的`\XDU@value@thesis@title`变量中，论文题目中可能含有换行符，如果有换行符，再添加元数据时会有如下报错：
+在[PDF元数据](#pdf元数据)中介绍了本项目模板可以自动获取论文中各种元数据，并添加到PDF文档属性中，其中就包括了论文题目，其值位于`thesisinfo.tex`文件中的`\XDU@value@thesis@title`变量中，论文题目中可能含有换行符，如果有换行符，再添加元数据时会有如下报错：
 
 ```latex
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
@@ -469,7 +442,7 @@ l.13 \XDUfrontmatter
 
 > 在调用fntef宏包选项的同时，旧版本CTEX宏包由于需要支持CCT系统，会将以\CJK开头的\CJKunderline等宏换名为以\CTEX开头的\CTEXunderline等宏。此功能在新版本的CTEX宏集中已失去意义。
 
-因此，将`XDUthesis.cls`中两处`\CTEXunderline`替换为`\underline`。
+因此，将`xdupgthesis.cls`中两处`\CTEXunderline`替换为`\underline`。
 
 # 字体修正
 
@@ -532,7 +505,7 @@ Package ctex Warning: Option `cs4size' is deprecated.
 (ctex)                Option `zihao=-4' is set.
 ```
 
-`XDUthesis.cls`中`cs4size`替换为`zihao=-4`。
+`xdupgthesis.cls`中`cs4size`替换为`zihao=-4`。
 
 ## fancyhdr
 
@@ -541,7 +514,7 @@ Package ctex Warning: Option `fancyhdr' is deprecated.
 (ctex)                `fancyhdr' package is loaded.
 ```
 
-`XDUthesis.cls`中`ctexbook`移除选项`fancyhdr`，改为
+`xdupgthesis.cls`中`ctexbook`移除选项`fancyhdr`，改为
 
 ```latex
 \RequirePackage{fancyhdr}
@@ -559,7 +532,7 @@ LaTeX Warning: Unused global option(s):
     [xeCJKfntef].
 ```
 
-`XDUthesis.cls`中移除`fntef`参数。
+`xdupgthesis.cls`中移除`fntef`参数。
 
 ## caption2
 
@@ -576,7 +549,7 @@ Package caption2 Warning: ****************************************************
 
 `caption2`包已经过时，使用`caption`包来替换。
 
-`XDUthesis.cls`中移除如下设置：
+`xdupgthesis.cls`中移除如下设置：
 
 ```latex
 \RequirePackage{caption2}
@@ -586,7 +559,7 @@ Package caption2 Warning: ****************************************************
 \renewcommand{\captionlabeldelim}{\ ~}%去冒号
 ```
 
-`XDUthesis.cls`中改为使用如下宏包：
+`xdupgthesis.cls`中改为使用如下宏包：
 
 ```latex
 \RequirePackage[labelsep=quad]{caption}
@@ -598,7 +571,7 @@ Package caption2 Warning: ****************************************************
 Package hyperref Warning: Option `a4paper' is no longer used.
 ```
 
-`XDUthesis.cls`中移除如下代码
+`xdupgthesis.cls`中移除如下代码
 
 ```latex
 \ifXDU@Option@PrintVersion
@@ -653,7 +626,7 @@ Package hyperref Warning: Option `a4paper' is no longer used.
 Package ctex Warning: Command `\CTEXsetup' is deprecated.
 ```
 
-将`XDUthesis.cls`中
+将`xdupgthesis.cls`中
 
 ```latex
 \CTEXsetup[name={\XDU@chapter@prenumber,\XDU@chapter@afternumber},
@@ -767,7 +740,7 @@ Package ctex Warning: Command `\CTEXsetup' is deprecated.
 Package ctex Warning: Command `\CTEXoptions' is deprecated.
 ```
 
-将`XDUthesis.cls`中
+将`xdupgthesis.cls`中
 
 ```latex
 \CTEXoptions[figurename={\zihao{5}\XDU@label@figure@cap}]
@@ -796,7 +769,7 @@ Package ctex Warning: Command `\CTEXnoindent' is deprecated.
 (ctex)                \parindent is set to 0pt.
 ```
 
-将`XDUthesis.cls`中`\CTEXnoindent`全部替换为`\parindent=0pt`。
+将`xdupgthesis.cls`中`\CTEXnoindent`全部替换为`\parindent=0pt`。
 
 ## \CTEXindent
 
@@ -805,7 +778,7 @@ Package ctex Warning: Command `\CTEXindent' is deprecated.
 (ctex)                \parindent is set to 2\ccwd .
 ```
 
-将`XDUthesis.cls`中`\CTEXindent`全部替换为`\parindent=2\ccwd`。
+将`xdupgthesis.cls`中`\CTEXindent`全部替换为`\parindent=2\ccwd`。
 
 ## Font size
 
@@ -814,7 +787,7 @@ LaTeX Font Warning: Font shape `OMX/cmex/m/n' in size <10.53937> not available
 (Font)              size <10.95> substituted on input line 14.
 ```
 
-在`XDUthesis.cls`中增加如下宏包来实现任意字号
+在`xdupgthesis.cls`中增加如下宏包来实现任意字号
 
 ```latex
 \RequirePackage{lmodern}
@@ -828,7 +801,7 @@ LaTeX Font Warning: Font shape `OMX/cmex/m/n' in size <10.53937> not available
 
 国家标准《信息与文献 参考文献着录规则》（标准号[GB/T 7714-2015](http://std.samr.gov.cn/gb/search/gbDetailed?id=71F772D8055ED3A7E05397BE0A0AB82A)）已于2015年12月1日实施，而学校原模板中还在使用已废止的国家标准《文后参考文献着录规则》（标准号[GB/T 7714-2005](http://std.samr.gov.cn/gb/search/gbDetailed?id=71F772D78562D3A7E05397BE0A0AB82A)），故本项目将参考文献样式修改为现行的国家标准。
 
-将`XDUthesis.cls`中`gbt7714-2005`替换为`gbt7714-numerical`即可，`gbt7714-numerical.bst`样式文件在发行版中自带了，最后删除主目录下的`gbt7714-2005.bst`文件。
+将`xdupgthesis.cls`中`gbt7714-2005`替换为`gbt7714-numerical`即可，`gbt7714-numerical.bst`样式文件在发行版中自带了，最后删除主目录下的`gbt7714-2005.bst`文件。
 
 ## 参考文献引用样式
 
@@ -860,7 +833,7 @@ LaTeX Font Warning: Font shape `OMX/cmex/m/n' in size <10.53937> not available
 
 ## PDF元数据
 
-增加了自动添加PDF元数据即文档属性的功能，包括标题、主题和作者三项，用户可以右键PDF文件查看自动添加的文档属性值。其中标题来自`XDUthesis.cfg`文件中`\XDU@value@thesis@title`值，作者来自`\XDU@value@author@name`值，而主题由`西安电子科技大学`字样、`\XDU@value@degreemark`值和`学位论文`拼接而成。该功能无需用户干预，自动实现PDF元数据的添加。
+增加了自动添加PDF元数据即文档属性的功能，包括标题、主题和作者三项，用户可以右键PDF文件查看自动添加的文档属性值。其中标题来自`thesisinfo.tex`文件中`\XDU@value@thesis@title`值，作者来自`\XDU@value@author@name`值，而主题由`西安电子科技大学`字样、`\XDU@value@degreemark`值和`学位论文`拼接而成。该功能无需用户干预，自动实现PDF元数据的添加。
 
 ## 子图及图片标题
 
