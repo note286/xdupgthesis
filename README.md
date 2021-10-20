@@ -24,6 +24,7 @@
   - [交叉引用](#交叉引用)
   - [图片](#图片)
   - [论文标题](#论文标题)
+  - [缩略语对照表](#缩略语对照表)
 - [模板来源](#模板来源)
 - [编码转换](#编码转换)
 - [修复错误](#修复错误)
@@ -234,6 +235,8 @@ xelatex -synctex=1 xdupgthesis
 
 - lmodern
 
+- makecell
+
 - multirow
 
 - natbib
@@ -411,6 +414,22 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 即换行符无法作为元数据的合法字符，因此我们可以使用`\texorpdfstring{\\}{}`来替换`\\`，意思是如果是在`tex`中，则认为是`\\`，如果是在pdf字符串中，则为空。
 
 用户在使用过程中，将`\texorpdfstring{\\}{}`当作`\\`来对待即可，如果论文标题不长或者希望自动换行，不需要换行符的话，删除`\texorpdfstring{\\}{}`即可。
+
+## 缩略语对照表
+
+缩略语对照表环境`abbreviationlist`提供了一个参数，用于调节列宽，模板中默认为`lXX`，其含义为全部左对齐，缩略语根据内容自动设置宽度，且只占据一行不自动换行，英文全称与中文对照平分剩下的页面宽度，会自动换行，用户无需手动插入换行符干预。
+
+用户如果想要手动指定宽度，可以将模板中默认的`lXX`改为`p{7.5em}p{10.5em}X`，其含义为第一列为`7.5em`，第二列为`10.5em`，第三列占据剩下的页面宽度，会自动换行，用户无需手动插入换行符干预。如果需要更多自定义的参数，用户可以参考[tabularx](http://mirrors.ctan.org/macros/latex/required/tools/tabularx.pdf)宏包手册。
+
+如果用户想要手动插入换行符，请将需要插入换行符的单元格放入`\makecell[l]{}`命令中，例如：
+
+```latex
+\begin{abbreviationlist}{lXX}
+缩略语 & 英文全称 & 中文对照\\
+XXX & \makecell[l]{手动换行手动换行\\手动换行} & 自动换行自动换行自动换行自动换行\\
+XXX & XXX & XXX\\
+\end{abbreviationlist}
+```
 
 # 模板来源
 
