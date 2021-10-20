@@ -1,6 +1,6 @@
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{xdupgthesis}[2021/10/19 Xidian University Postgraduate Thesis document class, version 0.2.9, modified by @note286, published in https://note286.github.io/xdupgthesis/]
+\ProvidesClass{xdupgthesis}[2021/10/19 Xidian University Postgraduate Thesis document class, version 0.2.10, modified by @note286, published in https://note286.github.io/xdupgthesis/]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%   class and packages
@@ -504,7 +504,17 @@ By \par%
   {\XDU@toc@add{\XDU@toc@listoftables}%
     \listoftables}
 
-\RequirePackage{tabularx}
+\RequirePackage{ltablex}
+\keepXColumns
+
+\RequirePackage{etoolbox}
+\AtEndOfPackage{
+\makeatletter
+\patchcmd{\TX@endtabularx}
+{\end{tabularx}}
+{\endtabularx\endgroup}
+{}{}
+\makeatother}
 
 \RequirePackage{makecell}
 

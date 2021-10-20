@@ -224,6 +224,8 @@ xelatex -synctex=1 xdupgthesis
 
 - diagbox
 
+- etoolbox
+
 - fancyhdr
 
 - graphicx
@@ -235,6 +237,8 @@ xelatex -synctex=1 xdupgthesis
 - ifthen
 
 - lmodern
+
+- ltablex
 
 - makecell
 
@@ -425,6 +429,8 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 缩略语对照表环境`abbreviationlist`提供了一个参数，用于调节列宽，模板中默认为`lXX`，其含义为全部左对齐，缩略语根据内容自动设置宽度，且只占据一行不自动换行，英文全称与中文对照平分剩下的页面宽度，会自动换行，用户无需手动插入换行符干预。
 
 用户如果想要手动指定宽度，可以将模板中默认的`lXX`改为`p{7.5em}p{10.5em}X`，其含义为第一列为`7.5em`，第二列为`10.5em`，第三列占据剩下的页面宽度，会自动换行，用户无需手动插入换行符干预。如果需要更多自定义的参数，用户可以参考[tabularx](http://mirrors.ctan.org/macros/latex/required/tools/tabularx.pdf)宏包手册。
+
+注意！一定要有一列的参数是`X`，其余列参数可以为`p{}`或者`l`。一般建议最后一列为`X`，其余列参数为`p{}`或者`l`。对于三列的，常见的有`p{7.5em}p{10.5em}X`和`llX`，对于两列的，常见的有`p{7.5em}X`和`lX`，其中`p{}`内的长度值可以自行视情况设置。
 
 如果用户想要手动插入换行符，请将需要插入换行符的单元格放入`\makecell[l]{}`命令中，例如：
 
@@ -940,7 +946,7 @@ LaTeX Font Warning: Font shape `OMX/cmex/m/n' in size <10.53937> not available
 
 原模板中的符号对照表和缩略语对照表为列表环境，无法自动对齐，使用很不方便。
 
-本项目基于`tabularx`环境实现了自定义符号对照表和缩略语对照表环境，用户只需要像使用表格一样去填写内容即可，模板中正文的示例已经更新，用户可参考示例填写。
+本项目基于`tabularx`环境实现了自定义符号对照表和缩略语对照表环境，用户只需要像使用表格一样去填写内容即可，支持跨页，模板中正文的示例已经更新，用户可参考示例填写。
 
 从模板示例中可以看出符号对照表和缩略语对照表内容字号为小四号，行距为固定值20磅，因此本项目设置符号对照表和缩略语对照表环境的行间距倍数为`1.6666666667`。
 
