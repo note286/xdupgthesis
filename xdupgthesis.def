@@ -44,10 +44,6 @@
 \def\XDU@chapter@prenumber{第}
 \def\XDU@chapter@afternumber{章}
 
-% 图表名称
-\def\XDU@label@figure@cap{图}
-\def\XDU@label@table@cap{表}
-
 % 摘要
 \def\XDU@label@abstract{摘要}
 \def\XDU@elabel@abstract{ABSTRACT}

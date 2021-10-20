@@ -282,15 +282,7 @@ pdfsubject={\XDU@label@university\XDU@value@degreemark\XDU@value@cover@thesis}%
            indent={4em}}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%    figure and table
-
-%% figure name
-\ctexset{figurename={\zihao{5}\XDU@label@figure@cap}}
-
-%% table name
-\ctexset{tablename={\zihao{5}\XDU@label@table@cap}}
-\newcommand{\tabincell}[2]{\begin{tabular}{@{}#1@{}}#2\end{tabular}} %转行
-
+% redefine equation number format
 \renewcommand{\theequation}{\arabic{chapter}-\arabic{equation}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
