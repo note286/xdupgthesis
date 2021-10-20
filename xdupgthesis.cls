@@ -1,6 +1,6 @@
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{xdupgthesis}[2021/10/19 Xidian University Postgraduate Thesis document class, version 0.2.8, modified by @note286, published in https://note286.github.io/xdupgthesis/]
+\ProvidesClass{xdupgthesis}[2021/10/19 Xidian University Postgraduate Thesis document class, version 0.2.9, modified by @note286, published in https://note286.github.io/xdupgthesis/]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%   class and packages
@@ -143,8 +143,7 @@ pdfsubject={\XDU@label@university\XDU@value@degreemark\XDU@value@cover@thesis}%
    \normalsize
    \@makecaption{\csname fnum@#1\endcsname}{\ignorespaces #3}\par
    \endgroup}
- \renewcommand*\l@figure{\@dottedtocline{1}{0em}{4em}}
- \let\l@table\l@figure \makeatother}
+ \makeatother}
 
 %%%%%%%%%%%%%%%%%%%%
 %% setup packages
@@ -458,10 +457,19 @@ By \par%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%    content
-    \renewcommand\p@figure{\figurename}
-    \renewcommand\p@table{\tablename}
-    \DeclareCaptionListFormat{listoffigtab}{#1~#2}
-    \captionsetup{listformat=listoffigtab}
+    % loft
+    \newlength{\tmplen}
+    % list of figures
+    \renewcommand{\cftfigpresnum}{\figurename}
+    \setlength{\cftfigindent}{0em}
+    \settowidth{\tmplen}{\cftfigpresnum}
+    \addtolength{\cftfignumwidth}{\tmplen}
+    % list of tables
+    \renewcommand{\cfttabpresnum}{\tablename}
+    \setlength{\cfttabindent}{0em}
+    \settowidth{\tmplen}{\cfttabpresnum}
+    \addtolength{\cfttabnumwidth}{\tmplen}
+
     \setlength{\cftbeforechapskip}{0pt}
     \setlength{\cftbeforesecskip}{0pt}
     \setlength{\cftbeforesubsecskip}{0pt}
