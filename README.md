@@ -6,6 +6,7 @@
 - [注意事项](#注意事项)
 - [项目起源](#项目起源)
 - [使用/示例](#使用示例)
+  - [下载与编辑](#下载与编辑)
   - [卸载与安装](#卸载与安装)
     - [配置镜像源](#配置镜像源)
     - [更新包管理器和所有包](#更新包管理器和所有包)
@@ -99,9 +100,17 @@ dvipdfmx templet
 
 # 使用/示例
 
-[下载](https://github.com/note286/xdupgthesis/archive/refs/heads/main.zip)或[克隆](x-github-client://openRepo/https://github.com/note286/xdupgthesis)该仓库，可直接修改`tex`和`bib`等类型文件来进行论文的攥写。具体来说，用户编辑`xdupgthesis.tex`、`xdupgthesis.bib`、`chapters`文件夹下文件来攥写论文内容，修改`thesisinfo.tex`内容来更改论文信息或者个人信息。此外，`xdupgthesis.cls`和`xdupgthesis.def`文件请不要修改。
-
 本节介绍了一些使用本项目模板的方法，建议用户根据自身情况阅读。
+
+## 下载与编辑
+
+请点击[下载](https://github.com/note286/xdupgthesis/archive/refs/heads/main.zip)压缩包或[克隆](x-github-client://openRepo/https://github.com/note286/xdupgthesis)该仓库，用户可直接修改`tex`、`bib`和`cfg`等类型文件来进行论文的攥写。具体来说，用户通过编辑`xdupgthesis.tex`、`xdupgthesis.bib`和`chapters`文件夹下文件来攥写论文内容，通过修改`xdupgthesis.cfg`内容来更改论文信息或者个人信息。此外，`xdupgthesis.cls`和`xdupgthesis.def`文件请不要修改。
+
+其中，Overleaf用户注意，由于Overleaf的[限制](https://www.overleaf.com/learn/how-to/Uploading_a_project)：
+
+> While the Overleaf editor can edit any plain text file, only uploads with the most common LaTeX file extensions (.tex, .bib, .cls, .sty, ...) will be editable on the site.
+
+因此主目录下的`xdupgthesis.cfg`文件无法直接在线编辑，只能通过下载再上传的方式进行编辑，不过由于该文件一般仅需要填写一次，也可以接受。
 
 ## 卸载与安装
 
