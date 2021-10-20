@@ -1,6 +1,6 @@
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{xdupgthesis}[2021/10/19 Xidian University Postgraduate Thesis document class, version 0.2.7, modified by @note286, published in https://note286.github.io/xdupgthesis/]
+\ProvidesClass{xdupgthesis}[2021/10/19 Xidian University Postgraduate Thesis document class, version 0.2.8, modified by @note286, published in https://note286.github.io/xdupgthesis/]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%   class and packages
@@ -509,11 +509,11 @@ By \par%
 \RequirePackage{makecell}
 
 %% list of Symbols
-\newenvironment{symbollist}
+\newenvironment{symbollist}[1]
   {\parindent=0pt\XDU@toc@add{\XDU@toc@symbollist@title}%
    \XDU@nchapter{\XDU@label@symbollist@title}\parindent=.5\ccwd%
    \renewcommand{\arraystretch}{1.6666666667}
-     \tabularx{\linewidth}{p{12em}X}}
+     \tabularx{\linewidth}{#1}}
   {\endtabularx\parindent=2\ccwd\cleardoublepage}
 
 %% list of abbreviations
