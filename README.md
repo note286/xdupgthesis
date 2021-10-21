@@ -233,7 +233,7 @@ xelatex -synctex=1 xdupgthesis
 
 - diagbox
 
-- etoolbox
+- environ
 
 - fancyhdr
 
