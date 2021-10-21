@@ -889,6 +889,14 @@ LaTeX Font Warning: Font shape `OMX/cmex/m/n' in size <10.53937> not available
 
 将`xdupgthesis.cls`中`gbt7714-2005`替换为`gbt7714-numerical`即可，`gbt7714-numerical.bst`样式文件在发行版中自带了，最后删除主目录下的`gbt7714-2005.bst`文件。
 
+虽然已经强调要求使用最新版的LaTeX套装，但是不排除有用户依然使用老旧的LaTeX套装，由于老旧版本的TeX Live或MacTeX的`gbt7714`调用接口与新版不一致，因此按照上面的方法参考文献无法正常编译。
+
+本项目模板对此做了适配，[gbt7714](http://mirrors.ctan.org/biblio/bibtex/contrib/gbt7714/gbt7714.pdf)文档中指出：
+
+> 从v2.0版本开始（2020-03-04），用户必须在文档中使用`\biblilographystyle`命令选择参考文献样式，如`gbt7714-numerical`或`gbt7714-author-year`。在早期的版本中，选择文献样式的方法是将`numbers`或`super`等参数传递给`gbt7714`，而不能使用`\bibliographystyle`。这跟标准的LaTeX接口不一致，所以将被弃用。
+
+本项目模板通过判断`gbt7714`版本来针对性地选择合适的宏包和参数来实现多种LaTeX套装版本均可正常编译参考文献。
+
 ## 参考文献引用样式
 
 模板示例中有如下表述：

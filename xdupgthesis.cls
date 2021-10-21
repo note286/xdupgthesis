@@ -1,6 +1,6 @@
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{xdupgthesis}[2021/10/19 Xidian University Postgraduate Thesis document class, version 0.2.13, modified by @note286, published in https://note286.github.io/xdupgthesis/]
+\ProvidesClass{xdupgthesis}[2021/10/21 Xidian University Postgraduate Thesis document class, version 0.2.14, modified by @note286, published in https://note286.github.io/xdupgthesis/]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%   class and packages
@@ -87,8 +87,12 @@
 
 \captionsetup[subfloat]{subrefformat=parens}
 
-%% natbib
-\RequirePackage[numbers,sort&compress]{natbib}
+%% natbib & gbt7714
+\RequirePackage[sort&compress]{natbib}
+\RequirePackage{gbt7714}
+\@ifpackagelater{gbt7714}{2020/03/04}
+  {\PassOptionsToPackage{numbers}{natbib}}
+  {\PassOptionsToPackage{numbers}{gbt7714}}
 
 \let\oldcite\cite
 \renewcommand{\cite}[1]{\textsuperscript{\oldcite{#1}}}
@@ -540,7 +544,9 @@ By \par%
 %%    referrence
 \renewcommand{\UrlFont}{\XDU@font@zihao{5}}
 \ctexset{bibname={\XDU@label@ref@title}}
-\bibliographystyle{gbt7714-numerical}
+\@ifpackagelater{gbt7714}{2020/03/04}
+  {\bibliographystyle{gbt7714-numerical}}
+  {}
 
 \renewenvironment{thebibliography}[1]
   {\XDU@toc@add{\XDU@toc@ref@title}%
