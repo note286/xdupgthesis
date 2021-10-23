@@ -1,6 +1,7 @@
 % General
 \def\XDU@label@university{西安电子科技大学}
 \def\XDU@elabel@university{XIDIAN UNIVERSITY}
+\def\XDU@value@thesis@UDC{10701}
 
 % 首页
 \def\XDU@label@fcover@author{作者姓名~}
