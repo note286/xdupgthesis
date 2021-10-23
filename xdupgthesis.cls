@@ -330,7 +330,6 @@ pdfsubject={\XDU@label@university\XDU@value@degreemark\XDU@value@cover@thesis}%
       % 申请学位类别
       \setlength{\linelength}{\alllength-\widthof{\XDU@label@fcover@degree}}
       \XDU@bold\XDU@font@ht{\XDU@label@fcover@degree}\XDU@font@st\XDU@underline[\linelength]{\XDU@value@mprof@degree}%
-      }
     \else
       % 指导教师姓名、职称
       \setlength{\linelength}{\alllength-\widthof{\XDU@label@fcover@aprof@advisor}}
@@ -339,7 +338,7 @@ pdfsubject={\XDU@label@university\XDU@value@degreemark\XDU@value@cover@thesis}%
       \setlength{\linelength}{\alllength-\widthof{\XDU@label@fcover@degree}}
       \XDU@bold\XDU@font@ht{\XDU@label@fcover@degree}\XDU@font@st\XDU@underline[\linelength]{\XDU@value@degree}%
     \fi
-    }
+    }}
 \clearpage\thispagestyle{empty}\parindent=2\ccwd\cleardoublepage}
 
 \DeclareRobustCommand{\XDU@make@title}
