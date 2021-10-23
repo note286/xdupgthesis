@@ -2,6 +2,13 @@
 \def\XDU@label@university{西安电子科技大学}
 \def\XDU@elabel@university{XIDIAN UNIVERSITY}
 
+% 首页
+\def\XDU@label@fcover@author{作者姓名~}
+\def\XDU@label@fcover@mprof@advisor{学校导师姓名、职称~}
+\def\XDU@label@fcover@mprof@entadvisor{企业导师姓名、职称~}
+\def\XDU@label@fcover@aprof@advisor{指导教师姓名、职称~}
+\def\XDU@label@fcover@degree{申请学位类别~}
+
 % 封面
 \def\XDU@value@cover@thesis{论文}
 \def\XDU@label@cover@UDC{学校代码\hspace*{0.9em}}
@@ -9,12 +16,15 @@
 \def\XDU@label@cover@classification{分\hspace*{0.5em}类\hspace*{0.5em}号\hspace*{0.9em}}
 \def\XDU@label@cover@confidential{密\quad{}级\hspace*{0.9em}}
 \def\XDU@label@cover@author{作者姓名：}
+\def\XDU@label@cover@mprof@domain{领\hspace*{2em}域：}
 \def\XDU@label@cover@major{一级学科：}
 \def\XDU@label@cover@submajor{二级学科（研究方向）：}
 \def\XDU@label@cover@degree{学位类别：}
-\def\XDU@label@cover@advisor{指导教师姓名、职称：}
+\def\XDU@label@cover@mprof@advisor{学校导师姓名、职称：}
+\def\XDU@label@cover@mprof@entadvisor{企业导师姓名、职称：}
+\def\XDU@label@cover@aprof@advisor{指导教师姓名、职称：}
 \def\XDU@elabel@cover@advisor{Supervisor:~}
-\def\XDU@label@cover@school{学\hspace*{2.05em}院：}
+\def\XDU@label@cover@school{学\hspace*{2em}院：}
 \def\XDU@label@cover@submit@date{提交日期：}
 
 % 声明和版权

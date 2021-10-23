@@ -1,6 +1,5 @@
-
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{xdupgthesis}[2021/10/21 Xidian University Postgraduate Thesis document class, version 0.2.14, modified by @note286, published in https://note286.github.io/xdupgthesis/]
+\ProvidesClass{xdupgthesis}[2021/10/23 Xidian University Postgraduate Thesis document class, version 0.2.15, modified by @note286, published in https://note286.github.io/xdupgthesis/]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%   class and packages
@@ -15,6 +14,10 @@
 % overleaf
 \newif\ifXDU@Option@overleaf \XDU@Option@overleaffalse
 \DeclareOption{overleaf}{\XDU@Option@overleaftrue}
+
+% mprof = Master of Professional
+\newif\ifXDU@Option@mprof\XDU@Option@mproffalse
+\DeclareOption{mprof}{\XDU@Option@mproftrue}
 
 %% others
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{ctexbook}}
@@ -302,18 +305,42 @@ pdfsubject={\XDU@label@university\XDU@value@degreemark\XDU@value@cover@thesis}%
         {\XDU@bold\XDU@value@thesis@title}%
     \end{center}%
     }
-    \makebox[\textwidth]{\rule{0pt}{3.5cm}}
+    \ifXDU@Option@mprof
+      \makebox[\textwidth]{\rule{0pt}{3.5cm-\baselineskip}}
+    \else
+      \makebox[\textwidth]{\rule{0pt}{3.5cm}}
+    \fi
     \rule[-3.2cm+15pt]{0pt}{3.2cm}\hspace{3cm}\parbox[t]{9cm}{%
     \XDU@font@zihao{4}\setlength{\baselineskip}{30pt}%
+    % 存储标签与下划线总长度
+    \newlength{\alllength}
+    \setlength{\alllength}{9cm}
+    % 存储下划线长度
     \newlength{\linelength}
-    \setlength{\linelength}{9cm-4.5em}
-    \XDU@bold\XDU@font@ht{作者姓名~}\XDU@font@st\XDU@underline[\linelength]{\XDU@value@author@name}\\%
-    \setlength{\linelength}{9cm-9.5em}
-    \XDU@bold\XDU@font@ht{指导教师姓名、职称~}\XDU@font@st\XDU@underline[\linelength]{\XDU@value@advisor@name~\XDU@value@advisor@title}\\%
-    \setlength{\linelength}{9cm-6.5em}
-    \XDU@bold\XDU@font@ht{申请学位类别~}\XDU@font@st\XDU@underline[\linelength]{\XDU@value@degree}%
+    % 作者姓名
+    \setlength{\linelength}{\alllength-\widthof{\XDU@label@fcover@author}}
+    \XDU@bold\XDU@font@ht{\XDU@label@fcover@author}\XDU@font@st\XDU@underline[\linelength]{\XDU@value@author@name}\\%
+    \ifXDU@Option@mprof
+      % 学校导师姓名、职称
+      \setlength{\linelength}{\alllength-\widthof{\XDU@label@fcover@mprof@advisor}}
+      \XDU@bold\XDU@font@ht{\XDU@label@fcover@mprof@advisor}\XDU@font@st\XDU@underline[\linelength]{\XDU@value@advisor@name~\XDU@value@advisor@title}\\%
+      % 企业导师姓名、职称
+      \setlength{\linelength}{\alllength-\widthof{\XDU@label@fcover@mprof@entadvisor}}
+      \XDU@bold\XDU@font@ht{\XDU@label@fcover@mprof@entadvisor}\XDU@font@st\XDU@underline[\linelength]{\XDU@value@entadvisor@name~\XDU@value@entadvisor@title}\\%
+      % 申请学位类别
+      \setlength{\linelength}{\alllength-\widthof{\XDU@label@fcover@degree}}
+      \XDU@bold\XDU@font@ht{\XDU@label@fcover@degree}\XDU@font@st\XDU@underline[\linelength]{\XDU@value@mprof@degree}%
+      }
+    \else
+      % 指导教师姓名、职称
+      \setlength{\linelength}{\alllength-\widthof{\XDU@label@fcover@aprof@advisor}}
+      \XDU@bold\XDU@font@ht{\XDU@label@fcover@aprof@advisor}\XDU@font@st\XDU@underline[\linelength]{\XDU@value@advisor@name~\XDU@value@advisor@title}\\%
+      % 申请学位类别
+      \setlength{\linelength}{\alllength-\widthof{\XDU@label@fcover@degree}}
+      \XDU@bold\XDU@font@ht{\XDU@label@fcover@degree}\XDU@font@st\XDU@underline[\linelength]{\XDU@value@degree}%
+    \fi
     }
-\clearpage\thispagestyle{empty}\parindent=2\ccwd\cleardoublepage}}
+\clearpage\thispagestyle{empty}\parindent=2\ccwd\cleardoublepage}
 
 \DeclareRobustCommand{\XDU@make@title}
   {{\cleardoublepage\parindent=0pt\thispagestyle{empty}%
@@ -347,11 +374,27 @@ pdfsubject={\XDU@label@university\XDU@value@degreemark\XDU@value@cover@thesis}%
     \vspace{2.5cm}%
     \hspace{4.5cm}\parbox{10.5cm}{
         \XDU@font@st\XDU@font@zihao{4}\setlength{\baselineskip}{32pt}%
+        % 作者姓名
         {\XDU@bold\XDU@label@cover@author}\XDU@value@author@name\\%
-        {\XDU@bold\XDU@label@cover@major}\XDU@value@author@major\\%
-        {\XDU@bold\XDU@label@cover@submajor}\XDU@value@author@submajor\\%
-        {\XDU@bold\XDU@label@cover@degree}\XDU@value@degree\\%
-        {\XDU@bold\XDU@label@cover@advisor}\XDU@value@advisor@name~\XDU@value@advisor@title\\%
+        \ifXDU@Option@mprof
+          % 领域
+          {\XDU@bold\XDU@label@cover@mprof@domain}\XDU@value@mprof@domain\\%
+          % 学位类别
+          {\XDU@bold\XDU@label@cover@degree}\XDU@value@mprof@degree\\%
+          % 学校导师姓名、职称
+          {\XDU@bold\XDU@label@cover@mprof@advisor}\XDU@value@advisor@name~\XDU@value@advisor@title\\%
+          % 企业导师姓名、职称
+          {\XDU@bold\XDU@label@cover@mprof@entadvisor}\XDU@value@entadvisor@name~\XDU@value@entadvisor@title\\%
+        \else
+          % 一级学科
+          {\XDU@bold\XDU@label@cover@major}\XDU@value@author@major\\%
+          % 二级学科（研究方向）
+          {\XDU@bold\XDU@label@cover@submajor}\XDU@value@author@submajor\\%
+          % 学位类别
+          {\XDU@bold\XDU@label@cover@degree}\XDU@value@degree\\%
+          % 指导教师姓名、职称
+          {\XDU@bold\XDU@label@cover@aprof@advisor}\XDU@value@advisor@name~\XDU@value@advisor@title\\%
+        \fi
         {\XDU@bold\XDU@label@cover@school}\XDU@value@school\\%
         {\XDU@bold\XDU@label@cover@submit@date}\XDU@value@thesis@submit@date%
     }
@@ -379,16 +422,39 @@ pdfsubject={\XDU@label@university\XDU@value@degreemark\XDU@value@cover@thesis}%
     \begin{center}%
 A\space\XDU@evalue@papertype\space submitted to\par\XDU@elabel@university\par%
 in partial fulfillment of the requirements \par for the degree of\space\XDU@evalue@degree%
-\par in\space\XDU@evalue@author@major%
+    \ifXDU@Option@mprof
+      \par in\space\XDU@evalue@author@mprof@degree%
+    \else
+      \par in\space\XDU@evalue@author@major%
+    \fi
     \end{center}%
     }
-    \rule{0pt}{7.2cm}%
+    \ifXDU@Option@mprof
+      \rule{0pt}{\textheight-3.5cm-2.5cm-5.5cm-4.5cm-12bp-12bp-30pt}%
+    \else
+      \rule{0pt}{7.2cm}%
+    \fi
     \rule[-4.5cm]{0pt}{4.5cm}\parbox[t]{\textwidth}{%
     \XDU@font@zihao{3}\setlength{\baselineskip}{30pt}%
     \begin{center}%
 By \par%
 \XDU@evalue@author@name\par%
-\XDU@elabel@cover@advisor\XDU@evalue@advisor@name~~{Title:}\XDU@evalue@advisor@title\par%
+\ifXDU@Option@mprof
+  % 导师姓名列宽度
+  \newlength{\firstlength}
+  \setlength{\firstlength}{\maxof{\widthof{\XDU@evalue@advisor@name}}{\widthof{\XDU@evalue@entadvisor@name}}}
+  % 导师职称栏宽度
+  \newlength{\secondlength}
+  \setlength{\secondlength}{\maxof{\widthof{\XDU@evalue@advisor@title}}{\widthof{\XDU@evalue@entadvisor@title}}}
+  % 学校导师姓名、职称
+  \XDU@elabel@cover@advisor\makebox[\firstlength][l]{\XDU@evalue@advisor@name}{~~Title:~}\makebox[\secondlength][l]{\XDU@evalue@advisor@title}\par%
+  % 企业导师姓名、职称
+  \XDU@elabel@cover@advisor\makebox[\firstlength][l]{\XDU@evalue@entadvisor@name}{~~Title:~}\makebox[\secondlength][l]{\XDU@evalue@entadvisor@title}\par%
+\else
+  % 指导教师姓名、职称
+  \XDU@elabel@cover@advisor\XDU@evalue@advisor@name~~{Title:~}\XDU@evalue@advisor@title\par%
+\fi
+% 提交日期
 \XDU@evalue@thesis@submit@date\par%
     \end{center}%
     }
