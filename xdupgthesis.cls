@@ -268,7 +268,7 @@ pdfsubject={\XDU@label@university\XDU@value@degreemark\XDU@value@cover@thesis}%
 %% subsection
 \ctexset{subsection={name={,},
            number={\thesubsection},
-           format={\raggedright\XDU@font@st\XDU@font@zihao{4}},
+           format={\raggedright\XDU@bold\XDU@font@st\XDU@font@zihao{4}},
            nameformat={},
            numberformat={},
            aftername={\quad},
@@ -280,7 +280,7 @@ pdfsubject={\XDU@label@university\XDU@value@degreemark\XDU@value@cover@thesis}%
 %% subsubsection
 \ctexset{subsubsection={name={,},
            number={\thesubsubsection},
-           format={\raggedright\XDU@font@st\XDU@font@zihao{-4}},
+           format={\raggedright\XDU@bold\XDU@font@st\XDU@font@zihao{-4}},
            nameformat={},
            numberformat={},
            aftername={\quad},
