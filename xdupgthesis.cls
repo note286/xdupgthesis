@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{xdupgthesis}[2021/10/25 Xidian University Postgraduate Thesis document class, version 0.2.16, modified by @note286, published in https://note286.github.io/xdupgthesis/]
+\ProvidesClass{xdupgthesis}[2021/10/25 Xidian University Postgraduate Thesis document class, version 0.2.17, modified by @note286, published in https://note286.github.io/xdupgthesis/]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%   class and packages
@@ -713,6 +713,16 @@ By \par%
     \XDU@tableofcontents\cleardoublepage%
   \fi
   \mainmatter
+}
+
+% appendix
+\NewEnviron{appendixes}
+{
+  \ifXDU@Option@psd
+  \else
+    \appendix
+    \BODY
+  \fi
 }
 
 %% back matter

@@ -27,6 +27,7 @@
   - [论文标题](#论文标题)
   - [符号对照表](#符号对照表)
   - [缩略语对照表](#缩略语对照表)
+  - [附录](#附录)
   - [个人及论文信息填写](#个人及论文信息填写)
   - [论文相似性检测](#论文相似性检测)
 - [模板来源](#模板来源)
@@ -454,6 +455,36 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 XXX & \makecell[l]{手动换行手动换行\\手动换行} & 自动换行自动换行自动换行自动换行\\
 XXX & XXX & XXX\\
 \end{abbreviationlist}
+```
+
+## 附录
+
+本项目模板支持附录，用户将附录章节放入`appendixes`环境中即可，例如：
+
+```latex
+\begin{appendixes}
+\include{chapters/edit}
+\include{chapters/guide}
+\end{appendixes}
+```
+
+附录内每一章的格式与正文每一章一致。
+
+如果用户不需要附录，可直接移除`appendixes`环境，例如：
+
+```latex
+\begin{document}
+\XDUfrontmatter
+\include{chapters/abstract}
+\XDUmainmatter
+\include{chapters/general}
+\include{chapters/substance}
+\include{chapters/edit}
+\include{chapters/guide}
+\XDUbackmatter
+\include{chapters/thanks}
+\include{chapters/resume}
+\end{document}
 ```
 
 ## 个人及论文信息填写
