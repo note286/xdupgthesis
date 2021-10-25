@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{xdupgthesis}[2021/10/25 Xidian University Postgraduate Thesis document class, version 0.2.18, modified by @note286, published in https://note286.github.io/xdupgthesis/]
+\ProvidesClass{xdupgthesis}[2021/10/26 Xidian University Postgraduate Thesis document class, version 0.2.19, modified by @note286, published in https://note286.github.io/xdupgthesis/]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%   class and packages
@@ -26,6 +26,10 @@
 % anonrvw = Anonymously Review
 \newif\ifXDU@Option@anonrvw\XDU@Option@anonrvwfalse
 \DeclareOption{anonrvw}{\XDU@Option@anonrvwtrue}
+
+% noloftpre = No Prefix in Lists of Figures and Tables
+\newif\ifXDU@Option@noloftpre\XDU@Option@noloftprefalse
+\DeclareOption{noloftpre}{\XDU@Option@noloftpretrue}
 
 %% others
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{ctexbook}}
@@ -560,17 +564,18 @@ By \par%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%    content
     % loft
-    \newlength{\tmplen}
-    % list of figures
-    \renewcommand{\cftfigpresnum}{\figurename}
+    \ifXDU@Option@noloftpre
+    \else
+      \newlength{\tmplen}
+      \renewcommand{\cftfigpresnum}{\figurename}
+      \settowidth{\tmplen}{\cftfigpresnum}
+      \addtolength{\cftfignumwidth}{\tmplen}
+      \renewcommand{\cfttabpresnum}{\tablename}
+      \settowidth{\tmplen}{\cfttabpresnum}
+      \addtolength{\cfttabnumwidth}{\tmplen}
+    \fi
     \setlength{\cftfigindent}{0em}
-    \settowidth{\tmplen}{\cftfigpresnum}
-    \addtolength{\cftfignumwidth}{\tmplen}
-    % list of tables
-    \renewcommand{\cfttabpresnum}{\tablename}
     \setlength{\cfttabindent}{0em}
-    \settowidth{\tmplen}{\cfttabpresnum}
-    \addtolength{\cfttabnumwidth}{\tmplen}
 
     \setlength{\cftbeforechapskip}{0pt}
     \setlength{\cftbeforesecskip}{0pt}

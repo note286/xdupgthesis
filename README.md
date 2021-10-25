@@ -26,6 +26,7 @@
   - [交叉引用](#交叉引用)
   - [图片](#图片)
   - [论文标题](#论文标题)
+  - [插图表格索引前缀开关](#插图表格索引前缀开关)
   - [符号对照表](#符号对照表)
   - [缩略语对照表](#缩略语对照表)
   - [附录](#附录)
@@ -227,6 +228,7 @@ xelatex -synctex=1 xdupgthesis
 - `mprof`，详见[个人及论文信息填写](#个人及论文信息填写)
 - `psd`，详见[论文相似性检测](#论文相似性检测)
 - `anonrvw`，详见[论文抽查评估](#论文抽查评估)
+- `noloftpre`，详见[插图表格索引前缀开关](#插图表格索引前缀开关)
 
 ## 内置宏包
 
@@ -445,6 +447,20 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 即换行符无法作为元数据的合法字符，因此我们可以使用`\texorpdfstring{\\}{}`来替换`\\`，意思是如果是在`tex`中，则认为是`\\`，如果是在pdf字符串中，则为空。
 
 用户在使用过程中，将`\texorpdfstring{\\}{}`当作`\\`来对待即可，如果论文标题不长或者希望自动换行，不需要换行符的话，删除`\texorpdfstring{\\}{}`即可。
+
+## 插图表格索引前缀开关
+
+插图表格索引中每一项的前缀可以不存在，图片索引里的一定是图，没必要显示为`图 2.1`，直接显示`2.1`即可。插图表格索引中序号前缀支持开关，用户可以自行选择是否在插图表格索引中序号前展示前缀，默认展示前缀，如果用户想要关闭前缀，需要在`xdupgthesis.tex`中为文档类添加`noloftpre`参数（No Prefix in Lists of Figures and Tables），即将
+
+```latex
+\documentclass{xdupgthesis}
+```
+
+改为
+
+```latex
+\documentclass[noloftpre]{xdupgthesis}
+```
 
 ## 符号对照表
 
