@@ -28,6 +28,7 @@
   - [符号对照表](#符号对照表)
   - [缩略语对照表](#缩略语对照表)
   - [个人及论文信息填写](#个人及论文信息填写)
+  - [论文相似性检测](#论文相似性检测)
 - [模板来源](#模板来源)
 - [编码转换](#编码转换)
 - [修复错误](#修复错误)
@@ -224,6 +225,8 @@ xelatex -synctex=1 xdupgthesis
 - amssymb
 
 - amsthm
+
+- bibentry
 
 - booktabs
 
@@ -478,6 +481,35 @@ XXX & XXX & XXX\\
 ```latex
 \documentclass[mprof]{xdupgthesis}
 ```
+
+## 论文相似性检测
+
+[西安电子科技大学研究生学位论文相似性检测实施办法-研究生院/研究生工作部-西安电子科技大学](https://gr.xidian.edu.cn/info/1045/5284.htm)中指出：
+
+> 提交检测的学位论文电子版必须为论文的正文部分（除去封面、目录、参考文献、附录、致谢、在学期间的研究成果等），论文电子版命名规则为：学号-作者姓名-论文题目-二级学科（领域）-导师姓名.doc（pdf）。
+
+用户如需进行论文相似性检测，需要在`xdupgthesis.tex`中为文档类添加`psd`参数（Paper Similarity Detection），即将
+
+```latex
+\documentclass{xdupgthesis}
+```
+
+改为
+
+```latex
+\documentclass[psd]{xdupgthesis}
+```
+
+则自动移除如下页面：
+
+- 封面
+- 中英文提名页
+- 声明页
+- 目录页
+- 参考文献列表页
+- 附录页
+- 致谢页
+- 作者简介页
 
 # 模板来源
 

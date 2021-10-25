@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{xdupgthesis}[2021/10/23 Xidian University Postgraduate Thesis document class, version 0.2.15, modified by @note286, published in https://note286.github.io/xdupgthesis/]
+\ProvidesClass{xdupgthesis}[2021/10/25 Xidian University Postgraduate Thesis document class, version 0.2.16, modified by @note286, published in https://note286.github.io/xdupgthesis/]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%   class and packages
@@ -18,6 +18,10 @@
 % mprof = Master of Professional
 \newif\ifXDU@Option@mprof\XDU@Option@mproffalse
 \DeclareOption{mprof}{\XDU@Option@mproftrue}
+
+% psd = Paper Similarity Detection
+\newif\ifXDU@Option@psd\XDU@Option@psdfalse
+\DeclareOption{psd}{\XDU@Option@psdtrue}
 
 %% others
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{ctexbook}}
@@ -632,20 +636,30 @@ By \par%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%    thanks
 
-\renewenvironment{thanks}
-  {\XDU@toc@add{\XDU@toc@thanks}%
-   \XDU@nchapter{\XDU@label@thanks}}
-  {}
+\RenewEnviron{thanks}
+{
+  \ifXDU@Option@psd
+  \else
+    \XDU@toc@add{\XDU@toc@thanks}%
+    \XDU@nchapter{\XDU@label@thanks}
+    \BODY
+  \fi
+}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%    resume
 
-%% environment
-\newenvironment{resume}
-  {\parindent=0pt\XDU@toc@add{\XDU@toc@resume@title}%
-   \XDU@nchapter{\XDU@label@resume@title}%
-   \renewcommand{\thesection}{\arabic{section}}\parindent=2\ccwd}
-  {\cleardoublepage}
+\NewEnviron{resume}
+{
+  \ifXDU@Option@psd
+  \else
+    \parindent=0pt\XDU@toc@add{\XDU@toc@resume@title}%
+    \XDU@nchapter{\XDU@label@resume@title}%
+    \renewcommand{\thesection}{\arabic{section}}\parindent=2\ccwd
+    \BODY
+    \cleardoublepage
+  \fi
+}
 
 %% resume list
 \newcounter{XDU@counter@resumelistcounter}
@@ -674,12 +688,17 @@ By \par%
 
 %% front matter
 \DeclareRobustCommand{\XDUfrontmatter}
-  {\XDU@make@cover%
-   \XDU@make@title%
-   \XDU@make@titleenglish%
-   \XDU@make@statementandcopyright%
-   \frontmatter\pagenumbering{Roman}%
-   \setlength{\baselineskip}{20pt}}
+{
+  \ifXDU@Option@psd
+  \else
+    \XDU@make@cover%
+    \XDU@make@title%
+    \XDU@make@titleenglish%
+    \XDU@make@statementandcopyright%
+  \fi
+  \frontmatter\pagenumbering{Roman}%
+  \setlength{\baselineskip}{20pt}
+}
 
 %% premain matter
 \DeclareRobustCommand{\XDUpremainmatter}
@@ -688,9 +707,22 @@ By \par%
   }
 %% main matter
 \DeclareRobustCommand{\XDUmainmatter}
-  {\XDU@tableofcontents\cleardoublepage%
-   \mainmatter}
+{
+  \ifXDU@Option@psd
+  \else
+    \XDU@tableofcontents\cleardoublepage%
+  \fi
+  \mainmatter
+}
 
 %% back matter
+\RequirePackage{bibentry}
 \DeclareRobustCommand{\XDUbackmatter}
-  {\backmatter{}\bibliography{xdupgthesis}{}}
+{
+  \backmatter{}
+  \ifXDU@Option@psd
+    \nobibliography{xdupgthesis}{}
+  \else
+    \bibliography{xdupgthesis}{}
+  \fi
+}
