@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{xdupgthesis}[2021/10/25 Xidian University Postgraduate Thesis document class, version 0.2.17, modified by @note286, published in https://note286.github.io/xdupgthesis/]
+\ProvidesClass{xdupgthesis}[2021/10/25 Xidian University Postgraduate Thesis document class, version 0.2.18, modified by @note286, published in https://note286.github.io/xdupgthesis/]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%   class and packages
@@ -22,6 +22,10 @@
 % psd = Paper Similarity Detection
 \newif\ifXDU@Option@psd\XDU@Option@psdfalse
 \DeclareOption{psd}{\XDU@Option@psdtrue}
+
+% anonrvw = Anonymously Review
+\newif\ifXDU@Option@anonrvw\XDU@Option@anonrvwfalse
+\DeclareOption{anonrvw}{\XDU@Option@anonrvwtrue}
 
 %% others
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{ctexbook}}
@@ -117,7 +121,30 @@ pdfsubject={\XDU@label@university\XDU@value@degreemark\XDU@value@cover@thesis}%
 
 %% config file
 \AtEndOfPackage{\makeatletter\input{xdupgthesis.def}\makeatother}
-\AtEndOfPackage{\makeatletter\input{xdupgthesis.cfg}\makeatother}
+\AtEndOfPackage{\makeatletter\input{xdupgthesis.cfg}
+\ifXDU@Option@anonrvw
+  \renewcommand{\XDU@value@author@name}{}
+  \renewcommand{\XDU@evalue@author@name}{}
+  \renewcommand{\XDU@value@author@major}{}
+  \renewcommand{\XDU@value@author@submajor}{}
+  \renewcommand{\XDU@evalue@author@major}{}
+  \renewcommand{\XDU@value@advisor@name}{}
+  \renewcommand{\XDU@evalue@advisor@name}{}
+  \renewcommand{\XDU@value@advisor@title}{}
+  \renewcommand{\XDU@evalue@advisor@title}{}
+  \renewcommand{\XDU@value@entadvisor@name}{}
+  \renewcommand{\XDU@evalue@entadvisor@name}{}
+  \renewcommand{\XDU@value@entadvisor@title}{}
+  \renewcommand{\XDU@evalue@entadvisor@title}{}
+  \renewcommand{\XDU@value@school}{}
+  \renewcommand{\XDU@value@mprof@degree}{}
+  \renewcommand{\XDU@evalue@author@mprof@degree}{}
+  \renewcommand{\XDU@value@mprof@domain}{}
+  \renewcommand{\XDU@value@degree}{}
+  \renewcommand{\XDU@value@thesis@studentNo}{}
+  \renewcommand{\XDU@value@thesis@classification}{}
+\fi
+\makeatother}
 \AtEndOfPackage{\makeatletter\renewcommand{\numberline}[1]{%
 \settowidth\@tempdimb{#1\hspace{0.25em}}%
 \ifdim\@tempdima<\@tempdimb%
