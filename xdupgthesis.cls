@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{xdupgthesis}[2021/10/26 Xidian University Postgraduate Thesis document class, version 0.2.19, modified by @note286, published in https://note286.github.io/xdupgthesis/]
+\ProvidesClass{xdupgthesis}[2021/10/26 Xidian University Postgraduate Thesis document class, version 0.2.20, modified by @note286, published in https://note286.github.io/xdupgthesis/]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%   class and packages
@@ -86,6 +86,11 @@
 
 \RequirePackage{multirow}
 
+\RequirePackage{algorithm}
+
+\RequirePackage{algorithmicx}
+
+\RequirePackage{algpseudocode}
 
 %% calc
 \RequirePackage{calc}
