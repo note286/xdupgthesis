@@ -454,6 +454,8 @@ xelatex -synctex=1 xdupgthesis
 
 此外，对于`figure`和`table`浮动体，不建议使用任何位置参数，让LaTeX引擎将浮动体自动放置在合适的位置。
 
+对于图片的格式，优先推荐`.tikz`、`.pgf`和`.pdf`格式的图片，不推荐`.png`和`.jpg`等非矢量图片格式。此外，对于已有的`.pdf`格式的图片，不需要转换成`.eps`文件。针对Microsoft Visio等绘图软件，建议使用打印成`.pdf`的方式，再使用TeX Live自带的`pdfcrop`命令进行快速高效裁剪。其中，使用`.tikz`和`.pgf`格式的图片时，用户需要使用`\input{}`命令而不是`\includegraphics{}`命令。
+
 ## 算法
 
 本项目模板已内置`algorithm`、`algorithmicx`和`algpseudocode`宏包，用户无需手动导入。建议用户参考[algorithmicx](http://tug.ctan.org/macros/latex/contrib/algorithmicx/algorithmicx.pdf)宏包手册中的示例攥写算法，本项目模板从手册中摘抄了两个算法用于测试。
