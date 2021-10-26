@@ -435,6 +435,8 @@ xelatex -synctex=1 xdupgthesis
 具体的内容可参考\figurename~\ref{fig2}。
 ```
 
+另外，本项目模板实测`\textwidth`为`441.01773pt`，`\textheight`为`682.86613pt`，对插图字号有要求的用户画图时可参考这两个数值，避免图片尺寸超过页面可编辑范围。
+
 ## 论文标题
 
 在[PDF元数据](#pdf元数据)中介绍了本项目模板可以自动获取论文中各种元数据，并添加到PDF文档属性中，其中就包括了论文题目，其值位于`thesisinfo.tex`文件中的`\XDU@value@thesis@title`变量中，论文题目中可能含有换行符，如果有换行符，再添加元数据时会有如下报错：
