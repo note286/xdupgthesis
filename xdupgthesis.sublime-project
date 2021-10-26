@@ -1,0 +1,35 @@
+{
+    "folders": [
+        {
+            "path": ".",
+            "file_exclude_patterns": [
+                "*.aux",
+                "*.bbl",
+                "*.blg",
+                "*.brf",
+                "*.fdb_latexmk",
+                "*.fls",
+                "*.gz",
+                "*.lof",
+                "*.log",
+                "*.lot",
+                "*.out",
+                "*.pdf",
+                "*.pyc",
+                "*.sublime-project",
+                "*.synctex(busy)",
+                "*.toc",
+                "*.xdv",
+                "_config.yml",
+                "LICENSE",
+                "xidian.png"
+            ],
+            "folder_exclude_patterns": [
+                "__pycache__"
+            ]
+        }
+    ],
+    "settings": {
+        "TEXroot": "xdupgthesis.tex"
+    }
+}
