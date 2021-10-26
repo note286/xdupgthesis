@@ -78,6 +78,8 @@
 
 \RequirePackage{amssymb}
 
+\RequirePackage{bm}
+
 \RequirePackage{nicefrac}
 
 \RequirePackage{diagbox}

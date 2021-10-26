@@ -242,6 +242,8 @@ xelatex -synctex=1 xdupgthesis
 
 - bibentry
 
+- bm
+
 - booktabs
 
 - calc
