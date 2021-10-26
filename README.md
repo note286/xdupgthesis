@@ -452,6 +452,8 @@ xelatex -synctex=1 xdupgthesis
 
 另外，本项目模板实测`\textwidth`为`441.01773pt`，`\textheight`为`682.86613pt`，对插图字号有要求的用户画图时可参考这两个数值，避免图片尺寸超过页面可编辑范围。
 
+此外，对于`figure`和`table`浮动体，不建议使用任何位置参数，让LaTeX引擎将浮动体自动放置在合适的位置。
+
 ## 算法
 
 本项目模板已内置`algorithm`、`algorithmicx`和`algpseudocode`宏包，用户无需手动导入。建议用户参考[algorithmicx](http://tug.ctan.org/macros/latex/contrib/algorithmicx/algorithmicx.pdf)宏包手册中的示例攥写算法，本项目模板从手册中摘抄了两个算法用于测试。
