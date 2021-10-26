@@ -10,8 +10,8 @@
 *.log
 *.lot
 *.out
-*.pdf
 *.synctex
 *.synctex(busy)
 *.toc
 *.xdv
+xdupgthesis.pdf
