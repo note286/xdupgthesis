@@ -31,5 +31,6 @@
     ],
     "settings": {
         "TEXroot": "xdupgthesis.tex"
-    }
+    },
+    "bibtex_file": "xdupgthesis.bib"
 }
