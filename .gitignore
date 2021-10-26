@@ -10,6 +10,7 @@
 *.log
 *.lot
 *.out
+*.sublime-workspace
 *.synctex
 *.synctex(busy)
 *.toc
