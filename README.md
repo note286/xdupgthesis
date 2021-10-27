@@ -152,6 +152,14 @@ tlmgr update --self && tlmgr update --all
 
 考虑到可能存在版权问题，故不提供字体文件或字体下载链接。
 
+对于编译得到pdf文件，可以通过运行
+
+```shell
+pdffonts xdupgthesis.pdf
+```
+
+来查看字体信息，包括字体名称和字体嵌入等情况。
+
 ### Windows
 
 Windows平台无需手动配置字体，所需字体Windows操作系统已内置。
