@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{xdupgthesis}[2021/10/26 Xidian University Postgraduate Thesis document class, version 0.2.21, modified by @note286, published in https://note286.github.io/xdupgthesis/]
+\ProvidesClass{xdupgthesis}[2021/10/27 Xidian University Postgraduate Thesis document class, version 0.2.22, modified by @note286, published in https://note286.github.io/xdupgthesis/]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%   class and packages
@@ -12,7 +12,7 @@
 \DeclareOption{oneside}{\OptionNotUsed}
 
 % overleaf
-\newif\ifXDU@Option@overleaf \XDU@Option@overleaffalse
+\newif\ifXDU@Option@overleaf\XDU@Option@overleaffalse
 \DeclareOption{overleaf}{\XDU@Option@overleaftrue}
 
 % mprof = Master of Professional
@@ -268,8 +268,11 @@ pdfsubject={\XDU@label@university\XDU@value@degreemark\XDU@value@cover@thesis}%
 
 \pagestyle{fancy}
 \fancyhf{}
-\fancyhead[CE]{{\XDU@font@st\XDU@font@zihao{5}\XDU@hdr@thesistitle}}
-\fancyhead[CO]{{\XDU@font@st\XDU@font@zihao{5}\nouppercase\leftmark}}
+\ifXDU@Option@psd
+\else
+  \fancyhead[CE]{{\XDU@font@st\XDU@font@zihao{5}\XDU@hdr@thesistitle}}
+  \fancyhead[CO]{{\XDU@font@st\XDU@font@zihao{5}\nouppercase\leftmark}}
+\fi
 \fancyfoot[C]{{\XDU@font@st\XDU@font@zihao{5}\thepage}}
 %% par skip
 %\parskip 0pt plus 6pt minus 0pt
@@ -624,21 +627,31 @@ By \par%
 
 %% list of Symbols
 \NewEnviron{symbollist}[1]
-  {\parindent=0pt\XDU@toc@add{\XDU@toc@symbollist@title}%
-   \XDU@nchapter{\XDU@label@symbollist@title}\parindent=.5\ccwd%
-   \renewcommand{\arraystretch}{1.6666666667}
-     \begin{tabularx}{\linewidth}{#1}
-     \BODY
-     \end{tabularx}\parindent=2\ccwd\cleardoublepage}
+{
+  \ifXDU@Option@psd
+  \else
+    \parindent=0pt\XDU@toc@add{\XDU@toc@symbollist@title}%
+    \XDU@nchapter{\XDU@label@symbollist@title}\parindent=.5\ccwd%
+    \renewcommand{\arraystretch}{1.6666666667}
+    \begin{tabularx}{\linewidth}{#1}
+    \BODY
+    \end{tabularx}\parindent=2\ccwd\cleardoublepage
+  \fi
+}
 
 %% list of abbreviations
 \NewEnviron{abbreviationlist}[1]
-  {\parindent=0pt\XDU@toc@add{\XDU@toc@abbreviationlist@title}%
-   \XDU@nchapter{\XDU@label@abbreviationlist@title}\parindent=.5\ccwd%
-   \renewcommand{\arraystretch}{1.6666666667}
-     \begin{tabularx}{\linewidth}{#1}
-     \BODY
-     \end{tabularx}\parindent=2\ccwd\cleardoublepage}
+{
+  \ifXDU@Option@psd
+  \else
+    \parindent=0pt\XDU@toc@add{\XDU@toc@abbreviationlist@title}%
+    \XDU@nchapter{\XDU@label@abbreviationlist@title}\parindent=.5\ccwd%
+    \renewcommand{\arraystretch}{1.6666666667}
+    \begin{tabularx}{\linewidth}{#1}
+    \BODY
+    \end{tabularx}\parindent=2\ccwd\cleardoublepage
+  \fi
+}
 
 %% content
 \ctexset{contentsname={\XDU@label@content}}
@@ -738,9 +751,13 @@ By \par%
 
 %% premain matter
 \DeclareRobustCommand{\XDUpremainmatter}
-  {\XDU@listoffigures\cleardoublepage%
-   \XDU@listoftables\cleardoublepage%
-  }
+{
+  \ifXDU@Option@psd
+  \else
+    \XDU@listoffigures\cleardoublepage%
+    \XDU@listoftables\cleardoublepage%
+  \fi
+}
 %% main matter
 \DeclareRobustCommand{\XDUmainmatter}
 {
