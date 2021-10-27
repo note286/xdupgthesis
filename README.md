@@ -634,6 +634,8 @@ XXX & XXX & XXX\\
 
 用户在进行论文相似性检测前，可以根据上述方法对论文进行检查，以防万一。
 
+学校图书馆提供了[大雅论文相似度分析系统](https://dbnav.xidian.edu.cn/newwisdom/doordatabase/databasedetail.html?wfwfid=2403&pageId=14305&id=7153)供大家使用，每个注册用户可检测5次，仅供参考。
+
 ## 论文抽查评估
 
 [关于对2020年6月申请授位的研究生学位论文进行抽查评估的通知-研究生院/研究生工作部-西安电子科技大学](https://gr.xidian.edu.cn/info/1044/9053.htm)中指出：
