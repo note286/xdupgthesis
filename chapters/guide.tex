@@ -37,7 +37,10 @@ v
 表格与正文之间一般应空一行。
 \begin{table}
 \renewcommand{\arraystretch}{1.5}
-\zihao{5}\caption{表格示例}
+\small
+\caption{表格示例}
+\label{tab1}
+\centering
 \begin{tabular}{|c|c|c|c|c|c|c|}
 \hline
 \multirow{2}{*}{\backslashbox{电性能参数}{馈电方式}}&\multirow{2}{*}{探针} & \multirow{2}{*}{环形缝隙}  & \multicolumn{2}{c|}{探针和缝隙} & \multicolumn{2}{c|}{缝隙和CPW} \\
