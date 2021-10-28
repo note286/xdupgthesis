@@ -499,7 +499,7 @@ xelatex -synctex=1 xdupgthesis
 
 ## 论文标题
 
-在[PDF元数据](#pdf元数据)中介绍了本项目模板可以自动获取论文中各种元数据，并添加到PDF文档属性中，其中就包括了论文题目，其值位于`thesisinfo.tex`文件中的`\XDU@value@thesis@title`变量中，论文题目中可能含有换行符，如果有换行符，再添加元数据时会有如下报错：
+在[PDF元数据](#pdf元数据)中介绍了本项目模板可以自动获取论文中各种元数据，并添加到PDF文档属性中，其中就包括了论文题目，其值位于`thesisinfo.tex`文件中的`\XDU@value@thesis@title`变量中，论文题目中可能含有换行符，如果有换行符，再添加元数据时会有如下警告：
 
 ```latex
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
