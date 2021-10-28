@@ -565,6 +565,8 @@ XXX & XXX & XXX\\
 \end{abbreviationlist}
 ```
 
+此外，缩略语对照表支持自动换页，无需用户手动干预。
+
 ## 附录
 
 本项目模板支持附录，用户将附录章节放入`appendixes`环境中即可，例如：
