@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{xdupgthesis}[2021/10/27 Xidian University Postgraduate Thesis document class, version 0.2.22, modified by @note286, published in https://note286.github.io/xdupgthesis/]
+\ProvidesClass{xdupgthesis}[2021/10/28 Xidian University Postgraduate Thesis document class, version 0.2.23, modified by @note286, published in https://note286.github.io/xdupgthesis/]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%   class and packages
@@ -618,12 +618,36 @@ By \par%
   {\XDU@toc@add{\XDU@toc@listoftables}%
     \listoftables}
 
+\RequirePackage{tabulary}
+
+\RequirePackage{tabularx}
 \RequirePackage{ltablex}
 \keepXColumns
+
+\RequirePackage{tabularray}
 
 \RequirePackage{environ}
 
 \RequirePackage{makecell}
+
+% Define Table Font Size
+\let\oldtabular\tabular
+\let\endoldtabular\endtabular
+\renewenvironment{tabular}
+{\small\oldtabular}
+{\endoldtabular}
+
+\let\oldtabularx\tabularx
+\let\endoldtabularx\endtabularx
+\renewenvironment{tabularx}
+{\small\oldtabularx}
+{\endoldtabularx}
+
+\let\oldtabulary\tabulary
+\let\endoldtabulary\endtabulary
+\renewenvironment{tabulary}
+{\small\oldtabulary}
+{\endoldtabulary}
 
 %% list of Symbols
 \NewEnviron{symbollist}[1]
@@ -633,9 +657,11 @@ By \par%
     \parindent=0pt\XDU@toc@add{\XDU@toc@symbollist@title}%
     \XDU@nchapter{\XDU@label@symbollist@title}\parindent=.5\ccwd%
     \renewcommand{\arraystretch}{1.6666666667}
+    \renewcommand{\small}{\zihao{-4}}
     \begin{tabularx}{\linewidth}{#1}
     \BODY
     \end{tabularx}\parindent=2\ccwd\cleardoublepage
+    \renewcommand{\small}{\zihao{5}}
   \fi
 }
 
@@ -647,9 +673,11 @@ By \par%
     \parindent=0pt\XDU@toc@add{\XDU@toc@abbreviationlist@title}%
     \XDU@nchapter{\XDU@label@abbreviationlist@title}\parindent=.5\ccwd%
     \renewcommand{\arraystretch}{1.6666666667}
+    \renewcommand{\small}{\zihao{-4}}
     \begin{tabularx}{\linewidth}{#1}
     \BODY
     \end{tabularx}\parindent=2\ccwd\cleardoublepage
+    \renewcommand{\small}{\zihao{5}}
   \fi
 }
 

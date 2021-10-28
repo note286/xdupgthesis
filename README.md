@@ -25,6 +25,7 @@
   - [中英文间空白](#中英文间空白)
   - [交叉引用](#交叉引用)
   - [图片](#图片)
+  - [表格](#表格)
   - [算法](#算法)
   - [论文标题](#论文标题)
   - [插图表格索引前缀开关](#插图表格索引前缀开关)
@@ -264,61 +265,35 @@ xelatex -synctex=1 xdupgthesis
 本项目模板已内置如下常用宏包，如果需要使用如下宏包，无需用户导入，直接使用即可。
 
 - algorithm
-
 - algorithmicx
-
 - algpseudocode
-
 - amsmath
-
 - amssymb
-
 - amsthm
-
 - bibentry
-
 - bm
-
 - booktabs
-
 - calc
-
 - caption
-
 - diagbox
-
 - environ
-
 - etoolbox
-
 - fancyhdr
-
+- gbt7714
 - graphicx
-
 - hyperref
-
 - ifpdf
-
 - ifthen
-
 - lmodern
-
 - ltablex
-
 - makecell
-
 - multirow
-
 - natbib
-
 - nicefrac
-
 - subfig
-
 - tabularx
-
+- tabulary
 - tocloft
-
 - xurl
 
 ## 参考文献引用
@@ -506,9 +481,15 @@ xelatex -synctex=1 xdupgthesis
 
 另外，本项目模板实测`\textwidth`为`441.01773pt`，`\textheight`为`682.86613pt`，对插图字号有要求的用户画图时可参考这两个数值，避免图片尺寸超过页面可编辑范围。
 
-此外，对于`figure`和`table`浮动体，不建议使用任何位置参数，让LaTeX引擎将浮动体自动放置在合适的位置。
+此外，对于`figure`浮动体，不建议使用任何位置参数，让LaTeX引擎将浮动体自动放置在合适的位置。
 
 对于图片的格式，优先推荐`.tikz`、`.pgf`和`.pdf`格式的图片，不推荐`.png`和`.jpg`等非矢量图片格式。此外，对于已有的`.pdf`格式的图片，不需要转换成`.eps`文件。针对Microsoft Visio等绘图软件，建议使用打印成`.pdf`的方式，再使用TeX Live自带的`pdfcrop`命令进行快速高效裁剪。其中，使用`.tikz`和`.pgf`格式的图片时，用户需要使用`\input{}`命令而不是`\includegraphics{}`命令。
+
+## 表格
+
+从模板示例中可以看出表中的内容字号为五号，本项目模板已经重定义了三种常见的表格环境的字号，包括`tabular`、`tabularx`和`tabulary`环境，对于这三种表格环境，用户无需手动指定字号。本项目模板内置了部分示例供参考。
+
+此外，对于`table`浮动体，不建议使用任何位置参数，让LaTeX引擎将浮动体自动放置在合适的位置。
 
 ## 算法
 
