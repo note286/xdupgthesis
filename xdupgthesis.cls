@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{xdupgthesis}[2021/10/29 Xidian University Postgraduate Thesis document class, version 0.2.25, modified by @note286, published in https://note286.github.io/xdupgthesis/]
+\ProvidesClass{xdupgthesis}[2021/10/29 Xidian University Postgraduate Thesis document class, version 0.2.26, modified by @note286, published in https://note286.github.io/xdupgthesis/]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%   class and packages
@@ -86,7 +86,7 @@
 
 \RequirePackage{multirow}
 
-\RequirePackage{algorithm}
+\RequirePackage[chapter]{algorithm}
 \renewcommand{\ALG@name}{算法}
 
 \RequirePackage{algorithmicx}
