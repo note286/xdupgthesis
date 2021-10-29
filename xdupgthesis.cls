@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{xdupgthesis}[2021/10/29 Xidian University Postgraduate Thesis document class, version 0.2.26, modified by @note286, published in https://note286.github.io/xdupgthesis/]
+\ProvidesClass{xdupgthesis}[2021/10/30 Xidian University Postgraduate Thesis document class, version 0.2.27, modified by @note286, published in https://note286.github.io/xdupgthesis/]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%   class and packages
@@ -817,5 +817,14 @@ By \par%
     \nobibliography{xdupgthesis}{}
   \else
     \bibliography{xdupgthesis}{}
+  \fi
+}
+
+\newcommand{\anonrvwinfo}[2]
+{
+  \ifXDU@Option@anonrvw
+    #2
+  \else
+    #1
   \fi
 }
