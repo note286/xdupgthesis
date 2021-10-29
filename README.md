@@ -111,7 +111,7 @@ dvipdfmx templet
 
 ## 下载与编辑
 
-请点击[下载](https://github.com/note286/xdupgthesis/archive/refs/heads/main.zip)压缩包或[克隆](x-github-client://openRepo/https://github.com/note286/xdupgthesis)该仓库，用户可直接修改`tex`、`bib`和`cfg`等类型文件来进行论文的攥写。具体来说，用户通过编辑`xdupgthesis.tex`、`xdupgthesis.bib`和`chapters`文件夹下文件来攥写论文内容，通过修改`xdupgthesis.cfg`内容来更改论文信息或者个人信息。此外，`xdupgthesis.cls`和`xdupgthesis.def`文件请不要修改。
+请点击[下载](https://github.com/note286/xdupgthesis/archive/refs/heads/main.zip)压缩包或[克隆](x-github-client://openRepo/https://github.com/note286/xdupgthesis)该仓库，用户可直接修改`tex`、`bib`和`cfg`等类型文件来进行论文的撰写。具体来说，用户通过编辑`xdupgthesis.tex`、`xdupgthesis.bib`和`chapters`文件夹下文件来撰写论文内容，通过修改`xdupgthesis.cfg`内容来更改论文信息或者个人信息。此外，`xdupgthesis.cls`和`xdupgthesis.def`文件请不要修改。
 
 其中，Overleaf用户注意，由于Overleaf的[限制](https://www.overleaf.com/learn/how-to/Uploading_a_project)：
 
@@ -501,7 +501,7 @@ xelatex -synctex=1 xdupgthesis
 
 ## 算法
 
-本项目模板已内置`algorithm`、`algorithmicx`和`algpseudocode`宏包，用户无需手动导入。建议用户参考[algorithmicx](http://tug.ctan.org/macros/latex/contrib/algorithmicx/algorithmicx.pdf)宏包手册中的示例攥写算法，本项目模板从手册中摘抄了两个算法用于测试。
+本项目模板已内置`algorithm`、`algorithmicx`和`algpseudocode`宏包，用户无需手动导入。建议用户参考[algorithmicx](http://tug.ctan.org/macros/latex/contrib/algorithmicx/algorithmicx.pdf)宏包手册中的示例撰写算法，本项目模板从手册中摘抄了两个算法用于测试。
 
 此外，对于`algorithm`浮动体，不建议使用任何位置参数，让LaTeX引擎将浮动体自动放置在合适的位置。
 
