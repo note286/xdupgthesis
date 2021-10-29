@@ -695,7 +695,7 @@ XXX & XXX & XXX\\
 对于作者简介页即`resume.tex`文件中的内容，用户使用`\anonrvwinfo{}{}`命令撰写需要隐去的信息，例如使用
 
 ```latex
-\anonrvwinfo{电子工程学院}{XXX学院}
+\anonrvwinfo{电子工程}{XXX}学院
 ```
 
 添加`anonrvw`参数后，pdf会显示`XXX学院`，不添加`anonrvw`参数pdf会显示`电子工程学院`。更多可以参考模板中示例，用户可根据自身情况结合研究生院的要求来撰写。
