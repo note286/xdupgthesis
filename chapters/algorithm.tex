@@ -29,23 +29,27 @@
 人文学院、外国语学院、微电子学院、生命科学技术学院、空间科学与技术学院、
 先进材料与纳米科技学院、网络与信息安全学院、马克思主义学院、人工智能学院、
 网络与继续教育学院等17个学院。
+\par
+具体的内容如\algorithmname~\ref{alg1}~中\linename{\ref{line1}}所示。
+具体的内容如\algorithmname~\ref{alg1}~中\linename{\ref{line2}}至\linename{\ref{line3}}所示。
 \begin{algorithm}
 \caption{The Bellman-Kalaba algorithm}
+\label{alg1}
 \begin{algorithmic}[1]
 \Procedure {BellmanKalaba}{$G$, $u$, $l$, $p$}
 \ForAll {$v \in V(G)$}
-\State $l(v) \leftarrow \infty$
+\State $l(v) \leftarrow \infty$\label{line1}
 \EndFor
 \State $l(u) \leftarrow 0$
 \Repeat
 \For {$i \leftarrow 1, n$}
 \State $min \leftarrow l(v_i)$
-\For {$j \leftarrow 1, n$}
+\For {$j \leftarrow 1, n$}\label{line2}
 \If {$min > e(v_i, v_j) + l(v_j)$}
 \State $min \leftarrow e(v_i, v_j) + l(v_j)$
 \State $p(i) \leftarrow v_j$
 \EndIf
-\EndFor
+\EndFor\label{line3}
 \State $l'(i) \leftarrow min$
 \EndFor
 \State $changed \leftarrow l \not= l'$

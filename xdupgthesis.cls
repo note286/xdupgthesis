@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{xdupgthesis}[2021/10/28 Xidian University Postgraduate Thesis document class, version 0.2.23, modified by @note286, published in https://note286.github.io/xdupgthesis/]
+\ProvidesClass{xdupgthesis}[2021/10/29 Xidian University Postgraduate Thesis document class, version 0.2.24, modified by @note286, published in https://note286.github.io/xdupgthesis/]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%   class and packages
@@ -178,6 +178,7 @@ pdfsubject={\XDU@label@university\XDU@value@degreemark\XDU@value@cover@thesis}%
 \renewcommand{\proofname}{证明}
 \renewcommand{\chaptername}[1]{第#1章}
 \newcommand{\sectionname}[1]{第~#1~节}
+\newcommand{\linename}[1]{第~#1~行}
  \def\@caption#1[#2]#3{%
    \par
    \addcontentsline{\csname ext@#1\endcsname}{#1}%

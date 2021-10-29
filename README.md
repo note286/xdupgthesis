@@ -396,16 +396,24 @@ xelatex -synctex=1 xdupgthesis
 
 需要注意，如果`\ref{}`后有非标点的内容，需要添加`~`来增加空白。
 
-新增的章节引用名称，使用方法有少许不同，不需要手动添加`~`来增加空白，具体如下：
+新增的章节和算法行引用名称，使用方法有少许不同，不需要手动添加`~`来增加空白，具体如下：
 
 ```latex
 具体的内容如\chaptername{\ref{chap1}}所示。
 具体的内容可参考\chaptername{\ref{chap2}}。
 具体的内容如\sectionname{\ref{sect1}}所示。
 具体的内容可参考\sectionname{\ref{sect2}}。
+具体的内容如\algorithmname~\ref{alg1}~中\linename{\ref{line1}}所示。
+具体的内容如\algorithmname~\ref{alg1}~中\linename{\ref{line2}}至\linename{\ref{line3}}所示。
 ```
 
 其中，`chap1`和`chap1`是`\chapter{}`对应的`\label{}`值，而`sect1`和`sect2`是`\section{}`或`\subsection{}`等对应的`\label{}`值。`\chapter{}`对应的是`章`，而`\section{}`或`\subsection{}`等对应的是`节`。
+
+算法行的`\label{}`放在对应语句后即可，例如：
+
+```latex
+\State $l(v) \leftarrow \infty$\label{line1}
+```
 
 另外，[lshort-zh-cn.pdf](http://mirrors.ctan.org/info/lshort/chinese/lshort-zh-cn.pdf)第3.3节指出：
 
