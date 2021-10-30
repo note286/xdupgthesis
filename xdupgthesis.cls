@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{xdupgthesis}[2021/10/30 Xidian University Postgraduate Thesis document class, version 0.2.27, modified by @note286, published in https://note286.github.io/xdupgthesis/]
+\ProvidesClass{xdupgthesis}[2021/10/30 Xidian University Postgraduate Thesis document class, version 0.2.28, modified by @note286, published in https://note286.github.io/xdupgthesis/]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%   class and packages
@@ -161,26 +161,32 @@ pdfsubject={\XDU@label@university\XDU@value@degreemark\XDU@value@cover@thesis}%
 \fi
 \hb@xt@\@tempdima{\@cftbsnum #1\@cftasnum\hfil}\@cftasnumb}\makeatother}
 \AtEndOfPackage{\makeatletter\@addtoreset{equation}{chapter}\makeatother}
+\RequirePackage{xspace}
+\xspaceaddexceptions{。？！，、；：“”‘’—….－-～·《》<>＿}
 \AtEndOfPackage{\makeatletter \renewcommand{\figurename}{图} \renewcommand{\tablename}{表}
-\newcommand{\algorithmname}{算法}
-\newcommand{\equationname}{公式}
-\newcommand{\assumptionname}{假设}
-\newcommand{\definitionname}{定义}
-\newcommand{\propositionname}{命题}
-\newcommand{\lemmaname}{引理}
-\newcommand{\theoremname}{定理}
-\newcommand{\axiomname}{公理}
-\newcommand{\corollaryname}{推论}
-\newcommand{\exercisename}{练习}
-\newcommand{\examplename}{例}
-\newcommand{\remarkname}{注释}
-\newcommand{\problemname}{问题}
-\newcommand{\conjecturename}{猜想}
-\renewcommand{\proofname}{证明}
-\renewcommand{\chaptername}[1]{第#1章}
-\newcommand{\sectionname}[1]{第~#1~节}
-\newcommand{\linename}[1]{第~#1~行}
- \def\@caption#1[#2]#3{%
+\newcommand{\figureref}[1]{图\xspace\ref{#1}\xspace}
+\newcommand{\subfigureref}[1]{图\xspace\subref*{#1}\xspace}
+\newcommand{\tableref}[1]{表\xspace\ref{#1}\xspace}
+\newcommand{\algorithmref}[1]{算法\xspace\ref{#1}\xspace}
+\newcommand{\equationref}[1]{公式\xspace\ref{#1}\xspace}
+\newcommand{\assumptionref}[1]{假设\xspace\ref{#1}\xspace}
+\newcommand{\definitionref}[1]{定义\xspace\ref{#1}\xspace}
+\newcommand{\propositionref}[1]{命题\xspace\ref{#1}\xspace}
+\newcommand{\lemmaref}[1]{引理\xspace\ref{#1}\xspace}
+\newcommand{\theoremref}[1]{定理\xspace\ref{#1}\xspace}
+\newcommand{\axiomref}[1]{公理\xspace\ref{#1}\xspace}
+\newcommand{\corollaryref}[1]{推论\xspace\ref{#1}\xspace}
+\newcommand{\exerciseref}[1]{练习\xspace\ref{#1}\xspace}
+\newcommand{\exampleref}[1]{例\xspace\ref{#1}\xspace}
+\newcommand{\remarkref}[1]{注释\xspace\ref{#1}\xspace}
+\newcommand{\problemref}[1]{问题\xspace\ref{#1}\xspace}
+\newcommand{\conjectureref}[1]{猜想\xspace\ref{#1}\xspace}
+\newcommand{\proofref}[1]{证明\xspace\ref{#1}\xspace}
+\newcommand{\chapterref}[1]{第\ref{#1}章}
+\newcommand{\sectionref}[1]{第\xspace\ref{#1}\xspace 节}
+\newcommand{\appendixref}[1]{附录\xspace\ref{#1}\xspace}
+\newcommand{\lineref}[1]{第\xspace\ref{#1}\xspace 行}
+\def\@caption#1[#2]#3{%
    \par
    \addcontentsline{\csname ext@#1\endcsname}{#1}%
                    {\protect\numberline{\csname #1name\endcsname\hskip0.5em\csname the#1\endcsname}%

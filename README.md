@@ -294,6 +294,7 @@ xelatex -synctex=1 xdupgthesis
 - tabularx
 - tabulary
 - tocloft
+- xspace
 - xurl
 
 ## 参考文献引用
@@ -350,64 +351,60 @@ xelatex -synctex=1 xdupgthesis
 
 ## 交叉引用
 
-在原模板中已定义了图表引用名称，即`\figurename`和`\tablename`，用户可以仿照如下示例使用：
+本项目模板有图、表、算法、公式、假设、定义、命题、引理、定理、公理、推论、练习、例、注释、问题、猜想、证明、章节、附录和算法行等引用命令，使用方法如下：
 
 ```latex
-具体的内容如\figurename~\ref{figu1}~所示。
-具体的内容可参考\figurename~\ref{figu2}。
-具体的内容如\tablename~\ref{tabl1}~所示。
-具体的内容可参考\tablename~\ref{tabl2}。
+具体的内容如\figureref{figu1}所示。
+具体的内容可参考\figureref{figu2}。
+具体的内容如\sfigureref{figu1}所示。
+具体的内容可参考\figureref{figu2}。
+具体的内容如\tableref{tabl1}所示。
+具体的内容可参考\tableref{tabl2}。
+具体的内容如\algorithmref{algo1}所示。
+具体的内容可参考\algorithmref{algo2}。
+具体的内容如\equationref{equa1}所示。
+具体的内容可参考\equationref{equa2}。
+具体的内容如\assumptionref{assu1}所示。
+具体的内容可参考\assumptionref{assu2}。
+具体的内容如\definitionref{defi1}所示。
+具体的内容可参考\definitionref{defi2}。
+具体的内容如\propositionref{prop1}所示。
+具体的内容可参考\propositionref{prop2}。
+具体的内容如\lemmaref{lemm1}所示。
+具体的内容可参考\lemmaref{lemm2}。
+具体的内容如\theoremref{theo1}所示。
+具体的内容可参考\theoremref{theo2}。
+具体的内容如\axiomref{axio1}所示。
+具体的内容可参考\axiomref{axio2}。
+具体的内容如\corollaryref{coro1}所示。
+具体的内容可参考\corollaryref{coro2}。
+具体的内容如\exerciseref{exer1}所示。
+具体的内容可参考\exerciseref{exer2}。
+具体的内容如\exampleref{exam1}所示。
+具体的内容可参考\exampleref{exam2}。
+具体的内容如\remarkref{rema1}所示。
+具体的内容可参考\remarkref{rema2}。
+具体的内容如\problemref{prob1}所示。
+具体的内容可参考\problemref{prob2}。
+具体的内容如\conjectureref{conj1}所示。
+具体的内容可参考\conjectureref{conj2}。
+具体的内容如\proofref{proo1}所示。
+具体的内容可参考\proofref{proo2}。
+具体的内容如\chapterref{chap1}所示。
+具体的内容可参考\chapterref{chap2}。
+具体的内容如\sectionref{sect1}所示。
+具体的内容可参考\sectionref{sect2}。
+具体的内容如\appendixref{appe1}所示。
+具体的内容可参考\appendixref{appe2}。
+具体的内容如\algorithmref{algo1}中\lineref{line1}所示。
+具体的内容如\algorithmref{algo2}中\lineref{line2}至\lineref{line3}所示。
 ```
 
-新增的算法、公式、假设、定义、命题、引理、定理、公理、推论、练习、例、注释、问题、猜想和证明等引用名称，使用方法和图表一致：
+其中子图和普通图的引用详见[图片](#图片)。
 
-```latex
-具体的内容如\algorithmname~\ref{algo1}~所示。
-具体的内容可参考\algorithmname~\ref{algo2}。
-具体的内容如\equationname~\ref{equa1}~所示。
-具体的内容可参考\equationname~\ref{equa2}。
-具体的内容如\assumptionname~\ref{assu1}~所示。
-具体的内容可参考\assumptionname~\ref{assu2}。
-具体的内容如\definitionname~\ref{defi1}~所示。
-具体的内容可参考\definitionname~\ref{defi2}。
-具体的内容如\propositionname~\ref{prop1}~所示。
-具体的内容可参考\propositionname~\ref{prop2}。
-具体的内容如\lemmaname~\ref{lemm1}~所示。
-具体的内容可参考\lemmaname~\ref{lemm2}。
-具体的内容如\theoremname~\ref{theo1}~所示。
-具体的内容可参考\theoremname~\ref{theo2}。
-具体的内容如\axiomname~\ref{axio1}~所示。
-具体的内容可参考\axiomname~\ref{axio2}。
-具体的内容如\corollaryname~\ref{coro1}~所示。
-具体的内容可参考\corollaryname~\ref{coro2}。
-具体的内容如\exercisename~\ref{exer1}~所示。
-具体的内容可参考\exercisename~\ref{exer2}。
-具体的内容如\examplename~\ref{exam1}~所示。
-具体的内容可参考\examplename~\ref{exam2}。
-具体的内容如\remarkname~\ref{rema1}~所示。
-具体的内容可参考\remarkname~\ref{rema2}。
-具体的内容如\problemname~\ref{prob1}~所示。
-具体的内容可参考\problemname~\ref{prob2}。
-具体的内容如\conjecturename~\ref{conj1}~所示。
-具体的内容可参考\conjecturename~\ref{conj2}。
-具体的内容如\proofname~\ref{proo1}~所示。
-具体的内容可参考\proofname~\ref{proo2}。
-```
+章节引用中`chap1`和`chap2`是`\chapter{}`对应的`\label{}`值，而`sect1`和`sect2`是`\section{}`或`\subsection{}`等对应的`\label{}`值。`\chapter{}`对应的是`章`，而`\section{}`或`\subsection{}`等对应的是`节`。
 
-需要注意，如果`\ref{}`后有非标点的内容，需要添加`~`来增加空白。
-
-新增的章节和算法行引用名称，使用方法有少许不同，不需要手动添加`~`来增加空白，具体如下：
-
-```latex
-具体的内容如\chaptername{\ref{chap1}}所示。
-具体的内容可参考\chaptername{\ref{chap2}}。
-具体的内容如\sectionname{\ref{sect1}}所示。
-具体的内容可参考\sectionname{\ref{sect2}}。
-具体的内容如\algorithmname~\ref{alg1}~中\linename{\ref{line1}}所示。
-具体的内容如\algorithmname~\ref{alg1}~中\linename{\ref{line2}}至\linename{\ref{line3}}所示。
-```
-
-其中，`chap1`和`chap1`是`\chapter{}`对应的`\label{}`值，而`sect1`和`sect2`是`\section{}`或`\subsection{}`等对应的`\label{}`值。`\chapter{}`对应的是`章`，而`\section{}`或`\subsection{}`等对应的是`节`。
+附录的引用请使用`\appendixref{}`而不是`\chapter{}`。
 
 算法行的`\label{}`放在对应语句后即可，例如：
 
@@ -467,11 +464,11 @@ xelatex -synctex=1 xdupgthesis
 >
 > 具体的内容可参考图 4.2(a)。
 
-需要使用如下命令，即`\subref*{}`而不是`\ref{}`：
+需要使用如下命令，即`\subfigureref{}`而不是`\figureref{}`：
 
 ```latex
-具体的内容如\figurename~\subref*{fig2}~所示。
-具体的内容可参考\figurename~\subref*{fig2}。
+具体的内容如\subfigureref{fig2}所示。
+具体的内容可参考\subfigureref{fig2}。
 ```
 
 不过如果需要如下的效果：
@@ -480,11 +477,11 @@ xelatex -synctex=1 xdupgthesis
 >
 > 具体的内容可参考图 4.2a。
 
-需要使用如下命令，与普通引用一致：
+需要使用如下命令，即与普通引用一致：
 
 ```latex
-具体的内容如\figurename~\ref{fig2}~所示。
-具体的内容可参考\figurename~\ref{fig2}。
+具体的内容如\figureref{fig2}所示。
+具体的内容可参考\figureref{fig2}。
 ```
 
 另外，本项目模板实测`\textwidth`为`441.01773pt`，`\textheight`为`682.86613pt`，对插图字号有要求的用户画图时可参考这两个数值，避免图片尺寸超过页面可编辑范围。
@@ -1172,7 +1169,9 @@ LaTeX Font Warning: Font shape `OMX/cmex/m/n' in size <10.53937> not available
 
 ## 交叉引用名称
 
-为了方便大家使用，增加了算法、公式、假设、定义、命题、引理、定理、公理、推论、练习、例、注释、问题、猜想、证明、章和节等的交叉引用名称，具体用法见[交叉引用](#交叉引用)。
+为了方便大家使用，支持图、表、算法、公式、假设、定义、命题、引理、定理、公理、推论、练习、例、注释、问题、猜想、证明、章节、附录和算法行等引用命令，具体用法见[交叉引用](#交叉引用)。
+
+本项目模板中利用`\xspace`支持交叉引用处自动处理前后空白，即非中文字符与中文字符之间有空白。但由于`xspace`宏包默认不支持中文标点的处理，故本项目模板从国家标准《标点符号用法》（标准号[GB/T 15834-2011](http://www.moe.gov.cn/ewebeditor/uploadfile/2015/01/13/20150113091548267.pdf)）中选取了全部中文标点进行了支持，包括句号、问号、叹号、逗号、顿号、分号、冒号、引号、破折号、省略号、着重号、连接号、间隔号、书名号、专名号。当交叉引用序号后为普通英文标点或上述中文标点时，其后无空白。
 
 ## PDF元数据
 
