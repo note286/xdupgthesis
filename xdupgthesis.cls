@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{xdupgthesis}[2021/10/30 Xidian University Postgraduate Thesis document class, version 0.2.29, modified by @note286, published in https://note286.github.io/xdupgthesis/]
+\ProvidesClass{xdupgthesis}[2021/10/31 Xidian University Postgraduate Thesis document class, version 0.2.30, modified by @note286, published in https://note286.github.io/xdupgthesis/]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%   class and packages
@@ -130,29 +130,36 @@ pdfsubject={\XDU@label@university\XDU@value@degreemark\XDU@value@cover@thesis}%
 
 %% config file
 \AtEndOfPackage{\makeatletter\input{xdupgthesis.def}\makeatother}
-\AtEndOfPackage{\makeatletter\input{xdupgthesis.cfg}
-\ifXDU@Option@anonrvw
-  \renewcommand{\XDU@value@author@name}{}
-  \renewcommand{\XDU@evalue@author@name}{}
-  \renewcommand{\XDU@value@author@major}{}
-  \renewcommand{\XDU@value@author@submajor}{}
-  \renewcommand{\XDU@evalue@author@major}{}
-  \renewcommand{\XDU@value@advisor@name}{}
-  \renewcommand{\XDU@evalue@advisor@name}{}
-  \renewcommand{\XDU@value@advisor@title}{}
-  \renewcommand{\XDU@evalue@advisor@title}{}
-  \renewcommand{\XDU@value@entadvisor@name}{}
-  \renewcommand{\XDU@evalue@entadvisor@name}{}
-  \renewcommand{\XDU@value@entadvisor@title}{}
-  \renewcommand{\XDU@evalue@entadvisor@title}{}
-  \renewcommand{\XDU@value@school}{}
-  \renewcommand{\XDU@value@mprof@degree}{}
-  \renewcommand{\XDU@evalue@author@mprof@degree}{}
-  \renewcommand{\XDU@value@mprof@domain}{}
-  \renewcommand{\XDU@value@degree}{}
-  \renewcommand{\XDU@value@thesis@studentNo}{}
-  \renewcommand{\XDU@value@thesis@classification}{}
-\fi
+\AtEndOfPackage{\makeatletter
+\newcommand\setXDU@value@author@name[2]{\newcommand{\XDU@value@author@name}{\anonrvwinfo{#1}{#2}}}
+\newcommand\setXDU@evalue@author@name[2]{\newcommand{\XDU@evalue@author@name}{\anonrvwinfo{#1}{#2}}}
+\newcommand\setXDU@value@author@major[2]{\newcommand{\XDU@value@author@major}{\anonrvwinfo{#1}{#2}}}
+\newcommand\setXDU@value@author@submajor[2]{\newcommand{\XDU@value@author@submajor}{\anonrvwinfo{#1}{#2}}}
+\newcommand\setXDU@evalue@author@major[2]{\newcommand{\XDU@evalue@author@major}{\anonrvwinfo{#1}{#2}}}
+\newcommand\setXDU@value@advisor@name[2]{\newcommand{\XDU@value@advisor@name}{\anonrvwinfo{#1}{#2}}}
+\newcommand\setXDU@evalue@advisor@name[2]{\newcommand{\XDU@evalue@advisor@name}{\anonrvwinfo{#1}{#2}}}
+\newcommand\setXDU@value@advisor@title[2]{\newcommand{\XDU@value@advisor@title}{\anonrvwinfo{#1}{#2}}}
+\newcommand\setXDU@evalue@advisor@title[2]{\newcommand{\XDU@evalue@advisor@title}{\anonrvwinfo{#1}{#2}}}
+\newcommand\setXDU@value@entadvisor@name[2]{\newcommand{\XDU@value@entadvisor@name}{\anonrvwinfo{#1}{#2}}}
+\newcommand\setXDU@evalue@entadvisor@name[2]{\newcommand{\XDU@evalue@entadvisor@name}{\anonrvwinfo{#1}{#2}}}
+\newcommand\setXDU@value@entadvisor@title[2]{\newcommand{\XDU@value@entadvisor@title}{\anonrvwinfo{#1}{#2}}}
+\newcommand\setXDU@evalue@entadvisor@title[2]{\newcommand{\XDU@evalue@entadvisor@title}{\anonrvwinfo{#1}{#2}}}
+\newcommand\setXDU@value@school[2]{\newcommand{\XDU@value@school}{\anonrvwinfo{#1}{#2}}}
+\newcommand\setXDU@value@mprof@degree[2]{\newcommand{\XDU@value@mprof@degree}{\anonrvwinfo{#1}{#2}}}
+\newcommand\setXDU@evalue@author@mprof@degree[2]{\newcommand{\XDU@evalue@author@mprof@degree}{\anonrvwinfo{#1}{#2}}}
+\newcommand\setXDU@value@mprof@domain[2]{\newcommand{\XDU@value@mprof@domain}{\anonrvwinfo{#1}{#2}}}
+\newcommand\setXDU@value@degree[2]{\newcommand{\XDU@value@degree}{\anonrvwinfo{#1}{#2}}}
+\newcommand\setXDU@value@thesis@studentNo[2]{\newcommand{\XDU@value@thesis@studentNo}{\anonrvwinfo{#1}{#2}}}
+\newcommand\setXDU@value@thesis@classification[2]{\newcommand{\XDU@value@thesis@classification}{\anonrvwinfo{#1}{#2}}}
+\newcommand\setXDU@evalue@degree[2]{\newcommand{\XDU@evalue@degree}{#1}}
+\newcommand\setXDU@value@degreemark[2]{\newcommand{\XDU@value@degreemark}{#1}}
+\newcommand\setXDU@evalue@papertype[2]{\newcommand{\XDU@evalue@papertype}{#1}}
+\newcommand\setXDU@value@thesis@title[2]{\newcommand{\XDU@value@thesis@title}{#1}}
+\newcommand\setXDU@evalue@thesis@title[2]{\newcommand{\XDU@evalue@thesis@title}{#1}}
+\newcommand\setXDU@value@thesis@confidential[2]{\newcommand{\XDU@value@thesis@confidential}{#1}}
+\newcommand\setXDU@value@thesis@submit@date[2]{\newcommand{\XDU@value@thesis@submit@date}{#1}}
+\newcommand\setXDU@evalue@thesis@submit@date[2]{\newcommand{\XDU@evalue@thesis@submit@date}{#1}}
+\input{xdupgthesis.cfg}
 \makeatother}
 \AtEndOfPackage{\makeatletter\renewcommand{\numberline}[1]{%
 \settowidth\@tempdimb{#1\hspace{0.25em}}%
