@@ -626,8 +626,6 @@ By \par%
 \RequirePackage{ltablex}
 \keepXColumns
 
-\RequirePackage{tabularray}
-
 \RequirePackage{environ}
 
 \RequirePackage{makecell}
