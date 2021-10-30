@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{xdupgthesis}[2021/10/30 Xidian University Postgraduate Thesis document class, version 0.2.28, modified by @note286, published in https://note286.github.io/xdupgthesis/]
+\ProvidesClass{xdupgthesis}[2021/10/30 Xidian University Postgraduate Thesis document class, version 0.2.29, modified by @note286, published in https://note286.github.io/xdupgthesis/]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%   class and packages
@@ -168,7 +168,7 @@ pdfsubject={\XDU@label@university\XDU@value@degreemark\XDU@value@cover@thesis}%
 \newcommand{\subfigureref}[1]{图\xspace\subref*{#1}\xspace}
 \newcommand{\tableref}[1]{表\xspace\ref{#1}\xspace}
 \newcommand{\algorithmref}[1]{算法\xspace\ref{#1}\xspace}
-\newcommand{\equationref}[1]{公式\xspace\ref{#1}\xspace}
+\newcommand{\equationref}[1]{公式(\ref{#1})}
 \newcommand{\assumptionref}[1]{假设\xspace\ref{#1}\xspace}
 \newcommand{\definitionref}[1]{定义\xspace\ref{#1}\xspace}
 \newcommand{\propositionref}[1]{命题\xspace\ref{#1}\xspace}
