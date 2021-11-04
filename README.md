@@ -79,6 +79,8 @@ xdupgthesis-Xidian University Postgraduate Thesis
 
 本人还未到写学位论文的阶段，因此没有十足的该模板日常使用经验，如果大家在使用过程中有任何问题或者建议，可以提[Issue](https://github.com/note286/xdupgthesis/issues)反馈，注意，不同的问题开多个issue，不要堆在一个issue里。此外，关于环境配置请阅读[install-latex-guide-zh-cn.pdf](http://mirrors.ctan.org/info/install-latex-guide-zh-cn/install-latex-guide-zh-cn.pdf)，不熟悉语法的请阅读[lshort-zh-cn.pdf](http://mirrors.ctan.org/info/lshort/chinese/lshort-zh-cn.pdf)。本项目文档都很详细，请认真阅读README。
 
+**由于模板升级频繁，在开始使用和提问前，请确保您已经认真完整地阅读了README和示例代码。**
+
 # 项目起源
 
 本节讲述本项目起源，用户不感兴趣可以跳过，直接使用本项目模板即可。
