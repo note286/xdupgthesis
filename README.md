@@ -131,9 +131,11 @@ Windows和GNU/Linux平台使用[TeX Live](https://www.tug.org/texlive/)，macOS�
 
 Windows平台卸载方法为管理员权限直接运行`C:\texlive\2021\tlpkg\installer\uninst.bat`，不同版本和安装位置请按需修改目录，更多介绍请参考[install-latex-guide-zh-cn.pdf](http://mirrors.ctan.org/info/install-latex-guide-zh-cn/install-latex-guide-zh-cn.pdf)第1.2节，GNU/Linux平台卸载方法请参考[install-latex-guide-zh-cn.pdf](http://mirrors.ctan.org/info/install-latex-guide-zh-cn/install-latex-guide-zh-cn.pdf)第2.2节，macOS上卸载方法请参考[Uninstalling MacTeX](https://www.tug.org/mactex/uninstalling.html)。
 
+建议安装最新版LaTeX发行版套装，本项目模板仅在2021版通过测试，其他旧版本并未实际进行测试。如果已安装TeX Live或MacTeX并且能够正常编译也可不升级，包也可不更新，能顺利编译即可。
+
 最新2021版校内睿思下载地址：[TeX Live](http://rs.xidian.edu.cn/forum.php?mod=viewthread&tid=1094234)和[MacTeX](http://rs.xidian.edu.cn/forum.php?mod=viewthread&tid=1094235)，中科大源校外下载地址：[TeX Live](https://mirrors.ustc.edu.cn/CTAN/systems/texlive/Images/texlive2021-20210325.iso)和[MacTeX](https://mirrors.ustc.edu.cn/CTAN/systems/mac/mactex/mactex-20210328.pkg)。
 
-强烈建议安装最新版LaTeX发行版套装，后续如无特殊情况，仅以Windows举例，其他操作系统上类似。如没有本地阅读文档的需求，安装时可以不勾选安装文档的选项，这样会减少大约一半的磁盘占用空间，环境配置请阅读[install-latex-guide-zh-cn.pdf](http://mirrors.ctan.org/info/install-latex-guide-zh-cn/install-latex-guide-zh-cn.pdf)，并更新所有包至最新版，Windows平台上使用管理员权限运行[cmd](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/cmd)：
+后续如无特殊情况，仅以Windows举例，其他操作系统上类似。如没有本地阅读文档的需求，安装时可以不勾选安装文档的选项，这样会减少大约一半的磁盘占用空间，环境配置请阅读[install-latex-guide-zh-cn.pdf](http://mirrors.ctan.org/info/install-latex-guide-zh-cn/install-latex-guide-zh-cn.pdf)，建议更新所有包至最新版，Windows平台上使用管理员权限运行[cmd](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/cmd)。
 
 ### 配置镜像源
 
