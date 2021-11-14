@@ -182,7 +182,7 @@ Windows平台无需手动配置字体，所需字体Windows操作系统已内置
 |    字体名称     | 字体文件名  |  Windows英文系统内字体名称  | Windows中文系统内字体名称 |
 | :-------------: | :---------: | :-------------------------: | :-----------------------: |
 |    中易黑体     | simhei.ttf  |       SimHei Regular        |         黑体 常规         |
-|    中易楷体     | simkai.ttf  |        KaiTi Regular        |         楷体常规          |
+|    中易楷体     | simkai.ttf  |        KaiTi Regular        |         楷体 常规         |
 |    中易宋体     | simsun.ttc  |       SimSun Regular        |         宋体 常规         |
 | Times New Roman |  times.ttf  |   Times New Roman Regular   |   Times New Roman 常规    |
 | Times New Roman | timesbd.ttf |    Times New Roman Bold     |   Times New Roman 粗体    |
