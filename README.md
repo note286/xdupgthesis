@@ -1259,6 +1259,14 @@ LaTeX Font Warning: Font shape `OMX/cmex/m/n' in size <10.53937> not available
 
 学校要求三级标题即`\subsection{}`缩进2字符，字号为四号加粗，缩进2字符即缩进`2em`实际为缩进`28bp`即2个四号字符宽度。但是由于正文内容字号为小四号，会导致三级标题和正文无法对齐。本模板对此进行了修正，不再缩进`2em`，改为缩进`24bp`即2个小四号字符宽度，以便于三级标题和正文对齐。
 
+---
+
+模板示例中有如下表述：
+
+> 正文中如果确需四级标题，用（1）、（2）形式标出
+
+因此本模板对四级标题即`\subsubsection{}`样式做出了修正，并设置缩进为`48bp`即4个小四号字符宽度。
+
 ## 子图及图片标题
 
 原模板中不支持子图，根据[bare_adv.tex](http://mirrors.ctan.org/macros/latex/contrib/IEEEtran/bare_adv.tex)中的示例，我们采用`subfig`宏包来实现子图的插入，具体使用方法参考[图片](#图片)。

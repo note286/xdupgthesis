@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{xdupgthesis}[2021/11/14 Xidian University Postgraduate Thesis document class, version 0.2.32, modified by @note286, published in https://note286.github.io/xdupgthesis/]
+\ProvidesClass{xdupgthesis}[2021/11/14 Xidian University Postgraduate Thesis document class, version 0.2.33, modified by @note286, published in https://note286.github.io/xdupgthesis/]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%   class and packages
@@ -339,16 +339,16 @@ pdfsubject={\XDU@label@university\XDU@value@degreemark\XDU@value@cover@thesis}%
            indent={24bp}}}
 
 %% subsubsection
-\ctexset{subsubsection={name={,},
-           number={\thesubsubsection},
+\ctexset{subsubsection={name={（,）},
+           number={\arabic{subsubsection}},
            format={\raggedright\XDU@bold\XDU@font@st\XDU@font@zihao{-4}},
            nameformat={},
            numberformat={},
-           aftername={\quad},
+           aftername={},
            titleformat={},
            beforeskip={6pt plus 0pt minus 0pt},
            afterskip={0pt},
-           indent={4em}}}
+           indent={48bp}}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % redefine equation number format
