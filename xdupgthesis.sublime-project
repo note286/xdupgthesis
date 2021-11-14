@@ -23,9 +23,6 @@
                 "_config.yml",
                 "LICENSE",
                 "xidian.png"
-            ],
-            "folder_exclude_patterns": [
-                "__pycache__"
             ]
         }
     ],
