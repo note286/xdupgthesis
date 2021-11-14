@@ -117,6 +117,8 @@ dvipdfmx templet
 
 本节介绍了一些使用本项目模板的方法，建议用户根据自身情况阅读。
 
+本模板内置的一些示例在附录中，可供参考。正文部分的源码不建议参考，其内容为原始模板，部分使用方式不是很规范。
+
 ## 下载与编辑
 
 请点击[下载](https://github.com/note286/xdupgthesis/archive/refs/heads/main.zip)压缩包或[克隆](x-github-client://openRepo/https://github.com/note286/xdupgthesis)该仓库，用户可直接修改`tex`、`bib`和`cfg`等类型文件来进行论文的撰写。具体来说，用户通过编辑`xdupgthesis.tex`、`xdupgthesis.bib`和`chapters`文件夹下文件来撰写论文内容，通过修改`xdupgthesis.cfg`内容来更改论文信息或者个人信息。此外，`xdupgthesis.cls`和`xdupgthesis.def`文件请不要修改。
