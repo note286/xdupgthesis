@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{xdupgthesis}[2021/11/14 Xidian University Postgraduate Thesis document class, version 0.2.31, modified by @note286, published in https://note286.github.io/xdupgthesis/]
+\ProvidesClass{xdupgthesis}[2021/11/14 Xidian University Postgraduate Thesis document class, version 0.2.32, modified by @note286, published in https://note286.github.io/xdupgthesis/]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%   class and packages
@@ -336,7 +336,7 @@ pdfsubject={\XDU@label@university\XDU@value@degreemark\XDU@value@cover@thesis}%
            titleformat={},
            beforeskip={12pt plus 0pt minus 0pt},
            afterskip={6pt},
-           indent={2em}}}
+           indent={24bp}}}
 
 %% subsubsection
 \ctexset{subsubsection={name={,},
