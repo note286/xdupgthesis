@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{xdupgthesis}[2021/10/31 Xidian University Postgraduate Thesis document class, version 0.2.30, modified by @note286, published in https://note286.github.io/xdupgthesis/]
+\ProvidesClass{xdupgthesis}[2021/11/14 Xidian University Postgraduate Thesis document class, version 0.2.31, modified by @note286, published in https://note286.github.io/xdupgthesis/]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%   class and packages
@@ -30,6 +30,10 @@
 % noloftpre = No Prefix in Lists of Figures and Tables
 \newif\ifXDU@Option@noloftpre\XDU@Option@noloftprefalse
 \DeclareOption{noloftpre}{\XDU@Option@noloftpretrue}
+
+% noloftgap = No Gap in Lists of Figures and Tables
+\newif\ifXDU@Option@noloftgap\XDU@Option@noloftgapfalse
+\DeclareOption{noloftgap}{\XDU@Option@noloftgaptrue}
 
 %% others
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{ctexbook}}
@@ -625,13 +629,25 @@ By \par%
 \ctexset{listfigurename={\XDU@label@listoffigures}}
 \DeclareRobustCommand{\XDU@listoffigures}
   {\XDU@toc@add{\XDU@toc@listoffigures}%
-    \listoffigures}
+    \ifXDU@Option@noloftgap
+      \addtocontents{lof}{\vspace{10pt}}%
+      {\renewcommand{\addvspace}[1]{}\listoffigures}
+    \else
+      \listoffigures
+    \fi
+  }
 
 %% list of tables
 \ctexset{listtablename={\XDU@label@listoftables}}
 \DeclareRobustCommand{\XDU@listoftables}
   {\XDU@toc@add{\XDU@toc@listoftables}%
-    \listoftables}
+    \ifXDU@Option@noloftgap
+      \addtocontents{lot}{\vspace{10pt}}%
+      {\renewcommand{\addvspace}[1]{}\listoftables}
+    \else
+      \listoftables
+    \fi
+  }
 
 \RequirePackage{tabulary}
 

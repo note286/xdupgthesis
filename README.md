@@ -30,6 +30,7 @@
   - [算法](#算法)
   - [论文标题](#论文标题)
   - [插图/表格索引前缀开关](#插图表格索引前缀开关)
+  - [插图/表格索引垂直间距开关](#插图表格索引垂直间距开关)
   - [符号对照表](#符号对照表)
   - [缩略语对照表](#缩略语对照表)
   - [附录](#附录)
@@ -271,6 +272,7 @@ xelatex -synctex=1 xdupgthesis
 - `psd`，详见[论文相似性检测](#论文相似性检测)
 - `anonrvw`，详见[论文抽查评估](#论文抽查评估)
 - `noloftpre`，详见[插图/表格索引前缀开关](#插图表格索引前缀开关)
+- `noloftgap`，详见[插图/表格索引垂直间距开关](#插图表格索引垂直间距开关)
 
 ## 内置宏包
 
@@ -552,6 +554,20 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 ```latex
 \documentclass[noloftpre]{xdupgthesis}
+```
+
+## 插图/表格索引垂直间距开关
+
+插图/表格索引中不同章节之间默认会有一定的垂直间距，如果用户想要关闭垂直间距，需要在`xdupgthesis.tex`中为文档类添加`noloftgap`参数（No Gap in Lists of Figures and Tables），即将
+
+```latex
+\documentclass{xdupgthesis}
+```
+
+改为
+
+```latex
+\documentclass[noloftgap]{xdupgthesis}
 ```
 
 ## 符号对照表
