@@ -31,6 +31,7 @@
   - [论文标题](#论文标题)
   - [插图/表格索引前缀开关](#插图表格索引前缀开关)
   - [插图/表格索引垂直间距开关](#插图表格索引垂直间距开关)
+  - [断页机制切换开关](#断页机制切换开关)
   - [符号对照表](#符号对照表)
   - [缩略语对照表](#缩略语对照表)
   - [附录](#附录)
@@ -274,6 +275,7 @@ xelatex -synctex=1 xdupgthesis
 - `anonrvw`，详见[论文抽查评估](#论文抽查评估)
 - `noloftpre`，详见[插图/表格索引前缀开关](#插图表格索引前缀开关)
 - `noloftgap`，详见[插图/表格索引垂直间距开关](#插图表格索引垂直间距开关)
+- `ragbtm`，详见[断页机制切换开关](#断页机制切换开关)
 
 ## 内置宏包
 
@@ -569,6 +571,28 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 ```latex
 \documentclass[noloftgap]{xdupgthesis}
+```
+
+## 断页机制切换开关
+
+刘海洋的[LaTeX入门](https://book.douban.com/subject/24703731/)第2.2.8节指出：
+
+> LaTeX使用两种机制处理断页问题，可以使用命令`\raggedbottom`告诉LaTeX让页面中的内容保持它的自然高度，把每一页的页面底部用空白填满。相反，`\flushbottom`则让LaTeX将页面高度均匀地填满，使每一页的底部直接对齐。在标准文档类中，LaTeX会为单面输出的文档（`oneside`选项）设置`\raggedbottom`，而为双面输出的文档（`twoside`选项）设置`\flushbottom`。当排满一页后，页面剩余空间比较大的时候，如果还要排版一个很高的内容（如多行的公式或表格），就会造成难看的断页，通常这是由浮动环境解决的，但在无可避免的时候就需要在两种断页机制下选择一种：双面印刷的书籍使用`\flushbottom`可以保证摊开时左右两页对称，但如果有太多过于松散的页面就不如使用`\raggedbottom`了。
+
+简单来讲，由于学位论文是`twoside`的，默认会将页面高度均匀地填满，使每一页的底部直接对齐。最直观的表现就是对于不满一页内容的页面不受影响，但是满一页内容的页面会在垂直方向上移动元素所在高度，使得行间距或段间距发生变化，甚至节标题的位置也会发生变化。用户可以查看[section行间隔不正常 · Issue #7](https://github.com/note286/xdupgthesis/issues/7)中的讨论，里面有图片描述。
+
+---
+
+本项目模板默认会默认会将页面高度均匀地填满，使每一页的底部直接对齐，用户如想要让页面中的内容保持它的自然高度，把每一页的页面底部用空白填满，需要在`xdupgthesis.tex`中为文档类添加`ragbtm`参数（Ragged Bottom），即将
+
+```latex
+\documentclass{xdupgthesis}
+```
+
+改为
+
+```latex
+\documentclass[ragbtm]{xdupgthesis}
 ```
 
 ## 符号对照表

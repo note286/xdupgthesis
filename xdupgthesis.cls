@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{xdupgthesis}[2021/11/14 Xidian University Postgraduate Thesis document class, version 0.2.33, modified by @note286, published in https://note286.github.io/xdupgthesis/]
+\ProvidesClass{xdupgthesis}[2021/11/16 Xidian University Postgraduate Thesis document class, version 0.2.34, modified by @note286, published in https://note286.github.io/xdupgthesis/]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%   class and packages
@@ -35,6 +35,10 @@
 \newif\ifXDU@Option@noloftgap\XDU@Option@noloftgapfalse
 \DeclareOption{noloftgap}{\XDU@Option@noloftgaptrue}
 
+% ragbtm = Ragged Bottom
+\newif\ifXDU@Option@ragbtm\XDU@Option@ragbtmfalse
+\DeclareOption{ragbtm}{\XDU@Option@ragbtmtrue}
+
 %% others
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{ctexbook}}
 \ProcessOptions\relax
@@ -65,6 +69,10 @@
 \else
   \LoadClass[a4paper,zihao=-4,twoside,openright,punct,fontset=windows]{ctexbook}
   \BeforeBeginEnvironment{document}{\setmainfont{Times New Roman}}
+\fi
+
+\ifXDU@Option@ragbtm
+  \BeforeBeginEnvironment{document}{\raggedbottom}
 \fi
 
 \RequirePackage{lmodern}
