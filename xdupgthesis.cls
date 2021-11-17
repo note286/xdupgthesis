@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{xdupgthesis}[2021/11/16 Xidian University Postgraduate Thesis document class, version 0.2.34, modified by @note286, published in https://note286.github.io/xdupgthesis/]
+\ProvidesClass{xdupgthesis}[2021/11/18 Xidian University Postgraduate Thesis document class, version 0.2.35, modified by @note286, published in https://note286.github.io/xdupgthesis/]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%   class and packages
@@ -300,7 +300,7 @@ pdfsubject={\XDU@label@university\XDU@value@degreemark\XDU@value@cover@thesis}%
   \fancyhead[CE]{{\XDU@font@st\XDU@font@zihao{5}\XDU@hdr@thesistitle}}
   \fancyhead[CO]{{\XDU@font@st\XDU@font@zihao{5}\nouppercase\leftmark}}
 \fi
-\fancyfoot[C]{{\XDU@font@st\XDU@font@zihao{5}\thepage}}
+\fancyfoot[C]{{\XDU@font@st\XDU@font@zihao{-5}\thepage}}
 %% par skip
 %\parskip 0pt plus 6pt minus 0pt
 
