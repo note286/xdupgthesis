@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{xdupgthesis}[2021/11/18 Xidian University Postgraduate Thesis document class, version 0.2.35, modified by @note286, published in https://note286.github.io/xdupgthesis/]
+\ProvidesClass{xdupgthesis}[2021/11/18 Xidian University Postgraduate Thesis document class, version 0.2.36, modified by @note286, published in https://note286.github.io/xdupgthesis/]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%   class and packages
@@ -863,3 +863,7 @@ By \par%
     #1
   \fi
 }
+
+% redefine float fraction
+\renewcommand{\topfraction}{.8}
+\renewcommand{\floatpagefraction}{.8}
