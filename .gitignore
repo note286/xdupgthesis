@@ -15,4 +15,5 @@
 *.synctex(busy)
 *.toc
 *.xdv
+.DS_Store
 xdupgthesis.pdf
