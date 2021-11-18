@@ -514,6 +514,12 @@ xelatex -synctex=1 xdupgthesis
 具体的内容可参考\figureref{fig2}。
 ```
 
+如果用户需要插入多页pdf文件的某一页，可以使用`page`参数，例如插入`figfile.pdf`的第2页：
+
+```latex
+\includegraphics[page=2]{figfile}
+```
+
 另外，本项目模板实测`\textwidth`为`441.01773pt`，`\textheight`为`682.86613pt`，对插图字号有要求的用户画图时可参考这两个数值，避免图片尺寸超过页面可编辑范围。
 
 此外，对于`figure`浮动体，不建议使用任何位置参数，让LaTeX引擎将浮动体自动放置在合适的位置。
