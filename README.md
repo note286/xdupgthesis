@@ -144,7 +144,7 @@ Windows和GNU/Linux平台使用[TeX Live](https://www.tug.org/texlive/)，macOS�
 
 Windows平台卸载方法为管理员权限直接运行`C:\texlive\2021\tlpkg\installer\uninst.bat`，不同版本和安装位置请按需修改目录，更多介绍请参考[install-latex-guide-zh-cn.pdf](http://mirrors.ctan.org/info/install-latex-guide-zh-cn/install-latex-guide-zh-cn.pdf)第1.2节，GNU/Linux平台卸载方法请参考[install-latex-guide-zh-cn.pdf](http://mirrors.ctan.org/info/install-latex-guide-zh-cn/install-latex-guide-zh-cn.pdf)第2.2节，macOS上卸载方法请参考[Uninstalling MacTeX](https://www.tug.org/mactex/uninstalling.html)。
 
-建议安装最新版LaTeX发行版套装，本项目模板仅在2021版通过测试，其他旧版本并未实际进行测试。如果已安装TeX Live或MacTeX并且能够正常编译也可不升级，包也可不更新，能顺利编译即可。
+建议安装最新版LaTeX发行版套装，本项目模板仅在TeX Live/MacTeX 2021通过测试，其他旧版本并未实际进行测试。如果已安装TeX Live或MacTeX并且能够正常编译也可不升级，包也可不更新，能顺利编译即可。不过不建议安装TeX Live/MacTeX 2018及以下版本，会影响论文相似性检测，具体原因详见[中文字体](#中文字体)。
 
 校内睿思下载地址：[TeX Live 2021](http://rs.xidian.edu.cn/forum.php?mod=viewthread&tid=1094234)和[MacTeX 2021](http://rs.xidian.edu.cn/forum.php?mod=viewthread&tid=1094235)，最新版中科大源校外下载地址：[TeX Live](https://mirrors.ustc.edu.cn/CTAN/systems/texlive/Images/texlive.iso)和[MacTeX](https://mirrors.ustc.edu.cn/CTAN/systems/mac/mactex/MacTeX.pkg)。
 
@@ -913,6 +913,12 @@ l.13 \XDUfrontmatter
 ```
 
 至此，可以使用中易字体来显示中文，同时利用伪粗体来实现粗体效果。
+
+需要注意的是，[NPUSCG/nputhesis](https://github.com/NPUSCG/nputhesis)中指出：
+
+> 在TeXLive 2019之前的版本中，启用`AutoFakeBold`选项将导致XeLaTeX编译生成的pdf文件内容复制时显示为乱码，进而导致查重报告显示为乱码。
+
+实际测试也发现，TeX Live/MacTeX 2018编译出的pdf文件，大部分文字无法复制及搜索出来，TeX Live/MacTeX 2019及以上版本无问题，因此用户一定要安装TeX Live/MacTeX 2019及以上版本或使用Overleaf进行编译，否则会影响论文相似性检测。
 
 ## 英文字体
 
