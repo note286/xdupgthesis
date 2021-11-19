@@ -31,6 +31,7 @@
   - [算法](#算法)
   - [浮动体位置](#浮动体位置)
   - [论文标题](#论文标题)
+  - [插图/表格索引中图表序号与图表标题间距](#插图/表格索引中图表序号与图表标题间距)
   - [插图/表格索引前缀开关](#插图表格索引前缀开关)
   - [插图/表格索引垂直间距开关](#插图表格索引垂直间距开关)
   - [断页机制切换开关](#断页机制切换开关)
@@ -611,6 +612,17 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 即换行符无法作为元数据的合法字符，因此我们可以使用`\texorpdfstring{\\}{}`来替换`\\`，意思是如果是在`tex`中，则认为是`\\`，如果是在pdf字符串中，则为空。
 
 用户在使用过程中，将`\texorpdfstring{\\}{}`当作`\\`来对待即可，如果论文标题不长或者希望自动换行，不需要换行符的话，删除`\texorpdfstring{\\}{}`即可。
+
+## 插图/表格索引中图表序号与图表标题间距
+
+[tocloft.pdf](http://mirrors.ctan.org/macros/latex/contrib/tocloft/tocloft.pdf)中图表序号宽度变量`\cftfignumwidth`与`\cfttabnumwidth`均直接设置为固定值`2.3em`，本项目模板已做一定程度的自适应调整，如果用户认为图表序号与图表标题间距过大或者过小，均可自行调整，方法为在导言区添加：
+
+```latex
+\addtolength{\cftfignumwidth}{1em}
+\addtolength{\cfttabnumwidth}{1em}
+```
+
+`\cftfignumwidth`对应的是插图索引，`\cfttabnumwidth`对应的是表格索引，上述命令为相应的间距增加指定的距离，两个值均可任意调整，可正可负，可以是小数，也可以仅设置一个。
 
 ## 插图/表格索引前缀开关
 
