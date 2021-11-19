@@ -183,6 +183,8 @@ Windows平台无需手动配置字体，所需字体Windows操作系统已内置
 
 ### GNU/Linux
 
+由于默认情况下中易宋体的意大利形状/倾斜形状对应的是中易楷体，因此中文字体除中易宋体和中易黑体外，还需要中易楷体。
+
 用户可以从Windows操作系统字体库中拷贝出`simhei.ttf`、`simkai.ttf`、`simsun.ttc`、`times.ttf`、`timesbd.ttf`、`timesbi.ttf`和`timesi.ttf`共7个字体文件至GNU/Linux，其中三个中文字体文件位于`C:\Windows\Fonts`处，Times New Roman字体的四个字体文件位于`C:\Windows\Fonts\Times New Roman`处。用户在查找字体时，可以根据Windows中英文系统内字体名称来查找，找到后复制该字体，粘贴至某个空白文件夹即可得到对应的字体文件，然后将这7个字体文件传输至GNU/Linux。
 
 |    字体名称     | 字体文件名  |  Windows英文系统内字体名称  | Windows中文系统内字体名称 |
