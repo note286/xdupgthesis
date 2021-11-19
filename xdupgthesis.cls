@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{xdupgthesis}[2021/11/18 Xidian University Postgraduate Thesis document class, version 0.2.36, modified by @note286, published in https://note286.github.io/xdupgthesis/]
+\ProvidesClass{xdupgthesis}[2021/11/19 Xidian University Postgraduate Thesis document class, version 0.2.37, modified by @note286, published in https://note286.github.io/xdupgthesis/]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%   class and packages
@@ -49,7 +49,9 @@
 
 %% book
 %%
-\PassOptionsToPackage{AutoFakeBold=3}{xeCJK}
+\newcommand\FakeBoldValue{3}
+\newcommand\FakeSlantValue{0.2}
+\PassOptionsToPackage{AutoFakeBold=\FakeBoldValue}{xeCJK}
 
 \RequirePackage{etoolbox}
 
@@ -57,18 +59,30 @@
 \ifXDU@Option@overleaf
   \LoadClass[a4paper,zihao=-4,twoside,openright,punct,fontset=none]{ctexbook}
   \BeforeBeginEnvironment{document}{
-  \setCJKfamilyfont{zhsong}[Path=fonts/]{simsun.ttc}
-  \setCJKfamilyfont{zhhei}[Path=fonts/]{simhei.ttf}
-  \NewDocumentCommand\songti{}{\CJKfamily{zhsong}}
-  \NewDocumentCommand\heiti{}{\CJKfamily{zhhei}}
-  \setCJKmainfont[Path=fonts/]{simsun.ttc}
-  \setmainfont[Path=fonts/]{times.ttf}
-  [BoldFont=timesbd.ttf,
-  ItalicFont=timesi.ttf,
-  BoldItalicFont=timesbi.ttf]}
+  \newCJKfontfamily[zhsong]\songti{simsun.ttc}[Path=fonts/]
+  \newCJKfontfamily[zhhei]\heiti{simhei.ttf}[Path=fonts/]
+  \setCJKmainfont{simsun.ttc}
+    [Path=fonts/,
+    BoldFont={simsun.ttc},BoldFeatures={FakeBold=\FakeBoldValue},
+    SlantedFont={simsun.ttc},SlantedFeatures={FakeSlant=\FakeSlantValue},
+    BoldSlantedFont={simsun.ttc},BoldSlantedFeatures={FakeBold=\FakeBoldValue,FakeSlant=\FakeSlantValue},
+    ItalicFont={simkai.ttf},
+    BoldItalicFont={simkai.ttf},BoldItalicFeatures={FakeBold=\FakeBoldValue}]
+  \setmainfont{times.ttf}
+    [Path=fonts/,
+    BoldFont=timesbd.ttf,
+    ItalicFont=timesi.ttf,
+    BoldItalicFont=timesbi.ttf]}
 \else
   \LoadClass[a4paper,zihao=-4,twoside,openright,punct,fontset=windows]{ctexbook}
-  \BeforeBeginEnvironment{document}{\setmainfont{Times New Roman}}
+  \BeforeBeginEnvironment{document}{
+  \setmainfont{Times New Roman}
+  \setCJKmainfont{SimSun}
+    [BoldFont={SimSun},BoldFeatures={FakeBold=\FakeBoldValue},
+    SlantedFont={SimSun},SlantedFeatures={FakeSlant=\FakeSlantValue},
+    BoldSlantedFont={SimSun},BoldSlantedFeatures={FakeBold=\FakeBoldValue,FakeSlant=\FakeSlantValue},
+    ItalicFont={KaiTi},
+    BoldItalicFont={KaiTi},BoldItalicFeatures={FakeBold=\FakeBoldValue}]}
 \fi
 
 \ifXDU@Option@ragbtm

@@ -22,6 +22,7 @@
   - [文档类参数](#文档类参数)
   - [内置宏包](#内置宏包)
   - [参考文献引用](#参考文献引用)
+  - [字体形状与字体系列](#字体形状与字体系列)
   - [中英文间空白](#中英文间空白)
   - [标点符号](#标点符号)
   - [交叉引用](#交叉引用)
@@ -183,7 +184,7 @@ Windows平台无需手动配置字体，所需字体Windows操作系统已内置
 
 ### GNU/Linux
 
-由于默认情况下中易宋体的意大利形状/倾斜形状对应的是中易楷体，因此中文字体除中易宋体和中易黑体外，还需要中易楷体。
+由于默认情况下中易宋体的意大利形状对应的是中易楷体，因此中文字体除中易宋体和中易黑体外，还需要中易楷体。
 
 用户可以从Windows操作系统字体库中拷贝出`simhei.ttf`、`simkai.ttf`、`simsun.ttc`、`times.ttf`、`timesbd.ttf`、`timesbi.ttf`和`timesi.ttf`共7个字体文件至GNU/Linux，其中三个中文字体文件位于`C:\Windows\Fonts`处，Times New Roman字体的四个字体文件位于`C:\Windows\Fonts\Times New Roman`处。用户在查找字体时，可以根据Windows中英文系统内字体名称来查找，找到后复制该字体，粘贴至某个空白文件夹即可得到对应的字体文件，然后将这7个字体文件传输至GNU/Linux。
 
@@ -358,6 +359,25 @@ xelatex -synctex=1 xdupgthesis
 > `unpublished`: A document having an author and title, but not formally published. **Required fields**: author, title, note. **Optional fields**: month, year.
 
 在本项目模板示例文件中已经提供了若干个条目供参考。需要注意的是，无论中英文，每个作者均使用`and`连接。除非文献卷号、期号和页码均无，否则不必提供DOI选项。对于网页链接，使用`misc`类型条目，填写`author`、`title`、`howpublished`和`year`选项即可。
+
+## 字体形状与字体系列
+
+本项目模板正文默认使用中易宋体和Times New Roman，支持常用的字体形状如意大利和倾斜，支持常见的字体系列如加宽加粗。
+
+对于中易宋体，意大利形状对应中易楷体，倾斜形状对应中易宋体伪斜体，加宽加粗系列对应中易宋体伪粗体。其中，参考[fontspec.pdf](http://mirrors.ctan.org/macros/unicodetex/latex/fontspec/fontspec.pdf)中的示例，设置倾斜程度为`0.2`，参考清华大学学位论文模板[thuthesis.dtx](http://mirrors.ctan.org/macros/latex/contrib/thuthesis/thuthesis.dtx)，设置粗细程度为`3`。
+
+对于Times New Roman，意大利形状及加宽加粗系列均有对应的Times New Roman字体文件，倾斜形状与意大利形状一致，因此无需伪斜体和伪粗体。
+
+字体形状和字体系列可以组合使用，例如：
+
+```latex
+意大利形状\textit{测试ABCabc123}
+倾斜形状\textsl{测试ABCabc123}
+加宽加粗系列\textbf{测试ABCabc123}
+加宽加粗系列叠加意大利形状\textbf{\textit{测试ABCabc123}}
+加宽加粗系列叠加倾斜形状\textbf{\textsl{测试ABCabc123}}
+强调\emph{测试ABCabc123}
+```
 
 ## 中英文间空白
 
