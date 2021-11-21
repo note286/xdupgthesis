@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{xdupgthesis}[2021/11/19 Xidian University Postgraduate Thesis document class, version 0.2.37, modified by @note286, published in https://note286.github.io/xdupgthesis/]
+\ProvidesClass{xdupgthesis}[2021/11/21 Xidian University Postgraduate Thesis document class, version 0.2.38, modified by @note286, published in https://note286.github.io/xdupgthesis/]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%   class and packages
@@ -233,15 +233,6 @@ pdfsubject={\XDU@label@university\XDU@value@degreemark\XDU@value@cover@thesis}%
    \@makecaption{\csname fnum@#1\endcsname}{\ignorespaces #3}\par
    \endgroup}
  \makeatother}
-
-%%%%%%%%%%%%%%%%%%%%
-%% setup packages
-%%%%%%%%%%%%%%%%%%%%
-
-%% hyperref
-  % GBK -> Unicode
-\AtBeginDvi{\special{pdf:tounicode GBK-EUC-UCS2}}
-  % setup
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%   utilities
