@@ -866,9 +866,10 @@ XXX & XXX & XXX\\
 为避免论文误删，强烈建议使用具有文件历史版本功能的自动同步工具或者git工具：
 
 - 具有文件历史版本功能的自动同步工具
-  - [坚果云](https://www.jianguoyun.com/)
-  - [Nextcloud](https://nextcloud.com/)，需自建
-  - [百度网盘](https://pan.baidu.com/)，有网盘同步空间
+  - [坚果云](https://www.jianguoyun.com/)，个人免费版用户保存[一个月](https://help.jianguoyun.com/?p=190)的文件历史版本
+  - [Nextcloud](https://nextcloud.com/)，免费需自建，roll back a file to [any previous](https://docs.nextcloud.com/server/latest/user_manual/en/files/version_control.html) version
+  - [Dropbox](https://www.dropbox.com/)，Dropbox Basic、Plus和Family用户享有[30天](https://help.dropbox.com/zh-cn/files-folders/restore-delete/version-history-overview)的文件恢复期
+  - [百度网盘同步空间](https://pan.baidu.com/disk/synchronization/)，SVIP会员用户会保存[100次](https://pan.baidu.com/doc/share/5uFBgKSK4FFqb7A3mlCw1Q-192375227722754)文件修改的历史版本，实测非会员用户会保存2次文件修改的历史版本
 - git
   - [GitHub](https://github.com/)
   - [CODING](https://coding.net/)
