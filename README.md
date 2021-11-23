@@ -163,7 +163,7 @@ tlmgr repository set https://mirrors.ustc.edu.cn/CTAN/systems/texlive/tlnet/
 ### 更新包管理器和所有包
 
 ```shell
-tlmgr update --self && tlmgr update --all
+tlmgr update --all --self
 ```
 
 如果遇到更新失败，重新执行一遍。
