@@ -90,7 +90,7 @@ xdupgthesis-Xidian University Postgraduate Thesis
 
 如果从来没接触过LaTeX又不肯花时间去学习，或者马上要交论文没有时间学习，不建议使用LaTeX，虽然Microsoft Word排版也不简单，但还是建议使用Microsoft Word。目前学校完全支持LaTeX编译出来的PDF文件进行查重和最终的提交，但是如果你的导师要求必须使用Microsoft Word才帮你修改论文的话，那么建议使用Microsoft Word来配合导师。
 
-关于环境配置请阅读[install-latex-guide-zh-cn.pdf](http://mirrors.ctan.org/info/install-latex-guide-zh-cn/install-latex-guide-zh-cn.pdf)，想要入门LaTeX或者对LaTeX语法一知半解的请阅读[lshort-zh-cn.pdf](http://mirrors.ctan.org/info/lshort/chinese/lshort-zh-cn.pdf)，想要查询数学符号的可以在[symbols-a4.pdf](http://mirrors.ctan.org/info/symbols/comprehensive/symbols-a4.pdf)中搜索。本项目文档都很详细，请认真阅读README。
+关于环境配置请阅读[install-latex-guide-zh-cn.pdf](https://mirrors.ustc.edu.cn/CTAN/info/install-latex-guide-zh-cn/install-latex-guide-zh-cn.pdf)，想要入门LaTeX或者对LaTeX语法一知半解的请阅读[lshort-zh-cn.pdf](https://mirrors.ustc.edu.cn/CTAN/info/lshort/chinese/lshort-zh-cn.pdf)，想要查询数学符号的可以在[symbols-a4.pdf](https://mirrors.ustc.edu.cn/CTAN/info/symbols/comprehensive/symbols-a4.pdf)中搜索。本项目文档都很详细，请认真阅读README。
 
 **由于模板升级频繁，在开始使用和提问前，请确保您已经认真完整地阅读了README和示例代码。**
 
@@ -136,7 +136,7 @@ dvipdfmx templet
 
 因此主目录下的`xdupgthesis.cfg`文件无法直接在线编辑，只能通过下载再上传的方式进行编辑，不过由于该文件一般仅需要填写一次，也可以接受。
 
-另外，在[CTEX宏集手册](http://mirror.ctan.org/language/chinese/ctex/ctex.pdf)中5.3章节指出：
+另外，在[CTEX宏集手册](https://mirrors.ustc.edu.cn/CTAN/language/chinese/ctex/ctex.pdf)中5.3章节指出：
 
 > 根据空格后面的情况决定是否保留：如果空格后面是汉字，则忽略该空格，否则保留。
 
@@ -146,13 +146,13 @@ dvipdfmx templet
 
 Windows和GNU/Linux平台使用[TeX Live](https://www.tug.org/texlive/)，macOS平台使用[MacTeX](https://www.tug.org/mactex/)，跨版本升级均需要卸载旧版。
 
-Windows平台卸载方法为管理员权限直接运行`C:\texlive\2021\tlpkg\installer\uninst.bat`，不同版本和安装位置请按需修改目录，更多介绍请参考[install-latex-guide-zh-cn.pdf](http://mirrors.ctan.org/info/install-latex-guide-zh-cn/install-latex-guide-zh-cn.pdf)第1.2节，GNU/Linux平台卸载方法请参考[install-latex-guide-zh-cn.pdf](http://mirrors.ctan.org/info/install-latex-guide-zh-cn/install-latex-guide-zh-cn.pdf)第2.2节，macOS上卸载方法请参考[Uninstalling MacTeX](https://www.tug.org/mactex/uninstalling.html)。
+Windows平台卸载方法为管理员权限直接运行`C:\texlive\2021\tlpkg\installer\uninst.bat`，不同版本和安装位置请按需修改目录，更多介绍请参考[install-latex-guide-zh-cn.pdf](https://mirrors.ustc.edu.cn/CTAN/info/install-latex-guide-zh-cn/install-latex-guide-zh-cn.pdf)第1.2节，GNU/Linux平台卸载方法请参考[install-latex-guide-zh-cn.pdf](https://mirrors.ustc.edu.cn/CTAN/info/install-latex-guide-zh-cn/install-latex-guide-zh-cn.pdf)第2.2节，macOS上卸载方法请参考[Uninstalling MacTeX](https://www.tug.org/mactex/uninstalling.html)。
 
 建议安装最新版LaTeX发行版套装，本项目模板仅在TeX Live/MacTeX 2021通过测试，其他旧版本并未实际进行测试。如果已安装TeX Live或MacTeX并且能够正常编译也可不升级，包也可不更新，能顺利编译即可。不过不建议安装TeX Live/MacTeX 2018及以下版本，会影响论文相似性检测，具体原因详见[中文字体](#中文字体)。
 
 校内睿思下载地址：[TeX Live 2021](http://rs.xidian.edu.cn/forum.php?mod=viewthread&tid=1094234)和[MacTeX 2021](http://rs.xidian.edu.cn/forum.php?mod=viewthread&tid=1094235)，最新版中科大源校外下载地址：[TeX Live](https://mirrors.ustc.edu.cn/CTAN/systems/texlive/Images/texlive.iso)和[MacTeX](https://mirrors.ustc.edu.cn/CTAN/systems/mac/mactex/MacTeX.pkg)。
 
-后续如无特殊情况，仅以Windows举例，其他操作系统上类似。如没有本地阅读文档的需求，安装时可以不勾选安装文档的选项，这样会减少大约一半的磁盘占用空间，环境配置请阅读[install-latex-guide-zh-cn.pdf](http://mirrors.ctan.org/info/install-latex-guide-zh-cn/install-latex-guide-zh-cn.pdf)，建议更新所有包至最新版，Windows平台上使用管理员权限运行[cmd](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/cmd)。
+后续如无特殊情况，仅以Windows举例，其他操作系统上类似。如没有本地阅读文档的需求，安装时可以不勾选安装文档的选项，这样会减少大约一半的磁盘占用空间，环境配置请阅读[install-latex-guide-zh-cn.pdf](https://mirrors.ustc.edu.cn/CTAN/info/install-latex-guide-zh-cn/install-latex-guide-zh-cn.pdf)，建议更新所有包至最新版，Windows平台上使用管理员权限运行[cmd](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/cmd)。
 
 ### 配置镜像源
 
@@ -330,7 +330,7 @@ xelatex -synctex=1 xdupgthesis
 
 原模板中自带的bib文件中的条目写的不是很规范，因此已被移除替换。用户可以使用[dblp](https://dblp.org/)生成的bib条目，[百度学术](https://xueshu.baidu.com/)和[Google Scholar](https://scholar.google.com.hk/)导出的bib文件不是很规范，经常有很大问题，感兴趣的可以去[BibTeX format explained](https://www.bibtex.com/g/bibtex-format/)了解bib文件的合法格式，遇到[dblp](https://dblp.org/)没有的条目，可以手动整理。
 
-在[btxdoc](http://mirrors.ctan.org/biblio/bibtex/base/btxdoc.pdf)文档中第3.1章节指出：
+在[btxdoc](https://mirrors.ustc.edu.cn/CTAN/biblio/bibtex/base/btxdoc.pdf)文档中第3.1章节指出：
 
 > `article`: An article from a journal or magazine. **Required fields**: author, title, journal, year. **Optional fields**: volume, number, pages, month, note.
 >
@@ -366,7 +366,7 @@ xelatex -synctex=1 xdupgthesis
 
 本项目模板正文默认使用中易宋体和Times New Roman，支持常用的字体形状如意大利和倾斜，支持常见的字体系列如加宽加粗。
 
-对于中易宋体，意大利形状对应中易楷体，倾斜形状对应中易宋体伪斜体，加宽加粗系列对应中易宋体伪粗体。其中，参考[fontspec.pdf](http://mirrors.ctan.org/macros/unicodetex/latex/fontspec/fontspec.pdf)中的示例，设置倾斜程度为`0.2`，参考清华大学学位论文模板[thuthesis.dtx](http://mirrors.ctan.org/macros/latex/contrib/thuthesis/thuthesis.dtx)，设置粗细程度为`3`。
+对于中易宋体，意大利形状对应中易楷体，倾斜形状对应中易宋体伪斜体，加宽加粗系列对应中易宋体伪粗体。其中，参考[fontspec.pdf](https://mirrors.ustc.edu.cn/CTAN/macros/unicodetex/latex/fontspec/fontspec.pdf)中的示例，设置倾斜程度为`0.2`，参考清华大学学位论文模板[thuthesis.dtx](https://mirrors.ustc.edu.cn/CTAN/macros/latex/contrib/thuthesis/thuthesis.dtx)，设置粗细程度为`3`。
 
 对于Times New Roman，意大利形状及加宽加粗系列均有对应的Times New Roman字体文件，倾斜形状与意大利形状一致，因此无需伪斜体和伪粗体。
 
@@ -383,7 +383,7 @@ xelatex -synctex=1 xdupgthesis
 
 ## 中英文间空白
 
-[xeCJK](http://mirrors.ctan.org/macros/xetex/latex/xecjk/xeCJK.pdf)宏包文档第1节第4点指出：
+[xeCJK](https://mirrors.ustc.edu.cn/CTAN/macros/xetex/latex/xecjk/xeCJK.pdf)宏包文档第1节第4点指出：
 
 > 自动调整中英文间空白。
 
@@ -402,7 +402,7 @@ xelatex -synctex=1 xdupgthesis
 
 其中英文前引号为英文输入法下键盘中`TAB`按键上方的按键，后引号为英文输入法下键盘中引号按键。
 
-更多标点符号的使用如连字符、破折号和波浪号等可见[lshort-zh-cn.pdf](http://mirrors.ctan.org/info/lshort/chinese/lshort-zh-cn.pdf)第2.3.5节。
+更多标点符号的使用如连字符、破折号和波浪号等可见[lshort-zh-cn.pdf](https://mirrors.ustc.edu.cn/CTAN/info/lshort/chinese/lshort-zh-cn.pdf)第2.3.5节。
 
 ## 交叉引用
 
@@ -467,7 +467,7 @@ xelatex -synctex=1 xdupgthesis
 \State $l(v) \leftarrow \infty$\label{line1}
 ```
 
-另外，[lshort-zh-cn.pdf](http://mirrors.ctan.org/info/lshort/chinese/lshort-zh-cn.pdf)第3.3节指出：
+另外，[lshort-zh-cn.pdf](https://mirrors.ustc.edu.cn/CTAN/info/lshort/chinese/lshort-zh-cn.pdf)第3.3节指出：
 
 > `\label`命令可用于记录各种类型的交叉引用，使用位置分别为：
 >
@@ -559,7 +559,7 @@ xelatex -synctex=1 xdupgthesis
 
 ## 算法
 
-本项目模板已内置`algorithm`、`algorithmicx`和`algpseudocode`宏包，用户无需手动导入。建议用户参考[algorithmicx](http://tug.ctan.org/macros/latex/contrib/algorithmicx/algorithmicx.pdf)宏包手册中的示例撰写算法，本项目模板从手册中摘抄了两个算法用于测试。
+本项目模板已内置`algorithm`、`algorithmicx`和`algpseudocode`宏包，用户无需手动导入。建议用户参考[algorithmicx](https://mirrors.ustc.edu.cn/CTAN/macros/latex/contrib/algorithmicx/algorithmicx.pdf)宏包手册中的示例撰写算法，本项目模板从手册中摘抄了两个算法用于测试。
 
 此外，对于`algorithm`浮动体，不建议使用任何位置参数，让LaTeX引擎将浮动体自动放置在合适的位置，具体原因可见[浮动体位置](#浮动体位置)。
 
@@ -616,7 +616,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 ## 插图/表格索引中图表序号与图表标题间距
 
-[tocloft.pdf](http://mirrors.ctan.org/macros/latex/contrib/tocloft/tocloft.pdf)中图表序号宽度变量`\cftfignumwidth`与`\cfttabnumwidth`均直接设置为固定值`2.3em`，本项目模板已做一定程度的自适应调整，如果用户认为图表序号与图表标题间距过大或者过小，均可自行调整，方法为在导言区添加：
+[tocloft.pdf](https://mirrors.ustc.edu.cn/CTAN/macros/latex/contrib/tocloft/tocloft.pdf)中图表序号宽度变量`\cftfignumwidth`与`\cfttabnumwidth`均直接设置为固定值`2.3em`，本项目模板已做一定程度的自适应调整，如果用户认为图表序号与图表标题间距过大或者过小，均可自行调整，方法为在导言区添加：
 
 ```latex
 \addtolength{\cftfignumwidth}{1em}
@@ -683,7 +683,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 缩略语对照表环境`abbreviationlist`提供了一个参数，用于调节列宽，模板中默认为`lXX`，其含义为全部左对齐，缩略语根据内容自动设置宽度，且只占据一行不自动换行，英文全称与中文对照平分剩下的页面宽度，会自动换行，用户无需手动插入换行符干预。
 
-用户如果想要手动指定宽度，可以将模板中默认的`lXX`改为`p{7.5em}p{10.5em}X`，其含义为第一列为`7.5em`，第二列为`10.5em`，第三列占据剩下的页面宽度，会自动换行，用户无需手动插入换行符干预。如果需要更多自定义的参数，用户可以参考[tabularx](http://mirrors.ctan.org/macros/latex/required/tools/tabularx.pdf)宏包手册。
+用户如果想要手动指定宽度，可以将模板中默认的`lXX`改为`p{7.5em}p{10.5em}X`，其含义为第一列为`7.5em`，第二列为`10.5em`，第三列占据剩下的页面宽度，会自动换行，用户无需手动插入换行符干预。如果需要更多自定义的参数，用户可以参考[tabularx](https://mirrors.ustc.edu.cn/CTAN/macros/latex/required/tools/tabularx.pdf)宏包手册。
 
 注意！一定要有一列的参数是`X`，其余列参数可以为`p{}`或者`l`。一般建议最后一列为`X`，其余列参数为`p{}`或者`l`。对于三列的，常见的有`p{7.5em}p{10.5em}X`和`llX`，对于两列的，常见的有`p{7.5em}X`和`lX`，其中`p{}`内的长度值可以自行视情况设置。
 
@@ -908,7 +908,7 @@ LaTeX非常适合搭配git来使用，这是因为LaTeX都是纯文本，利于�
 
 本节讲述为什么修改原西安电子科技大学学位论文模板的文件编码，用户不感兴趣可以跳过，直接使用本项目模板即可。
 
-在[CTEX宏集手册](http://mirror.ctan.org/language/chinese/ctex/ctex.pdf)中4.2章节指出：
+在[CTEX宏集手册](https://mirrors.ustc.edu.cn/CTAN/language/chinese/ctex/ctex.pdf)中4.2章节指出：
 
 > 使用XeLaTeX、LuaLaTeX或upLaTeX编译时，CTEX宏集强制使用UTF-8编码。
 
@@ -953,7 +953,7 @@ l.13 \XDUfrontmatter
 l.13 \XDUfrontmatter
 ```
 
-在[CTEX宏集手册](http://mirror.ctan.org/language/chinese/ctex/ctex.pdf)中11.2章节指出：
+在[CTEX宏集手册](https://mirrors.ustc.edu.cn/CTAN/language/chinese/ctex/ctex.pdf)中11.2章节指出：
 
 > 在调用fntef宏包选项的同时，旧版本CTEX宏包由于需要支持CCT系统，会将以\CJK开头的\CJKunderline等宏换名为以\CTEX开头的\CTEXunderline等宏。此功能在新版本的CTEX宏集中已失去意义。
 
@@ -965,7 +965,7 @@ l.13 \XDUfrontmatter
 
 ## 中文字体
 
-[CTEX宏集手册](http://mirror.ctan.org/language/chinese/ctex/ctex.pdf)中4.3章节指出：
+[CTEX宏集手册](https://mirrors.ustc.edu.cn/CTAN/language/chinese/ctex/ctex.pdf)中4.3章节指出：
 
 > 如果没有指定fontset的值，CTEX宏集将自动检测用户使用的操作系统，配置相应的字体。
 
@@ -985,11 +985,11 @@ l.13 \XDUfrontmatter
   - 首页底部`作者姓名`、`指导教师姓名、职称`和`申请学位类别`字样
   - 第3页中部`西安电子科技大学`字样
 
-因此需要使用伪粗体来实现粗体效果，但是[CTEX宏集手册](http://mirror.ctan.org/language/chinese/ctex/ctex.pdf)中版本历史v2.4.4指出：
+因此需要使用伪粗体来实现粗体效果，但是[CTEX宏集手册](https://mirrors.ustc.edu.cn/CTAN/language/chinese/ctex/ctex.pdf)中版本历史v2.4.4指出：
 
 > General: 不再默认设置xeCJK的伪粗体。
 
-所以需要手动开启伪粗体，在清华大学学位论文模板[thuthesis.dtx](http://mirrors.ctan.org/macros/latex/contrib/thuthesis/thuthesis.dtx)中可以找到如下参数：
+所以需要手动开启伪粗体，在清华大学学位论文模板[thuthesis.dtx](https://mirrors.ustc.edu.cn/CTAN/macros/latex/contrib/thuthesis/thuthesis.dtx)中可以找到如下参数：
 
 > \xeCJKsetup{EmboldenFactor=3}
 
@@ -1326,7 +1326,7 @@ LaTeX Font Warning: Font shape `OMX/cmex/m/n' in size <10.53937> not available
 
 虽然已经强调要求使用最新版的LaTeX套装，但是不排除有用户依然使用老旧的LaTeX套装，由于老旧版本的TeX Live或MacTeX的`gbt7714`调用接口与新版不一致，因此按照上面的方法参考文献无法正常编译。
 
-本项目模板对此做了适配，[gbt7714](http://mirrors.ctan.org/biblio/bibtex/contrib/gbt7714/gbt7714.pdf)文档中指出：
+本项目模板对此做了适配，[gbt7714](https://mirrors.ustc.edu.cn/CTAN/biblio/bibtex/contrib/gbt7714/gbt7714.pdf)文档中指出：
 
 > 从v2.0版本开始（2020-03-04），用户必须在文档中使用`\biblilographystyle`命令选择参考文献样式，如`gbt7714-numerical`或`gbt7714-author-year`。在早期的版本中，选择文献样式的方法是将`numbers`或`super`等参数传递给`gbt7714`，而不能使用`\bibliographystyle`。这跟标准的LaTeX接口不一致，所以将被弃用。
 
@@ -1346,7 +1346,7 @@ LaTeX Font Warning: Font shape `OMX/cmex/m/n' in size <10.53937> not available
 
 增加了`xurl`宏包的自动调用，实现任意字符处可换行，避免出现URL上一行过于松散的情况。
 
-[xurl宏包](http://mirrors.ctan.org/macros/latex/contrib/xurl/doc/xurl.pdf)文档有如下表述：
+[xurl宏包](https://mirrors.ustc.edu.cn/CTAN/macros/latex/contrib/xurl/doc/xurl.pdf)文档有如下表述：
 
 > Package xurl loads package url by default and defines possible url breaks for all alphanumerical characters and = / . : * - ~ ' "
 
@@ -1386,9 +1386,9 @@ LaTeX Font Warning: Font shape `OMX/cmex/m/n' in size <10.53937> not available
 
 ## 子图及图片标题
 
-原模板中不支持子图，根据[bare_adv.tex](http://mirrors.ctan.org/macros/latex/contrib/IEEEtran/bare_adv.tex)中的示例，我们采用`subfig`宏包来实现子图的插入，具体使用方法参考[图片](#图片)。
+原模板中不支持子图，根据[bare_adv.tex](https://mirrors.ustc.edu.cn/CTAN/macros/latex/contrib/IEEEtran/bare_adv.tex)中的示例，我们采用`subfig`宏包来实现子图的插入，具体使用方法参考[图片](#图片)。
 
-此外，本项目修正了图片标题与图片的间距过小的问题，在清华大学学位论文模板[thuthesis.dtx](http://mirrors.ctan.org/macros/latex/contrib/thuthesis/thuthesis.dtx)中可以找到如下参数：
+此外，本项目修正了图片标题与图片的间距过小的问题，在清华大学学位论文模板[thuthesis.dtx](https://mirrors.ustc.edu.cn/CTAN/macros/latex/contrib/thuthesis/thuthesis.dtx)中可以找到如下参数：
 
 ```latex
 \captionsetup{
