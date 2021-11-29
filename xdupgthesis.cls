@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{xdupgthesis}[2021/11/21 Xidian University Postgraduate Thesis document class, version 0.2.38, modified by @note286, published in https://note286.github.io/xdupgthesis/]
+\ProvidesClass{xdupgthesis}[2021/11/29 Xidian University Postgraduate Thesis document class, version 0.2.39, modified by @note286, published in https://note286.github.io/xdupgthesis/]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%   class and packages
@@ -31,9 +31,9 @@
 \newif\ifXDU@Option@noloftpre\XDU@Option@noloftprefalse
 \DeclareOption{noloftpre}{\XDU@Option@noloftpretrue}
 
-% noloftgap = No Gap in Lists of Figures and Tables
-\newif\ifXDU@Option@noloftgap\XDU@Option@noloftgapfalse
-\DeclareOption{noloftgap}{\XDU@Option@noloftgaptrue}
+% addloftgap = Add Gap in Lists of Figures and Tables
+\newif\ifXDU@Option@addloftgap\XDU@Option@addloftgapfalse
+\DeclareOption{addloftgap}{\XDU@Option@addloftgaptrue}
 
 % ragbtm = Ragged Bottom
 \newif\ifXDU@Option@ragbtm\XDU@Option@ragbtmfalse
@@ -642,11 +642,11 @@ By \par%
 \ctexset{listfigurename={\XDU@label@listoffigures}}
 \DeclareRobustCommand{\XDU@listoffigures}
   {\XDU@toc@add{\XDU@toc@listoffigures}%
-    \ifXDU@Option@noloftgap
+    \ifXDU@Option@addloftgap
+      \listoffigures
+    \else
       \addtocontents{lof}{\vspace{10pt}}%
       {\renewcommand{\addvspace}[1]{}\listoffigures}
-    \else
-      \listoffigures
     \fi
   }
 
@@ -654,11 +654,11 @@ By \par%
 \ctexset{listtablename={\XDU@label@listoftables}}
 \DeclareRobustCommand{\XDU@listoftables}
   {\XDU@toc@add{\XDU@toc@listoftables}%
-    \ifXDU@Option@noloftgap
+    \ifXDU@Option@addloftgap
+      \listoftables
+    \else
       \addtocontents{lot}{\vspace{10pt}}%
       {\renewcommand{\addvspace}[1]{}\listoftables}
-    \else
-      \listoftables
     \fi
   }
 

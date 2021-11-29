@@ -280,7 +280,7 @@ xelatex -synctex=1 xdupgthesis
 - `psd`，详见[论文相似性检测](#论文相似性检测)
 - `anonrvw`，详见[论文抽查评估](#论文抽查评估)
 - `noloftpre`，详见[插图/表格索引前缀开关](#插图表格索引前缀开关)
-- `noloftgap`，详见[插图/表格索引垂直间距开关](#插图表格索引垂直间距开关)
+- `addloftgap`，详见[插图/表格索引垂直间距开关](#插图表格索引垂直间距开关)
 - `ragbtm`，详见[断页机制切换开关](#断页机制切换开关)
 
 ## 内置宏包
@@ -641,7 +641,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 ## 插图/表格索引垂直间距开关
 
-插图/表格索引中不同章节之间默认会有一定的垂直间距，如果用户想要关闭垂直间距，需要在`xdupgthesis.tex`中为文档类添加`noloftgap`参数（No Gap in Lists of Figures and Tables），即将
+默认关闭插图/表格索引中不同章节间的垂直间距，如果用户想要开启垂直间距，需要在`xdupgthesis.tex`中为文档类添加`addloftgap`参数（Add Gap in Lists of Figures and Tables），即将
 
 ```latex
 \documentclass{xdupgthesis}
@@ -650,7 +650,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 改为
 
 ```latex
-\documentclass[noloftgap]{xdupgthesis}
+\documentclass[addloftgap]{xdupgthesis}
 ```
 
 ## 断页机制切换开关
