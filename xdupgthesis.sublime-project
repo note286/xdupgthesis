@@ -17,6 +17,7 @@
                 "*.pdf",
                 "*.pyc",
                 "*.sublime-project",
+                "*.synctex",
                 "*.synctex(busy)",
                 "*.toc",
                 "*.xdv",
