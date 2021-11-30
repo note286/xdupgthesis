@@ -20,6 +20,7 @@
       - [latexmk编译](#latexmk编译)
       - [四次编译](#四次编译)
     - [WinEdt编译](#winedt编译)
+    - [TeXworks编译](#texworks编译)
     - [Overleaf编译](#overleaf编译)
   - [文档类参数](#文档类参数)
   - [内置宏包](#内置宏包)
@@ -280,6 +281,18 @@ latexmk -c
 并点击确定即可。
 
 注意，由于WinEdt添加新的编译配置较为复杂，本方法将TeXify内的编译引擎由LaTeX改为latexmk，并使用了主目录下的`latexmkrc`编译配置。
+
+### TeXworks编译
+
+下载[TeXworks](https://tug.org/texworks/)安装包并安装，支持Windows，GNU/Linux和macOS平台。安装后可以查看[A short manual for TeXworks](https://github.com/TeXworks/manual/releases)获取更多关于TeXworks的使用帮助。
+
+打开TeXworks后，点击编辑->首选项->排版->处理工具，点击右下角蓝色加号，在弹出的面板中名称处填写latexmk，程序处点击右侧浏览选择`C:\texlive\2021\bin\win32\latexmk.exe`文件并点击打开，如果安装TeX Live至非默认目录，依情况修改，最后点击面板上的OK。选择新建的latexmk，点击右侧的蓝色上箭头移动至顶部，再将内置的XeLaTeX和BibTeX移动至顶部，使得latexmk、XeLaTeX和BibTeX位于处理工具的顶部，方便后续切换引擎。再选择下方的默认，可以将latexmk或者XeLaTeX设置为默认，最后点击OK。在`chapters`文件夹内所有`.tex`文件头部添加一行，内容为`% !TeX root = ../xdupgthesis.tex`，这样设置后可以使得在任意子文件内均可以直接点击编译而无需切换至主文件再编译。
+
+点击文件->打开，选择`xdupgthesis.tex`文件，Toolbars左上角可以切换编译引擎。完全编译选择latexmk，可以自动处理交叉引用和参考文献引用，编译时间较长；不考虑交叉引用和参考文献引用时，快速编译选择XeLaTeX，编译时间较短，需要参考文献引用时切换至BibTeX编译参考文献，接着执行两次XeLaTeX编译可以生成参考文献列表和参考文献引用。
+
+点击文件->删除辅助文件，在弹出的面板中再点击删除可以清理临时文件，常用于某次报错后清理错误的临时文件，避免二次报错。
+
+TeXworks内置了PDF查看器，支持正向同步和反向同步功能，具体查看[A short manual for TeXworks](https://github.com/TeXworks/manual/releases)中5.1节。
 
 ### Overleaf编译
 
