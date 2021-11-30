@@ -352,6 +352,7 @@ TeXworks内置了PDF查看器，支持正向同步和反向同步功能，具体
 - multirow
 - natbib
 - nicefrac
+- siunitx
 - subfig
 - tabularx
 - tabulary

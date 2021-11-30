@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{xdupgthesis}[2021/11/29 Xidian University Postgraduate Thesis document class, version 0.2.39, modified by @note286, published in https://note286.github.io/xdupgthesis/]
+\ProvidesClass{xdupgthesis}[2021/11/30 Xidian University Postgraduate Thesis document class, version 0.2.40, modified by @note286, published in https://note286.github.io/xdupgthesis/]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%   class and packages
@@ -103,6 +103,8 @@
 \RequirePackage{amsthm}
 
 \RequirePackage{amssymb}
+
+\RequirePackage{siunitx}
 
 \RequirePackage{bm}
 
