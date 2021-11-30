@@ -263,7 +263,7 @@ latexmk -c
 
 ### WinEdt编译
 
-下载[WinEdt](https://www.winedt.com/download.html)安装包并安装，安装后可以查看[Quick Guide](http://www.winedt.com/download.html#Quick_Guide)获取更多关于WinEdt的使用帮助。
+下载[WinEdt](https://www.winedt.com/download.html)安装包并安装，支持Windows平台。安装后可以查看[Quick Guide](http://www.winedt.com/download.html#Quick_Guide)获取更多关于WinEdt的使用帮助。
 
 打开WinEdt后，点击File->Open打开`xdupgthesis.tex`文件，点击Project->Build Tree，在左侧Tree栏中`xdupgthesis.tex`文件上左键单击，再点击Project->Set Main File，这样设置后可以使得在任意子文件内均可以直接点击编译而无需切换至主文件再编译。点击Option->Execution Modes，在弹出的面板左侧选择TeXify，在面板左下角点击Browse for executable，依次找到`C:\texlive\2021\bin\win32\latexmk.exe`文件并点击打开，如果安装TeX Live至非默认目录，依情况修改；将左下角的Switches中对应值清空，最后点击面板上的OK。
 
