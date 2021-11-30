@@ -231,31 +231,33 @@ sudo cp simhei.ttf simkai.ttf simsun.ttc times.ttf timesbd.ttf timesbi.ttf times
 
 #### latexmk编译
 
-```shell
-latexmk -xelatex -synctex=1 xdupgthesis
-```
-
-本项目模板已内置`latexmkrc`，因此可以直接运行
+编译
 
 ```shell
 latexmk
 ```
 
-编译得到pdf文件，运行
+清理临时文件
 
 ```shell
 latexmk -c
 ```
 
-来清理临时文件。
-
 #### 四次编译
+
+编译
 
 ```shell
 xelatex -synctex=1 xdupgthesis
 bibtex xdupgthesis
 xelatex -synctex=1 xdupgthesis
 xelatex -synctex=1 xdupgthesis
+```
+
+清理临时文件
+
+```shell
+latexmk -c
 ```
 
 ### Overleaf编译
