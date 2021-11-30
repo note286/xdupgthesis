@@ -142,7 +142,7 @@ dvipdfmx templet
 
 > 根据空格后面的情况决定是否保留：如果空格后面是汉字，则忽略该空格，否则保留。
 
-因此，用户在写作过程中，建议每行汉字控制在40个字符，英文控制在80个字符，即刚好填充一行的字符数。用户可以随意的换行，在LaTeX中，换行意味着空格，空格会根据上面的情况选择保留还是忽略，如果空格后面是汉字，则忽略该空格，用户完全不需要担心会产生多余的空格。这样的好处是在从文档到源码的反向跳转中可以非常精准地定位。
+因此，用户在写作过程中，建议每行汉字控制在40个字符，英文控制在80个字符，即刚好填充一行的字符数。用户可以随意的换行，在LaTeX中，换行意味着空格，空格会根据上面的情况选择保留还是忽略，如果空格后面是汉字，则忽略该空格，用户完全不需要担心会产生多余的空格。这样的好处是在从文档到源码的反向同步中可以非常精准地定位。
 
 ## 卸载与安装
 
@@ -224,7 +224,7 @@ sudo cp simhei.ttf simkai.ttf simsun.ttc times.ttf timesbd.ttf timesbi.ttf times
 
 ## 编译
 
-本项目目前仅在Windows和GNU/Linux平台上的TeX Live 2021和macOS平台上的MacTeX 2021进行了测试，均更新所有包至最新版，并参考[字体安装](#字体安装)安装了缺失字体。命令编译时切换到`xdupgthesis.tex`所在目录执行命令即可。IDE编译选择对应IDE中的`XeLaTeX`的编译方式，参考文献使用`BibTeX`编译。关于PDF查看器，Windows平台上推荐使用[Sumatra PDF](https://www.sumatrapdfreader.org/free-pdf-reader)，macOS平台上推荐[Skim](https://skim-app.sourceforge.io/)，适当配置可支持正向跳转和反向跳转。
+本项目目前仅在Windows和GNU/Linux平台上的TeX Live 2021和macOS平台上的MacTeX 2021进行了测试，均更新所有包至最新版，并参考[字体安装](#字体安装)安装了缺失字体。命令编译时切换到`xdupgthesis.tex`所在目录执行命令即可。IDE编译选择对应IDE中的`XeLaTeX`的编译方式，参考文献使用`BibTeX`编译。关于PDF查看器，Windows平台上推荐使用[Sumatra PDF](https://www.sumatrapdfreader.org/free-pdf-reader)，macOS平台上推荐[Skim](https://skim-app.sourceforge.io/)，适当配置可支持正向同步和反向同步。
 
 ### 命令编译
 
@@ -265,13 +265,13 @@ latexmk -c
 
 下载[WinEdt](https://www.winedt.com/)安装包并安装，安装后可以查看[Quick Guide](http://www.winedt.com/download.html#Quick_Guide)获取更多关于WinEdt的使用帮助。
 
-打开WinEdt后，点击File->Open打开`xdupgthesis.tex`文件，点击Project->Build Tree，在左侧Tree栏中`xdupgthesis.tex`文件上左键单击，再点击Project->Set Main File，这样设置后可以使得在任意子文件内均可以直接点击编译而无需切换至主文件再编译。点击Option->Execution Modes，在弹出的面板左侧选择TeXify，在面板左下角点击Browse for executable，依次找到`C:\texlive\2021\bin\win32\latexmk.exe`文件并点击打开，如果安装TeX Live至非默认目录，依情况修改；将左下角的Switches中对应值清空，最后点击面板的OK。
+打开WinEdt后，点击File->Open打开`xdupgthesis.tex`文件，点击Project->Build Tree，在左侧Tree栏中`xdupgthesis.tex`文件上左键单击，再点击Project->Set Main File，这样设置后可以使得在任意子文件内均可以直接点击编译而无需切换至主文件再编译。点击Option->Execution Modes，在弹出的面板左侧选择TeXify，在面板左下角点击Browse for executable，依次找到`C:\texlive\2021\bin\win32\latexmk.exe`文件并点击打开，如果安装TeX Live至非默认目录，依情况修改；将左下角的Switches中对应值清空，最后点击面板上的OK。
 
 在Toolbar中PDF Preview左侧的按钮下拉菜单中可以切换编译引擎。完全编译选择TeXify，可以自动处理交叉引用和参考文献引用，编译时间较长；不考虑交叉引用和参考文献引用时，快速编译选择XeLaTeX，编译时间较短，需要参考文献引用时再点击TeX->BibTeX编译参考文献，接着执行两次XeLaTeX编译可以生成参考文献引用和参考文献列表。
 
 点击Tools->Erase Output Files或者Toolbar中的Erase Output Files按钮，在弹出的面板中再点击Delete Now可以清理临时文件，常用于某次报错后清理错误的临时文件，避免二次报错。
 
-可以参考[QuickGuide.pdf](http://www.winedt.com/doc/QuickGuide.pdf)中第2.3节配置WinEdt默认PDF查看器为Sumatra PDF Viewer，即点击Option->Execution Modes，在弹出的面板选择PDF Viewer标签，将PDF Viewer Executable改为SumatraPDF.exe，Sumatra PDF Viewer默认安装在`%LOCALAPPDATA%\SumatraPDF\`处，这样就可以使用Sumatra PDF Viewer来查看PDF文件。Sumatra PDF Viewer的反向跳转一般WinEdt会自动配置，如果需要手动配置，在Sumatra PDF Viewer左上角点击三道杠->设置->选项，在最后设置反向搜索命令行中填写
+可以参考[QuickGuide.pdf](http://www.winedt.com/doc/QuickGuide.pdf)中第2.3节配置WinEdt默认PDF查看器为Sumatra PDF Viewer，即点击Option->Execution Modes，在弹出的面板选择PDF Viewer标签，将PDF Viewer Executable改为SumatraPDF.exe，Sumatra PDF Viewer默认安装在`%LOCALAPPDATA%\SumatraPDF\`处，这样就可以使用Sumatra PDF Viewer来查看PDF文件。Sumatra PDF Viewer的反向同步一般WinEdt会自动配置，如果需要手动配置，在Sumatra PDF Viewer左上角点击三道杠->设置->选项，在最后设置反向搜索命令行中填写
 
 ```
 "C:\Program Files\WinEdt Team\WinEdt 10\WinEdt.exe" "[Open(|%f|);SelPar(%l,8);]"
