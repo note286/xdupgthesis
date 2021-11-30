@@ -16,8 +16,9 @@
     - [macOS](#macos)
     - [Overleaf](#overleaf)
   - [编译](#编译)
-    - [latexmk](#latexmk)
-    - [四次编译](#四次编译)
+    - [命令编译](#命令编译)
+      - [latexmk编译](#latexmk编译)
+      - [四次编译](#四次编译)
     - [Overleaf编译](#overleaf编译)
   - [文档类参数](#文档类参数)
   - [内置宏包](#内置宏包)
@@ -222,11 +223,13 @@ sudo cp simhei.ttf simkai.ttf simsun.ttc times.ttf timesbd.ttf timesbi.ttf times
 
 ## 编译
 
-本项目目前仅在Windows和GNU/Linux平台上的TeX Live 2021和macOS平台上的MacTeX 2021进行了测试，均更新所有包至最新版，并参考[字体安装](#字体安装)安装了缺失字体。
+本项目目前仅在Windows和GNU/Linux平台上的TeX Live 2021和macOS平台上的MacTeX 2021进行了测试，均更新所有包至最新版，并参考[字体安装](#字体安装)安装了缺失字体。命令编译时切换到`xdupgthesis.tex`所在目录执行命令即可。IDE编译选择对应IDE中的`XeLaTeX`的编译方式，参考文献使用`BibTeX`编译。关于PDF查看器，Windows平台上推荐使用[Sumatra PDF](https://www.sumatrapdfreader.org/free-pdf-reader)，macOS平台上推荐[Skim](https://skim-app.sourceforge.io/)，适当配置可支持正向跳转和反向跳转，在此不赘述。
 
-仅介绍如何使用命令编译，可选择使用`latexmk`来快速编译或者常规的四次编译。如果喜欢使用IDE，请自行选择对应IDE中的`XeLaTeX`的编译方式，参考文献使用`BibTeX`编译。如使用命令行或者IDE无内置PDF查看器，Windows平台上推荐使用[Sumatra PDF](https://www.sumatrapdfreader.org/free-pdf-reader)，适当配置可支持正向跳转和反向跳转，在此不赘述。
+### 命令编译
 
-### latexmk
+介绍如何使用命令编译，可选择使用`latexmk`来快速编译或者常规的四次编译。
+
+#### latexmk编译
 
 ```shell
 latexmk -xelatex -synctex=1 xdupgthesis
@@ -246,7 +249,7 @@ latexmk -c
 
 来清理临时文件。
 
-### 四次编译
+#### 四次编译
 
 ```shell
 xelatex -synctex=1 xdupgthesis
