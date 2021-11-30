@@ -239,7 +239,7 @@ sudo cp simhei.ttf simkai.ttf simsun.ttc times.ttf timesbd.ttf timesbi.ttf times
 latexmk
 ```
 
-清理临时文件
+清理辅助文件
 
 ```shell
 latexmk -c
@@ -256,7 +256,7 @@ xelatex -synctex=1 xdupgthesis
 xelatex -synctex=1 xdupgthesis
 ```
 
-清理临时文件
+清理辅助文件
 
 ```shell
 latexmk -c
@@ -270,7 +270,7 @@ latexmk -c
 
 在Toolbar中PDF Preview左侧的按钮下拉菜单中可以切换编译引擎。完全编译选择TeXify，可以自动处理交叉引用和参考文献引用，编译时间较长；不考虑交叉引用和参考文献引用时，快速编译选择XeLaTeX，编译时间较短，需要参考文献引用时再点击TeX->BibTeX编译参考文献，接着执行两次XeLaTeX编译可以生成参考文献列表和参考文献引用。
 
-点击Tools->Erase Output Files或者Toolbar中的Erase Output Files按钮，在弹出的面板中再点击Delete Now可以清理临时文件，常用于某次报错后清理错误的临时文件，避免二次报错。
+点击Tools->Erase Output Files或者Toolbar中的Erase Output Files按钮，在弹出的面板中再点击Delete Now可以清理辅助文件，常用于某次报错后清理错误的辅助文件，避免二次报错。
 
 可以参考[QuickGuide.pdf](http://www.winedt.com/doc/QuickGuide.pdf)中第2.3节配置WinEdt默认PDF查看器为Sumatra PDF Viewer，即点击Option->Execution Modes，在弹出的面板选择PDF Viewer标签，将PDF Viewer Executable改为SumatraPDF.exe，Sumatra PDF Viewer默认安装在`%LOCALAPPDATA%\SumatraPDF\`处，这样就可以使用Sumatra PDF Viewer来查看PDF文件。Sumatra PDF Viewer的反向同步一般WinEdt会自动配置，如果需要手动配置，在Sumatra PDF Viewer左上角点击三道杠->设置->选项，在最后设置反向搜索命令行中填写
 
@@ -290,7 +290,7 @@ latexmk -c
 
 点击文件->打开，选择`xdupgthesis.tex`文件，Toolbars左上角可以切换编译引擎。完全编译选择latexmk，可以自动处理交叉引用和参考文献引用，编译时间较长；不考虑交叉引用和参考文献引用时，快速编译选择XeLaTeX，编译时间较短，需要参考文献引用时切换至BibTeX编译参考文献，接着执行两次XeLaTeX编译可以生成参考文献列表和参考文献引用。
 
-点击文件->删除辅助文件，在弹出的面板中再点击删除可以清理临时文件，常用于某次报错后清理错误的临时文件，避免二次报错。
+点击文件->删除辅助文件，在弹出的面板中再点击删除可以清理辅助文件，常用于某次报错后清理错误的辅助文件，避免二次报错。
 
 TeXworks内置了PDF查看器，支持正向同步和反向同步功能，具体请查看[A short manual for TeXworks](https://github.com/TeXworks/manual/releases)中5.1节。
 
@@ -920,7 +920,7 @@ XXX & XXX & XXX\\
 
 LaTeX非常适合搭配git来使用，这是因为LaTeX都是纯文本，利于版本控制，建议参考[下载与编辑](#下载与编辑)中关于源代码每行字数的描述。使用git可以清楚地知道每次修改或添加了什么内容，并填写commit内容，便于后期查看，也可以轻松的回退到任意版本，或者提取某个版本的历史内容。用户可以使用[GitHub Desktop](https://desktop.github.com/)，学习成本很低，易用，使用[SmartGit](https://www.syntevo.com/smartgit/)可以获得更清晰的diff信息，不过后者功能较为复杂，用户可以搭配使用，使用前者提交版本，后者仅作为diff信息查看器使用。
 
-此外，可以使用[FileGee](http://cn.filegee.com/)实现更多的功能，例如不同步临时文件和编译出的pdf文件，搭配git避免两次commit之间出现的意外情况，等等，更多用法用户可以自行挖掘。总之一句话，一定要使用自动同步工具或者git，不要仅仅使用手动定期备份的方式，一定要有文件历史版本的功能，不要仅仅使用仅同步最新状态的工具。
+此外，可以使用[FileGee](http://cn.filegee.com/)实现更多的功能，例如不同步辅助文件和编译出的pdf文件，搭配git避免两次commit之间出现的意外情况，等等，更多用法用户可以自行挖掘。总之一句话，一定要使用自动同步工具或者git，不要仅仅使用手动定期备份的方式，一定要有文件历史版本的功能，不要仅仅使用仅同步最新状态的工具。
 
 # 模板来源
 
