@@ -23,6 +23,7 @@
     - [WinEdt编译](#winedt编译)
     - [TeXworks编译](#texworks编译)
     - [TeXstudio编译](#texstudio编译)
+    - [Texmaker编译](#texmaker编译)
     - [Overleaf编译](#overleaf编译)
   - [文档类可选参数](#文档类可选参数)
   - [内置宏包](#内置宏包)
@@ -313,6 +314,18 @@ TeXstudio无法快速切换编译引擎，只能在选项->设置TeXstudio->构�
 点击工具->清理辅助文件，在弹出的面板中选择合适的范围再点击OK便可以清理辅助文件，常用于某次报错后清理错误的辅助文件，避免二次报错。
 
 TeXstudio内置了PDF查看器，支持正向同步和反向同步功能，具体请查看[TeXstudio : User manual](https://htmlpreview.github.io/?https://github.com/texstudio-org/texstudio/master/utilities/manual/usermanual_en.html)中4.10节。
+
+### Texmaker编译
+
+下载[Texmaker](https://www.xm1math.net/texmaker/)安装包并安装，支持Windows，GNU/Linux和macOS平台。安装后可以查看[Texmaker : User manual](https://www.xm1math.net/texmaker/doc.html)获取更多关于Texmaker的使用帮助。
+
+打开Texmaker后，点击文件->打开，选择`xdupgthesis.tex`文件，点击选项->设置当前文档为主文档，这样设置后可以使得在任意子文件内均可以直接点击编译而无需切换至主文件再编译。点击选项->配置Texmaker->命令，将LaTeX-Mk中对应值改为`latexmk`，点击OK。
+
+工具栏中可以切换编译引擎。完全编译选择latexmk，可以自动处理交叉引用和参考文献引用，编译时间较长；不考虑交叉引用和参考文献引用时，快速编译选择XeLaTeX，编译时间较短，需要参考文献引用时切换至BibTeX编译参考文献，接着执行两次XeLaTeX编译可以生成参考文献列表和参考文献引用。
+
+点击工具->清除历史记录，在弹出的面板中再点击删除文件可以清理辅助文件，常用于某次报错后清理错误的辅助文件，避免二次报错。
+
+Texmaker内置了PDF查看器，支持正向同步和反向同步功能，具体请查看[Texmaker : User manual](https://www.xm1math.net/texmaker/doc.html)中3.3节。
 
 ### Overleaf编译
 
