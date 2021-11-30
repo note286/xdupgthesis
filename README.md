@@ -19,6 +19,7 @@
     - [命令编译](#命令编译)
       - [latexmk编译](#latexmk编译)
       - [四次编译](#四次编译)
+    - [文本编辑器编译](#文本编辑器编译)
     - [WinEdt编译](#winedt编译)
     - [TeXworks编译](#texworks编译)
     - [TeXstudio编译](#texstudio编译)
@@ -226,7 +227,7 @@ sudo cp simhei.ttf simkai.ttf simsun.ttc times.ttf timesbd.ttf timesbi.ttf times
 
 ## 编译
 
-本项目目前仅在Windows和GNU/Linux平台上的TeX Live 2021和macOS平台上的MacTeX 2021进行了测试，均更新所有包至最新版，并参考[字体安装](#字体安装)安装了缺失字体。命令编译时切换到`xdupgthesis.tex`所在目录执行命令即可。IDE编译选择对应IDE中的`XeLaTeX`的编译方式，参考文献使用`BibTeX`编译。关于PDF查看器，Windows平台上推荐使用[Sumatra PDF](https://www.sumatrapdfreader.org/free-pdf-reader)，macOS平台上推荐[Skim](https://skim-app.sourceforge.io/)，适当配置可支持正向同步和反向同步。
+本项目目前仅在Windows和GNU/Linux平台上的TeX Live 2021和macOS平台上的MacTeX 2021进行了测试，均更新所有包至最新版，并参考[字体安装](#字体安装)安装了缺失字体。命令编译时切换到`xdupgthesis.tex`所在目录执行命令即可。IDE编译选择对应IDE中的`XeLaTeX`的编译方式，参考文献使用`BibTeX`编译。关于PDF查看器，Windows平台上推荐使用[Sumatra PDF Viewer](https://www.sumatrapdfreader.org/free-pdf-reader)，macOS平台上推荐[Skim](https://skim-app.sourceforge.io/)，适当配置可支持正向同步和反向同步。
 
 ### 命令编译
 
@@ -262,6 +263,12 @@ xelatex -synctex=1 xdupgthesis
 ```shell
 latexmk -c
 ```
+
+### 文本编辑器编译
+
+任何一款[文本编辑器](https://zh.wikipedia.org/wiki/%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8)均可以编辑`.tex`文件，包括[Sublime Text](https://www.sublimetext.com/)和[Visual Studio Code](https://code.visualstudio.com/)等，大部分文本编辑器均提供自定义编译功能，例如Sublime Text的[Build Systems](https://www.sublimetext.com/docs/build_systems.html)，可以参考[命令编译](#命令编译)自行创建相应的编译配置，利用编译快捷键进行编译。此外，一些文本编辑器支持安装扩展，例如Sublime Text可以安装[LaTeXTools](https://packagecontrol.io/packages/LaTeXTools)来辅助进行`.tex`文件的编辑，还提供了一些常用的编译配置。可以搭配Sumatra PDF Viewer或Skim实现反向同步，正向同步一般需要文本编辑器或其扩展支持。
+
+一些文本编辑器不支持自定义编译功能或者安装扩展，依然可以使用文本编辑器来编辑`.tex`文件，使用命令来进行编译。
 
 ### WinEdt编译
 
