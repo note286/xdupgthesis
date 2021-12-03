@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{xdupgthesis}[2021/11/30 Xidian University Postgraduate Thesis document class, version 0.2.41, modified by @note286, published in https://note286.github.io/xdupgthesis/]
+\ProvidesClass{xdupgthesis}[2021/12/03 Xidian University Postgraduate Thesis document class, version 0.2.42, modified by @note286, published in https://note286.github.io/xdupgthesis/]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%   class and packages
@@ -14,6 +14,9 @@
 % overleaf
 \newif\ifXDU@Option@overleaf\XDU@Option@overleaffalse
 \DeclareOption{overleaf}{\XDU@Option@overleaftrue}
+
+% texpage
+\DeclareOption{texpage}{\XDU@Option@overleaftrue}
 
 % mprof = Master of Professional
 \newif\ifXDU@Option@mprof\XDU@Option@mproffalse

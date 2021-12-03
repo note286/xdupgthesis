@@ -15,6 +15,7 @@
     - [GNU/Linux](#gnulinux)
     - [macOS](#macos)
     - [Overleaf](#overleaf)
+    - [TeXPage](#texpage)
   - [编译](#编译)
     - [命令编译](#命令编译)
       - [latexmk编译](#latexmk编译)
@@ -25,6 +26,7 @@
     - [TeXstudio编译](#texstudio编译)
     - [Texmaker编译](#texmaker编译)
     - [Overleaf编译](#overleaf编译)
+    - [TeXPage编译](#texpage编译)
   - [文档类可选参数](#文档类可选参数)
   - [内置宏包](#内置宏包)
   - [参考文献引用](#参考文献引用)
@@ -226,6 +228,12 @@ sudo cp simhei.ttf simkai.ttf simsun.ttc times.ttf timesbd.ttf timesbi.ttf times
 
 在Overleaf左上角点击`New Project`，选择Upload Project，将压缩包上传至Overleaf，会自动进入该论文模板项目。点击左上角`New Folder`按钮，新建一个名为`fonts`的文件夹，选中`fonts`文件夹，点击左上角`Upload`按钮将所有的字体文件上传。最后根据[Overleaf编译](#overleaf编译)配置如何在线编译。
 
+### TeXPage
+
+在[TeXPage](https://www.texpage.com/)平台使用时，由于TeXPage是安装在GNU/Linux上的最新版的TeX Live，用户无需考虑LaTeX套装版本问题，仅需要安装字体即可，用户首先将本仓库[下载](https://github.com/note286/xdupgthesis/archive/refs/heads/main.zip)，再根据[GNU/Linux](#gnulinux)中的方法得到字体文件。
+
+在TeXPage[个人主页](https://www.texpage.com/console)左上角点击`创建`，选择上传项目，将压缩包上传至TeXPage，进入该论文模板项目。点击左上角`新建文件夹`按钮，新建一个名为`fonts`的文件夹，选中`fonts`文件夹，点击左上角`上传文件`按钮将所有的字体文件上传。最后根据[TeXPage编译](#texpage编译)配置如何在线编译。
+
 ## 编译
 
 本项目目前仅在Windows和GNU/Linux平台上的TeX Live 2021和macOS平台上的MacTeX 2021进行了测试，均更新所有包至最新版，并参考[字体安装](#字体安装)安装了缺失字体。命令编译时切换到`xdupgthesis.tex`所在目录执行命令即可。IDE编译选择对应IDE中的`XeLaTeX`的编译方式，参考文献使用`BibTeX`编译。关于PDF查看器，Windows平台上推荐使用[Sumatra PDF Viewer](https://www.sumatrapdfreader.org/free-pdf-reader)，macOS平台上推荐[Skim](https://skim-app.sourceforge.io/)，适当配置可支持正向同步和反向同步。
@@ -343,11 +351,28 @@ Texmaker内置了PDF查看器，支持正向同步和反向同步功能，具体
 
 后即可正常编译。
 
+### TeXPage编译
+
+用户首先根据[TeXPage](#texpage)中关于字体安装的介绍安装好字体，再点击右上角的`设置`按钮修改`LaTeX编译器`为`XeLaTeX`，最后为`xdupgthesis`文档类传入`texpage`参数，即将`xdupgthesis.tex`中
+
+```latex
+\documentclass{xdupgthesis}
+```
+
+改为
+
+```latex
+\documentclass[texpage]{xdupgthesis}
+```
+
+后即可正常编译。
+
 ## 文档类可选参数
 
 本项目模板中`xdupgthesis`文档类支持如下可选参数：
 
 - `overleaf`，详见[Overleaf编译](#overleaf编译)
+- `texpage`，详见[TeXPage编译](#texpage编译)
 - `mprof`，详见[个人及论文信息填写](#个人及论文信息填写)
 - `psd`，详见[论文相似性检测](#论文相似性检测)
 - `anonrvw`，详见[论文抽查评估](#论文抽查评估)
@@ -1080,7 +1105,7 @@ l.13 \XDUfrontmatter
 
 > 在TeXLive 2019之前的版本中，启用`AutoFakeBold`选项将导致XeLaTeX编译生成的pdf文件内容复制时显示为乱码，进而导致查重报告显示为乱码。
 
-实际测试也发现，TeX Live/MacTeX 2018编译出的pdf文件，大部分文字无法复制及搜索出来，TeX Live/MacTeX 2019及以上版本无问题，因此用户一定要安装TeX Live/MacTeX 2019及以上版本或使用Overleaf进行编译，否则会影响论文相似性检测。
+实际测试也发现，TeX Live/MacTeX 2018编译出的pdf文件，大部分文字无法复制及搜索出来，TeX Live/MacTeX 2019及以上版本无问题，因此用户一定要安装TeX Live/MacTeX 2019及以上版本或使用Overleaf/TeXPage进行编译，否则会影响论文相似性检测。
 
 ## 英文字体
 
