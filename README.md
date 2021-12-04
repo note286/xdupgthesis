@@ -353,7 +353,7 @@ Texmaker内置了PDF查看器，支持正向同步和反向同步功能，具体
 
 ### TeXPage编译
 
-用户首先根据[TeXPage](#texpage)中关于字体安装的介绍安装好字体，再点击右上角的`设置`按钮修改`LaTeX编译器`为`XeLaTeX`，最后为`xdupgthesis`文档类传入`texpage`参数，即将`xdupgthesis.tex`中
+用户首先根据[TeXPage](#texpage)中关于字体安装的介绍安装好字体，再点击右上角的设置按钮修改LaTeX编译器为`XeLaTeX`，最后为`xdupgthesis`文档类传入`texpage`参数，即将`xdupgthesis.tex`中
 
 ```latex
 \documentclass{xdupgthesis}
