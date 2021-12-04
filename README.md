@@ -232,7 +232,7 @@ sudo cp simhei.ttf simkai.ttf simsun.ttc times.ttf timesbd.ttf timesbi.ttf times
 
 在[TeXPage](https://www.texpage.com/)平台使用时，由于TeXPage是安装在GNU/Linux上的最新版的TeX Live，用户无需考虑LaTeX套装版本问题，仅需要安装字体即可，用户首先将本仓库[下载](https://github.com/note286/xdupgthesis/archive/refs/heads/main.zip)，再根据[GNU/Linux](#gnulinux)中的方法得到字体文件。
 
-在TeXPage[个人主页](https://www.texpage.com/console)左上角点击`创建`，选择上传项目，将压缩包上传至TeXPage，进入该论文模板项目。点击左上角`新建文件夹`按钮，新建一个名为`fonts`的文件夹，选中`fonts`文件夹，点击左上角`上传文件`按钮将所有的字体文件上传。最后根据[TeXPage编译](#texpage编译)配置如何在线编译。
+在TeXPage[个人主页](https://www.texpage.com/console)左上角点击创建，选择上传项目，将压缩包上传至TeXPage，进入该论文模板项目。点击左上角新建文件夹按钮，新建一个名为`fonts`的文件夹，选中`fonts`文件夹，点击左上角上传文件按钮将所有的字体文件上传。最后根据[TeXPage编译](#texpage编译)配置如何在线编译。
 
 ## 编译
 
