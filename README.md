@@ -156,7 +156,12 @@ Windows和GNU/Linux平台使用[TeX Live](https://www.tug.org/texlive/)，macOS�
 
 Windows平台卸载方法为管理员权限直接运行`C:\texlive\2021\tlpkg\installer\uninst.bat`，不同版本和安装位置请按需修改目录，更多介绍请参考[install-latex-guide-zh-cn.pdf](https://mirrors.ustc.edu.cn/CTAN/info/install-latex-guide-zh-cn/install-latex-guide-zh-cn.pdf)第1.2节，GNU/Linux平台卸载方法请参考[install-latex-guide-zh-cn.pdf](https://mirrors.ustc.edu.cn/CTAN/info/install-latex-guide-zh-cn/install-latex-guide-zh-cn.pdf)第2.2节，macOS上卸载方法请参考[Uninstalling MacTeX](https://www.tug.org/mactex/uninstalling.html)。
 
-建议安装最新版LaTeX发行版套装，本项目模板仅在TeX Live/MacTeX 2021通过测试，其他旧版本并未实际进行测试。如果已安装TeX Live或MacTeX并且能够正常编译也可不升级，包也可不更新，能顺利编译即可。不过不建议安装TeX Live/MacTeX 2018及以下版本，会影响论文相似性检测，具体原因详见[中文字体](#中文字体)。
+本项目模板仅在TeX Live/MacTeX 2021通过测试，其他旧版本并未实际进行测试。建议安装最新版LaTeX发行版套装并更新所有包，如果已安装TeX Live或MacTeX并且能够编译，用户可以选择不升级套装，不更新包。
+
+目前已知旧版本套装和旧包存在的问题：
+
+- 最新版LaTeX发行版套装不更新所有包可能会出现参考文献样式问题，详见[参考文献格式问题 · Issue #13](https://github.com/note286/xdupgthesis/issues/13)。
+- TeX Live/MacTeX 2018及以下版本套装会影响论文相似性检测，具体原因详见[中文字体](#中文字体)。
 
 校内睿思下载地址：[TeX Live 2021](http://rs.xidian.edu.cn/forum.php?mod=viewthread&tid=1094234)和[MacTeX 2021](http://rs.xidian.edu.cn/forum.php?mod=viewthread&tid=1094235)，最新版中科大源校外下载地址：[TeX Live](https://mirrors.ustc.edu.cn/CTAN/systems/texlive/Images/texlive.iso)和[MacTeX](https://mirrors.ustc.edu.cn/CTAN/systems/mac/mactex/MacTeX.pkg)。
 
@@ -164,11 +169,15 @@ Windows平台卸载方法为管理员权限直接运行`C:\texlive\2021\tlpkg\in
 
 ### 配置镜像源
 
+管理员权限运行
+
 ```shell
 tlmgr repository set https://mirrors.ustc.edu.cn/CTAN/systems/texlive/tlnet/
 ```
 
 ### 更新包管理器和所有包
+
+管理员权限运行
 
 ```shell
 tlmgr update --all --self
