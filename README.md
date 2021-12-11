@@ -437,7 +437,7 @@ Texmaker内置了PDF查看器，支持正向同步和反向同步功能，具体
 测试引用\cite{tang:press,wanga:medicine,CRAW:future}是否正常。
 ```
 
-原模板中自带的bib文件中的条目写的不是很规范，因此已被移除替换。用户可以使用[dblp](https://dblp.org/)生成的bib条目，[百度学术](https://xueshu.baidu.com/)和[Google Scholar](https://scholar.google.com.hk/)导出的bib文件不是很规范，经常有很大问题，感兴趣的可以去[BibTeX format explained](https://www.bibtex.com/g/bibtex-format/)了解bib文件的合法格式，遇到[dblp](https://dblp.org/)没有的条目，可以手动整理。
+原模板中自带的bib文件中的条目写的不是很规范，因此已被移除替换。目前已添加部分常用类型参考文献条目样例至`xdupgthesis.bib`，用户可以参考使用，需要注意的是，不要轻易使用分组即`{}`，尤其是`author`字段。关于样式标准请参考[参考文献条目样式](#参考文献条目样式)，用户可以自行下载相应标准查看示例。用户可以使用[dblp](https://dblp.org/)生成的bib条目，[百度学术](https://xueshu.baidu.com/)和[Google Scholar](https://scholar.google.com.hk/)导出的bib文件不是很规范，经常有很大问题，感兴趣的可以去[BibTeX format explained](https://www.bibtex.com/g/bibtex-format/)了解bib文件的合法格式，遇到[dblp](https://dblp.org/)没有的条目，可以手动整理。
 
 在[btxdoc](https://mirrors.ustc.edu.cn/CTAN/biblio/bibtex/base/btxdoc.pdf)文档中第3.1章节指出：
 
