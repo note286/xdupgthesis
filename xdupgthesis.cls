@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{xdupgthesis}[2021/12/03 Xidian University Postgraduate Thesis document class, version 0.2.42, modified by @note286, published in https://note286.github.io/xdupgthesis/]
+\ProvidesClass{xdupgthesis}[2021/12/12 Xidian University Postgraduate Thesis document class, version 0.2.43, modified by @note286, published in https://note286.github.io/xdupgthesis/]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%   class and packages
@@ -41,6 +41,10 @@
 % ragbtm = Ragged Bottom
 \newif\ifXDU@Option@ragbtm\XDU@Option@ragbtmfalse
 \DeclareOption{ragbtm}{\XDU@Option@ragbtmtrue}
+
+% draft
+\newif\ifXDU@Option@draft\XDU@Option@draftfalse
+\DeclareOption{draft}{\XDU@Option@drafttrue}
 
 %% others
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{ctexbook}}
@@ -96,7 +100,7 @@
 
 \RequirePackage{fancyhdr}
 
-\RequirePackage{graphicx}
+\RequirePackage[final]{graphicx}
 \graphicspath{{figures/}}
 
 \RequirePackage{booktabs}
@@ -583,7 +587,11 @@ By \par%
 %% chinese abstract
 \newenvironment{abstract}
   {\XDU@toc@add{\XDU@toc@abstract}%
-   \XDU@nchapter{\XDU@label@abstract}\XDU@font@zihao{-4}}
+   \XDU@nchapter{\XDU@label@abstract}\XDU@font@zihao{-4}
+   \ifXDU@Option@draft
+     \setlength{\baselineskip}{30pt}
+   \fi
+  }
   {\cleardoublepage}
 
 %% chinese keywords
@@ -598,7 +606,11 @@ By \par%
 \newenvironment{englishabstract}
   {\XDU@toc@add{\XDU@etoc@abstract}\XDU@nchapter{\XDU@elabel@abstract}%
    \vspace{-2ex}\parindent=0pt\normalfont\XDU@font@zihao{-4}%
-   \parindent=0pt}
+   \parindent=0pt
+   \ifXDU@Option@draft
+     \setlength{\baselineskip}{30pt}
+   \fi
+  }
   {\cleardoublepage}
 
 %% english keywords
@@ -845,6 +857,13 @@ By \par%
     \XDU@tableofcontents\cleardoublepage%
   \fi
   \mainmatter
+  \ifXDU@Option@draft
+    \setlength{\baselineskip}{30pt}
+    \setlength{\abovedisplayskip}{18pt}
+    \setlength{\abovedisplayshortskip}{18pt}
+    \setlength{\belowdisplayskip}{18pt}
+    \setlength{\belowdisplayshortskip}{18pt}
+  \fi
 }
 
 % appendix
@@ -861,6 +880,9 @@ By \par%
 \RequirePackage{bibentry}
 \DeclareRobustCommand{\XDUbackmatter}
 {
+  \ifXDU@Option@draft
+    \setlength{\baselineskip}{20pt}
+  \fi
   \backmatter{}
   \ifXDU@Option@psd
     \nobibliography{xdupgthesis}{}
