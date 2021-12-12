@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{xdupgthesis}[2021/12/12 Xidian University Postgraduate Thesis document class, version 0.2.43, modified by @note286, published in https://note286.github.io/xdupgthesis/]
+\ProvidesClass{xdupgthesis}[2021/12/12 Xidian University Postgraduate Thesis document class, version 0.2.44, modified by @note286, published in https://note286.github.io/xdupgthesis/]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%   class and packages
@@ -45,6 +45,10 @@
 % draft
 \newif\ifXDU@Option@draft\XDU@Option@draftfalse
 \DeclareOption{draft}{\XDU@Option@drafttrue}
+
+% frame
+\newif\ifXDU@Option@frame\XDU@Option@framefalse
+\DeclareOption{frame}{\XDU@Option@frametrue}
 
 %% others
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{ctexbook}}
@@ -94,6 +98,10 @@
 
 \ifXDU@Option@ragbtm
   \BeforeBeginEnvironment{document}{\raggedbottom}
+\fi
+
+\ifXDU@Option@frame
+  \RequirePackage[verbose,pass,showframe,showcrop]{geometry}
 \fi
 
 \RequirePackage{lmodern}
