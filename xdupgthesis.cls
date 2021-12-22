@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{xdupgthesis}[2021/12/14 Xidian University Postgraduate Thesis document class, version 0.2.45, modified by @note286, published in https://note286.github.io/xdupgthesis/]
+\ProvidesClass{xdupgthesis}[2021/12/22 Xidian University Postgraduate Thesis document class, version 0.2.46, modified by @note286, published in https://note286.github.io/xdupgthesis/]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%   class and packages
@@ -50,6 +50,15 @@
 \newif\ifXDU@Option@frame\XDU@Option@framefalse
 \DeclareOption{frame}{\XDU@Option@frametrue}
 
+% Math Font=TeX Gyre Termes Math
+\newif\ifXDU@Option@mftgtm\XDU@Option@mftgtmfalse
+\DeclareOption{mf=tgtm}{\XDU@Option@mftgtmtrue}
+
+% Math Font=Computer Modern
+\newif\ifXDU@Option@mfcm\XDU@Option@mfcmfalse
+\DeclareOption{mf=cm}{\XDU@Option@mfcmtrue}
+
+
 %% others
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{ctexbook}}
 \ProcessOptions\relax
@@ -83,7 +92,17 @@
     [Path=fonts/,
     BoldFont=timesbd.ttf,
     ItalicFont=timesi.ttf,
-    BoldItalicFont=timesbi.ttf]}
+    BoldItalicFont=timesbi.ttf]
+  \ifXDU@Option@mftgtm
+    \RequirePackage{unicode-math}
+    \setmathfont{TeX Gyre Termes Math}
+  \else
+    \ifXDU@Option@mfcm
+    \else
+      \RequirePackage{unicode-math}
+      \setmathfont{cambria.ttc}[Path=fonts/,FontIndex=1]
+    \fi
+  \fi}
 \else
   \LoadClass[a4paper,zihao=-4,twoside,openright,punct,fontset=windows]{ctexbook}
   \BeforeBeginEnvironment{document}{
@@ -93,7 +112,17 @@
     SlantedFont={SimSun},SlantedFeatures={FakeSlant=\FakeSlantValue},
     BoldSlantedFont={SimSun},BoldSlantedFeatures={FakeBold=\FakeBoldValue,FakeSlant=\FakeSlantValue},
     ItalicFont={KaiTi},
-    BoldItalicFont={KaiTi},BoldItalicFeatures={FakeBold=\FakeBoldValue}]}
+    BoldItalicFont={KaiTi},BoldItalicFeatures={FakeBold=\FakeBoldValue}]
+  \ifXDU@Option@mftgtm
+    \RequirePackage{unicode-math}
+    \setmathfont{TeX Gyre Termes Math}
+  \else
+    \ifXDU@Option@mfcm
+    \else
+      \RequirePackage{unicode-math}
+      \setmathfont{Cambria Math}
+    \fi
+  \fi}
 \fi
 
 \ifXDU@Option@ragbtm
@@ -103,8 +132,6 @@
 \ifXDU@Option@frame
   \RequirePackage[verbose,pass,showframe,showcrop]{geometry}
 \fi
-
-\RequirePackage{lmodern}
 
 \RequirePackage{fancyhdr}
 

@@ -29,6 +29,7 @@
     - [TeXPage编译](#texpage编译)
   - [文档类可选参数](#文档类可选参数)
   - [内置宏包](#内置宏包)
+  - [数学字体切换开关](#数学字体切换开关)
   - [参考文献引用](#参考文献引用)
   - [字体形状与字体系列](#字体形状与字体系列)
   - [中英文间空白](#中英文间空白)
@@ -202,13 +203,15 @@ pdffonts xdupgthesis.pdf
 
 ### Windows
 
-Windows平台无需手动配置字体，所需字体Windows操作系统已内置。
+已安装Microsoft Office的Windows平台无需手动配置字体，所需字体Microsoft Office和Windows操作系统已内置。如果没有安装Microsoft Office，会缺失Cambria Math字体，可以从已安装Microsoft Office的Windows设备`C:\Windows\Fonts`处拷贝出`cambria.ttc`字体，右键该字体文件，选择为所有用户安装即可。
 
 ### GNU/Linux
 
 由于默认情况下中易宋体的意大利形状对应的是中易楷体，因此中文字体除中易宋体和中易黑体外，还需要中易楷体。
 
-用户可以从Windows操作系统字体库中拷贝出`simhei.ttf`、`simkai.ttf`、`simsun.ttc`、`times.ttf`、`timesbd.ttf`、`timesbi.ttf`和`timesi.ttf`共7个字体文件至GNU/Linux，其中三个中文字体文件位于`C:\Windows\Fonts`处，Times New Roman字体的四个字体文件位于`C:\Windows\Fonts\Times New Roman`处。用户在查找字体时，可以根据Windows中英文系统内字体名称来查找，找到后复制该字体，粘贴至某个空白文件夹即可得到对应的字体文件，然后将这7个字体文件传输至GNU/Linux。
+此外还需要数学字体Cambria Math。
+
+用户可以从Windows操作系统字体库中拷贝出`simhei.ttf`、`simkai.ttf`、`simsun.ttc`、`times.ttf`、`timesbd.ttf`、`timesbi.ttf`、`timesi.ttf`和`cambria.ttc`共8个字体文件至GNU/Linux，其中三个中文字体文件和Cambria Math数学字体文件位于`C:\Windows\Fonts`处，Times New Roman字体的四个字体文件位于`C:\Windows\Fonts\Times New Roman`处。用户在查找字体时，可以根据Windows中英文系统内字体名称来查找，找到后复制该字体，粘贴至某个空白文件夹即可得到对应的字体文件，然后将这8个字体文件传输至GNU/Linux。
 
 |    字体名称     | 字体文件名  |  Windows英文系统内字体名称  | Windows中文系统内字体名称 |
 | :-------------: | :---------: | :-------------------------: | :-----------------------: |
@@ -219,24 +222,31 @@ Windows平台无需手动配置字体，所需字体Windows操作系统已内置
 | Times New Roman | timesbd.ttf |    Times New Roman Bold     |   Times New Roman 粗体    |
 | Times New Roman | timesbi.ttf | Times New Roman Bold Italic |  Times New Roman 粗斜体   |
 | Times New Roman | timesi.ttf  |   Times New Roman Italic    |   Times New Roman 斜体    |
+|  Cambria Math   | cambria.ttc |    Cambria Math Regular     |     Cambria Math 常规     |
 
 使用如下命令在GNU/Linux安装字体：
 
 ```shell
-sudo cp simhei.ttf simkai.ttf simsun.ttc times.ttf timesbd.ttf timesbi.ttf timesi.ttf /usr/share/fonts
+sudo cp simhei.ttf simkai.ttf simsun.ttc times.ttf timesbd.ttf timesbi.ttf timesi.ttf cambria.ttc /usr/share/fonts
+```
+
+需要注意的是，TeX Gyre Termes Math数学字体内置于TeX Live，如果GNU/Linux环境变量配置有问题，导致XeLaTeX无法找到该字体，可以使用如下命令安装该字体：
+
+```shell
+sudo cp /usr/local/texlive/2021/texmf-dist/fonts/opentype/public/tex-gyre-math/texgyretermes-math.otf /usr/share/fonts
 ```
 
 然后就可以根据[编译](#编译)里的方法去编译了。
 
 ### macOS
 
-参考[GNU/Linux](#gnulinux)从Windows平台提取字体文件，然后在macOS上双击安装字体文件即可。注意，虽然macOS内置了Times New Roman字体，但是该内置字体版本过于老旧，有缺字的现象，建议将7个字体文件全部安装。
+参考[GNU/Linux](#gnulinux)从Windows平台提取字体文件，然后在macOS上双击安装字体文件即可。注意，虽然macOS内置了Times New Roman字体，但是该内置字体版本过于老旧，有缺字的现象，建议将8个字体文件全部安装。
 
 然后就可以根据[编译](#编译)里的方法去编译了。
 
 ### Overleaf
 
-在[Overleaf in Chinese](https://cn.overleaf.com/)平台使用时，由于Overleaf是安装在GNU/Linux上的最新版的TeX Live，用户无需考虑LaTeX套装版本问题，仅需要安装字体即可，用户首先将本仓库[下载](https://github.com/note286/xdupgthesis/archive/refs/heads/main.zip)，再根据[GNU/Linux](#gnulinux)中的方法得到字体文件。
+在[Overleaf in Chinese](https://cn.overleaf.com/)平台使用时，由于Overleaf是安装在GNU/Linux上的最新版的TeX Live，用户无需考虑LaTeX套装版本问题，仅需要安装字体即可，用户首先将本仓库[下载](https://github.com/note286/xdupgthesis/archive/refs/heads/main.zip)，再根据[GNU/Linux](#gnulinux)中的方法得到8个字体文件。
 
 在Overleaf左上角点击创建新项目，选择上传项目，将压缩包上传至Overleaf，会自动进入该论文模板项目。点击左上角新建目录按钮，新建一个名为`fonts`的文件夹，选中`fonts`文件夹，点击左上角上传按钮将所有的字体文件上传。最后根据[Overleaf编译](#overleaf编译)配置如何在线编译。
 
@@ -383,8 +393,7 @@ Texmaker内置了PDF查看器，支持正向同步和反向同步功能，具体
 
 本项目模板中`xdupgthesis`文档类支持如下可选参数：
 
-- `overleaf`，详见[Overleaf编译](#overleaf编译)
-- `texpage`，详见[TeXPage编译](#texpage编译)
+- `overleaf`或`texpage`，详见[Overleaf编译](#overleaf编译)或[TeXPage编译](#texpage编译)
 - `mprof`，详见[个人及论文信息填写](#个人及论文信息填写)
 - `psd`，详见[论文相似性检测](#论文相似性检测)
 - `anonrvw`，详见[论文抽查评估](#论文抽查评估)
@@ -393,6 +402,9 @@ Texmaker内置了PDF查看器，支持正向同步和反向同步功能，具体
 - `ragbtm`，详见[断页机制切换开关](#断页机制切换开关)
 - `draft`，详见[草稿模式](#草稿模式)
 - `frame`，详见[显示边框](#显示边框)
+- `mf=tgtm`或`mf=cm`，详见[数学字体切换开关](#数学字体切换开关)
+
+以上参数功能相互独立，均可任意组合使用。
 
 ## 内置宏包
 
@@ -419,7 +431,6 @@ Texmaker内置了PDF查看器，支持正向同步和反向同步功能，具体
 - hyperref
 - ifpdf
 - ifthen
-- lmodern
 - ltablex
 - makecell
 - multirow
@@ -434,6 +445,40 @@ Texmaker内置了PDF查看器，支持正向同步和反向同步功能，具体
 - tocloft
 - xspace
 - xurl
+
+## 数学字体切换开关
+
+本项目模板支持Cambria Math、TeX Gyre Termes Math和Computer Modern三种数学字体。
+
+- [Cambria Math](https://docs.microsoft.com/en-us/typography/font-list/cambria-math)字体为Microsoft Office默认数学字体，与正文的Times New Roman搭配很和谐。
+- [TeX Gyre Termes Math](https://ctan.org/pkg/tex-gyre-math-termes?lang=en)字体内置于TeX Live中，是Times风格的开源字体，同样与正文的Times New Roman搭配比较和谐，但是实测一些字符很难看，例如圆周率`\pi`。
+- [Computer Modern](https://www.ctan.org/tex-archive/fonts/cm/)字体为LaTeX默认数学字体，但是实测整体偏瘦，与Times New Roman搭配不是很和谐。
+
+本项目模板默认数学字体为Cambria Math，用户可以自行选择使用TeX Gyre Termes Math和Computer Modern。由于Cambria Math为Microsoft Office内置字体，因此没有安装Microsoft Office的设备无法直接使用，请参考[字体安装](#字体安装)安装Cambria Math字体。
+
+如果用户想要使用TeX Gyre Termes Math字体，需要在`xdupgthesis.tex`中为文档类添加`mf=tgtm`参数（Math Font=TeX Gyre Termes Math），即将
+
+```latex
+\documentclass{xdupgthesis}
+```
+
+改为
+
+```latex
+\documentclass[mf=tgtm]{xdupgthesis}
+```
+
+如果用户想要使用Computer Modern字体，需要在`xdupgthesis.tex`中为文档类添加`mf=cm`参数（Math Font=Computer Modern），即将
+
+```latex
+\documentclass{xdupgthesis}
+```
+
+改为
+
+```latex
+\documentclass[mf=cm]{xdupgthesis}
+```
 
 ## 参考文献引用
 
