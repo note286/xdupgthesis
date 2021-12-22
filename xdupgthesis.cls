@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{xdupgthesis}[2021/12/22 Xidian University Postgraduate Thesis document class, version 0.2.46, modified by @note286, published in https://note286.github.io/xdupgthesis/]
+\ProvidesClass{xdupgthesis}[2021/12/22 Xidian University Postgraduate Thesis document class, version 0.2.47, modified by @note286, published in https://note286.github.io/xdupgthesis/]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%   class and packages
@@ -115,7 +115,7 @@
     BoldItalicFont={KaiTi},BoldItalicFeatures={FakeBold=\FakeBoldValue}]
   \ifXDU@Option@mftgtm
     \RequirePackage{unicode-math}
-    \setmathfont{TeX Gyre Termes Math}
+    \setmathfont{texgyretermes-math.otf}
   \else
     \ifXDU@Option@mfcm
     \else

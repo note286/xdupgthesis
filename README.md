@@ -230,12 +230,6 @@ pdffonts xdupgthesis.pdf
 sudo cp simhei.ttf simkai.ttf simsun.ttc times.ttf timesbd.ttf timesbi.ttf timesi.ttf cambria.ttc /usr/share/fonts
 ```
 
-需要注意的是，TeX Gyre Termes Math数学字体内置于TeX Live，如果GNU/Linux环境变量配置有问题，导致XeLaTeX无法找到该字体，可以使用如下命令安装该字体：
-
-```shell
-sudo cp /usr/local/texlive/2021/texmf-dist/fonts/opentype/public/tex-gyre-math/texgyretermes-math.otf /usr/share/fonts
-```
-
 然后就可以根据[编译](#编译)里的方法去编译了。
 
 ### macOS
