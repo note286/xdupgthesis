@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{xdupgthesis}[2021/12/22 Xidian University Postgraduate Thesis document class, version 0.2.47, modified by @note286, published in https://note286.github.io/xdupgthesis/]
+\ProvidesClass{xdupgthesis}[2021/12/26 Xidian University Postgraduate Thesis document class, version 0.2.48, modified by @note286, published in https://note286.github.io/xdupgthesis/]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%   class and packages
@@ -96,11 +96,13 @@
   \ifXDU@Option@mftgtm
     \RequirePackage{unicode-math}
     \setmathfont{TeX Gyre Termes Math}
+    \renewcommand{\bm}[1]{\symbf{#1}}
   \else
     \ifXDU@Option@mfcm
     \else
       \RequirePackage{unicode-math}
       \setmathfont{cambria.ttc}[Path=fonts/,FontIndex=1]
+      \renewcommand{\bm}[1]{\symbf{#1}}
     \fi
   \fi}
 \else
@@ -116,11 +118,13 @@
   \ifXDU@Option@mftgtm
     \RequirePackage{unicode-math}
     \setmathfont{texgyretermes-math.otf}
+    \renewcommand{\bm}[1]{\symbf{#1}}
   \else
     \ifXDU@Option@mfcm
     \else
       \RequirePackage{unicode-math}
       \setmathfont{Cambria Math}
+      \renewcommand{\bm}[1]{\symbf{#1}}
     \fi
   \fi}
 \fi
