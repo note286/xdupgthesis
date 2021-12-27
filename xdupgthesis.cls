@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{xdupgthesis}[2021/12/26 Xidian University Postgraduate Thesis document class, version 0.2.48, modified by @note286, published in https://note286.github.io/xdupgthesis/]
+\ProvidesClass{xdupgthesis}[2021/12/27 Xidian University Postgraduate Thesis document class, version 0.2.49, modified by @note286, published in https://note286.github.io/xdupgthesis/]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%   class and packages
@@ -95,13 +95,13 @@
     BoldItalicFont=timesbi.ttf]
   \ifXDU@Option@mftgtm
     \RequirePackage{unicode-math}
-    \setmathfont{TeX Gyre Termes Math}
+    \setmathfont{TeX Gyre Termes Math}[math-style=ISO,bold-style=ISO]
     \renewcommand{\bm}[1]{\symbf{#1}}
   \else
     \ifXDU@Option@mfcm
     \else
       \RequirePackage{unicode-math}
-      \setmathfont{cambria.ttc}[Path=fonts/,FontIndex=1]
+      \setmathfont{cambria.ttc}[Path=fonts/,FontIndex=1,math-style=ISO,bold-style=ISO]
       \renewcommand{\bm}[1]{\symbf{#1}}
     \fi
   \fi}
@@ -117,13 +117,13 @@
     BoldItalicFont={KaiTi},BoldItalicFeatures={FakeBold=\FakeBoldValue}]
   \ifXDU@Option@mftgtm
     \RequirePackage{unicode-math}
-    \setmathfont{texgyretermes-math.otf}
+    \setmathfont{texgyretermes-math.otf}[math-style=ISO,bold-style=ISO]
     \renewcommand{\bm}[1]{\symbf{#1}}
   \else
     \ifXDU@Option@mfcm
     \else
       \RequirePackage{unicode-math}
-      \setmathfont{Cambria Math}
+      \setmathfont{Cambria Math}[math-style=ISO,bold-style=ISO]
       \renewcommand{\bm}[1]{\symbf{#1}}
     \fi
   \fi}
