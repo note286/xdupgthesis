@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{xdupgthesis}[2021/12/27 Xidian University Postgraduate Thesis document class, version 0.2.49, modified by @note286, published in https://note286.github.io/xdupgthesis/]
+\ProvidesClass{xdupgthesis}[2021/12/30 Xidian University Postgraduate Thesis document class, version 0.2.50, modified by @note286, published in https://note286.github.io/xdupgthesis/]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%   class and packages
@@ -191,7 +191,7 @@
 \captionsetup[subfloat]{subrefformat=parens}
 
 %% natbib & gbt7714
-\RequirePackage[sort&compress,square,super]{natbib}
+\RequirePackage[sort&compress,square,super,comma]{natbib}
 \RequirePackage{gbt7714}
 \@ifpackagelater{gbt7714}{2020/03/04}
   {\PassOptionsToPackage{numbers}{natbib}}
