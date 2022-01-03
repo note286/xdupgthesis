@@ -1,5 +1,6 @@
 *.aux
 *.bak
+*.bat
 *.bbl
 *.blg
 *.dvi
