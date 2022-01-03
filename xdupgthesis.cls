@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{xdupgthesis}[2021/12/30 Xidian University Postgraduate Thesis document class, version 0.2.50, modified by @note286, published in https://note286.github.io/xdupgthesis/]
+\ProvidesClass{xdupgthesis}[2022/01/03 Xidian University Postgraduate Thesis document class, version 1.24.0, modified by @note286, published in https://note286.github.io/xdupgthesis/]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%   class and packages
@@ -136,6 +136,11 @@
 \ifXDU@Option@frame
   \RequirePackage[verbose,pass,showframe,showcrop]{geometry}
 \fi
+
+\RequirePackage{enumitem}
+\setlist[enumerate]{topsep=0pt,partopsep=0pt,parsep=\parskip,itemsep=0pt}
+\setlist[itemize]{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=0pt}
+\setlist[description]{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=0pt}
 
 \RequirePackage{fancyhdr}
 
