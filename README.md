@@ -88,6 +88,7 @@
   - [图表索引与目录中引导符一致](#图表索引与目录中引导符一致)
   - [增强符号对照表和缩略语对照表](#增强符号对照表和缩略语对照表)
   - [增加专业学位硕士学位论文封面与中英文题名页](#增加专业学位硕士学位论文封面与中英文题名页)
+- [版本记录](#版本记录)
 - [免责声明](#免责声明)
 - [作者](#作者)
 
@@ -1647,6 +1648,64 @@ LaTeX Font Warning: Font shape `OMX/cmex/m/n' in size <10.53937> not available
 > 二、本次单独设计了专业硕士学位论文的封面、中英文题名页，打印装订时必须采用专业硕士学位论文的封面、中英文题名页。
 
 根据压缩包内的`2、西安电子科技大学专业学位硕士学位论文封面及中英文题名页模板（2015年版）-2019.03修订.docx`文件对专业硕士学位论文模板的封面与中英文题名页进行适配。
+
+# 版本记录
+
+- `2021-12-30` [`v1.23.1`](https://github.com/note286/xdupgthesis/releases/tag/v1.23.1) 修复多个参考文献引用序号分隔符。
+- `2021-12-27` [`v1.23.0`](https://github.com/note286/xdupgthesis/releases/tag/v1.23.0) 配置数学字体样式为ISO样式。
+- `2021-12-26` [`v1.22.2`](https://github.com/note286/xdupgthesis/releases/tag/v1.22.2) 修复数学字体无法加粗。
+- `2021-12-22` [`v1.22.1`](https://github.com/note286/xdupgthesis/releases/tag/v1.22.1) 修复macOS无法调用TeX Gyre Termes Math字体。
+- `2021-12-22` [`v1.22.0`](https://github.com/note286/xdupgthesis/releases/tag/v1.22.0) 修改默认数学字体为Cambria Math。
+- `2021-12-12` [`v1.21.0`](https://github.com/note286/xdupgthesis/releases/tag/v1.21.0) 新增显示边框功能。
+- `2021-12-12` [`v1.20.0`](https://github.com/note286/xdupgthesis/releases/tag/v1.20.0) 新增草稿模式功能。
+- `2021-12-04` [`v1.19.0`](https://github.com/note286/xdupgthesis/releases/tag/v1.19.0) TeXPage文档移除代码标签。
+- `2021-11-19` [`v1.18.0`](https://github.com/note286/xdupgthesis/releases/tag/v1.18.0) 增加字体形状与字体系列命令。
+- `2021-11-18` [`v1.17.1`](https://github.com/note286/xdupgthesis/releases/tag/v1.17.1) 修正页码字号为小五号。
+- `2021-11-16` [`v1.17.0`](https://github.com/note286/xdupgthesis/releases/tag/v1.17.0) 增加断页机制切换开关。
+- `2021-11-14` [`v1.16.2`](https://github.com/note286/xdupgthesis/releases/tag/v1.16.2) 修正四级标题样式。
+- `2021-11-14` [`v1.16.1`](https://github.com/note286/xdupgthesis/releases/tag/v1.16.1) 修改三级标题缩进。
+- `2021-11-14` [`v1.16.0`](https://github.com/note286/xdupgthesis/releases/tag/v1.16.0) 增加插图/表格索引垂直间距开关。
+- `2021-10-31` [`v1.15.0`](https://github.com/note286/xdupgthesis/releases/tag/v1.15.0) 支持论文抽查评估自定义隐去信息替换内容。
+- `2021-10-30` [`v1.14.1`](https://github.com/note286/xdupgthesis/releases/tag/v1.14.1) 支持交叉引用空白自动处理。
+- `2021-10-30` [`v1.14.0`](https://github.com/note286/xdupgthesis/releases/tag/v1.14.0) 盲审版本增加自动处理作者简介功能。
+- `2021-10-29` [`v1.13.1`](https://github.com/note286/xdupgthesis/releases/tag/v1.13.1) 修正算法序号为分章依序编码。
+- `2021-10-29` [`v1.13.0`](https://github.com/note286/xdupgthesis/releases/tag/v1.13.0) 增加算法行引用。
+- `2021-10-28` [`v1.12.3`](https://github.com/note286/xdupgthesis/releases/tag/v1.12.3) 表格环境重定义为5号字并新增表格示例和说明。
+- `2021-10-27` [`v1.12.2`](https://github.com/note286/xdupgthesis/releases/tag/v1.12.2) 论文相似性检测仅保留中英文摘要和正文内容。
+- `2021-10-26` [`v1.12.1`](https://github.com/note286/xdupgthesis/releases/tag/v1.12.1) 修正参考文献引用样式。
+- `2021-10-26` [`v1.12.0`](https://github.com/note286/xdupgthesis/releases/tag/v1.12.0) 支持插图表格索引前缀开关。
+- `2021-10-25` [`v1.11.0`](https://github.com/note286/xdupgthesis/releases/tag/v1.11.0) 支持论文抽查评估。
+- `2021-10-25` [`v1.10.0`](https://github.com/note286/xdupgthesis/releases/tag/v1.10.0) 支持附录功能。
+- `2021-10-25` [`v1.9.0`](https://github.com/note286/xdupgthesis/releases/tag/v1.9.0) 支持论文相似性检测版本输出。
+- `2021-10-24` [`v1.8.3`](https://github.com/note286/xdupgthesis/releases/tag/v1.8.3) 修正三、四级标题不加粗的bug。
+- `2021-10-24` [`v1.8.2`](https://github.com/note286/xdupgthesis/releases/tag/v1.8.2) 修正关键词之间的空格。
+- `2021-10-24` [`v1.8.1`](https://github.com/note286/xdupgthesis/releases/tag/v1.8.1) 修正英文摘要段间空一行。
+- `2021-10-23` [`v1.8.0`](https://github.com/note286/xdupgthesis/releases/tag/v1.8.0) 增加专业学位硕士学位论文封面与中英文题名页。
+- `2021-10-21` [`v1.7.0`](https://github.com/note286/xdupgthesis/releases/tag/v1.7.0) 适配旧版gbt7714。
+- `2021-10-20` [`v1.6.0`](https://github.com/note286/xdupgthesis/releases/tag/v1.6.0) 支持符号对照表和缩略语对照表跨页。
+- `2021-10-20` [`v1.5.1`](https://github.com/note286/xdupgthesis/releases/tag/v1.5.1) 修复图表引用多余前缀。
+- `2021-10-20` [`v1.5.0`](https://github.com/note286/xdupgthesis/releases/tag/v1.5.0) 允许用户自定义符号对照表列宽。
+- `2021-10-20` [`v1.4.0`](https://github.com/note286/xdupgthesis/releases/tag/v1.4.0) 允许用户自定义缩略语对照表列宽。
+- `2021-10-20` [`v1.3.1`](https://github.com/note286/xdupgthesis/releases/tag/v1.3.1) 移除超链接颜色框。
+- `2021-10-19` [`v1.3.0`](https://github.com/note286/xdupgthesis/releases/tag/v1.3.0) 支持Overleaf字体放入文件夹。
+- `2021-10-19` [`v1.2.0`](https://github.com/note286/xdupgthesis/releases/tag/v1.2.0) 修改bib文件位置并精简bib文件调用方式。
+- `2021-10-19` [`v1.1.0`](https://github.com/note286/xdupgthesis/releases/tag/v1.1.0) 支持Overleaf。
+- `2021-10-18` [`v1.0.0`](https://github.com/note286/xdupgthesis/releases/tag/v1.0.0) 重命名配置文件、文档类文件和主文件。
+- `2021-10-18` [`v0.6.0`](https://github.com/note286/xdupgthesis/releases/tag/v0.6.0) 增强符号对照表和缩略语对照表。
+- `2021-10-18` [`v0.5.2`](https://github.com/note286/xdupgthesis/releases/tag/v0.5.2) 修正图表索引与目录中引导符一致。
+- `2021-10-18` [`v0.5.1`](https://github.com/note286/xdupgthesis/releases/tag/v0.5.1) 显示图表索引前缀。
+- `2021-10-17` [`v0.5.0`](https://github.com/note286/xdupgthesis/releases/tag/v0.5.0) 支持插入子图。
+- `2021-10-17` [`v0.4.0`](https://github.com/note286/xdupgthesis/releases/tag/v0.4.0) 支持PDF自动添加元数据。
+- `2021-10-16` [`v0.3.0`](https://github.com/note286/xdupgthesis/releases/tag/v0.3.0) 支持URL自动换行。
+- `2021-10-16` [`v0.2.0`](https://github.com/note286/xdupgthesis/releases/tag/v0.2.0) 修改参考文献引用样式。
+- `2021-10-16` [`v0.1.0`](https://github.com/note286/xdupgthesis/releases/tag/v0.1.0) 修改参考文献样式。
+- `2021-10-16` [`v0.0.6`](https://github.com/note286/xdupgthesis/releases/tag/v0.0.6) 转换bst文件编码为UTF-8。
+- `2021-10-16` [`v0.0.5`](https://github.com/note286/xdupgthesis/releases/tag/v0.0.5) 修正英文字体。
+- `2021-10-15` [`v0.0.4`](https://github.com/note286/xdupgthesis/releases/tag/v0.0.4) 修复编译警告。
+- `2021-10-15` [`v0.0.3`](https://github.com/note286/xdupgthesis/releases/tag/v0.0.3) 修正中英文字体。
+- `2021-10-15` [`v0.0.2`](https://github.com/note286/xdupgthesis/releases/tag/v0.0.2) 修复编译错误。
+- `2021-10-15` [`v0.0.1`](https://github.com/note286/xdupgthesis/releases/tag/v0.0.1) 转换编码为UTF-8。
+- `2021-10-15` [`v0.0.0`](https://github.com/note286/xdupgthesis/releases/tag/v0.0.0) 提交学校官方原始模板。
 
 # 免责声明
 
