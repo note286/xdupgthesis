@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{xdupgthesis}[2022/01/04 Xidian University Postgraduate Thesis document class, version 1.24.2, modified by @note286, published in https://note286.github.io/xdupgthesis/]
+\ProvidesClass{xdupgthesis}[2022/01/04 Xidian University Postgraduate Thesis document class, version 1.24.3, modified by @note286, published in https://note286.github.io/xdupgthesis/]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%   class and packages
@@ -305,8 +305,6 @@ pdfsubject={\XDU@label@university\XDU@value@degreemark\XDU@value@cover@thesis}%
 \DeclareRobustCommand{\XDU@underline}
   {\@ifnextchar[\XDU@@underline\underline}
 
-\DeclareRobustCommand*{\XDU@bold}{\bfseries}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% size
 \DeclareRobustCommand*{\XDU@font@zihao}[1]{\zihao{#1}\setlength{\baselineskip}{20pt}}
@@ -383,7 +381,7 @@ pdfsubject={\XDU@label@university\XDU@value@degreemark\XDU@value@cover@thesis}%
 %% section
 \ctexset{section={name={,},
            number={\thesection},
-           format={\raggedright\XDU@bold\XDU@font@zihao{-3}},
+           format={\raggedright\bfseries\XDU@font@zihao{-3}},
            nameformat={},
            numberformat={},
            aftername={\quad},
@@ -395,7 +393,7 @@ pdfsubject={\XDU@label@university\XDU@value@degreemark\XDU@value@cover@thesis}%
 %% subsection
 \ctexset{subsection={name={,},
            number={\thesubsection},
-           format={\raggedright\XDU@bold\XDU@font@zihao{4}},
+           format={\raggedright\bfseries\XDU@font@zihao{4}},
            nameformat={},
            numberformat={},
            aftername={\quad},
@@ -407,7 +405,7 @@ pdfsubject={\XDU@label@university\XDU@value@degreemark\XDU@value@cover@thesis}%
 %% subsubsection
 \ctexset{subsubsection={name={（,）},
            number={\arabic{subsubsection}},
-           format={\raggedright\XDU@bold\XDU@font@zihao{-4}},
+           format={\raggedright\bfseries\XDU@font@zihao{-4}},
            nameformat={},
            numberformat={},
            aftername={},
@@ -429,7 +427,7 @@ pdfsubject={\XDU@label@university\XDU@value@degreemark\XDU@value@cover@thesis}%
     \makebox[\textwidth]{\rule{0pt}{12cm}}
     \rule[-3.2cm]{0pt}{3.2cm}\parbox[t]{\textwidth}{%
     \begin{center}%
-        {\XDU@bold\XDU@value@thesis@title}%
+        {\bfseries\XDU@value@thesis@title}%
     \end{center}%
     }
     \ifXDU@Option@mprof
@@ -446,24 +444,24 @@ pdfsubject={\XDU@label@university\XDU@value@degreemark\XDU@value@cover@thesis}%
     \newlength{\linelength}
     % 作者姓名
     \setlength{\linelength}{\alllength-\widthof{\XDU@label@fcover@author}}
-    \XDU@bold{\heiti\XDU@label@fcover@author}\XDU@underline[\linelength]{\XDU@value@author@name}\\%
+    \bfseries{\heiti\XDU@label@fcover@author}\XDU@underline[\linelength]{\XDU@value@author@name}\\%
     \ifXDU@Option@mprof
       % 学校导师姓名、职称
       \setlength{\linelength}{\alllength-\widthof{\XDU@label@fcover@mprof@advisor}}
-      \XDU@bold{\heiti\XDU@label@fcover@mprof@advisor}\XDU@underline[\linelength]{\XDU@value@advisor@name~\XDU@value@advisor@title}\\%
+      \bfseries{\heiti\XDU@label@fcover@mprof@advisor}\XDU@underline[\linelength]{\XDU@value@advisor@name~\XDU@value@advisor@title}\\%
       % 企业导师姓名、职称
       \setlength{\linelength}{\alllength-\widthof{\XDU@label@fcover@mprof@entadvisor}}
-      \XDU@bold{\heiti\XDU@label@fcover@mprof@entadvisor}\XDU@underline[\linelength]{\XDU@value@entadvisor@name~\XDU@value@entadvisor@title}\\%
+      \bfseries{\heiti\XDU@label@fcover@mprof@entadvisor}\XDU@underline[\linelength]{\XDU@value@entadvisor@name~\XDU@value@entadvisor@title}\\%
       % 申请学位类别
       \setlength{\linelength}{\alllength-\widthof{\XDU@label@fcover@degree}}
-      \XDU@bold{\heiti\XDU@label@fcover@degree}\XDU@underline[\linelength]{\XDU@value@mprof@degree}%
+      \bfseries{\heiti\XDU@label@fcover@degree}\XDU@underline[\linelength]{\XDU@value@mprof@degree}%
     \else
       % 指导教师姓名、职称
       \setlength{\linelength}{\alllength-\widthof{\XDU@label@fcover@aprof@advisor}}
-      \XDU@bold{\heiti\XDU@label@fcover@aprof@advisor}\XDU@underline[\linelength]{\XDU@value@advisor@name~\XDU@value@advisor@title}\\%
+      \bfseries{\heiti\XDU@label@fcover@aprof@advisor}\XDU@underline[\linelength]{\XDU@value@advisor@name~\XDU@value@advisor@title}\\%
       % 申请学位类别
       \setlength{\linelength}{\alllength-\widthof{\XDU@label@fcover@degree}}
-      \XDU@bold{\heiti\XDU@label@fcover@degree}\XDU@underline[\linelength]{\XDU@value@degree}%
+      \bfseries{\heiti\XDU@label@fcover@degree}\XDU@underline[\linelength]{\XDU@value@degree}%
     \fi
     }}
 \clearpage\thispagestyle{empty}\parindent=2\ccwd\cleardoublepage}
@@ -473,27 +471,27 @@ pdfsubject={\XDU@label@university\XDU@value@degreemark\XDU@value@cover@thesis}%
 
     \normalfont\renewcommand{\baselinestretch}{1.2}\zihao{5}%
     \rule{0pt}{1.35cm}\parbox[b]{4.5cm}{
-        \XDU@bold\XDU@label@cover@UDC\XDU@underline[73pt]{\XDU@value@thesis@UDC}\par%
+        \bfseries\XDU@label@cover@UDC\XDU@underline[73pt]{\XDU@value@thesis@UDC}\par%
         \vspace{2pt}%
-        \XDU@bold\XDU@label@cover@classification\XDU@underline[73pt]{\XDU@value@thesis@classification}%
+        \bfseries\XDU@label@cover@classification\XDU@underline[73pt]{\XDU@value@thesis@classification}%
     }
     \hfill\parbox[b]{4.5cm}{
-        \XDU@bold\XDU@label@cover@studentNo\XDU@underline[83pt]{\XDU@value@thesis@studentNo}\par%
+        \bfseries\XDU@label@cover@studentNo\XDU@underline[83pt]{\XDU@value@thesis@studentNo}\par%
         \vspace{2pt}%
-        \XDU@bold\XDU@label@cover@confidential\XDU@underline[83pt]{\XDU@value@thesis@confidential}%
+        \bfseries\XDU@label@cover@confidential\XDU@underline[83pt]{\XDU@value@thesis@confidential}%
     }
 
 \renewcommand{\baselinestretch}{1}%
     \vspace{2.05cm}%
     \makebox[\textwidth]{\rule{0pt}{4.5cm}\shortstack[c]{
-        \XDU@bold\heiti\XDU@font@zihao{1}\setlength{\baselineskip}{30pt}\XDU@label@university\\%
+        \bfseries\heiti\XDU@font@zihao{1}\setlength{\baselineskip}{30pt}\XDU@label@university\\%
         \vspace{60pt} \\%
-        \XDU@bold\XDU@font@zihao{-1}\setlength{\baselineskip}{30pt}\XDU@value@degreemark\XDU@value@cover@thesis%
+        \bfseries\XDU@font@zihao{-1}\setlength{\baselineskip}{30pt}\XDU@value@degreemark\XDU@value@cover@thesis%
     }}
     \rule{0pt}{2.7cm}%
     \rule[-3.2cm]{0pt}{3.2cm}\parbox[t]{\textwidth}{
     \begin{center}%
-     \XDU@bold\XDU@font@zihao{2}\setlength{\baselineskip}{30pt}\XDU@value@thesis@title%
+     \bfseries\XDU@font@zihao{2}\setlength{\baselineskip}{30pt}\XDU@value@thesis@title%
     \end{center}%
     }
 
@@ -501,28 +499,28 @@ pdfsubject={\XDU@label@university\XDU@value@degreemark\XDU@value@cover@thesis}%
     \hspace{4.5cm}\parbox{10.5cm}{
         \XDU@font@zihao{4}\setlength{\baselineskip}{32pt}%
         % 作者姓名
-        {\XDU@bold\XDU@label@cover@author}\XDU@value@author@name\\%
+        {\bfseries\XDU@label@cover@author}\XDU@value@author@name\\%
         \ifXDU@Option@mprof
           % 领域
-          {\XDU@bold\XDU@label@cover@mprof@domain}\XDU@value@mprof@domain\\%
+          {\bfseries\XDU@label@cover@mprof@domain}\XDU@value@mprof@domain\\%
           % 学位类别
-          {\XDU@bold\XDU@label@cover@degree}\XDU@value@mprof@degree\\%
+          {\bfseries\XDU@label@cover@degree}\XDU@value@mprof@degree\\%
           % 学校导师姓名、职称
-          {\XDU@bold\XDU@label@cover@mprof@advisor}\XDU@value@advisor@name~\XDU@value@advisor@title\\%
+          {\bfseries\XDU@label@cover@mprof@advisor}\XDU@value@advisor@name~\XDU@value@advisor@title\\%
           % 企业导师姓名、职称
-          {\XDU@bold\XDU@label@cover@mprof@entadvisor}\XDU@value@entadvisor@name~\XDU@value@entadvisor@title\\%
+          {\bfseries\XDU@label@cover@mprof@entadvisor}\XDU@value@entadvisor@name~\XDU@value@entadvisor@title\\%
         \else
           % 一级学科
-          {\XDU@bold\XDU@label@cover@major}\XDU@value@author@major\\%
+          {\bfseries\XDU@label@cover@major}\XDU@value@author@major\\%
           % 二级学科（研究方向）
-          {\XDU@bold\XDU@label@cover@submajor}\XDU@value@author@submajor\\%
+          {\bfseries\XDU@label@cover@submajor}\XDU@value@author@submajor\\%
           % 学位类别
-          {\XDU@bold\XDU@label@cover@degree}\XDU@value@degree\\%
+          {\bfseries\XDU@label@cover@degree}\XDU@value@degree\\%
           % 指导教师姓名、职称
-          {\XDU@bold\XDU@label@cover@aprof@advisor}\XDU@value@advisor@name~\XDU@value@advisor@title\\%
+          {\bfseries\XDU@label@cover@aprof@advisor}\XDU@value@advisor@name~\XDU@value@advisor@title\\%
         \fi
-        {\XDU@bold\XDU@label@cover@school}\XDU@value@school\\%
-        {\XDU@bold\XDU@label@cover@submit@date}\XDU@value@thesis@submit@date%
+        {\bfseries\XDU@label@cover@school}\XDU@value@school\\%
+        {\bfseries\XDU@label@cover@submit@date}\XDU@value@thesis@submit@date%
     }
    \clearpage\thispagestyle{empty}%
    \renewcommand{\baselinestretch}{1}%
@@ -539,7 +537,7 @@ pdfsubject={\XDU@label@university\XDU@value@degreemark\XDU@value@cover@thesis}%
     \rule[-3.5cm]{0pt}{3.5cm}\parbox[t]{\textwidth}{%
     \XDU@font@zihao{2}\setlength{\baselineskip}{30pt}%
     \begin{center}%
-        {\XDU@bold\XDU@evalue@thesis@title}%
+        {\bfseries\XDU@evalue@thesis@title}%
     \end{center}%
     }
     \rule{0pt}{2.5cm}%
