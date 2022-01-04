@@ -1653,6 +1653,7 @@ LaTeX Font Warning: Font shape `OMX/cmex/m/n' in size <10.53937> not available
 
 # 版本记录
 
+- `2022-01-04` [`v1.24.2`](https://github.com/note286/xdupgthesis/releases/tag/v1.24.2) 更改ctexbook字体为手动配置。
 - `2022-01-04` [`v1.24.1`](https://github.com/note286/xdupgthesis/releases/tag/v1.24.1) 移除宋体显式调用。
 - `2022-01-03` [`v1.24.0`](https://github.com/note286/xdupgthesis/releases/tag/v1.24.0) 修改enumerate、itemize和description环境默认间距。
 - `2021-12-30` [`v1.23.1`](https://github.com/note286/xdupgthesis/releases/tag/v1.23.1) 修复多个参考文献引用序号分隔符。

@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{xdupgthesis}[2022/01/04 Xidian University Postgraduate Thesis document class, version 1.24.1, modified by @note286, published in https://note286.github.io/xdupgthesis/]
+\ProvidesClass{xdupgthesis}[2022/01/04 Xidian University Postgraduate Thesis document class, version 1.24.2, modified by @note286, published in https://note286.github.io/xdupgthesis/]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%   class and packages
@@ -79,7 +79,7 @@
 \ifXDU@Option@overleaf
   \LoadClass[a4paper,zihao=-4,twoside,openright,punct,fontset=none]{ctexbook}
   \BeforeBeginEnvironment{document}{
-  \newCJKfontfamily[zhhei]\heiti{simhei.ttf}[Path=fonts/]
+  \newCJKfontfamily\heiti{simhei.ttf}[Path=fonts/,BoldFont={simhei.ttf},BoldFeatures={FakeBold=\FakeBoldValue}]
   \setCJKmainfont{simsun.ttc}
     [Path=fonts/,
     BoldFont={simsun.ttc},BoldFeatures={FakeBold=\FakeBoldValue},
@@ -105,7 +105,7 @@
     \fi
   \fi}
 \else
-  \LoadClass[a4paper,zihao=-4,twoside,openright,punct,fontset=windows]{ctexbook}
+  \LoadClass[a4paper,zihao=-4,twoside,openright,punct,fontset=none]{ctexbook}
   \BeforeBeginEnvironment{document}{
   \setmainfont{Times New Roman}
   \setCJKmainfont{SimSun}
@@ -114,6 +114,7 @@
     BoldSlantedFont={SimSun},BoldSlantedFeatures={FakeBold=\FakeBoldValue,FakeSlant=\FakeSlantValue},
     ItalicFont={KaiTi},
     BoldItalicFont={KaiTi},BoldItalicFeatures={FakeBold=\FakeBoldValue}]
+  \newCJKfontfamily\heiti{SimHei}[BoldFont={SimHei},BoldFeatures={FakeBold=\FakeBoldValue}]
   \ifXDU@Option@mftgtm
     \RequirePackage{unicode-math}
     \setmathfont{texgyretermes-math.otf}[math-style=ISO,bold-style=ISO]
@@ -307,11 +308,6 @@ pdfsubject={\XDU@label@university\XDU@value@degreemark\XDU@value@cover@thesis}%
 \DeclareRobustCommand*{\XDU@bold}{\bfseries}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%    font
-
-%% family
-\DeclareRobustCommand*{\XDU@font@ht}{\heiti}
-
 %% size
 \DeclareRobustCommand*{\XDU@font@zihao}[1]{\zihao{#1}\setlength{\baselineskip}{20pt}}
 \renewcommand*{\baselinestretch}{1}
@@ -372,7 +368,7 @@ pdfsubject={\XDU@label@university\XDU@value@degreemark\XDU@value@cover@thesis}%
 %% chapter
 \ctexset{chapter={name={\XDU@chapter@prenumber,\XDU@chapter@afternumber},
            number={\chinese{chapter}},
-           format={\centering\XDU@font@ht\XDU@font@zihao{3}},
+           format={\centering\heiti\XDU@font@zihao{3}},
            nameformat={},
            numberformat={},
            aftername={\quad},
@@ -450,24 +446,24 @@ pdfsubject={\XDU@label@university\XDU@value@degreemark\XDU@value@cover@thesis}%
     \newlength{\linelength}
     % 作者姓名
     \setlength{\linelength}{\alllength-\widthof{\XDU@label@fcover@author}}
-    \XDU@bold{\XDU@font@ht\XDU@label@fcover@author}\XDU@underline[\linelength]{\XDU@value@author@name}\\%
+    \XDU@bold{\heiti\XDU@label@fcover@author}\XDU@underline[\linelength]{\XDU@value@author@name}\\%
     \ifXDU@Option@mprof
       % 学校导师姓名、职称
       \setlength{\linelength}{\alllength-\widthof{\XDU@label@fcover@mprof@advisor}}
-      \XDU@bold{\XDU@font@ht\XDU@label@fcover@mprof@advisor}\XDU@underline[\linelength]{\XDU@value@advisor@name~\XDU@value@advisor@title}\\%
+      \XDU@bold{\heiti\XDU@label@fcover@mprof@advisor}\XDU@underline[\linelength]{\XDU@value@advisor@name~\XDU@value@advisor@title}\\%
       % 企业导师姓名、职称
       \setlength{\linelength}{\alllength-\widthof{\XDU@label@fcover@mprof@entadvisor}}
-      \XDU@bold{\XDU@font@ht\XDU@label@fcover@mprof@entadvisor}\XDU@underline[\linelength]{\XDU@value@entadvisor@name~\XDU@value@entadvisor@title}\\%
+      \XDU@bold{\heiti\XDU@label@fcover@mprof@entadvisor}\XDU@underline[\linelength]{\XDU@value@entadvisor@name~\XDU@value@entadvisor@title}\\%
       % 申请学位类别
       \setlength{\linelength}{\alllength-\widthof{\XDU@label@fcover@degree}}
-      \XDU@bold{\XDU@font@ht\XDU@label@fcover@degree}\XDU@underline[\linelength]{\XDU@value@mprof@degree}%
+      \XDU@bold{\heiti\XDU@label@fcover@degree}\XDU@underline[\linelength]{\XDU@value@mprof@degree}%
     \else
       % 指导教师姓名、职称
       \setlength{\linelength}{\alllength-\widthof{\XDU@label@fcover@aprof@advisor}}
-      \XDU@bold{\XDU@font@ht\XDU@label@fcover@aprof@advisor}\XDU@underline[\linelength]{\XDU@value@advisor@name~\XDU@value@advisor@title}\\%
+      \XDU@bold{\heiti\XDU@label@fcover@aprof@advisor}\XDU@underline[\linelength]{\XDU@value@advisor@name~\XDU@value@advisor@title}\\%
       % 申请学位类别
       \setlength{\linelength}{\alllength-\widthof{\XDU@label@fcover@degree}}
-      \XDU@bold{\XDU@font@ht\XDU@label@fcover@degree}\XDU@underline[\linelength]{\XDU@value@degree}%
+      \XDU@bold{\heiti\XDU@label@fcover@degree}\XDU@underline[\linelength]{\XDU@value@degree}%
     \fi
     }}
 \clearpage\thispagestyle{empty}\parindent=2\ccwd\cleardoublepage}
@@ -490,7 +486,7 @@ pdfsubject={\XDU@label@university\XDU@value@degreemark\XDU@value@cover@thesis}%
 \renewcommand{\baselinestretch}{1}%
     \vspace{2.05cm}%
     \makebox[\textwidth]{\rule{0pt}{4.5cm}\shortstack[c]{
-        \XDU@bold\XDU@font@ht\XDU@font@zihao{1}\setlength{\baselineskip}{30pt}\XDU@label@university\\%
+        \XDU@bold\heiti\XDU@font@zihao{1}\setlength{\baselineskip}{30pt}\XDU@label@university\\%
         \vspace{60pt} \\%
         \XDU@bold\XDU@font@zihao{-1}\setlength{\baselineskip}{30pt}\XDU@value@degreemark\XDU@value@cover@thesis%
     }}
@@ -684,7 +680,7 @@ By \par%
     \setlength{\cftbeforechapskip}{0pt}
     \setlength{\cftbeforesecskip}{0pt}
     \setlength{\cftbeforesubsecskip}{0pt}
-    \renewcommand{\cftchapfont}{\XDU@font@ht\XDU@font@zihao{-4}}
+    \renewcommand{\cftchapfont}{\heiti\XDU@font@zihao{-4}}
     \renewcommand{\cftsecfont}{\XDU@font@zihao{-4}}
     \renewcommand{\cftsubsecfont}{\XDU@font@zihao{-4}}
     \renewcommand{\cftchapleader}{\cftdotfill{\cftchapdotsep}}
