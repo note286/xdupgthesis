@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{xdupgthesis}[2022/01/03 Xidian University Postgraduate Thesis document class, version 1.24.0, modified by @note286, published in https://note286.github.io/xdupgthesis/]
+\ProvidesClass{xdupgthesis}[2022/01/04 Xidian University Postgraduate Thesis document class, version 1.24.1, modified by @note286, published in https://note286.github.io/xdupgthesis/]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%   class and packages
@@ -79,7 +79,6 @@
 \ifXDU@Option@overleaf
   \LoadClass[a4paper,zihao=-4,twoside,openright,punct,fontset=none]{ctexbook}
   \BeforeBeginEnvironment{document}{
-  \newCJKfontfamily[zhsong]\songti{simsun.ttc}[Path=fonts/]
   \newCJKfontfamily[zhhei]\heiti{simhei.ttf}[Path=fonts/]
   \setCJKmainfont{simsun.ttc}
     [Path=fonts/,
@@ -311,7 +310,6 @@ pdfsubject={\XDU@label@university\XDU@value@degreemark\XDU@value@cover@thesis}%
 %%    font
 
 %% family
-\DeclareRobustCommand*{\XDU@font@st}{\songti}
 \DeclareRobustCommand*{\XDU@font@ht}{\heiti}
 
 %% size
@@ -361,10 +359,10 @@ pdfsubject={\XDU@label@university\XDU@value@degreemark\XDU@value@cover@thesis}%
 \fancyhf{}
 \ifXDU@Option@psd
 \else
-  \fancyhead[CE]{{\XDU@font@st\XDU@font@zihao{5}\XDU@hdr@thesistitle}}
-  \fancyhead[CO]{{\XDU@font@st\XDU@font@zihao{5}\nouppercase\leftmark}}
+  \fancyhead[CE]{{\XDU@font@zihao{5}\XDU@hdr@thesistitle}}
+  \fancyhead[CO]{{\XDU@font@zihao{5}\nouppercase\leftmark}}
 \fi
-\fancyfoot[C]{{\XDU@font@st\XDU@font@zihao{-5}\thepage}}
+\fancyfoot[C]{{\XDU@font@zihao{-5}\thepage}}
 %% par skip
 %\parskip 0pt plus 6pt minus 0pt
 
@@ -389,7 +387,7 @@ pdfsubject={\XDU@label@university\XDU@value@degreemark\XDU@value@cover@thesis}%
 %% section
 \ctexset{section={name={,},
            number={\thesection},
-           format={\raggedright\XDU@bold\XDU@font@st\XDU@font@zihao{-3}},
+           format={\raggedright\XDU@bold\XDU@font@zihao{-3}},
            nameformat={},
            numberformat={},
            aftername={\quad},
@@ -401,7 +399,7 @@ pdfsubject={\XDU@label@university\XDU@value@degreemark\XDU@value@cover@thesis}%
 %% subsection
 \ctexset{subsection={name={,},
            number={\thesubsection},
-           format={\raggedright\XDU@bold\XDU@font@st\XDU@font@zihao{4}},
+           format={\raggedright\XDU@bold\XDU@font@zihao{4}},
            nameformat={},
            numberformat={},
            aftername={\quad},
@@ -413,7 +411,7 @@ pdfsubject={\XDU@label@university\XDU@value@degreemark\XDU@value@cover@thesis}%
 %% subsubsection
 \ctexset{subsubsection={name={（,）},
            number={\arabic{subsubsection}},
-           format={\raggedright\XDU@bold\XDU@font@st\XDU@font@zihao{-4}},
+           format={\raggedright\XDU@bold\XDU@font@zihao{-4}},
            nameformat={},
            numberformat={},
            aftername={},
@@ -431,7 +429,7 @@ pdfsubject={\XDU@label@university\XDU@value@degreemark\XDU@value@cover@thesis}%
 %% ql first
 \DeclareRobustCommand{\XDU@make@cover}
 {{\parindent=0pt\thispagestyle{empty}%
-    \normalfont\XDU@font@st\XDU@font@zihao{2}\setlength{\baselineskip}{30pt}%
+    \normalfont\XDU@font@zihao{2}\setlength{\baselineskip}{30pt}%
     \makebox[\textwidth]{\rule{0pt}{12cm}}
     \rule[-3.2cm]{0pt}{3.2cm}\parbox[t]{\textwidth}{%
     \begin{center}%
@@ -452,24 +450,24 @@ pdfsubject={\XDU@label@university\XDU@value@degreemark\XDU@value@cover@thesis}%
     \newlength{\linelength}
     % 作者姓名
     \setlength{\linelength}{\alllength-\widthof{\XDU@label@fcover@author}}
-    \XDU@bold\XDU@font@ht{\XDU@label@fcover@author}\XDU@font@st\XDU@underline[\linelength]{\XDU@value@author@name}\\%
+    \XDU@bold{\XDU@font@ht\XDU@label@fcover@author}\XDU@underline[\linelength]{\XDU@value@author@name}\\%
     \ifXDU@Option@mprof
       % 学校导师姓名、职称
       \setlength{\linelength}{\alllength-\widthof{\XDU@label@fcover@mprof@advisor}}
-      \XDU@bold\XDU@font@ht{\XDU@label@fcover@mprof@advisor}\XDU@font@st\XDU@underline[\linelength]{\XDU@value@advisor@name~\XDU@value@advisor@title}\\%
+      \XDU@bold{\XDU@font@ht\XDU@label@fcover@mprof@advisor}\XDU@underline[\linelength]{\XDU@value@advisor@name~\XDU@value@advisor@title}\\%
       % 企业导师姓名、职称
       \setlength{\linelength}{\alllength-\widthof{\XDU@label@fcover@mprof@entadvisor}}
-      \XDU@bold\XDU@font@ht{\XDU@label@fcover@mprof@entadvisor}\XDU@font@st\XDU@underline[\linelength]{\XDU@value@entadvisor@name~\XDU@value@entadvisor@title}\\%
+      \XDU@bold{\XDU@font@ht\XDU@label@fcover@mprof@entadvisor}\XDU@underline[\linelength]{\XDU@value@entadvisor@name~\XDU@value@entadvisor@title}\\%
       % 申请学位类别
       \setlength{\linelength}{\alllength-\widthof{\XDU@label@fcover@degree}}
-      \XDU@bold\XDU@font@ht{\XDU@label@fcover@degree}\XDU@font@st\XDU@underline[\linelength]{\XDU@value@mprof@degree}%
+      \XDU@bold{\XDU@font@ht\XDU@label@fcover@degree}\XDU@underline[\linelength]{\XDU@value@mprof@degree}%
     \else
       % 指导教师姓名、职称
       \setlength{\linelength}{\alllength-\widthof{\XDU@label@fcover@aprof@advisor}}
-      \XDU@bold\XDU@font@ht{\XDU@label@fcover@aprof@advisor}\XDU@font@st\XDU@underline[\linelength]{\XDU@value@advisor@name~\XDU@value@advisor@title}\\%
+      \XDU@bold{\XDU@font@ht\XDU@label@fcover@aprof@advisor}\XDU@underline[\linelength]{\XDU@value@advisor@name~\XDU@value@advisor@title}\\%
       % 申请学位类别
       \setlength{\linelength}{\alllength-\widthof{\XDU@label@fcover@degree}}
-      \XDU@bold\XDU@font@ht{\XDU@label@fcover@degree}\XDU@font@st\XDU@underline[\linelength]{\XDU@value@degree}%
+      \XDU@bold{\XDU@font@ht\XDU@label@fcover@degree}\XDU@underline[\linelength]{\XDU@value@degree}%
     \fi
     }}
 \clearpage\thispagestyle{empty}\parindent=2\ccwd\cleardoublepage}
@@ -477,7 +475,7 @@ pdfsubject={\XDU@label@university\XDU@value@degreemark\XDU@value@cover@thesis}%
 \DeclareRobustCommand{\XDU@make@title}
   {{\cleardoublepage\parindent=0pt\thispagestyle{empty}%
 
-    \normalfont\XDU@font@st\renewcommand{\baselinestretch}{1.2}\zihao{5}%
+    \normalfont\renewcommand{\baselinestretch}{1.2}\zihao{5}%
     \rule{0pt}{1.35cm}\parbox[b]{4.5cm}{
         \XDU@bold\XDU@label@cover@UDC\XDU@underline[73pt]{\XDU@value@thesis@UDC}\par%
         \vspace{2pt}%
@@ -494,7 +492,7 @@ pdfsubject={\XDU@label@university\XDU@value@degreemark\XDU@value@cover@thesis}%
     \makebox[\textwidth]{\rule{0pt}{4.5cm}\shortstack[c]{
         \XDU@bold\XDU@font@ht\XDU@font@zihao{1}\setlength{\baselineskip}{30pt}\XDU@label@university\\%
         \vspace{60pt} \\%
-        \XDU@bold\XDU@font@st\XDU@font@zihao{-1}\setlength{\baselineskip}{30pt}\XDU@value@degreemark\XDU@value@cover@thesis%
+        \XDU@bold\XDU@font@zihao{-1}\setlength{\baselineskip}{30pt}\XDU@value@degreemark\XDU@value@cover@thesis%
     }}
     \rule{0pt}{2.7cm}%
     \rule[-3.2cm]{0pt}{3.2cm}\parbox[t]{\textwidth}{
@@ -505,7 +503,7 @@ pdfsubject={\XDU@label@university\XDU@value@degreemark\XDU@value@cover@thesis}%
 
     \vspace{2.5cm}%
     \hspace{4.5cm}\parbox{10.5cm}{
-        \XDU@font@st\XDU@font@zihao{4}\setlength{\baselineskip}{32pt}%
+        \XDU@font@zihao{4}\setlength{\baselineskip}{32pt}%
         % 作者姓名
         {\XDU@bold\XDU@label@cover@author}\XDU@value@author@name\\%
         \ifXDU@Option@mprof
@@ -540,7 +538,7 @@ pdfsubject={\XDU@label@university\XDU@value@degreemark\XDU@value@cover@thesis}%
 
 \DeclareRobustCommand{\XDU@make@titleenglish}
   {{\cleardoublepage\parindent=0pt\thispagestyle{empty}%
-    \normalfont\XDU@font@st%
+    \normalfont%
 
     \rule[-3.5cm]{0pt}{3.5cm}\parbox[t]{\textwidth}{%
     \XDU@font@zihao{2}\setlength{\baselineskip}{30pt}%
@@ -599,7 +597,7 @@ By \par%
 
 \DeclareRobustCommand{\XDU@make@statementandcopyright}
   {{\cleardoublepage\parindent=0pt\thispagestyle{empty}%
-  \normalfont\XDU@font@st%
+  \normalfont%
    \begin{center}%
    \bfseries\XDU@font@zihao{4}%
      \XDU@label@stat@statement%
@@ -617,7 +615,7 @@ By \par%
    \XDU@font@zihao{-4}%
    \hspace*{2em}\parindent=2\ccwd\XDU@value@stat@copyright\parindent=0pt%
   \vskip 20pt%
-   \normalfont\XDU@font@st\XDU@font@zihao{-4}%
+   \normalfont\XDU@font@zihao{-4}%
    \hspace*{2em}\XDU@lable@stat@auther\XDU@underline[100pt]{}\hspace*{1em}%
     \hfill \XDU@lable@stat@advisor\XDU@underline[100pt]{}\hspace*{1em}%
   \vskip 20pt%
@@ -643,9 +641,9 @@ By \par%
 %% chinese keywords
 \DeclareRobustCommand{\keywords}[1]
   {{\parindent=0pt\vspace{20pt}%
-   \normalfont\XDU@font@st\bfseries\XDU@font@zihao{-4}%
+   \normalfont\bfseries\XDU@font@zihao{-4}%
    \XDU@label@keywords%
-   \normalfont\XDU@font@st\XDU@font@zihao{-4}%
+   \normalfont\XDU@font@zihao{-4}%
    {#1}\parindent=2\ccwd}}
 
 %% english abstract
@@ -662,9 +660,9 @@ By \par%
 %% english keywords
 \DeclareRobustCommand{\englishkeywords}[1]
   {{\parindent=0pt\vspace{2ex}%
-   \normalfont\XDU@font@st\bfseries\XDU@font@zihao{-4}%
+   \normalfont\bfseries\XDU@font@zihao{-4}%
    \XDU@elabel@keywords~%
-   \normalfont\XDU@font@st\XDU@font@zihao{-4}%
+   \normalfont\XDU@font@zihao{-4}%
    {#1}\parindent=2\ccwd}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -687,23 +685,23 @@ By \par%
     \setlength{\cftbeforesecskip}{0pt}
     \setlength{\cftbeforesubsecskip}{0pt}
     \renewcommand{\cftchapfont}{\XDU@font@ht\XDU@font@zihao{-4}}
-    \renewcommand{\cftsecfont}{\XDU@font@st\XDU@font@zihao{-4}}
-    \renewcommand{\cftsubsecfont}{\XDU@font@st\XDU@font@zihao{-4}}
+    \renewcommand{\cftsecfont}{\XDU@font@zihao{-4}}
+    \renewcommand{\cftsubsecfont}{\XDU@font@zihao{-4}}
     \renewcommand{\cftchapleader}{\cftdotfill{\cftchapdotsep}}
     \renewcommand{\cftchapdotsep}{\cftdotsep}
-    \renewcommand{\cftchappagefont}{\XDU@font@st\XDU@font@zihao{-4}}
+    \renewcommand{\cftchappagefont}{\XDU@font@zihao{-4}}
     \renewcommand{\cftsecpagefont}{\XDU@font@zihao{-4}}
     \renewcommand{\cftsubsecpagefont}{\XDU@font@zihao{-4}}
-    \renewcommand{\cftfigfont}{\XDU@font@st\XDU@font@zihao{-4}}
-    \renewcommand{\cftloftitlefont}{\XDU@font@st\XDU@font@zihao{-4}}
-    \renewcommand{\cftfigpagefont}{\XDU@font@st\XDU@font@zihao{-4}}
-    \renewcommand{\cfttabfont}{\XDU@font@st\XDU@font@zihao{-4}}
-    \renewcommand{\cftlottitlefont}{\XDU@font@st\XDU@font@zihao{-4}}
-    \renewcommand{\cfttabpagefont}{\XDU@font@st\XDU@font@zihao{-4}}
+    \renewcommand{\cftfigfont}{\XDU@font@zihao{-4}}
+    \renewcommand{\cftloftitlefont}{\XDU@font@zihao{-4}}
+    \renewcommand{\cftfigpagefont}{\XDU@font@zihao{-4}}
+    \renewcommand{\cfttabfont}{\XDU@font@zihao{-4}}
+    \renewcommand{\cftlottitlefont}{\XDU@font@zihao{-4}}
+    \renewcommand{\cfttabpagefont}{\XDU@font@zihao{-4}}
 
     \setlength{\abovecaptionskip}{6bp}
     \setlength{\belowcaptionskip}{0pt}
-    \renewcommand{\captionfont}{\XDU@font@st\XDU@font@zihao{5}}
+    \renewcommand{\captionfont}{\XDU@font@zihao{5}}
 
 %% list of figures
 \ctexset{listfigurename={\XDU@label@listoffigures}}
@@ -855,14 +853,14 @@ By \par%
     {\usecounter{XDU@counter@resumelistcounter}
      \setcounter{XDU@counter@resumelistcounter}{0}
      \setlength{\topsep}{0pt}\setlength{\itemsep}{0pt}\setlength{\parsep}{0pt}
-     \parindent=0pt\normalfont\XDU@font@st\XDU@font@zihao{-4}
+     \parindent=0pt\normalfont\XDU@font@zihao{-4}
      \setlength{\leftmargin}{2\labelwidth}}}
   {\end{list}}
 
 \newenvironment{resumelist*}
   {\begin{list}{}
     {\setlength{\topsep}{0pt}\setlength{\itemsep}{0pt}\setlength{\parsep}{0pt}
-    \parindent=0pt\normalfont\XDU@font@st\XDU@font@zihao{-4}
+    \parindent=0pt\normalfont\XDU@font@zihao{-4}
      \setlength{\leftmargin}{\labelwidth}}}
   {\end{list}}
 
