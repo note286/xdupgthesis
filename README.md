@@ -6,7 +6,6 @@
 - [注意事项](#注意事项)
 - [项目起源](#项目起源)
 - [使用/示例](#使用示例)
-  - [下载与编辑](#下载与编辑)
   - [卸载与安装](#卸载与安装)
     - [配置镜像源](#配置镜像源)
     - [更新包管理器和所有包](#更新包管理器和所有包)
@@ -16,6 +15,7 @@
     - [macOS](#macos)
     - [Overleaf](#overleaf)
     - [TeXPage](#texpage)
+  - [下载与编辑](#下载与编辑)
   - [编译](#编译)
     - [命令编译](#命令编译)
       - [latexmk编译](#latexmk编译)
@@ -140,22 +140,6 @@ dvipdfmx templet
 
 本模板内置的一些示例在附录中，可供参考。正文部分的源码不建议参考，其内容为原始模板，部分使用方式不是很规范。
 
-## 下载与编辑
-
-请点击[下载](https://github.com/note286/xdupgthesis/archive/refs/heads/main.zip)压缩包或[克隆](x-github-client://openRepo/https://github.com/note286/xdupgthesis)该仓库，用户可直接修改`tex`、`bib`和`cfg`等类型文件来进行论文的撰写。具体来说，用户通过编辑`xdupgthesis.tex`、`xdupgthesis.bib`和`chapters`文件夹下文件来撰写论文内容，通过修改`xdupgthesis.cfg`内容来更改论文信息或者个人信息。此外，`xdupgthesis.cls`和`xdupgthesis.def`文件请不要修改。
-
-其中，Overleaf用户注意，由于Overleaf的[限制](https://www.overleaf.com/learn/how-to/Uploading_a_project)：
-
-> While the Overleaf editor can edit any plain text file, only uploads with the most common LaTeX file extensions (.tex, .bib, .cls, .sty, ...) will be editable on the site.
-
-因此主目录下的`xdupgthesis.cfg`文件无法直接在线编辑，只能通过下载再上传的方式进行编辑，不过由于该文件一般仅需要填写一次，也可以接受。
-
-另外，在[CTEX宏集手册](https://mirrors.ustc.edu.cn/CTAN/language/chinese/ctex/ctex.pdf)中5.3章节指出：
-
-> 根据空格后面的情况决定是否保留：如果空格后面是汉字，则忽略该空格，否则保留。
-
-因此，用户在写作过程中，建议每行汉字控制在40个字符，英文控制在80个字符，即刚好填充一行的字符数。用户可以随意的换行，在LaTeX中，换行意味着空格，空格会根据上面的情况选择保留还是忽略，如果空格后面是汉字，则忽略该空格，用户完全不需要担心会产生多余的空格。这样的好处是在从文档到源码的反向同步中可以非常精准地定位。
-
 ## 卸载与安装
 
 Windows和GNU/Linux平台使用[TeX Live](https://www.tug.org/texlive/)，macOS平台使用[MacTeX](https://www.tug.org/mactex/)，跨版本升级均需要卸载旧版。
@@ -252,6 +236,22 @@ sudo cp simhei.ttf simkai.ttf simsun.ttc times.ttf timesbd.ttf timesbi.ttf times
 在[TeXPage](https://www.texpage.com/)平台使用时，由于TeXPage是安装在GNU/Linux上的最新版的TeX Live，用户无需考虑LaTeX套装版本问题，仅需要安装字体即可，用户首先将本仓库[下载](https://github.com/note286/xdupgthesis/archive/refs/heads/main.zip)，再根据[GNU/Linux](#gnulinux)中的方法得到字体文件。
 
 在TeXPage[个人主页](https://www.texpage.com/console)左上角点击创建，选择上传项目，将压缩包上传至TeXPage，进入该论文模板项目。点击左上角新建文件夹按钮，新建一个名为`fonts`的文件夹，选中`fonts`文件夹，点击左上角上传文件按钮将所有的字体文件上传。最后根据[TeXPage编译](#texpage编译)配置如何在线编译。
+
+## 下载与编辑
+
+请点击[下载](https://github.com/note286/xdupgthesis/archive/refs/heads/main.zip)压缩包或[克隆](x-github-client://openRepo/https://github.com/note286/xdupgthesis)该仓库，用户可直接修改`tex`、`bib`和`cfg`等类型文件来进行论文的撰写。具体来说，用户通过编辑`xdupgthesis.tex`、`xdupgthesis.bib`和`chapters`文件夹下文件来撰写论文内容，通过修改`xdupgthesis.cfg`内容来更改论文信息或者个人信息。此外，`xdupgthesis.cls`和`xdupgthesis.def`文件请不要修改。
+
+其中，Overleaf用户注意，由于Overleaf的[限制](https://www.overleaf.com/learn/how-to/Uploading_a_project)：
+
+> While the Overleaf editor can edit any plain text file, only uploads with the most common LaTeX file extensions (.tex, .bib, .cls, .sty, ...) will be editable on the site.
+
+因此主目录下的`xdupgthesis.cfg`文件无法直接在线编辑，只能通过下载再上传的方式进行编辑，不过由于该文件一般仅需要填写一次，也可以接受。
+
+另外，在[CTEX宏集手册](https://mirrors.ustc.edu.cn/CTAN/language/chinese/ctex/ctex.pdf)中5.3章节指出：
+
+> 根据空格后面的情况决定是否保留：如果空格后面是汉字，则忽略该空格，否则保留。
+
+因此，用户在写作过程中，建议每行汉字控制在40个字符，英文控制在80个字符，即刚好填充一行的字符数。用户可以随意的换行，在LaTeX中，换行意味着空格，空格会根据上面的情况选择保留还是忽略，如果空格后面是汉字，则忽略该空格，用户完全不需要担心会产生多余的空格。这样的好处是在从文档到源码的反向同步中可以非常精准地定位。
 
 ## 编译
 
