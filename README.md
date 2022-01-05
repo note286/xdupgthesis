@@ -414,6 +414,7 @@ Texmaker内置了PDF查看器，支持正向同步和反向同步功能，具体
 - algorithm
 - algorithmicx
 - algpseudocode
+- algpseudocodex
 - amsmath
 - amssymb
 - amsthm
@@ -726,7 +727,9 @@ Texmaker内置了PDF查看器，支持正向同步和反向同步功能，具体
 
 ## 算法
 
-本项目模板已内置`algorithm`、`algorithmicx`和`algpseudocode`宏包，用户无需手动导入。建议用户参考[algorithmicx](https://mirrors.ustc.edu.cn/CTAN/macros/latex/contrib/algorithmicx/algorithmicx.pdf)宏包手册中的示例撰写算法，本项目模板从手册中摘抄了两个算法用于测试。
+本项目模板已内置`algorithm`、`algorithmicx`和`algpseudocodex`宏包，用户无需手动导入。TeX Live/MacTeX 2020及以下版本的用户使用的是`algpseudocode`宏包而非`algpseudocodex`宏包。
+
+建议TeX Live/MacTeX 2021用户参考[algpseudocodex](https://mirrors.ustc.edu.cn/CTAN/macros/latex/contrib/algpseudocodex/algpseudocodex.pdf)宏包手册中的示例撰写算法，其他低版本用户参考[algorithmicx](https://mirrors.ustc.edu.cn/CTAN/macros/latex/contrib/algorithmicx/algorithmicx.pdf)宏包手册中的示例撰写算法，本项目模板从手册中摘抄了两个算法用于测试。
 
 此外，对于`algorithm`浮动体，不建议使用任何位置参数，让LaTeX引擎将浮动体自动放置在合适的位置，具体原因可见[浮动体位置](#浮动体位置)。
 
@@ -1653,6 +1656,7 @@ LaTeX Font Warning: Font shape `OMX/cmex/m/n' in size <10.53937> not available
 
 # 版本记录
 
+- `2022-01-05` [`v1.25.0`](https://github.com/note286/xdupgthesis/releases/tag/v1.25.0) 升级algpseudocode宏包为algpseudocodex宏包。
 - `2022-01-04` [`v1.24.3`](https://github.com/note286/xdupgthesis/releases/tag/v1.24.3) 移除原模板加粗命令别名。
 - `2022-01-04` [`v1.24.2`](https://github.com/note286/xdupgthesis/releases/tag/v1.24.2) 更改ctexbook字体为手动配置。
 - `2022-01-04` [`v1.24.1`](https://github.com/note286/xdupgthesis/releases/tag/v1.24.1) 移除宋体显式调用。

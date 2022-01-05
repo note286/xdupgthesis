@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{xdupgthesis}[2022/01/04 Xidian University Postgraduate Thesis document class, version 1.24.3, modified by @note286, published in https://note286.github.io/xdupgthesis/]
+\ProvidesClass{xdupgthesis}[2022/01/05 Xidian University Postgraduate Thesis document class, version 1.25.0, modified by @note286, published in https://note286.github.io/xdupgthesis/]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%   class and packages
@@ -174,7 +174,9 @@
 
 \RequirePackage{algorithmicx}
 
-\RequirePackage{algpseudocode}
+\IfFileExists{algpseudocodex.sty}
+  {\RequirePackage{algpseudocodex}}
+  {\RequirePackage{algpseudocode}}
 \algrenewcommand\algorithmicrequire{\textbf{输入:}}
 \algrenewcommand\algorithmicensure{\textbf{输出:}}
 
