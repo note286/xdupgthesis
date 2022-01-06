@@ -53,6 +53,7 @@
   - [论文抽查评估](#论文抽查评估)
   - [草稿模式](#草稿模式)
   - [显示边框](#显示边框)
+  - [签名图像](#签名图像)
   - [字数统计](#字数统计)
   - [数据同步](#数据同步)
 - [模板来源](#模板来源)
@@ -400,6 +401,7 @@ Texmaker内置了PDF查看器，支持正向同步和反向同步功能，具体
 - `draft`，详见[草稿模式](#草稿模式)
 - `frame`，详见[显示边框](#显示边框)
 - `mf=tgtm`或`mf=cm`，详见[数学字体切换开关](#数学字体切换开关)
+- `sign`，详见[签名图像](#签名图像)
 
 以上参数功能相互独立，均可任意组合使用，选项之间无先后顺序之分，多个选项之间使用逗号隔开，例如：
 
@@ -447,6 +449,7 @@ Texmaker内置了PDF查看器，支持正向同步和反向同步功能，具体
 - tikz
 - tocloft
 - unicode-math
+- xeCJKfntef
 - xspace
 - xurl
 
@@ -1042,6 +1045,30 @@ XXX & XXX & XXX\\
 
 在最终交稿时一定要移除`frame`参数。
 
+## 签名图像
+
+西安电子科技大学图书馆在[学位论文提交](https://lib.xidian.edu.cn/engine2/general/more?appId=17003&wfwfid=2403&pageId=14305&typeId=2044071)中要求：
+
+> 电子版和纸质版论文的独创性声明和使用授权页都需签字（请手写签字后扫描该页加到电子版论文中）。
+
+本项目模板支持插入签名图像，用户需要自行制作好签名图像，推荐处理成字迹全黑且背景透明并以`.png`格式存储，此外需要将图片四周的空白裁掉，尽量减小字迹与四周的间距。将准备好的签名图像放入`figures/sign/`，用户在`xdupgthesis.cfg`中填写相应的签名图像文件名，无需扩展名且无需路径。最后为`xdupgthesis`文档类传入`sign`参数，即将`xdupgthesis.tex`中
+
+```latex
+\documentclass{xdupgthesis}
+```
+
+改为
+
+```latex
+\documentclass[sign]{xdupgthesis}
+```
+
+后即可得到嵌入签名图像的PDF，如果不需要嵌入签名图像，移除`sign`文档类参数即可。
+
+---
+
+如果用户想要扫描独创性声明和使用授权页一整页再合并到论文中，请自行选择合适的PDF处理工具进行该页的替换。
+
 ## 字数统计
 
 [TeXcount](https://app.uio.no/ifi/texcount/index.html)是一款内置于TeX Live的命令行工具，运行如下命令即可得到相应的字数统计结果供参考：
@@ -1635,6 +1662,7 @@ LaTeX Font Warning: Font shape `OMX/cmex/m/n' in size <10.53937> not available
 
 # 版本记录
 
+- `2022-01-06` [`v2.0.0`](https://github.com/note286/xdupgthesis/releases/tag/v2.0.0) 支持插入签名图像。
 - `2022-01-05` [`v1.25.0`](https://github.com/note286/xdupgthesis/releases/tag/v1.25.0) 升级algpseudocode宏包为algpseudocodex宏包。
 - `2022-01-04` [`v1.24.3`](https://github.com/note286/xdupgthesis/releases/tag/v1.24.3) 移除原模板加粗命令别名。
 - `2022-01-04` [`v1.24.2`](https://github.com/note286/xdupgthesis/releases/tag/v1.24.2) 更改ctexbook字体为手动配置。

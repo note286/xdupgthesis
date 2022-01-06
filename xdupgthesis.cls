@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{xdupgthesis}[2022/01/05 Xidian University Postgraduate Thesis document class, version 1.25.0, modified by @note286, published in https://note286.github.io/xdupgthesis/]
+\ProvidesClass{xdupgthesis}[2022/01/06 Xidian University Postgraduate Thesis document class, version 2.0.0, modified by @note286, published in https://note286.github.io/xdupgthesis/]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%   class and packages
@@ -58,6 +58,9 @@
 \newif\ifXDU@Option@mfcm\XDU@Option@mfcmfalse
 \DeclareOption{mf=cm}{\XDU@Option@mfcmtrue}
 
+% Sign
+\newif\ifXDU@Option@sign\XDU@Option@signfalse
+\DeclareOption{sign}{\XDU@Option@signtrue}
 
 %% others
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{ctexbook}}
@@ -144,8 +147,11 @@
 
 \RequirePackage{fancyhdr}
 
+% 下划线
+\RequirePackage{xeCJKfntef}
+
 \RequirePackage[final]{graphicx}
-\graphicspath{{figures/}}
+\graphicspath{{figures/}{figures/sign/}}
 
 \RequirePackage{booktabs}
 
@@ -590,6 +596,33 @@ By \par%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%    statement and copyright
+% 插入签名图片
+\ifXDU@Option@sign
+  \newcommand\sign[1]{\makebox[120pt][c]{\includegraphics[height=1.5em,keepaspectratio]{#1}}}
+\else
+  \newcommand\sign[1]{\makebox[120pt]{}}
+\fi
+% 定义签名命令
+% 学位论文独创性（或创新性）声明本人签字
+\newcommand\setXDU@innovation@author@sign[1]{\newcommand\XDU@innovation@author@sign{\sign{#1}}}
+% 学位论文独创性（或创新性）声明本人签字日期
+\newcommand\setXDU@innovation@author@date[1]{\newcommand\XDU@innovation@author@date{\sign{#1}}}
+% 关于论文使用授权的说明本人签字
+\newcommand\setXDU@authorize@author@sign[1]{\newcommand\XDU@authorize@author@sign{\sign{#1}}}
+% 关于论文使用授权的说明本人签字日期
+\newcommand\setXDU@authorize@author@date[1]{\newcommand\XDU@authorize@author@date{\sign{#1}}}
+% 关于论文使用授权的说明导师签字
+\newcommand\setXDU@authorize@advisor@sign[1]{\newcommand\XDU@authorize@advisor@sign{\sign{#1}}}
+% 关于论文使用授权的说明导师签字日期
+\newcommand\setXDU@authorize@advisor@date[1]{\newcommand\XDU@authorize@advisor@date{\sign{#1}}}
+% 保密的学位论文在XX年解密后适用本授权书
+\ifXDU@Option@sign
+  \newcommand\setXDU@secret@year[1]{\newcommand\XDU@secret@year{\CJKunderline[thickness=0.5pt]{\makebox[1cm]{#1}}}}
+\else
+  \newcommand\setXDU@secret@year[1]{\newcommand\XDU@secret@year{\CJKunderline[thickness=0.5pt]{\makebox[1cm]{}}}}
+\fi
+% 学位论文独创性（或创新性）声明和关于论文使用授权的说明扫描页
+\newcommand\setXDU@scan@page[1]{\newcommand\XDU@scan@page{\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{#1}}}
 
 \DeclareRobustCommand{\XDU@make@statementandcopyright}
   {{\cleardoublepage\parindent=0pt\thispagestyle{empty}%
@@ -601,8 +634,8 @@ By \par%
    \XDU@font@zihao{-4}%
    \hspace*{2em}\parindent=2\ccwd\XDU@value@stat@statement\parindent=0pt%
   \vskip 20pt%
-   \hspace*{2em}\XDU@lable@stat@auther\XDU@underline[100pt]{}\hspace*{1em}%
-    \hfill \XDU@lable@stat@date\XDU@underline[100pt]{}\hspace*{1em}
+   \hspace*{2em}\XDU@lable@stat@auther\XDU@underline{\XDU@innovation@author@sign}\hspace*{1em}%
+    \hfill \XDU@lable@stat@date\XDU@underline{\XDU@innovation@author@date}\hspace*{1em}
   \vskip \stretch{6}%
    \begin{center}%
      \bfseries\XDU@font@zihao{4}%
@@ -612,11 +645,11 @@ By \par%
    \hspace*{2em}\parindent=2\ccwd\XDU@value@stat@copyright\parindent=0pt%
   \vskip 20pt%
    \normalfont\XDU@font@zihao{-4}%
-   \hspace*{2em}\XDU@lable@stat@auther\XDU@underline[100pt]{}\hspace*{1em}%
-    \hfill \XDU@lable@stat@advisor\XDU@underline[100pt]{}\hspace*{1em}%
+   \hspace*{2em}\XDU@lable@stat@auther\XDU@underline{\XDU@authorize@author@sign}\hspace*{1em}%
+    \hfill \XDU@lable@stat@advisor\XDU@underline{\XDU@authorize@advisor@sign}\hspace*{1em}%
   \vskip 20pt%
-   \hspace*{2em}\XDU@lable@stat@date\XDU@underline[100pt]{}\hspace*{1em}%
-    \hfill \XDU@lable@stat@date\XDU@underline[100pt]{}\hspace*{1em}%
+   \hspace*{2em}\XDU@lable@stat@date\XDU@underline{\XDU@authorize@author@date}\hspace*{1em}%
+    \hfill \XDU@lable@stat@date\XDU@underline{\XDU@authorize@advisor@date}\hspace*{1em}%
   \vskip \stretch{1}%
   \clearpage\thispagestyle{empty}%
   \parindent=2\ccwd\cleardoublepage}}
