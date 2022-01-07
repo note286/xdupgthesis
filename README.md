@@ -1,6 +1,13 @@
-![Xidian University](xidian.png)
-
-[![GitHub](https://img.shields.io/github/license/note286/xdupgthesis)](https://github.com/note286/xdupgthesis/blob/main/LICENSE) [![GitHub Repo stars](https://img.shields.io/github/stars/note286/xdupgthesis)](https://github.com/note286/xdupgthesis) [![GitHub issues](https://img.shields.io/github/issues/note286/xdupgthesis)](https://github.com/note286/xdupgthesis/issues?q=is%3Aopen+is%3Aissue) [![GitHub closed issues](https://img.shields.io/github/issues-closed/note286/xdupgthesis)](https://github.com/note286/xdupgthesis/issues?q=is%3Aissue+is%3Aclosed) [![GitHub commit activity](https://img.shields.io/github/commit-activity/m/note286/xdupgthesis)](https://github.com/note286/xdupgthesis/commits/main) [![GitHub last commit](https://img.shields.io/github/last-commit/note286/xdupgthesis)](https://github.com/note286/xdupgthesis/commits/main) [![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/note286/xdupgthesis)](https://github.com/note286/xdupgthesis/tags)
+<p align="center"><a href="https://github.com/note286/xdupgthesis"><img src="logo.png"></a></p>
+<p align="center">
+<a href="https://github.com/note286/xdupgthesis/blob/main/LICENSE"><img src="https://img.shields.io/github/license/note286/xdupgthesis"></a>
+<a href="https://github.com/note286/xdupgthesis"><img src="https://img.shields.io/github/stars/note286/xdupgthesis"></a>
+<a href="https://github.com/note286/xdupgthesis/issues?q=is%3Aopen+is%3Aissue"><img src="https://img.shields.io/github/issues/note286/xdupgthesis"></a>
+<a href="https://github.com/note286/xdupgthesis/issues?q=is%3Aissue+is%3Aclosed"><img src="https://img.shields.io/github/issues-closed/note286/xdupgthesis"></a>
+<a href="https://github.com/note286/xdupgthesis/commits/main"><img src="https://img.shields.io/github/commit-activity/m/note286/xdupgthesis"></a>
+<a href="https://github.com/note286/xdupgthesis/commits/main"><img src="https://img.shields.io/github/last-commit/note286/xdupgthesis"></a>
+<a href="https://github.com/note286/xdupgthesis/tags"><img src="https://img.shields.io/github/v/tag/note286/xdupgthesis"></a>
+</p>
 
 # 目录
 
