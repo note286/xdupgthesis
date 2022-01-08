@@ -169,6 +169,8 @@ Windows平台卸载方法为管理员身份直接运行`C:\texlive\2021\tlpkg\in
 
 后续如无特殊情况，仅以Windows举例，其他操作系统上类似。右键选择下载好的`.iso`文件，选择打开方式->Windows资源管理器，然后右键以管理员身份运行`install-tl-windows.bat`，保持默认配置即可，如没有本地阅读文档的需求，安装时可以不勾选安装文档的选项，这样会减少大约一半的磁盘占用空间，具体来说，在TeX Live安装窗口中点击左下角Advanced，取消勾选安装字体/宏包文档目录树和安装字体/宏包源码目录树即可不安装文档和源码。更多LaTeX环境安装与配置请阅读[install-latex-guide-zh-cn.pdf](https://mirrors.ustc.edu.cn/CTAN/info/install-latex-guide-zh-cn/install-latex-guide-zh-cn.pdf)，建议更新所有包至最新版，Windows平台上使用管理员身份运行[cmd](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/cmd)。
 
+如果习惯使用Docker，可以使用[Tex Live的Docker镜像](https://hub.docker.com/r/texlive/texlive)。
+
 ### 配置镜像源
 
 管理员权限运行
@@ -203,6 +205,8 @@ pdffonts xdupgthesis.pdf
 
 已安装Microsoft Office的Windows平台无需手动配置字体，所需字体Microsoft Office和Windows操作系统已内置。如果没有安装Microsoft Office，会缺失Cambria Math字体，可以从已安装Microsoft Office的Windows设备`C:\Windows\Fonts`处拷贝出`cambria.ttc`字体，右键该字体文件，选择为所有用户安装即可。
 
+若使用[Tex Live的Docker镜像](https://hub.docker.com/r/texlive/texlive)，先安装[任意wsl发行版](https://docs.microsoft.com/en-us/windows/wsl/install)与[Docker Desktop](https://www.docker.com/products/docker-desktop)。假设项目目录为`D:\xdupgthesis`，可通过`-v`将字体文件夹和项目目录映射进入容器，在wsl中运行：`docker run -it --name texlive -v /mnt/c/Windows/Fonts:/usr/share/fonts/WindowsFonts -v /mnt/d/xdupgthesis:/xdupgthesis texlive/texlive bash`，
+
 ### GNU/Linux
 
 由于默认情况下中易宋体的意大利形状对应的是中易楷体，因此中文字体除中易宋体和中易黑体外，还需要中易楷体。
@@ -229,6 +233,8 @@ sudo cp simhei.ttf simkai.ttf simsun.ttc times.ttf timesbd.ttf timesbi.ttf times
 ```
 
 然后就可以根据[编译](#编译)里的方法去编译了。
+
+若使用[Tex Live的Docker镜像](https://hub.docker.com/r/texlive/texlive)，按上述步骤拷贝字体后运行：`docker run -it --name texlive -v /usr/share/fonts:/usr/share/fonts -v /path/to/xdupgthesis:/xdupgthesis texlive/texlive bash`
 
 ### macOS
 
