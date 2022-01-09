@@ -107,7 +107,7 @@
 
 xdupgthesis-Xidian University Postgraduate Thesis
 
-西安电子科技大学研究生学位论文模板
+西安电子科技大学研究生学位论文XeLaTeX模板
 
 # 注意事项
 
@@ -311,7 +311,7 @@ latexmk -c
 
 ### 文本编辑器编译
 
-任何一款[文本编辑器](https://zh.wikipedia.org/wiki/%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8)均可以编辑`.tex`文件，包括[Sublime Text](https://www.sublimetext.com/)和[Visual Studio Code](https://code.visualstudio.com/)等，大部分文本编辑器均提供自定义编译功能，例如Sublime Text的[Build Systems](https://www.sublimetext.com/docs/build_systems.html)，可以参考[命令编译](#命令编译)自行创建相应的编译配置，利用编译快捷键进行编译。此外，一些文本编辑器支持安装扩展，例如Sublime Text可以安装[LaTeXTools](https://packagecontrol.io/packages/LaTeXTools)来辅助进行`.tex`文件的编辑，还提供了一些常用的编译配置。可以搭配Sumatra PDF Viewer或Skim实现反向同步，正向同步一般需要文本编辑器或其扩展支持。
+任何一款[文本编辑器](https://zh.wikipedia.org/wiki/%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8)均可以编辑`.tex`文件，包括但不限于[Sublime Text](https://www.sublimetext.com/)和[Visual Studio Code](https://code.visualstudio.com/)等。一些文本编辑器支持安装扩展，例如Sublime Text可以安装[LaTeXTools](https://packagecontrol.io/packages/LaTeXTools)、Visual Studio Code可以安装[LaTeX Workshop](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop)来辅助进行`.tex`文件的编辑，还提供了一些常用的编译配置。可以搭配Sumatra PDF Viewer或Skim实现反向同步，正向同步一般需要文本编辑器或其扩展支持。
 
 Visual Studio Code可以安装[LaTeX Workshop](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop)插件，其内置了[多种默认编译配置](https://github.com/James-Yu/LaTeX-Workshop/wiki/Compile#latex-recipes)，本项目使用第一种配置`latexmk 🔃`即可。如果遇到编译问题，可以调整编译配置的命令行参数，在工作目录下创建`.vscode/settings.json`并添加：
 ```json
