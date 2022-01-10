@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{xdupgthesis}[2022/01/06 Xidian University Postgraduate Thesis document class, version 2.0.0, modified by @note286, published in https://note286.github.io/xdupgthesis/]
+\ProvidesClass{xdupgthesis}[2022/01/10 Xidian University Postgraduate Thesis document class, version 3.0.0, modified by @note286, published in https://note286.github.io/xdupgthesis/]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%   class and packages
@@ -597,32 +597,34 @@ By \par%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%    statement and copyright
 % 插入签名图片
+\newcommand\sign[1]{\includegraphics[height=1.5em,keepaspectratio]{#1}}
+% 独创性声明和使用授权页开关
 \ifXDU@Option@sign
-  \newcommand\sign[1]{\makebox[120pt][c]{\includegraphics[height=1.5em,keepaspectratio]{#1}}}
+  \newcommand\signed[1]{#1}
 \else
-  \newcommand\sign[1]{\makebox[120pt]{}}
+  \newcommand\signed[1]{}
 \fi
 % 定义签名命令
 % 学位论文独创性（或创新性）声明本人签字
-\newcommand\setXDU@innovation@author@sign[1]{\newcommand\XDU@innovation@author@sign{\sign{#1}}}
+\newcommand\XDU@innovation@author@sign{\makebox[120pt][c]{}}
+\newcommand\setXDU@innovation@author@sign[1]{\renewcommand\XDU@innovation@author@sign{\makebox[120pt][c]{\signed{#1}}}}
 % 学位论文独创性（或创新性）声明本人签字日期
-\newcommand\setXDU@innovation@author@date[1]{\newcommand\XDU@innovation@author@date{\sign{#1}}}
+\newcommand\XDU@innovation@author@date{\makebox[120pt][c]{}}
+\newcommand\setXDU@innovation@author@date[1]{\renewcommand\XDU@innovation@author@date{\makebox[120pt][c]{\signed{#1}}}}
 % 关于论文使用授权的说明本人签字
-\newcommand\setXDU@authorize@author@sign[1]{\newcommand\XDU@authorize@author@sign{\sign{#1}}}
+\newcommand\XDU@authorize@author@sign{\makebox[120pt][c]{}}
+\newcommand\setXDU@authorize@author@sign[1]{\renewcommand\XDU@authorize@author@sign{\makebox[120pt][c]{\signed{#1}}}}
 % 关于论文使用授权的说明本人签字日期
-\newcommand\setXDU@authorize@author@date[1]{\newcommand\XDU@authorize@author@date{\sign{#1}}}
+\newcommand\XDU@authorize@author@date{\makebox[120pt][c]{}}
+\newcommand\setXDU@authorize@author@date[1]{\renewcommand\XDU@authorize@author@date{\makebox[120pt][c]{\signed{#1}}}}
 % 关于论文使用授权的说明导师签字
-\newcommand\setXDU@authorize@advisor@sign[1]{\newcommand\XDU@authorize@advisor@sign{\sign{#1}}}
+\newcommand\XDU@authorize@advisor@sign{\makebox[120pt][c]{}}
+\newcommand\setXDU@authorize@advisor@sign[1]{\renewcommand\XDU@authorize@advisor@sign{\makebox[120pt][c]{\signed{#1}}}}
 % 关于论文使用授权的说明导师签字日期
-\newcommand\setXDU@authorize@advisor@date[1]{\newcommand\XDU@authorize@advisor@date{\sign{#1}}}
+\newcommand\XDU@authorize@advisor@date{\makebox[120pt][c]{}}
+\newcommand\setXDU@authorize@advisor@date[1]{\renewcommand\XDU@authorize@advisor@date{\makebox[120pt][c]{\signed{#1}}}}
 % 保密的学位论文在XX年解密后适用本授权书
-\ifXDU@Option@sign
-  \newcommand\setXDU@secret@year[1]{\newcommand\XDU@secret@year{\CJKunderline[thickness=0.5pt]{\makebox[1cm]{#1}}}}
-\else
-  \newcommand\setXDU@secret@year[1]{\newcommand\XDU@secret@year{\CJKunderline[thickness=0.5pt]{\makebox[1cm]{}}}}
-\fi
-% 学位论文独创性（或创新性）声明和关于论文使用授权的说明扫描页
-\newcommand\setXDU@scan@page[1]{\newcommand\XDU@scan@page{\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{#1}}}
+\newcommand\setXDU@secret@year[1]{\newcommand\XDU@secret@year{\CJKunderline[thickness=0.5pt]{\makebox[1cm]{\signed{#1}}}}}
 
 \DeclareRobustCommand{\XDU@make@statementandcopyright}
   {{\cleardoublepage\parindent=0pt\thispagestyle{empty}%

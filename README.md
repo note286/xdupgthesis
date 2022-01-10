@@ -1078,7 +1078,13 @@ XXX & XXX & XXX\\
 
 > 电子版和纸质版论文的独创性声明和使用授权页都需签字（请手写签字后扫描该页加到电子版论文中）。
 
-本项目模板支持插入签名图像，用户需要自行制作好签名图像，推荐处理成字迹全黑且背景透明并以`.png`格式存储，使用纯白色背景并以其他格式如`.jpg`和`.pdf`等格式存储也可。此外需要将图片四周的空白裁掉，尽量减小字迹与四周的间距。将准备好的签名图像放入`figures/sign/`，用户在`xdupgthesis.cfg`中填写相应的签名图像文件名，无需扩展名且无需路径。最后为`xdupgthesis`文档类传入`sign`参数，即将`xdupgthesis.tex`中
+本项目模板支持插入签名图像，用户需要自行制作好签名图像，推荐处理成字迹全黑且背景透明并以`.png`格式存储，使用纯白色背景并以其他格式如`.jpg`和`.pdf`等格式存储也可。此外需要将图片四周的空白裁掉，尽量减小字迹与四周的间距。将准备好的签名图像放入`figures/sign/`，用户在`xdupgthesis.cfg`中填写签名图像相关值，需要现场手写的值留空即可。每个签名图像使用`\sign{}`添加，其中分组内为签名图像文件名，无需扩展名且无需路径。如果需要插入电子版的日期，将对应的值填写为日期即可，如
+
+```latex
+\setXDU@innovation@author@date{2022年1月10日}
+```
+
+最后为`xdupgthesis`文档类传入`sign`参数，即将`xdupgthesis.tex`中
 
 ```latex
 \documentclass{xdupgthesis}
@@ -1090,7 +1096,9 @@ XXX & XXX & XXX\\
 \documentclass[sign]{xdupgthesis}
 ```
 
-后即可得到嵌入签名图像的PDF，如果不需要嵌入签名图像，移除`sign`文档类参数即可。
+后编译即可得到嵌入签名图像的PDF。
+
+如果不需要嵌入签名图像，移除`sign`文档类参数即可，`xdupgthesis.cfg`内相关配置不会生效，该页内所有签名位和日期位全部置空。
 
 ---
 
@@ -1689,6 +1697,7 @@ LaTeX Font Warning: Font shape `OMX/cmex/m/n' in size <10.53937> not available
 
 # 版本记录
 
+- `2022-01-10` [`v3.0.0`](https://github.com/note286/xdupgthesis/releases/tag/v3.0.0) 支持独创性声明和使用授权页插入电子版日期。
 - `2022-01-06` [`v2.0.0`](https://github.com/note286/xdupgthesis/releases/tag/v2.0.0) 支持插入签名图像。
 - `2022-01-05` [`v1.25.0`](https://github.com/note286/xdupgthesis/releases/tag/v1.25.0) 升级algpseudocode宏包为algpseudocodex宏包。
 - `2022-01-04` [`v1.24.3`](https://github.com/note286/xdupgthesis/releases/tag/v1.24.3) 移除原模板加粗命令别名。
