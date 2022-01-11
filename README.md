@@ -121,7 +121,7 @@ xdupgthesis-Xidian University Postgraduate Thesis
 
 # 项目起源
 
-本节讲述本项目起源，用户不感兴趣可以跳过，直接使用本项目模板即可。
+本节讲述本项目起源，用户不感兴趣可以跳过，直接使用本模板即可。
 
 本项目起源于身边陆续有人使用西安电子科技大学提供的LaTeX模板，却卡在无法编译，使用时出错等问题。最近感觉LaTeX水平勉强支撑对模板的修正，因此边阅读`XDUthesis.cls`文件源码边修改，水平非常有限，难免出错或有不合适的修改，可提[Issue](https://github.com/note286/xdupgthesis/issues)来反馈。
 
@@ -147,7 +147,7 @@ dvipdfmx templet
 
 # 使用/示例
 
-本节介绍了一些使用本项目模板的方法，建议用户根据自身情况阅读。
+本节介绍了一些使用本模板的方法，建议用户根据自身情况阅读。
 
 本模板内置的一些示例在附录中，可供参考。正文部分的源码不建议参考，其内容为原始模板，部分使用方式不是很规范。
 
@@ -157,7 +157,7 @@ Windows和GNU/Linux平台使用[TeX Live](https://www.tug.org/texlive/)，macOS�
 
 Windows平台卸载方法为管理员身份直接运行`C:\texlive\2021\tlpkg\installer\uninst.bat`，不同版本和安装位置请按需修改目录，更多介绍请参考[install-latex-guide-zh-cn.pdf](https://mirrors.ustc.edu.cn/CTAN/info/install-latex-guide-zh-cn/install-latex-guide-zh-cn.pdf)第1.2节，GNU/Linux平台卸载方法请参考[install-latex-guide-zh-cn.pdf](https://mirrors.ustc.edu.cn/CTAN/info/install-latex-guide-zh-cn/install-latex-guide-zh-cn.pdf)第2.2节，macOS上卸载方法请参考[Uninstalling MacTeX](https://www.tug.org/mactex/uninstalling.html)。
 
-本项目模板仅在TeX Live/MacTeX 2021通过测试，其他旧版本并未实际进行测试。建议安装最新版LaTeX发行版套装并更新所有包，如果已安装TeX Live或MacTeX并且能够编译，用户可以选择不升级套装，不更新包。
+本模板仅在TeX Live/MacTeX 2021通过测试，其他旧版本并未实际进行测试。建议安装最新版LaTeX发行版套装并更新所有包，如果已安装TeX Live或MacTeX并且能够编译，用户可以选择不升级套装，不更新包。
 
 目前已知旧版本套装和旧包存在的问题：
 
@@ -266,7 +266,7 @@ sudo cp simhei.ttf simkai.ttf simsun.ttc times.ttf timesbd.ttf timesbi.ttf times
 
 ## 编译
 
-本项目目前仅在Windows和GNU/Linux平台上的TeX Live 2021和macOS平台上的MacTeX 2021进行了测试，均更新所有包至最新版，并参考[字体安装](#字体安装)安装了缺失字体。命令编译时切换到`xdupgthesis.tex`所在目录执行命令即可。IDE编译选择对应IDE中的`XeLaTeX`的编译方式，参考文献使用`BibTeX`编译。关于PDF查看器，Windows平台上推荐使用[Sumatra PDF Viewer](https://www.sumatrapdfreader.org/free-pdf-reader)，macOS平台上推荐[Skim](https://skim-app.sourceforge.io/)，适当配置可支持正向同步和反向同步。
+本模板目前仅在Windows和GNU/Linux平台上的TeX Live 2021和macOS平台上的MacTeX 2021进行了测试，均更新所有包至最新版，并参考[字体安装](#字体安装)安装了缺失字体。命令编译时切换到`xdupgthesis.tex`所在目录执行命令即可。IDE编译选择对应IDE中的`XeLaTeX`的编译方式，参考文献使用`BibTeX`编译。关于PDF查看器，Windows平台上推荐使用[Sumatra PDF Viewer](https://www.sumatrapdfreader.org/free-pdf-reader)，macOS平台上推荐[Skim](https://skim-app.sourceforge.io/)，适当配置可支持正向同步和反向同步。
 
 ### 命令编译
 
@@ -399,7 +399,7 @@ Texmaker内置了PDF查看器，支持正向同步和反向同步功能，具体
 
 ## 文档类可选参数
 
-本项目模板中`xdupgthesis`文档类支持如下可选参数：
+本模板中`xdupgthesis`文档类支持如下可选参数：
 
 - `overleaf`或`texpage`，详见[Overleaf编译](#overleaf编译)或[TeXPage编译](#texpage编译)
 - `mprof`，详见[个人及论文信息填写](#个人及论文信息填写)
@@ -421,7 +421,7 @@ Texmaker内置了PDF查看器，支持正向同步和反向同步功能，具体
 
 ## 内置宏包
 
-本项目模板已内置如下常用宏包，如果需要使用如下宏包，无需用户导入，直接使用即可。
+本模板已内置如下常用宏包，如果需要使用如下宏包，无需用户导入，直接使用即可。
 
 - algorithm
 - algorithmicx
@@ -465,13 +465,13 @@ Texmaker内置了PDF查看器，支持正向同步和反向同步功能，具体
 
 ## 数学字体切换开关
 
-本项目模板支持Cambria Math、TeX Gyre Termes Math和Computer Modern三种数学字体。
+本模板支持Cambria Math、TeX Gyre Termes Math和Computer Modern三种数学字体。
 
 - [Cambria Math](https://docs.microsoft.com/en-us/typography/font-list/cambria-math)字体为Microsoft Office默认数学字体，与正文的Times New Roman搭配很和谐。
 - [TeX Gyre Termes Math](https://ctan.org/pkg/tex-gyre-math-termes?lang=en)字体内置于TeX Live中，是Times风格的开源字体，同样与正文的Times New Roman搭配比较和谐，但是实测一些字符很难看，例如圆周率`\pi`。
 - [Computer Modern](https://www.ctan.org/tex-archive/fonts/cm/)字体为LaTeX默认数学字体，但是实测整体偏瘦，与Times New Roman搭配不是很和谐。
 
-本项目模板默认数学字体为Cambria Math，用户可以自行选择使用TeX Gyre Termes Math和Computer Modern。由于Cambria Math为Microsoft Office内置字体，因此没有安装Microsoft Office的设备无法直接使用，请参考[字体安装](#字体安装)安装Cambria Math字体。
+本模板默认数学字体为Cambria Math，用户可以自行选择使用TeX Gyre Termes Math和Computer Modern。由于Cambria Math为Microsoft Office内置字体，因此没有安装Microsoft Office的设备无法直接使用，请参考[字体安装](#字体安装)安装Cambria Math字体。
 
 如果用户想要使用TeX Gyre Termes Math字体，需要在`xdupgthesis.tex`中为文档类添加`mf=tgtm`参数（Math Font=TeX Gyre Termes Math），即将
 
@@ -503,7 +503,7 @@ Texmaker内置了PDF查看器，支持正向同步和反向同步功能，具体
 
 ## 参考文献引用
 
-本项目模板已根据学校要求设置了`\cite{}`生成的引用样式，所以直接使用即可符合学校的要求，例如：
+本模板已根据学校要求设置了`\cite{}`生成的引用样式，所以直接使用即可符合学校的要求，例如：
 
 ```latex
 测试引用\cite{tang:press,wanga:medicine,CRAW:future}是否正常。
@@ -541,7 +541,7 @@ Texmaker内置了PDF查看器，支持正向同步和反向同步功能，具体
 >
 > `unpublished`: A document having an author and title, but not formally published. **Required fields**: author, title, note. **Optional fields**: month, year.
 
-在本项目模板示例文件中已经提供了若干个条目供参考。需要注意的是，无论中英文，每个作者均使用`and`连接。除非文献卷号、期号和页码均无，否则不必提供DOI选项。对于网页链接，使用`misc`类型条目，填写`author`、`title`、`howpublished`和`year`选项即可。
+在本模板示例文件中已经提供了若干个条目供参考。需要注意的是，无论中英文，每个作者均使用`and`连接。除非文献卷号、期号和页码均无，否则不必提供DOI选项。对于网页链接，使用`misc`类型条目，填写`author`、`title`、`howpublished`和`year`选项即可。
 
 ---
 
@@ -563,7 +563,7 @@ Texmaker内置了PDF查看器，支持正向同步和反向同步功能，具体
 
 ## 字体形状与字体系列
 
-本项目模板正文默认使用中易宋体和Times New Roman，支持常用的字体形状如意大利和倾斜，支持常见的字体系列如加宽加粗。
+本模板正文默认使用中易宋体和Times New Roman，支持常用的字体形状如意大利和倾斜，支持常见的字体系列如加宽加粗。
 
 对于中易宋体，意大利形状对应中易楷体，倾斜形状对应中易宋体伪斜体，加宽加粗系列对应中易宋体伪粗体。其中，参考[fontspec.pdf](https://mirrors.ustc.edu.cn/CTAN/macros/unicodetex/latex/fontspec/fontspec.pdf)中的示例，设置倾斜程度为`0.2`，参考清华大学学位论文模板[thuthesis.dtx](https://mirrors.ustc.edu.cn/CTAN/macros/latex/contrib/thuthesis/thuthesis.dtx)，设置粗细程度为`3`。
 
@@ -605,7 +605,7 @@ Texmaker内置了PDF查看器，支持正向同步和反向同步功能，具体
 
 ## 交叉引用
 
-本项目模板有图、子图、表、算法、公式、假设、定义、命题、引理、定理、公理、推论、练习、例、注释、问题、猜想、证明、章节、附录和算法行等引用命令，使用方法如下：
+本模板有图、子图、表、算法、公式、假设、定义、命题、引理、定理、公理、推论、练习、例、注释、问题、猜想、证明、章节、附录和算法行等引用命令，使用方法如下：
 
 ```latex
 图的具体内容如\figureref{figu1}所示。
@@ -723,7 +723,7 @@ Texmaker内置了PDF查看器，支持正向同步和反向同步功能，具体
 \includegraphics[page=2]{figfile}
 ```
 
-另外，本项目模板实测`\textwidth`为`441.01773pt`，`\textheight`为`682.86613pt`，对插图字号有要求的用户画图时可参考这两个数值，避免图片尺寸超过页面可编辑范围。
+另外，本模板实测`\textwidth`为`441.01773pt`，`\textheight`为`682.86613pt`，对插图字号有要求的用户画图时可参考这两个数值，避免图片尺寸超过页面可编辑范围。
 
 此外，对于`figure`浮动体，不建议使用任何位置参数，让LaTeX引擎将浮动体自动放置在合适的位置，具体原因可见[浮动体位置](#浮动体位置)。
 
@@ -731,15 +731,15 @@ Texmaker内置了PDF查看器，支持正向同步和反向同步功能，具体
 
 ## 表格
 
-从模板示例中可以看出表中的内容字号为五号，本项目模板已经重定义了三种常见的表格环境的字号，包括`tabular`、`tabularx`和`tabulary`环境，对于这三种表格环境，用户无需手动指定字号。本项目模板内置了部分示例供参考。
+从模板示例中可以看出表中的内容字号为五号，本模板已经重定义了三种常见的表格环境的字号，包括`tabular`、`tabularx`和`tabulary`环境，对于这三种表格环境，用户无需手动指定字号。本模板内置了部分示例供参考。
 
 此外，对于`table`浮动体，不建议使用任何位置参数，让LaTeX引擎将浮动体自动放置在合适的位置，具体原因可见[浮动体位置](#浮动体位置)。
 
 ## 算法
 
-本项目模板已内置`algorithm`、`algorithmicx`和`algpseudocodex`宏包，用户无需手动导入。TeX Live/MacTeX 2020及以下版本的用户使用的是`algpseudocode`宏包而非`algpseudocodex`宏包。
+本模板已内置`algorithm`、`algorithmicx`和`algpseudocodex`宏包，用户无需手动导入。TeX Live/MacTeX 2020及以下版本的用户使用的是`algpseudocode`宏包而非`algpseudocodex`宏包。
 
-建议TeX Live/MacTeX 2021用户参考[algpseudocodex](https://mirrors.ustc.edu.cn/CTAN/macros/latex/contrib/algpseudocodex/algpseudocodex.pdf)宏包手册中的示例撰写算法，其他低版本用户参考[algorithmicx](https://mirrors.ustc.edu.cn/CTAN/macros/latex/contrib/algorithmicx/algorithmicx.pdf)宏包手册中的示例撰写算法，本项目模板从手册中摘抄了两个算法用于测试。
+建议TeX Live/MacTeX 2021用户参考[algpseudocodex](https://mirrors.ustc.edu.cn/CTAN/macros/latex/contrib/algpseudocodex/algpseudocodex.pdf)宏包手册中的示例撰写算法，其他低版本用户参考[algorithmicx](https://mirrors.ustc.edu.cn/CTAN/macros/latex/contrib/algorithmicx/algorithmicx.pdf)宏包手册中的示例撰写算法，本模板从手册中摘抄了两个算法用于测试。
 
 此外，对于`algorithm`浮动体，不建议使用任何位置参数，让LaTeX引擎将浮动体自动放置在合适的位置，具体原因可见[浮动体位置](#浮动体位置)。
 
@@ -764,7 +764,7 @@ Texmaker内置了PDF查看器，支持正向同步和反向同步功能，具体
 >
 > 如果不设置位置参数，`figure`和`table`环境默认的位置选项是`tbp`。如果图表较多，最好将浮动图表的位置限定设置得宽松一些，以防止浮动体积压过多，最后统一输出。
 
-本项目模板不建议大家添加位置参数，使用默认值`tbp`即优先浮动在页面顶部，这是由于文章的主题是正文，而非图表，如果一个页面中图标与正文交叉出现，非常影响文章的阅读，因此将所有的浮动体浮动在顶部有利于文章的阅读。此外，强制将浮动体指定在正文中间，并使用如下表等表述更是强烈反对的，应该让图表自由浮动，引用时使用编号。
+本模板不建议大家添加位置参数，使用默认值`tbp`即优先浮动在页面顶部，这是由于文章的主题是正文，而非图表，如果一个页面中图标与正文交叉出现，非常影响文章的阅读，因此将所有的浮动体浮动在顶部有利于文章的阅读。此外，强制将浮动体指定在正文中间，并使用如下表等表述更是强烈反对的，应该让图表自由浮动，引用时使用编号。
 
 ---
 
@@ -783,7 +783,7 @@ Texmaker内置了PDF查看器，支持正向同步和反向同步功能，具体
 
 ## 论文标题
 
-在[PDF元数据](#pdf元数据)中介绍了本项目模板可以自动获取论文中各种元数据，并添加到PDF文档属性中，其中就包括了论文题目，其值位于`thesisinfo.tex`文件中的`\XDU@value@thesis@title`变量中，论文题目中可能含有换行符，如果有换行符，再添加元数据时会有如下警告：
+在[PDF元数据](#pdf元数据)中介绍了本模板可以自动获取论文中各种元数据，并添加到PDF文档属性中，其中就包括了论文题目，其值位于`thesisinfo.tex`文件中的`\XDU@value@thesis@title`变量中，论文题目中可能含有换行符，如果有换行符，再添加元数据时会有如下警告：
 
 ```latex
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
@@ -796,7 +796,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 ## 插图/表格索引中图表序号与图表标题间距
 
-[tocloft.pdf](https://mirrors.ustc.edu.cn/CTAN/macros/latex/contrib/tocloft/tocloft.pdf)中图表序号宽度变量`\cftfignumwidth`与`\cfttabnumwidth`均直接设置为固定值`2.3em`，本项目模板已做一定程度的自适应调整，如果用户认为图表序号与图表标题间距过大或者过小，均可自行调整，方法为在导言区添加：
+[tocloft.pdf](https://mirrors.ustc.edu.cn/CTAN/macros/latex/contrib/tocloft/tocloft.pdf)中图表序号宽度变量`\cftfignumwidth`与`\cfttabnumwidth`均直接设置为固定值`2.3em`，本模板已做一定程度的自适应调整，如果用户认为图表序号与图表标题间距过大或者过小，均可自行调整，方法为在导言区添加：
 
 ```latex
 \addtolength{\cftfignumwidth}{1em}
@@ -843,7 +843,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 ---
 
-本项目模板默认会默认会将页面高度均匀地填满，使每一页的底部直接对齐，用户如想要让页面中的内容保持它的自然高度，把每一页的页面底部用空白填满，需要在`xdupgthesis.tex`中为文档类添加`ragbtm`参数（Ragged Bottom），即将
+本模板默认会默认会将页面高度均匀地填满，使每一页的底部直接对齐，用户如想要让页面中的内容保持它的自然高度，把每一页的页面底部用空白填满，需要在`xdupgthesis.tex`中为文档类添加`ragbtm`参数（Ragged Bottom），即将
 
 ```latex
 \documentclass{xdupgthesis}
@@ -887,7 +887,7 @@ XXX & XXX & XXX\\
 
 因此，附录是可选的，且位于正文和参考文献之间。
 
-本项目模板支持附录，用户将附录章节放入`appendixes`环境中即可，例如：
+本模板支持附录，用户将附录章节放入`appendixes`环境中即可，例如：
 
 ```latex
 \begin{appendixes}
@@ -917,7 +917,7 @@ XXX & XXX & XXX\\
 
 ## 个人及论文信息填写
 
-用户在`xdupgthesis.cfg`文件中填写个人及论文信息，根据[2022年硕士研究生招生简章-研究生院/研究生工作部-西安电子科技大学](https://gr.xidian.edu.cn/info/1074/10844.htm)和[2022年博士研究生招生简章-研究生院/研究生工作部-西安电子科技大学](https://gr.xidian.edu.cn/info/1075/10994.htm)，我校研究生主要有硕士研究生和博士研究生，硕士研究生主要有学术学位和专业学位两种，博士研究生主要有学术学位和专业学位（工程类）两种，在本项目模板中我们按照如下进行规则对我校研究生进行分类：
+用户在`xdupgthesis.cfg`文件中填写个人及论文信息，根据[2022年硕士研究生招生简章-研究生院/研究生工作部-西安电子科技大学](https://gr.xidian.edu.cn/info/1074/10844.htm)和[2022年博士研究生招生简章-研究生院/研究生工作部-西安电子科技大学](https://gr.xidian.edu.cn/info/1075/10994.htm)，我校研究生主要有硕士研究生和博士研究生，硕士研究生主要有学术学位和专业学位两种，博士研究生主要有学术学位和专业学位（工程类）两种，在本模板中我们按照如下进行规则对我校研究生进行分类：
 
 - 全体研究生
   - 博士研究生
@@ -1079,7 +1079,7 @@ XXX & XXX & XXX\\
 
 > 电子版和纸质版论文的独创性声明和使用授权页都需签字（请手写签字后扫描该页加到电子版论文中）。
 
-本项目模板支持插入签名图像，用户需要自行制作好签名图像，推荐处理成字迹全黑且背景透明并以`.png`格式存储，使用纯白色背景并以其他格式如`.jpg`和`.pdf`等格式存储也可。此外需要将图片四周的空白裁掉，尽量减小字迹与四周的间距。将准备好的签名图像放入`figures/sign/`，用户在`xdupgthesis.cfg`中填写签名图像相关值，需要现场手写的值留空即可。每个签名图像使用`\sign{}`添加，其中分组内为签名图像文件名，无需扩展名且无需路径。如果需要插入电子版的日期，将对应的值填写为日期即可，如
+本模板支持插入签名图像，用户需要自行制作好签名图像，推荐处理成字迹全黑且背景透明并以`.png`格式存储，使用纯白色背景并以其他格式如`.jpg`和`.pdf`等格式存储也可。此外需要将图片四周的空白裁掉，尽量减小字迹与四周的间距。将准备好的签名图像放入`figures/sign/`，用户在`xdupgthesis.cfg`中填写签名图像相关值，需要现场手写的值留空即可。每个签名图像使用`\sign{}`添加，其中分组内为签名图像文件名，无需扩展名且无需路径。如果需要插入电子版的日期，将对应的值填写为日期即可，如
 
 ```latex
 \setXDU@innovation@author@date{2022年1月10日}
@@ -1119,7 +1119,7 @@ texcount -total -merge -utf8 xdupgthesis.tex
 
 ## 模板更新
 
-由于新功能的添加和bug的修复，非常建议用户定期更新本项目模板。具体方法如下：
+由于新功能的添加和bug的修复，非常建议用户定期更新本模板。具体方法如下：
 
 1. 备份目前在用的模板，即将整个文件夹拷贝至他处，以防止后续更新误删文件。
 2. [下载](https://github.com/note286/xdupgthesis/archive/refs/heads/main.zip)最新版模板并解压。
@@ -1149,7 +1149,7 @@ LaTeX非常适合搭配git来使用，这是因为LaTeX都是纯文本，利于�
 
 # 模板来源
 
-本节讲述本项目模板来源，用户不感兴趣可以跳过，直接使用本项目模板即可。
+本节讲述本模板来源，用户不感兴趣可以跳过，直接使用本模板即可。
 
 在[西安电子科技大学申请硕士学位相关资料(学术学位)-研究生院/研究生工作部-西安电子科技大学](https://gr.xidian.edu.cn/info/1047/5087.htm)中[关于发布研究生学位论文模板（2015年修订版）的通知](https://gr.xidian.edu.cn/images/16/07/15/3lz5xyf6nj/16CE9809876C6A463CF45A57AFBD1968.doc)里，有如下描述：
 
@@ -1173,7 +1173,7 @@ LaTeX非常适合搭配git来使用，这是因为LaTeX都是纯文本，利于�
 
 # 编码转换
 
-本节讲述为什么修改原西安电子科技大学学位论文模板的文件编码，用户不感兴趣可以跳过，直接使用本项目模板即可。
+本节讲述为什么修改原西安电子科技大学学位论文模板的文件编码，用户不感兴趣可以跳过，直接使用本模板即可。
 
 在[CTEX宏集手册](https://mirrors.ustc.edu.cn/CTAN/language/chinese/ctex/ctex.pdf)中4.2章节指出：
 
@@ -1183,7 +1183,7 @@ LaTeX非常适合搭配git来使用，这是因为LaTeX都是纯文本，利于�
 
 # 修复错误
 
-本节讲述如何修复原西安电子科技大学学位论文模板的运行错误，用户不感兴趣可以跳过，直接使用本项目模板即可。
+本节讲述如何修复原西安电子科技大学学位论文模板的运行错误，用户不感兴趣可以跳过，直接使用本模板即可。
 
 ## 错误一
 
@@ -1228,7 +1228,7 @@ l.13 \XDUfrontmatter
 
 # 字体修正
 
-本节讲述如何修复原西安电子科技大学学位论文模板的字体问题，用户不感兴趣可以跳过，直接使用本项目模板即可。
+本节讲述如何修复原西安电子科技大学学位论文模板的字体问题，用户不感兴趣可以跳过，直接使用本模板即可。
 
 ## 中文字体
 
@@ -1284,7 +1284,7 @@ l.13 \XDUfrontmatter
 
 # 修复警告
 
-本节讲述如何修复原西安电子科技大学学位论文模板的警告，用户不感兴趣可以跳过，直接使用本项目模板即可。
+本节讲述如何修复原西安电子科技大学学位论文模板的警告，用户不感兴趣可以跳过，直接使用本模板即可。
 
 ## cs4size
 
@@ -1583,21 +1583,21 @@ LaTeX Font Warning: Font shape `OMX/cmex/m/n' in size <10.53937> not available
 
 # 增加功能
 
-本节讲述如何增强原西安电子科技大学学位论文模板的各种问题，用户不感兴趣可以跳过，直接使用本项目模板即可。
+本节讲述如何增强原西安电子科技大学学位论文模板的各种问题，用户不感兴趣可以跳过，直接使用本模板即可。
 
 ## 参考文献条目样式
 
-国家标准《信息与文献 参考文献着录规则》（标准号[GB/T 7714-2015](http://std.samr.gov.cn/gb/search/gbDetailed?id=71F772D8055ED3A7E05397BE0A0AB82A)）已于2015年12月1日实施，而学校原模板中还在使用已废止的国家标准《文后参考文献着录规则》（标准号[GB/T 7714-2005](http://std.samr.gov.cn/gb/search/gbDetailed?id=71F772D78562D3A7E05397BE0A0AB82A)），故本项目将参考文献样式修改为现行的国家标准。
+国家标准《信息与文献 参考文献着录规则》（标准号[GB/T 7714-2015](http://std.samr.gov.cn/gb/search/gbDetailed?id=71F772D8055ED3A7E05397BE0A0AB82A)）已于2015年12月1日实施，而学校原模板中还在使用已废止的国家标准《文后参考文献着录规则》（标准号[GB/T 7714-2005](http://std.samr.gov.cn/gb/search/gbDetailed?id=71F772D78562D3A7E05397BE0A0AB82A)），故本模板将参考文献样式修改为现行的国家标准。
 
 将`xdupgthesis.cls`中`gbt7714-2005`替换为`gbt7714-numerical`即可，`gbt7714-numerical.bst`样式文件在发行版中自带了，最后删除主目录下的`gbt7714-2005.bst`文件。
 
 虽然已经强调要求使用最新版的LaTeX套装，但是不排除有用户依然使用老旧的LaTeX套装，由于老旧版本的TeX Live或MacTeX的`gbt7714`调用接口与新版不一致，因此按照上面的方法参考文献无法正常编译。
 
-本项目模板对此做了适配，[gbt7714](https://mirrors.ustc.edu.cn/CTAN/biblio/bibtex/contrib/gbt7714/gbt7714.pdf)文档中指出：
+本模板对此做了适配，[gbt7714](https://mirrors.ustc.edu.cn/CTAN/biblio/bibtex/contrib/gbt7714/gbt7714.pdf)文档中指出：
 
 > 从v2.0版本开始（2020-03-04），用户必须在文档中使用`\biblilographystyle`命令选择参考文献样式，如`gbt7714-numerical`或`gbt7714-author-year`。在早期的版本中，选择文献样式的方法是将`numbers`或`super`等参数传递给`gbt7714`，而不能使用`\bibliographystyle`。这跟标准的LaTeX接口不一致，所以将被弃用。
 
-本项目模板通过判断`gbt7714`版本来针对性地选择合适的宏包和参数来实现多种LaTeX套装版本均可正常编译参考文献。
+本模板通过判断`gbt7714`版本来针对性地选择合适的宏包和参数来实现多种LaTeX套装版本均可正常编译参考文献。
 
 ## 参考文献引用样式
 
@@ -1605,7 +1605,7 @@ LaTeX Font Warning: Font shape `OMX/cmex/m/n' in size <10.53937> not available
 
 > 学位论文的撰写要本着严谨求实的科学态度，凡有引用他人成果之处，引用处右上角用方括号标注阿拉伯数字编排的序号（必须与参考文献一致），同时所有引用的文献必须用全称，不能缩写，并按论文中所引用的顺序列于文末。
 
-从中可以看出学校要求参考文献引用处右上角用方括号标注阿拉伯数字编排的序号，因此本项目模板直接设置了`\cite{}`命令对应的引用样式为引用处右上角用方括号标注阿拉伯数字编排的序号，用户直接使用`\cite{}`命令即可产生符合要求的参考文献引用样式。
+从中可以看出学校要求参考文献引用处右上角用方括号标注阿拉伯数字编排的序号，因此本模板直接设置了`\cite{}`命令对应的引用样式为引用处右上角用方括号标注阿拉伯数字编排的序号，用户直接使用`\cite{}`命令即可产生符合要求的参考文献引用样式。
 
 此外，移除了主文件中没有必要的`refcompress`参数和cls样式文件中对应的代码，改为默认参考文献连续编号压缩。同时移除了主文件中的`\nocite{*}`，即没有引用的参考文献不在参考文献列表中显示。
 
@@ -1627,7 +1627,7 @@ LaTeX Font Warning: Font shape `OMX/cmex/m/n' in size <10.53937> not available
 
 为了方便大家使用，支持图、子图、表、算法、公式、假设、定义、命题、引理、定理、公理、推论、练习、例、注释、问题、猜想、证明、章节、附录和算法行等引用命令，具体用法见[交叉引用](#交叉引用)。
 
-本项目模板中利用`\xspace`支持交叉引用处自动处理前后空白，即非中文字符与中文字符之间有空白。但由于`xspace`宏包默认不支持中文标点的处理，故本项目模板从国家标准《标点符号用法》（标准号[GB/T 15834-2011](http://www.moe.gov.cn/ewebeditor/uploadfile/2015/01/13/20150113091548267.pdf)）中选取了全部中文标点进行了支持，包括句号、问号、叹号、逗号、顿号、分号、冒号、引号、破折号、省略号、着重号、连接号、间隔号、书名号、专名号。当交叉引用序号后为普通英文标点或上述中文标点时，其后无空白。
+本模板中利用`\xspace`支持交叉引用处自动处理前后空白，即非中文字符与中文字符之间有空白。但由于`xspace`宏包默认不支持中文标点的处理，故本模板从国家标准《标点符号用法》（标准号[GB/T 15834-2011](http://www.moe.gov.cn/ewebeditor/uploadfile/2015/01/13/20150113091548267.pdf)）中选取了全部中文标点进行了支持，包括句号、问号、叹号、逗号、顿号、分号、冒号、引号、破折号、省略号、着重号、连接号、间隔号、书名号、专名号。当交叉引用序号后为普通英文标点或上述中文标点时，其后无空白。
 
 ## PDF元数据
 
@@ -1655,7 +1655,7 @@ LaTeX Font Warning: Font shape `OMX/cmex/m/n' in size <10.53937> not available
 
 原模板中不支持子图，根据[bare_adv.tex](https://mirrors.ustc.edu.cn/CTAN/macros/latex/contrib/IEEEtran/bare_adv.tex)中的示例，我们采用`subfig`宏包来实现子图的插入，具体使用方法参考[图片](#图片)。
 
-此外，本项目修正了图片标题与图片的间距过小的问题，在清华大学学位论文模板[thuthesis.dtx](https://mirrors.ustc.edu.cn/CTAN/macros/latex/contrib/thuthesis/thuthesis.dtx)中可以找到如下参数：
+此外，本模板修正了图片标题与图片的间距过小的问题，在清华大学学位论文模板[thuthesis.dtx](https://mirrors.ustc.edu.cn/CTAN/macros/latex/contrib/thuthesis/thuthesis.dtx)中可以找到如下参数：
 
 ```latex
 \captionsetup{
@@ -1675,7 +1675,7 @@ LaTeX Font Warning: Font shape `OMX/cmex/m/n' in size <10.53937> not available
 
 ## 显示图表索引前缀
 
-原模板无法显示`插图索引`和`表格索引`的图表前缀，本项目已修复，用户使用时无需额外操作。
+原模板无法显示`插图索引`和`表格索引`的图表前缀，本模板已修复，用户使用时无需额外操作。
 
 ## 图表索引与目录中引导符一致
 
@@ -1685,9 +1685,9 @@ LaTeX Font Warning: Font shape `OMX/cmex/m/n' in size <10.53937> not available
 
 原模板中的符号对照表和缩略语对照表为列表环境，无法自动对齐，使用很不方便。
 
-本项目基于`tabularx`环境实现了自定义符号对照表和缩略语对照表环境，用户只需要像使用表格一样去填写内容即可，支持跨页，模板中正文的示例已经更新，用户可参考示例填写。
+本模板基于`tabularx`环境实现了自定义符号对照表和缩略语对照表环境，用户只需要像使用表格一样去填写内容即可，支持跨页，模板中正文的示例已经更新，用户可参考示例填写。
 
-从模板示例中可以看出符号对照表和缩略语对照表内容字号为小四号，行距为固定值20磅，因此本项目设置符号对照表和缩略语对照表环境的行间距倍数为`1.6666666667`。
+从模板示例中可以看出符号对照表和缩略语对照表内容字号为小四号，行距为固定值20磅，因此本模板设置符号对照表和缩略语对照表环境的行间距倍数为`1.6666666667`。
 
 用户可自定义列宽参数，具体请参考[符号对照表](#符号对照表)和[缩略语对照表](#缩略语对照表)。
 
