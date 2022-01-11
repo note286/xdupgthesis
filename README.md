@@ -550,6 +550,15 @@ Texmaker内置了PDF查看器，支持正向同步和反向同步功能，具体
 强调\emph{测试ABCabc123}
 ```
 
+---
+
+在数学公式中，可以使用`\bm{}`命令来选择粗体数学符号，使用`\text{}`命令在数学公式中插入普通文本，例如：
+
+```latex
+$\bm{a^2}+\bm{b}^2=c^2$
+$\text{被减数} - \text{减数} = \text{差}$
+```
+
 ## 中英文间空白
 
 [xeCJK](https://mirrors.ustc.edu.cn/CTAN/macros/xetex/latex/xecjk/xeCJK.pdf)宏包文档第1节第4点指出：
