@@ -503,45 +503,15 @@ Texmaker内置了PDF查看器，支持正向同步和反向同步功能，具体
 
 ## 参考文献引用
 
-本模板已根据学校要求设置了`\cite{}`生成的引用样式，所以直接使用即可符合学校的要求，例如：
+在[btxdoc](https://mirrors.ustc.edu.cn/CTAN/biblio/bibtex/base/btxdoc.pdf)文档第3.1章节描述了BibTeX的标准类型的必选域和可选域。在[参考文献条目样式](#参考文献条目样式)中提到本模板采用的是GB/T 7714-2015，用户可以自行下载相应标准查看示例。国标中规定了16种参考文献类型，部分类型不是BibTeX的标准类型，此外国标中规定的著录项目多于BibTeX的标准域。因此，强烈建议用户参考[gbt7714.pdf](https://mirrors.ustc.edu.cn/CTAN/biblio/bibtex/contrib/gbt7714/gbt7714.pdf)中关于文献类型和著录项目的描述以及[standard.bib](https://github.com/zepinglee/gbt7714-bibtex-style/blob/master/test/testbst/support/standard.bib)中丰富的示例。
+
+[百度学术](https://xueshu.baidu.com/)和[Google Scholar](https://scholar.google.com.hk/)导出的bib文件不是很规范，经常有很大问题，感兴趣的可以去[BibTeX format explained](https://www.bibtex.com/g/bibtex-format/)了解bib文件的合法格式。用户可以使用[dblp](https://dblp.org/)生成的bib条目，遇到[dblp](https://dblp.org/)没有的条目，可以参考上述文档和示例自行整理。已添加部分常用类型参考文献条目样例至`xdupgthesis.bib`供用户参考。需要注意的是，不要轻易使用分组即`{}`，尤其是`author`域。无论中英文，每个作者均使用`and`连接。除非文献卷号、期号和页码均无，否则不必提供DOI域。对于网页链接，使用`online`类型，填写`author`、`title`、`url`和`urldate`域即可。
+
+本模板已根据学校要求设置了`\cite{}`生成的引用样式，直接使用即可符合学校的要求，例如：
 
 ```latex
-测试引用\cite{tang:press,wanga:medicine,CRAW:future}是否正常。
+测试引用\cite{ChangHTD19,WangZSS21,GongL21}是否正常。
 ```
-
-原模板中自带的bib文件中的条目写的不是很规范，因此已被移除替换。目前已添加部分常用类型参考文献条目样例至`xdupgthesis.bib`，用户可以参考使用，需要注意的是，不要轻易使用分组即`{}`，尤其是`author`字段。关于样式标准请参考[参考文献条目样式](#参考文献条目样式)，用户可以自行下载相应标准查看示例。用户可以使用[dblp](https://dblp.org/)生成的bib条目，[百度学术](https://xueshu.baidu.com/)和[Google Scholar](https://scholar.google.com.hk/)导出的bib文件不是很规范，经常有很大问题，感兴趣的可以去[BibTeX format explained](https://www.bibtex.com/g/bibtex-format/)了解bib文件的合法格式，遇到[dblp](https://dblp.org/)没有的条目，可以手动整理。
-
-在[btxdoc](https://mirrors.ustc.edu.cn/CTAN/biblio/bibtex/base/btxdoc.pdf)文档中第3.1章节指出：
-
-> `article`: An article from a journal or magazine. **Required fields**: author, title, journal, year. **Optional fields**: volume, number, pages, month, note.
->
-> `book`: A book with an explicit publisher. **Required fields**: author or editor, title, publisher, year. **Optional fields**: volume or number, series, address, edition, month, note.
->
-> `booklet`: A work that is printed and bound, but without a named publisher or sponsoring institution. Required field: title. **Optional fields**: author, howpublished, address, month, year, note.
->
-> `conference`: The same as INPROCEEDINGS, included for Scribe compatibility.
->
-> `inbook`: A part of a book, which may be a chapter (or section or whatever) and/or a range of pages. **Required fields**: author or editor, title, chapter and/or pages, publisher, year. **Optional fields**: volume or number, series, type, address, edition, month, note.
->
-> `incollection`: A part of a book having its own title. **Required fields**: author, title, booktitle, publisher, year. **Optional fields**: editor, volume or number, series, type, chapter, pages, address, edition, month, note.
->
-> `inproceedings`: An article in a conference proceedings. **Required fields**: author, title, booktitle, year. **Optional fields**: editor, volume or number, series, pages, address, month, organization, publisher, note.
->
-> `manual`: Technical documentation. Required field: title. **Optional fields**: author, organization, address, edition, month, year, note.
->
-> `mastersthesis`: A Master’s thesis. **Required fields**: author, title, school, year. **Optional fields**: type, address, month, note.
->
-> `misc`: Use this type when nothing else fits. **Required fields**: none. **Optional fields**: author, title, howpublished, month, year, note.
->
-> `phdthesis`: A PhD thesis. **Required fields**: author, title, school, year. **Optional fields**: type, address, month, note.
->
-> `proceedings`: The proceedings of a conference. **Required fields**: title, year. **Optional fields**: editor, volume or number, series, address, month, organization, publisher, note.
->
-> `techreport`: A report published by a school or other institution, usually numbered within a series. **Required fields**: author, title, institution, year. **Optional fields**: type, number, address, month, note.
->
-> `unpublished`: A document having an author and title, but not formally published. **Required fields**: author, title, note. **Optional fields**: month, year.
-
-在本模板示例文件中已经提供了若干个条目供参考。需要注意的是，无论中英文，每个作者均使用`and`连接。除非文献卷号、期号和页码均无，否则不必提供DOI选项。对于网页链接，使用`misc`类型条目，填写`author`、`title`、`howpublished`和`year`选项即可。
 
 ---
 
