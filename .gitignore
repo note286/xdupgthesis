@@ -12,6 +12,7 @@
 *.lot
 *.out
 *.sh
+*.sty
 *.sublime-workspace
 *.synctex
 *.synctex(busy)
