@@ -38,6 +38,7 @@
     - [TeXPage编译](#texpage编译)
   - [文档类可选参数](#文档类可选参数)
   - [内置宏包](#内置宏包)
+  - [英文学位论文](#英文学位论文)
   - [数学字体切换开关](#数学字体切换开关)
   - [数学符号](#数学符号)
   - [参考文献引用](#参考文献引用)
@@ -412,6 +413,7 @@ Texmaker内置了PDF查看器，支持正向同步和反向同步功能，具体
 - `frame`，详见[显示边框](#显示边框)
 - `mf=tgtm`或`mf=cm`，详见[数学字体切换开关](#数学字体切换开关)
 - `sign`，详见[签名图像](#签名图像)
+- `en`，详见[英文学位论文](#英文学位论文)
 
 以上参数功能相互独立，均可任意组合使用，选项之间无先后顺序之分，多个选项之间使用逗号隔开，例如：
 
@@ -446,6 +448,7 @@ Texmaker内置了PDF查看器，支持正向同步和反向同步功能，具体
 - hyperref
 - ifpdf
 - ifthen
+- indentfirst
 - ltablex
 - makecell
 - multirow
@@ -462,6 +465,99 @@ Texmaker内置了PDF查看器，支持正向同步和反向同步功能，具体
 - xeCJKfntef
 - xspace
 - xurl
+
+## 英文学位论文
+
+在[西安电子科技大学申请学术学位博士学位相关资料-研究生院/研究生工作部-西安电子科技大学](https://gr.xidian.edu.cn/info/1047/7160.htm)下方有附件[西安电子科技大学申请博士学位相关资料-2021年3月更新.zip](https://gr.xidian.edu.cn/system/_content/download.jsp?urltype=news.DownloadAttachUrl&owner=1281831001&wbfileid=4717167)，该压缩包内有`3-4西安电子科技大学英文学位论文撰写相关规定.doc`，其SHA-1值为：
+
+> 0DF4B42F4BB1B4B6889D51C83A2C9A75B0C5512D
+
+其内有如下描述：
+
+> 英文学位论文撰写的总体要求遵照我校研究生学位论文撰写要求执行，除封面、中文题名页、学位论文独创性声明和关于论文使用授权的说明、中文摘要、中文目录页和中文参考文献用中文撰写外，其他内容一律用英文撰写。
+>
+> 学位论文的封面用中文填写，用研究生院统一印制的纸张打印，不得手写。
+>
+> 题名页包括英文题名页和中文题名页，英文题名页在前，中文题名页在后，填写要求遵照我校研究生学位论文撰写要求执行。
+>
+> 声明页用中文版本，不用翻译成英文。
+>
+> 摘要包括英文摘要和中文摘要，英文摘要在前，中文摘要在后。除此之外，在提交送审学位论文时，博士学位论文必须附加一份3000～5000字左右的详细中文摘要，硕士学位论文必须附加一份1500～3000字左右的详细中文摘要。详细中文摘要与学位论文分开装订，供评审专家参考。
+>
+> 目录包括中文目录页和英文目录页，英文目录页在前，中文目录页在后。
+>
+> 正文全部用英文撰写，撰写要求遵照我校研究生学位论文撰写要求执行。
+>
+> 页眉的“西安电子科技大学博士/硕士学位论文”统一翻译成：Doctoral Dissertation of XIDIAN UNIVERSITY/Master Thesis of XIDIAN UNIVERSITY。
+>
+> 英文字体统一用Times New Roman，字号遵照我校研究生学位论文撰写要求执行。
+
+具体要求整理如下：
+
+- 中文撰写内容及要求
+
+  - 封面
+    - 中文填写，用研究生院统一印制的纸张打印，不得手写
+  - 中文题名页
+    - 英文题名页在前，中文题名页在后
+  - 学位论文独创性声明和关于论文使用授权的说明
+    - 声明页用中文版本，不用翻译成英文。
+  - 中文摘要
+    - 英文摘要在前，中文摘要在后
+    - 在提交送审学位论文时，博士学位论文必须附加一份3000～5000字左右的详细中文摘要，硕士学位论文必须附加一份1500～3000字左右的详细中文摘要。详细中文摘要与学位论文分开装订，供评审专家参考。
+  - 中文目录页
+    - 英文目录页在前，中文目录页在后
+
+  - 中文参考文献
+
+- 英文撰写内容及要求
+
+  - 英文提名页
+    - 英文题名页在前，中文题名页在后
+  - 正文
+    - 正文全部用英文撰写
+  - 页眉
+    - 页眉的“西安电子科技大学博士/硕士学位论文”统一翻译成：Doctoral Dissertation of XIDIAN UNIVERSITY/Master Thesis of XIDIAN UNIVERSITY
+  - 英文摘要
+    - 英文摘要在前，中文摘要在后
+  - 英文目录页
+    - 英文目录页在前，中文目录页在后
+
+如果用户想要撰写英文学位论文，需要在`xdupgthesis.tex`中为`en`参数（English），即将
+
+```latex
+\documentclass{xdupgthesis}
+```
+
+改为
+
+```latex
+\documentclass[en]{xdupgthesis}
+```
+
+此外，需要注意：
+
+- 用户需要手动将英文摘要环境移动至中文摘要前面
+
+- 为生成中文目录页，在`\chapter{}`、`\section{}`、`\subsection{}`和`\subsubsection{}`后添加`\zhchapter{}`、`\zhsection{}`、`\zhsubsection{}`和`\zhsubsubsection{}`，例如：
+
+  ```latex
+  \chapter{Introduction}
+  \zhchapter{绪论}
+  \section{Background}
+  \zhsection{y}
+  ```
+
+- 用户自行替换作者简介页内的标题，提供如下翻译供参考：
+
+  - 基本情况 Brief Introduction
+  - 教育背景 Academic Experience
+  - 攻读硕士学位期间的研究成果 Research Production during Graduate Study
+  - 发表学术论文 Publications
+  - 申请（授权）专利 Applied (Authorized) Patent
+  - 参与科研项目及获奖 Projects and Awards
+
+- 详细中文摘要与学位论文分开装订，供评审专家参考
 
 ## 数学字体切换开关
 
@@ -1688,6 +1784,7 @@ LaTeX Font Warning: Font shape `OMX/cmex/m/n' in size <10.53937> not available
 
 # 版本记录
 
+- `2022-01-19` [`v3.1.0`](https://github.com/note286/xdupgthesis/releases/tag/v3.1.0) 支持英文学位论文。
 - `2022-01-10` [`v3.0.0`](https://github.com/note286/xdupgthesis/releases/tag/v3.0.0) 支持独创性声明和使用授权页插入电子版日期。
 - `2022-01-06` [`v2.0.0`](https://github.com/note286/xdupgthesis/releases/tag/v2.0.0) 支持插入签名图像。
 - `2022-01-05` [`v1.25.0`](https://github.com/note286/xdupgthesis/releases/tag/v1.25.0) 升级algpseudocode宏包为algpseudocodex宏包。

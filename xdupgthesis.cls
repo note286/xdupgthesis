@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{xdupgthesis}[2022/01/10 Xidian University Postgraduate Thesis document class, version 3.0.0, modified by @note286, published in https://note286.github.io/xdupgthesis/]
+\ProvidesClass{xdupgthesis}[2022/01/19 Xidian University Postgraduate Thesis document class, version 3.1.0, modified by @note286, published in https://note286.github.io/xdupgthesis/]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%   class and packages
@@ -62,9 +62,18 @@
 \newif\ifXDU@Option@sign\XDU@Option@signfalse
 \DeclareOption{sign}{\XDU@Option@signtrue}
 
+% English
+\newif\ifXDU@Option@en\XDU@Option@enfalse
+\DeclareOption{en}{\XDU@Option@entrue}
+
 %% others
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{ctexbook}}
 \ProcessOptions\relax
+
+\ifXDU@Option@en
+  \PassOptionsToClass{scheme=plain}{ctexbook}
+  \RequirePackage{indentfirst}
+\fi
 
 %%%%%%%%%%%%%%%%%%%%
 %% load class and packages
@@ -176,15 +185,21 @@
 \RequirePackage{multirow}
 
 \RequirePackage[chapter]{algorithm}
-\renewcommand{\ALG@name}{算法}
+\ifXDU@Option@en
+\else
+  \renewcommand{\ALG@name}{算法}
+\fi
 
 \RequirePackage{algorithmicx}
 
 \IfFileExists{algpseudocodex.sty}
   {\RequirePackage{algpseudocodex}}
   {\RequirePackage{algpseudocode}}
-\algrenewcommand\algorithmicrequire{\textbf{输入:}}
-\algrenewcommand\algorithmicensure{\textbf{输出:}}
+\ifXDU@Option@en
+\else
+  \algrenewcommand\algorithmicrequire{\textbf{输入:}}
+  \algrenewcommand\algorithmicensure{\textbf{输出:}}
+\fi
 
 %% calc
 \RequirePackage{calc}
@@ -245,7 +260,7 @@ pdfsubject={\XDU@label@university\XDU@value@degreemark\XDU@value@cover@thesis}%
 \newcommand\setXDU@value@thesis@studentNo[2]{\newcommand{\XDU@value@thesis@studentNo}{\anonrvwinfo{#1}{#2}}}
 \newcommand\setXDU@value@thesis@classification[2]{\newcommand{\XDU@value@thesis@classification}{\anonrvwinfo{#1}{#2}}}
 \newcommand\setXDU@evalue@degree[2]{\newcommand{\XDU@evalue@degree}{#1}}
-\newcommand\setXDU@value@degreemark[2]{\newcommand{\XDU@value@degreemark}{#1}}
+\newcommand\setXDU@value@degreemark[2]{\renewcommand{\XDU@value@degreemark}{#1}}
 \newcommand\setXDU@evalue@papertype[2]{\newcommand{\XDU@evalue@papertype}{#1}}
 \newcommand\setXDU@value@thesis@title[2]{\newcommand{\XDU@value@thesis@title}{#1}}
 \newcommand\setXDU@evalue@thesis@title[2]{\newcommand{\XDU@evalue@thesis@title}{#1}}
@@ -263,29 +278,58 @@ pdfsubject={\XDU@label@university\XDU@value@degreemark\XDU@value@cover@thesis}%
 \AtEndOfPackage{\makeatletter\@addtoreset{equation}{chapter}\makeatother}
 \RequirePackage{xspace}
 \xspaceaddexceptions{。？！，、；：“”‘’—….－-～·《》<>＿}
-\AtEndOfPackage{\makeatletter \renewcommand{\figurename}{图} \renewcommand{\tablename}{表}
-\newcommand{\figureref}[1]{图\xspace\ref{#1}\xspace}
-\newcommand{\subfigureref}[1]{图\xspace\subref*{#1}\xspace}
-\newcommand{\tableref}[1]{表\xspace\ref{#1}\xspace}
-\newcommand{\algorithmref}[1]{算法\xspace\ref{#1}\xspace}
-\newcommand{\equationref}[1]{公式(\ref{#1})}
-\newcommand{\assumptionref}[1]{假设\xspace\ref{#1}\xspace}
-\newcommand{\definitionref}[1]{定义\xspace\ref{#1}\xspace}
-\newcommand{\propositionref}[1]{命题\xspace\ref{#1}\xspace}
-\newcommand{\lemmaref}[1]{引理\xspace\ref{#1}\xspace}
-\newcommand{\theoremref}[1]{定理\xspace\ref{#1}\xspace}
-\newcommand{\axiomref}[1]{公理\xspace\ref{#1}\xspace}
-\newcommand{\corollaryref}[1]{推论\xspace\ref{#1}\xspace}
-\newcommand{\exerciseref}[1]{练习\xspace\ref{#1}\xspace}
-\newcommand{\exampleref}[1]{例\xspace\ref{#1}\xspace}
-\newcommand{\remarkref}[1]{注释\xspace\ref{#1}\xspace}
-\newcommand{\problemref}[1]{问题\xspace\ref{#1}\xspace}
-\newcommand{\conjectureref}[1]{猜想\xspace\ref{#1}\xspace}
-\newcommand{\proofref}[1]{证明\xspace\ref{#1}\xspace}
-\newcommand{\chapterref}[1]{第\ref{#1}章}
-\newcommand{\sectionref}[1]{第\xspace\ref{#1}\xspace 节}
-\newcommand{\appendixref}[1]{附录\xspace\ref{#1}\xspace}
-\newcommand{\lineref}[1]{第\xspace\ref{#1}\xspace 行}
+\AtEndOfPackage{\makeatletter
+\ifXDU@Option@en
+  \renewcommand{\figurename}{Figure}
+  \renewcommand{\tablename}{Table}
+  \newcommand{\figureref}[1]{Figure\xspace\ref{#1}\xspace}
+  \newcommand{\subfigureref}[1]{Figure\xspace\subref*{#1}\xspace}
+  \newcommand{\tableref}[1]{Table\xspace\ref{#1}\xspace}
+  \newcommand{\algorithmref}[1]{Algorithm\xspace\ref{#1}\xspace}
+  \newcommand{\equationref}[1]{Equation\xspace(\ref{#1})}
+  \newcommand{\assumptionref}[1]{Assumption\xspace\ref{#1}\xspace}
+  \newcommand{\definitionref}[1]{Definition\xspace\ref{#1}\xspace}
+  \newcommand{\propositionref}[1]{Proposition\xspace\ref{#1}\xspace}
+  \newcommand{\lemmaref}[1]{Lemma\xspace\ref{#1}\xspace}
+  \newcommand{\theoremref}[1]{Theorem\xspace\ref{#1}\xspace}
+  \newcommand{\axiomref}[1]{Axiom\xspace\ref{#1}\xspace}
+  \newcommand{\corollaryref}[1]{Corollary\xspace\ref{#1}\xspace}
+  \newcommand{\exerciseref}[1]{Exercise\xspace\ref{#1}\xspace}
+  \newcommand{\exampleref}[1]{Example\xspace\ref{#1}\xspace}
+  \newcommand{\remarkref}[1]{Remark\xspace\ref{#1}\xspace}
+  \newcommand{\problemref}[1]{Problem\xspace\ref{#1}\xspace}
+  \newcommand{\conjectureref}[1]{Conjecture\xspace\ref{#1}\xspace}
+  \newcommand{\proofref}[1]{Proof\xspace\ref{#1}\xspace}
+  \newcommand{\chapterref}[1]{Chapter\xspace\ref{#1}\xspace}
+  \newcommand{\sectionref}[1]{Section\xspace\ref{#1}\xspace}
+  \newcommand{\appendixref}[1]{Appendix\xspace\ref{#1}\xspace}
+  \newcommand{\lineref}[1]{Line\xspace\ref{#1}\xspace}
+\else
+  \renewcommand{\figurename}{图}
+  \renewcommand{\tablename}{表}
+  \newcommand{\figureref}[1]{图\xspace\ref{#1}\xspace}
+  \newcommand{\subfigureref}[1]{图\xspace\subref*{#1}\xspace}
+  \newcommand{\tableref}[1]{表\xspace\ref{#1}\xspace}
+  \newcommand{\algorithmref}[1]{算法\xspace\ref{#1}\xspace}
+  \newcommand{\equationref}[1]{公式(\ref{#1})}
+  \newcommand{\assumptionref}[1]{假设\xspace\ref{#1}\xspace}
+  \newcommand{\definitionref}[1]{定义\xspace\ref{#1}\xspace}
+  \newcommand{\propositionref}[1]{命题\xspace\ref{#1}\xspace}
+  \newcommand{\lemmaref}[1]{引理\xspace\ref{#1}\xspace}
+  \newcommand{\theoremref}[1]{定理\xspace\ref{#1}\xspace}
+  \newcommand{\axiomref}[1]{公理\xspace\ref{#1}\xspace}
+  \newcommand{\corollaryref}[1]{推论\xspace\ref{#1}\xspace}
+  \newcommand{\exerciseref}[1]{练习\xspace\ref{#1}\xspace}
+  \newcommand{\exampleref}[1]{例\xspace\ref{#1}\xspace}
+  \newcommand{\remarkref}[1]{注释\xspace\ref{#1}\xspace}
+  \newcommand{\problemref}[1]{问题\xspace\ref{#1}\xspace}
+  \newcommand{\conjectureref}[1]{猜想\xspace\ref{#1}\xspace}
+  \newcommand{\proofref}[1]{证明\xspace\ref{#1}\xspace}
+  \newcommand{\chapterref}[1]{第\ref{#1}章}
+  \newcommand{\sectionref}[1]{第\xspace\ref{#1}\xspace 节}
+  \newcommand{\appendixref}[1]{附录\xspace\ref{#1}\xspace}
+  \newcommand{\lineref}[1]{第\xspace\ref{#1}\xspace 行}
+\fi
 \def\@caption#1[#2]#3{%
    \par
    \addcontentsline{\csname ext@#1\endcsname}{#1}%
@@ -304,6 +348,8 @@ pdfsubject={\XDU@label@university\XDU@value@degreemark\XDU@value@cover@thesis}%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%   utilities
 
+\DeclareRobustCommand{\XDU@zhtoc@add}[1]
+  {\addcontentsline{zh.toc}{chapter}{#1}}
 \DeclareRobustCommand{\XDU@toc@add}[1]
   {\cleardoublepage\phantomsection\addcontentsline{toc}{chapter}{#1}}
 
@@ -341,8 +387,14 @@ pdfsubject={\XDU@label@university\XDU@value@degreemark\XDU@value@cover@thesis}%
 %% remove header from empty page
 
 %% label of even page header
-\def\XDU@hdr@thesistitle
-  {\XDU@label@university\XDU@value@degreemark\XDU@value@cover@thesis}
+\newcommand{\XDU@value@degreemark}{}
+\ifXDU@Option@en
+\ifthenelse{\equal{\XDU@value@degreemark}{硕士学位}}
+  {\def\XDU@hdr@thesistitle{Master Thesis of XIDIAN UNIVERSITY}}
+  {\def\XDU@hdr@thesistitle{Doctoral Dissertation of XIDIAN UNIVERSITY}}
+\else
+  \def\XDU@hdr@thesistitle{\XDU@label@university\XDU@value@degreemark\XDU@value@cover@thesis}
+\fi
 
 %% the double line under header
 \newcommand{\makeheadrule}{%
@@ -372,16 +424,29 @@ pdfsubject={\XDU@label@university\XDU@value@degreemark\XDU@value@cover@thesis}%
 \setcounter{secnumdepth}{4}
 
 %% chapter
-\ctexset{chapter={name={\XDU@chapter@prenumber,\XDU@chapter@afternumber},
-           number={\chinese{chapter}},
-           format={\centering\heiti\XDU@font@zihao{3}},
-           nameformat={},
-           numberformat={},
-           aftername={\quad},
-           titleformat={},
-           beforeskip={6pt},
-           afterskip={18pt},
-           indent={0pt}}}
+\ifXDU@Option@en
+  \ctexset{chapter={name={Chapter\xspace,},
+             number={\Roman{chapter}},
+             format={\centering\heiti\XDU@font@zihao{3}},
+             nameformat={},
+             numberformat={},
+             aftername={\quad},
+             titleformat={},
+             beforeskip={6pt},
+             afterskip={18pt},
+             indent={0pt}}}
+\else
+  \ctexset{chapter={name={\XDU@chapter@prenumber,\XDU@chapter@afternumber},
+             number={\chinese{chapter}},
+             format={\centering\heiti\XDU@font@zihao{3}},
+             nameformat={},
+             numberformat={},
+             aftername={\quad},
+             titleformat={},
+             beforeskip={6pt},
+             afterskip={18pt},
+             indent={0pt}}}
+\fi
 
 %% chapter without number
 \DeclareRobustCommand{\XDU@nchapter}[1]{\chapter*{#1}\markboth{#1}{}}
@@ -662,6 +727,7 @@ By \par%
 %% chinese abstract
 \newenvironment{abstract}
   {\XDU@toc@add{\XDU@toc@abstract}%
+   \XDU@zhtoc@add{\XDU@toc@abstract}%
    \XDU@nchapter{\XDU@label@abstract}\XDU@font@zihao{-4}
    \ifXDU@Option@draft
      \setlength{\baselineskip}{30pt}
@@ -679,7 +745,9 @@ By \par%
 
 %% english abstract
 \newenvironment{englishabstract}
-  {\XDU@toc@add{\XDU@etoc@abstract}\XDU@nchapter{\XDU@elabel@abstract}%
+  {\XDU@toc@add{\XDU@etoc@abstract}
+   \XDU@zhtoc@add{\XDU@etoc@abstract}
+   \XDU@nchapter{\XDU@elabel@abstract}%
    \vspace{-2ex}\parindent=0pt\normalfont\XDU@font@zihao{-4}%
    \parindent=0pt
    \ifXDU@Option@draft
@@ -702,10 +770,10 @@ By \par%
     \ifXDU@Option@noloftpre
     \else
       \newlength{\tmplen}
-      \renewcommand{\cftfigpresnum}{\figurename}
+      \renewcommand{\cftfigpresnum}{\figurename\xspace}
       \settowidth{\tmplen}{\cftfigpresnum}
       \addtolength{\cftfignumwidth}{\tmplen}
-      \renewcommand{\cfttabpresnum}{\tablename}
+      \renewcommand{\cfttabpresnum}{\tablename\xspace}
       \settowidth{\tmplen}{\cfttabpresnum}
       \addtolength{\cfttabnumwidth}{\tmplen}
     \fi
@@ -738,6 +806,7 @@ By \par%
 \ctexset{listfigurename={\XDU@label@listoffigures}}
 \DeclareRobustCommand{\XDU@listoffigures}
   {\XDU@toc@add{\XDU@toc@listoffigures}%
+   \XDU@zhtoc@add{插图索引}
     \ifXDU@Option@addloftgap
       \listoffigures
     \else
@@ -750,6 +819,7 @@ By \par%
 \ctexset{listtablename={\XDU@label@listoftables}}
 \DeclareRobustCommand{\XDU@listoftables}
   {\XDU@toc@add{\XDU@toc@listoftables}%
+   \XDU@zhtoc@add{表格索引}
     \ifXDU@Option@addloftgap
       \listoftables
     \else
@@ -793,10 +863,16 @@ By \par%
   \ifXDU@Option@psd
   \else
     \parindent=0pt\XDU@toc@add{\XDU@toc@symbollist@title}%
+    \XDU@zhtoc@add{符号对照表}
     \XDU@nchapter{\XDU@label@symbollist@title}\parindent=.5\ccwd%
     \renewcommand{\arraystretch}{1.6666666667}
     \renewcommand{\small}{\zihao{-4}}
     \begin{tabularx}{\linewidth}{#1}
+    \ifXDU@Option@en
+      Notation & Description\\
+    \else
+      符号 & 符号名称\\
+    \fi
     \BODY
     \end{tabularx}\parindent=2\ccwd\cleardoublepage
     \renewcommand{\small}{\zihao{5}}
@@ -809,10 +885,16 @@ By \par%
   \ifXDU@Option@psd
   \else
     \parindent=0pt\XDU@toc@add{\XDU@toc@abbreviationlist@title}%
+    \XDU@zhtoc@add{缩略语对照表}
     \XDU@nchapter{\XDU@label@abbreviationlist@title}\parindent=.5\ccwd%
     \renewcommand{\arraystretch}{1.6666666667}
     \renewcommand{\small}{\zihao{-4}}
     \begin{tabularx}{\linewidth}{#1}
+    \ifXDU@Option@en
+      Abbreviation & English Full Name & Chinese Full Name\\
+    \else
+      缩略语 & 英文全称 & 中文对照\\
+    \fi
     \BODY
     \end{tabularx}\parindent=2\ccwd\cleardoublepage
     \renewcommand{\small}{\zihao{5}}
@@ -834,6 +916,7 @@ By \par%
 
 \renewenvironment{thebibliography}[1]
   {\XDU@toc@add{\XDU@toc@ref@title}%
+   \XDU@zhtoc@add{参考文献}
    \XDU@nchapter{\bibname}%
    \XDU@font@zihao{5}%
    \@mkboth{\MakeUppercase\bibname}{\MakeUppercase\bibname}%
@@ -856,6 +939,7 @@ By \par%
   \ifXDU@Option@psd
   \else
     \XDU@toc@add{\XDU@toc@thanks}%
+    \XDU@zhtoc@add{致谢}
     \XDU@nchapter{\XDU@label@thanks}
     \BODY
   \fi
@@ -869,6 +953,7 @@ By \par%
   \ifXDU@Option@psd
   \else
     \parindent=0pt\XDU@toc@add{\XDU@toc@resume@title}%
+    \XDU@zhtoc@add{作者简介}
     \XDU@nchapter{\XDU@label@resume@title}%
     \renewcommand{\thesection}{\arabic{section}}\parindent=2\ccwd
     \BODY
@@ -907,8 +992,13 @@ By \par%
   \ifXDU@Option@psd
   \else
     \XDU@make@cover%
-    \XDU@make@title%
-    \XDU@make@titleenglish%
+    \ifXDU@Option@en
+      \XDU@make@titleenglish%
+      \XDU@make@title%
+    \else
+      \XDU@make@title%
+      \XDU@make@titleenglish%
+    \fi
     \XDU@make@statementandcopyright%
   \fi
   \frontmatter\pagenumbering{Roman}%
@@ -925,11 +1015,33 @@ By \par%
   \fi
 }
 %% main matter
+\newcommand{\contentszhname}{目录}
+\newcommand\tableofencontents{%
+    \if@twocolumn
+      \@restonecoltrue\onecolumn
+    \else
+      \@restonecolfalse
+    \fi
+    \chapter*{\contentszhname
+        \@mkboth{%
+           \MakeUppercase\contentszhname}{\MakeUppercase\contentszhname}}%
+    \@starttoc{zh.toc}%
+    \if@restonecol\twocolumn\fi
+    }
+\newcommand{\XDUchapter}{\XDU@chapter@prenumber\chinese{chapter}\XDU@chapter@afternumber}
+\newcommand\zhchapter[1]{\addcontentsline{zh.toc}{chapter}{\XDUchapter\quad #1}}
+\newcommand\zhsection[1]{\addcontentsline{zh.toc}{section}{\thesection\quad #1}}
+\newcommand\zhsubsection[1]{\addcontentsline{zh.toc}{subsection}{\thesubsection\quad #1}}
+\newcommand\zhsubsubsection[1]{\addcontentsline{zh.toc}{subsubsection}{\arabic{subsubsection}\quad #1}}
+
 \DeclareRobustCommand{\XDUmainmatter}
 {
   \ifXDU@Option@psd
   \else
     \XDU@tableofcontents\cleardoublepage%
+    \ifXDU@Option@en
+      \tableofencontents\cleardoublepage%
+    \fi
   \fi
   \mainmatter
   \ifXDU@Option@draft
@@ -947,6 +1059,7 @@ By \par%
   \ifXDU@Option@psd
   \else
     \appendix
+    \renewcommand{\XDUchapter}{附录\xspace\Alph{chapter}}
     \BODY
   \fi
 }

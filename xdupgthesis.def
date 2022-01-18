@@ -65,31 +65,46 @@
 \def\XDU@label@keywords{关键词：}
 \def\XDU@elabel@keywords{Keywords:}
 
+\ifXDU@Option@en
 % 目录
-\def\XDU@label@listoffigures{插图索引}
-\def\XDU@toc@listoffigures{插图索引}
-\def\XDU@label@listoftables{表格索引}
-\def\XDU@toc@listoftables{表格索引}
-\def\XDU@label@symbollist@title{符号对照表}
-\def\XDU@toc@symbollist@title{符号对照表}
-\def\XDU@label@abbreviationlist@title{缩略语对照表}
-\def\XDU@toc@abbreviationlist@title{缩略语对照表}
-\def\XDU@label@content{目录}
-\def\XDU@toc@content{目录}
-
-% 参考文献
-\def\XDU@label@ref@title{参考文献}
-\def\XDU@toc@ref@title{参考文献}
-
-% 致谢
-\def\XDU@label@thanks{致谢}
-\def\XDU@toc@thanks{致谢}
-
-% 简历
-\def\XDU@label@resume@title{作者简介}
-\def\XDU@toc@resume@title{作者简介}
-\def\XDU@label@resume@baseinfo{基本情况}
-\def\XDU@label@resume@name{姓名：}
-\def\XDU@label@resume@sex{性别：}
-\def\XDU@label@resume@birthday{出生日期：}
-\def\XDU@label@resume@place{籍贯：}
+  \def\XDU@label@listoffigures{List of Figures}
+  \def\XDU@toc@listoffigures{List of Figures}
+  \def\XDU@label@listoftables{List of Tables}
+  \def\XDU@toc@listoftables{List of Tables}
+  \def\XDU@label@symbollist@title{List of Symbols}
+  \def\XDU@toc@symbollist@title{List of Symbols}
+  \def\XDU@label@abbreviationlist@title{List of Abbreviations}
+  \def\XDU@toc@abbreviationlist@title{List of Abbreviations}
+  \def\XDU@label@content{Contents}
+  \def\XDU@toc@content{Contents}
+  % 参考文献
+  \def\XDU@label@ref@title{References}
+  \def\XDU@toc@ref@title{References}
+  % 致谢
+  \def\XDU@label@thanks{Acknowledgment}
+  \def\XDU@toc@thanks{Acknowledgment}
+  % 简历
+  \def\XDU@label@resume@title{Author Biography}
+  \def\XDU@toc@resume@title{Author Biography}
+\else
+  % 目录
+  \def\XDU@label@listoffigures{插图索引}
+  \def\XDU@toc@listoffigures{插图索引}
+  \def\XDU@label@listoftables{表格索引}
+  \def\XDU@toc@listoftables{表格索引}
+  \def\XDU@label@symbollist@title{符号对照表}
+  \def\XDU@toc@symbollist@title{符号对照表}
+  \def\XDU@label@abbreviationlist@title{缩略语对照表}
+  \def\XDU@toc@abbreviationlist@title{缩略语对照表}
+  \def\XDU@label@content{目录}
+  \def\XDU@toc@content{目录}
+  % 参考文献
+  \def\XDU@label@ref@title{参考文献}
+  \def\XDU@toc@ref@title{参考文献}
+  % 致谢
+  \def\XDU@label@thanks{致谢}
+  \def\XDU@toc@thanks{致谢}
+  % 简历
+  \def\XDU@label@resume@title{作者简介}
+  \def\XDU@toc@resume@title{作者简介}
+\fi
