@@ -154,6 +154,10 @@ dvipdfmx templet
 
 ## 卸载与安装
 
+MiKTeX用户需要额外安装[Perl](https://strawberryperl.com/)以便于使用latexmk，可通过运行`perl -v`来检查是否已安装。此外，MiKTeX用户自行打开MiKTeX控制台更新所有包。
+
+下面主要介绍TeX Live/MacTeX。
+
 Windows和GNU/Linux平台使用[TeX Live](https://www.tug.org/texlive/)，macOS平台使用[MacTeX](https://www.tug.org/mactex/)，跨版本升级均需要卸载旧版。
 
 Windows平台卸载方法为管理员身份直接运行`C:\texlive\2021\tlpkg\installer\uninst.bat`，不同版本和安装位置请按需修改目录，更多介绍请参考[install-latex-guide-zh-cn.pdf](https://mirrors.ustc.edu.cn/CTAN/info/install-latex-guide-zh-cn/install-latex-guide-zh-cn.pdf)第1.2节，GNU/Linux平台卸载方法请参考[install-latex-guide-zh-cn.pdf](https://mirrors.ustc.edu.cn/CTAN/info/install-latex-guide-zh-cn/install-latex-guide-zh-cn.pdf)第2.2节，macOS上卸载方法请参考[Uninstalling MacTeX](https://www.tug.org/mactex/uninstalling.html)。
