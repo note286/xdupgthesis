@@ -1788,6 +1788,7 @@ LaTeX Font Warning: Font shape `OMX/cmex/m/n' in size <10.53937> not available
 
 # 版本记录
 
+- `2022-01-20` [`v3.1.1`](https://github.com/note286/xdupgthesis/releases/tag/v3.1.1) 修复旧版gbt7714兼容问题。
 - `2022-01-19` [`v3.1.0`](https://github.com/note286/xdupgthesis/releases/tag/v3.1.0) 支持英文学位论文。
 - `2022-01-10` [`v3.0.0`](https://github.com/note286/xdupgthesis/releases/tag/v3.0.0) 支持独创性声明和使用授权页插入电子版日期。
 - `2022-01-06` [`v2.0.0`](https://github.com/note286/xdupgthesis/releases/tag/v2.0.0) 支持插入签名图像。
