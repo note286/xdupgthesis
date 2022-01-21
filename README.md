@@ -810,7 +810,7 @@ $\text{被减数} - \text{减数} = \text{差}$
 
 ## 表格
 
-从模板示例中可以看出表中的内容字号为五号，本模板已经重定义了三种常见的表格环境的字号，包括`tabular`、`tabularx`和`tabulary`环境，对于这三种表格环境，用户无需手动指定字号。本模板内置了部分示例供参考。
+从模板示例中可以看出表中的内容字号为五号，本模板已经重定义了4种常见的表格环境的字号，包括`tabular`、`tabularx`、`tabulary`和`longtable`环境，对于这4种表格环境，用户无需手动指定字号。本模板内置了部分示例供参考，更建议用户参考[lshort-zh-cn.pdf](https://mirrors.ustc.edu.cn/CTAN/info/lshort/chinese/lshort-zh-cn.pdf)第3.6节中关于表格的描述。
 
 此外，对于`table`浮动体，不建议使用任何位置参数，让LaTeX引擎将浮动体自动放置在合适的位置，具体原因可见[浮动体位置](#浮动体位置)。
 
