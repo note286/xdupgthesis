@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{xdupgthesis}[2022/01/20 Xidian University Postgraduate Thesis document class, version 3.1.1, modified by @note286, published in https://note286.github.io/xdupgthesis/]
+\ProvidesClass{xdupgthesis}[2022/01/21 Xidian University Postgraduate Thesis document class, version 4.0.0, modified by @note286, published in https://note286.github.io/xdupgthesis/]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%   class and packages
@@ -830,8 +830,8 @@ By \par%
 \RequirePackage{tabulary}
 
 \RequirePackage{tabularx}
-\RequirePackage{ltablex}
-\keepXColumns
+
+\RequirePackage{longtable}
 
 \RequirePackage{environ}
 
@@ -843,6 +843,12 @@ By \par%
 \renewenvironment{tabular}
 {\small\oldtabular}
 {\endoldtabular}
+
+\let\oldlongtable\longtable
+\let\endoldlongtable\endlongtable
+\renewenvironment{longtable}
+{\small\oldlongtable}
+{\endoldlongtable}
 
 \let\oldtabularx\tabularx
 \let\endoldtabularx\endtabularx
@@ -866,14 +872,14 @@ By \par%
     \XDU@nchapter{\XDU@label@symbollist@title}\parindent=.5\ccwd%
     \renewcommand{\arraystretch}{1.6666666667}
     \renewcommand{\small}{\zihao{-4}}
-    \begin{tabularx}{\linewidth}{#1}
+    \begin{longtable}{#1}
     \ifXDU@Option@en
       Notation & Description\\
     \else
       符号 & 符号名称\\
     \fi
     \BODY
-    \end{tabularx}\parindent=2\ccwd\cleardoublepage
+    \end{longtable}\parindent=2\ccwd\cleardoublepage
     \renewcommand{\small}{\zihao{5}}
   \fi
 }
@@ -888,14 +894,14 @@ By \par%
     \XDU@nchapter{\XDU@label@abbreviationlist@title}\parindent=.5\ccwd%
     \renewcommand{\arraystretch}{1.6666666667}
     \renewcommand{\small}{\zihao{-4}}
-    \begin{tabularx}{\linewidth}{#1}
+    \begin{longtable}{#1}
     \ifXDU@Option@en
       Abbreviation & English Full Name & Chinese Full Name\\
     \else
       缩略语 & 英文全称 & 中文对照\\
     \fi
     \BODY
-    \end{tabularx}\parindent=2\ccwd\cleardoublepage
+    \end{longtable}\parindent=2\ccwd\cleardoublepage
     \renewcommand{\small}{\zihao{5}}
   \fi
 }

@@ -453,7 +453,7 @@ Texmaker内置了PDF查看器，支持正向同步和反向同步功能，具体
 - ifpdf
 - ifthen
 - indentfirst
-- ltablex
+- longtable
 - makecell
 - multirow
 - natbib
@@ -936,27 +936,21 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 ## 符号对照表
 
-模板中默认为`lX`，其含义为全部左对齐，符号列根据内容自动设置宽度，且只占据一行不自动换行，符号名称占据剩下的页面宽度，会自动换行，用户无需手动插入换行符干预。更多设置请用户参考[缩略语对照表](#缩略语对照表)介绍进行设置。
+符号对照表环境`symbollist`提供了一个参数，用于调节列宽，模板中默认为`lp{7cm}`，其含义为全部左对齐，符号列根据内容自动设置宽度，且只占据一行不自动换行，符号名称列宽度为`7cm`，会自动换行，用户无需手动插入换行符干预。符号对照表支持自动换页，无需用户手动干预。更多设置请用户参考[缩略语对照表](#缩略语对照表)介绍进行设置。
 
 ## 缩略语对照表
 
-缩略语对照表环境`abbreviationlist`提供了一个参数，用于调节列宽，模板中默认为`lXX`，其含义为全部左对齐，缩略语根据内容自动设置宽度，且只占据一行不自动换行，英文全称与中文对照平分剩下的页面宽度，会自动换行，用户无需手动插入换行符干预。
+缩略语对照表环境`abbreviationlist`提供了一个参数，用于调节列宽，模板中默认为`lp{6cm}p{4cm}`，其含义为全部左对齐，缩略语列根据内容自动设置宽度，且只占据一行不自动换行，英文全称列宽度为`6cm`，中文对照列宽度为`4cm`，会自动换行，用户无需手动插入换行符干预。其中`p{}`内的长度值可以自行视情况设置。如果需要更多自定义的参数，用户可以参考[lshort-zh-cn.pdf](https://mirrors.ustc.edu.cn/CTAN/info/lshort/chinese/lshort-zh-cn.pdf)第3.6节中关于LaTeX表格列格式的描述。此外，缩略语对照表支持自动换页，无需用户手动干预。
 
-用户如果想要手动指定宽度，可以将模板中默认的`lXX`改为`p{7.5em}p{10.5em}X`，其含义为第一列为`7.5em`，第二列为`10.5em`，第三列占据剩下的页面宽度，会自动换行，用户无需手动插入换行符干预。如果需要更多自定义的参数，用户可以参考[tabularx](https://mirrors.ustc.edu.cn/CTAN/macros/latex/required/tools/tabularx.pdf)宏包手册。
-
-注意！一定要有一列的参数是`X`，其余列参数可以为`p{}`或者`l`。一般建议最后一列为`X`，其余列参数为`p{}`或者`l`。对于三列的，常见的有`p{7.5em}p{10.5em}X`和`llX`，对于两列的，常见的有`p{7.5em}X`和`lX`，其中`p{}`内的长度值可以自行视情况设置。
-
-如果用户想要手动插入换行符，请将需要插入换行符的单元格放入`\makecell[l]{}`命令中，例如：
+如果用户想要手动插入换行符，请将需要插入换行符的单元格放入`\makecell[tl]{}`命令中，例如：
 
 ```latex
-\begin{abbreviationlist}{lXX}
-缩略语 & 英文全称 & 中文对照\\
-XXX & \makecell[l]{手动换行手动换行\\手动换行} & 自动换行自动换行自动换行自动换行\\
+\begin{abbreviationlist}{lp{6cm}p{4cm}}
+XXX & XXX & XXX\\
+XXX & \makecell[tl]{手动换行手动换行\\手动换行} & 自动换行自动换行自动换行自动换行\\
 XXX & XXX & XXX\\
 \end{abbreviationlist}
 ```
-
-此外，缩略语对照表支持自动换页，无需用户手动干预。
 
 ## 附录
 
@@ -1788,6 +1782,7 @@ LaTeX Font Warning: Font shape `OMX/cmex/m/n' in size <10.53937> not available
 
 # 版本记录
 
+- `2022-01-21` [`v4.0.0`](https://github.com/note286/xdupgthesis/releases/tag/v4.0.0) 修复ltablex导致的正文或图表超出下方页边距问题。
 - `2022-01-20` [`v3.1.1`](https://github.com/note286/xdupgthesis/releases/tag/v3.1.1) 修复旧版gbt7714兼容问题。
 - `2022-01-19` [`v3.1.0`](https://github.com/note286/xdupgthesis/releases/tag/v3.1.0) 支持英文学位论文。
 - `2022-01-10` [`v3.0.0`](https://github.com/note286/xdupgthesis/releases/tag/v3.0.0) 支持独创性声明和使用授权页插入电子版日期。
