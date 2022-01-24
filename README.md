@@ -1,4 +1,4 @@
-<p align="center"><a href="https://github.com/note286/xdupgthesis"><img src="logo.png"></a></p>
+<p align="center"><a href="https://github.com/note286/xdupgthesis"><img src="logo.svg" height="50px"></a></p>
 <p align="center">
 <a href="https://github.com/note286/xdupgthesis/blob/main/LICENSE"><img src="https://img.shields.io/github/license/note286/xdupgthesis"></a>
 <a href="https://github.com/note286/xdupgthesis"><img src="https://img.shields.io/github/stars/note286/xdupgthesis"></a>
