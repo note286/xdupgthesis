@@ -49,6 +49,7 @@
   - [图片](#图片)
   - [表格](#表格)
   - [算法](#算法)
+  - [定理类环境](#定理类环境)
   - [浮动体位置](#浮动体位置)
   - [论文标题](#论文标题)
   - [插图/表格索引中图表序号与图表标题间距](#插图表格索引中图表序号与图表标题间距)
@@ -823,6 +824,18 @@ $\text{被减数} - \text{减数} = \text{差}$
 建议TeX Live/MacTeX 2021用户参考[algpseudocodex](https://mirrors.ustc.edu.cn/CTAN/macros/latex/contrib/algpseudocodex/algpseudocodex.pdf)宏包手册中的示例撰写算法，其他低版本用户参考[algorithmicx](https://mirrors.ustc.edu.cn/CTAN/macros/latex/contrib/algorithmicx/algorithmicx.pdf)宏包手册中的示例撰写算法，本模板从手册中摘抄了两个算法用于测试。
 
 此外，对于`algorithm`浮动体，不建议使用任何位置参数，让LaTeX引擎将浮动体自动放置在合适的位置，具体原因可见[浮动体位置](#浮动体位置)。
+
+## 定理类环境
+
+推荐用户按章定义定理类环境序号，例如：
+
+```latex
+\newtheorem{lemma}{引理}[chapter]
+\newtheorem{theorem}{定理}[chapter]
+\newtheorem{definition}{定义}[chapter]
+```
+
+如果需要更多自定义的参数，用户可以参考[lshort-zh-cn.pdf](https://mirrors.ustc.edu.cn/CTAN/info/lshort/chinese/lshort-zh-cn.pdf)第4.8节中关于定理环境的描述。
 
 ## 浮动体位置
 
