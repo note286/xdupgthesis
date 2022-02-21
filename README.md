@@ -610,11 +610,21 @@ Texmaker内置了PDF查看器，支持正向同步和反向同步功能，具体
 
 [百度学术](https://xueshu.baidu.com/)和[Google Scholar](https://scholar.google.com.hk/)导出的bib文件不是很规范，经常有很大问题，感兴趣的可以去[BibTeX format explained](https://www.bibtex.com/g/bibtex-format/)了解bib文件的合法格式。用户可以使用[dblp](https://dblp.org/)生成的bib条目，遇到[dblp](https://dblp.org/)没有的条目，可以参考上述文档和示例自行整理。已添加部分常用类型参考文献条目样例至`xdupgthesis.bib`供用户参考。需要注意的是，不要轻易使用分组即`{}`，尤其是`author`域。无论中英文，每个作者均使用`and`连接。除非文献卷号、期号和页码均无，否则不必提供DOI域。对于网页链接，使用`online`类型，填写`author`、`title`、`url`和`urldate`域即可。
 
-本模板已根据学校要求设置了`\cite{}`生成的引用样式，直接使用即可符合学校的要求，例如：
+---
+
+研究生院要求
+
+> 引用处右上角用方括号标注阿拉伯数字编排的序号
+
+因此本模板默认设置`\cite{}`为上标模式，直接使用即可符合学校的要求，例如：
 
 ```latex
 测试引用\cite{ChangHTD19,WangZSS21,GongL21}是否正常。
 ```
+
+或者使用`\cites{}`。
+
+此外，为满足部分用户的特殊需求，也提供了正文模式的引用，即`\citen{}`。
 
 ---
 
@@ -1797,6 +1807,7 @@ LaTeX Font Warning: Font shape `OMX/cmex/m/n' in size <10.53937> not available
 
 # 版本记录
 
+- `2022-02-21` [`v4.1.0`](https://github.com/note286/xdupgthesis/releases/tag/v4.1.0) 增加参考文献上标和正文两种引用模式。
 - `2022-01-21` [`v4.0.0`](https://github.com/note286/xdupgthesis/releases/tag/v4.0.0) 修复ltablex导致的正文或图表超出下方页边距问题。
 - `2022-01-20` [`v3.1.1`](https://github.com/note286/xdupgthesis/releases/tag/v3.1.1) 修复旧版gbt7714兼容问题。
 - `2022-01-19` [`v3.1.0`](https://github.com/note286/xdupgthesis/releases/tag/v3.1.0) 支持英文学位论文。

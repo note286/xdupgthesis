@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{xdupgthesis}[2022/01/21 Xidian University Postgraduate Thesis document class, version 4.0.0, modified by @note286, published in https://note286.github.io/xdupgthesis/]
+\ProvidesClass{xdupgthesis}[2022/02/21 Xidian University Postgraduate Thesis document class, version 4.1.0, modified by @note286, published in https://note286.github.io/xdupgthesis/]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%   class and packages
@@ -223,6 +223,9 @@
 \@ifpackagelater{gbt7714}{2020/03/04}
   {\PassOptionsToPackage{square,super,comma}{natbib}}
   {}
+
+\newcommand\cites[1]{\cite{#1}}
+\newcommand\citen[1]{\setcitestyle{numbers}\cite{#1}\setcitestyle{super}}
 
 \RequirePackage{xurl}
 
