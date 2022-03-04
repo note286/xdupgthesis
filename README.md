@@ -887,7 +887,7 @@ $\text{被减数} - \text{减数} = \text{差}$
 
 ## 论文标题
 
-在[PDF元数据](#pdf元数据)中介绍了本模板可以自动获取论文中各种元数据，并添加到PDF文档属性中，其中就包括了论文题目，其值位于`thesisinfo.tex`文件中的`\XDU@value@thesis@title`变量中，论文题目中可能含有换行符，如果有换行符，再添加元数据时会有如下警告：
+在[PDF元数据](#pdf元数据)中介绍了本模板可以自动获取论文中各种元数据，并添加到PDF文档属性中，其中就包括了论文题目，其值位于`xdupgthesis.cfg`文件中的`\XDU@value@thesis@title`变量中，论文题目中可能含有换行符，如果有换行符，再添加元数据时会有如下警告：
 
 ```latex
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
@@ -1729,7 +1729,7 @@ LaTeX Font Warning: Font shape `OMX/cmex/m/n' in size <10.53937> not available
 
 ## PDF元数据
 
-增加了自动添加PDF元数据即文档属性的功能，包括标题、主题和作者三项，用户可以右键PDF文件查看自动添加的文档属性值。其中标题来自`thesisinfo.tex`文件中`\XDU@value@thesis@title`值，作者来自`\XDU@value@author@name`值，而主题由`西安电子科技大学`字样、`\XDU@value@degreemark`值和`学位论文`拼接而成。该功能无需用户干预，自动实现PDF元数据的添加。
+增加了自动添加PDF元数据即文档属性的功能，包括标题、主题和作者三项，用户可以右键PDF文件查看自动添加的文档属性值。其中标题来自`xdupgthesis.cfg`文件中`\XDU@value@thesis@title`值，作者来自`\XDU@value@author@name`值，而主题由`西安电子科技大学`字样、`\XDU@value@degreemark`值和`学位论文`拼接而成。该功能无需用户干预，自动实现PDF元数据的添加。
 
 ## 各级标题样式
 
