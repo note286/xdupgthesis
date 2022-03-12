@@ -827,6 +827,10 @@ $\text{被减数} - \text{减数} = \text{差}$
 
 此外，对于`table`浮动体，不建议使用任何位置参数，让LaTeX引擎将浮动体自动放置在合适的位置，具体原因可见[浮动体位置](#浮动体位置)。
 
+---
+
+表格索引是根据表格在页面中出现的顺序来显示的，由于`longtable`不是浮动体，因此`longtable`前面的浮动体可能会浮动到`longtable`后面，导致在表格索引中`longtable`所在行可能出现所谓的“错误”，为回避这种情况，可以在每个`longtable`前使用`placeins`宏包的`\FloatBarrier`命令来输出此前所有的浮动体。
+
 ## 算法
 
 本模板已内置`algorithm`、`algorithmicx`和`algpseudocodex`宏包，用户无需手动导入。TeX Live/MacTeX 2020及以下版本的用户使用的是`algpseudocode`宏包而非`algpseudocodex`宏包。
