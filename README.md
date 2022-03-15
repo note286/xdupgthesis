@@ -1811,6 +1811,7 @@ LaTeX Font Warning: Font shape `OMX/cmex/m/n' in size <10.53937> not available
 
 # 版本记录
 
+- `2022-03-15` [`v4.2.0`](https://github.com/note286/xdupgthesis/releases/tag/v4.2.0) subsubsection改为缩进两个字符。
 - `2022-02-21` [`v4.1.0`](https://github.com/note286/xdupgthesis/releases/tag/v4.1.0) 增加参考文献上标和正文两种引用模式。
 - `2022-01-21` [`v4.0.0`](https://github.com/note286/xdupgthesis/releases/tag/v4.0.0) 修复ltablex导致的正文或图表超出下方页边距问题。
 - `2022-01-20` [`v3.1.1`](https://github.com/note286/xdupgthesis/releases/tag/v3.1.1) 修复旧版gbt7714兼容问题。
