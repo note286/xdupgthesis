@@ -115,6 +115,8 @@ xdupgthesis-Xidian University Postgraduate Thesis
 
 在使用过程中有任何问题或者建议，可以提[Issue](https://github.com/note286/xdupgthesis/issues)反馈，注意，不同的问题开多个issue，不要堆在一个issue里。
 
+虽然我感谢贡献，但我认为对于本模板，pull requests通常不是一个好方法（除非已经讨论并同意更改）。模板的稳定性非常重要，这意味着对模板的更改必然非常保守。这也意味着在进行任何更改之前必须进行大量讨论。因此，如果您确实决定发布pull requests，请记住这一点：我确实欣赏新想法，但不能总是将它们集成到模板中，我很可能会拒绝以这种方式进行的更新。
+
 如果从来没接触过LaTeX又不肯花时间去学习，或者马上要交论文没有时间学习，不建议使用LaTeX，虽然Microsoft Word排版也不简单，但还是建议使用Microsoft Word。目前学校完全支持LaTeX编译出来的PDF文件进行查重和最终的提交，但是如果你的导师要求必须使用Microsoft Word才帮你修改论文的话，那么建议使用Microsoft Word来配合导师。
 
 关于环境配置请阅读[install-latex-guide-zh-cn.pdf](https://mirrors.ustc.edu.cn/CTAN/info/install-latex-guide-zh-cn/install-latex-guide-zh-cn.pdf)，想要入门LaTeX或者对LaTeX语法一知半解的请阅读[lshort-zh-cn.pdf](https://mirrors.ustc.edu.cn/CTAN/info/lshort/chinese/lshort-zh-cn.pdf)，想要查询数学符号的可以在[symbols-a4.pdf](https://mirrors.ustc.edu.cn/CTAN/info/symbols/comprehensive/symbols-a4.pdf)中搜索。本项目文档都很详细，请认真阅读README。
