@@ -233,6 +233,7 @@
 \RequirePackage[bookmarksnumbered,hidelinks]{hyperref}
 \BeforeBeginEnvironment{document}{%
 \hypersetup{%
+bookmarksopen=true,%
 pdftitle={\XDU@value@thesis@title},%
 pdfauthor={\XDU@value@author@name},%
 pdfsubject={\XDU@label@university\XDU@value@degreemark\XDU@value@cover@thesis}%
@@ -946,10 +947,13 @@ By \par%
 {
   \ifXDU@Option@psd
   \else
-    \XDU@toc@add{\XDU@toc@thanks}%
-    \XDU@zhtoc@add{致谢}
-    \XDU@nchapter{\XDU@label@thanks}
-    \BODY
+    \ifXDU@Option@anonrvw
+    \else
+      \XDU@toc@add{\XDU@toc@thanks}%
+      \XDU@zhtoc@add{致谢}
+      \XDU@nchapter{\XDU@label@thanks}
+      \BODY
+    \fi
   \fi
 }
 
@@ -999,15 +1003,26 @@ By \par%
 {
   \ifXDU@Option@psd
   \else
-    \XDU@make@cover%
-    \ifXDU@Option@en
-      \XDU@make@titleenglish%
-      \XDU@make@title%
+    \ifXDU@Option@anonrvw
+      \XDU@make@cover%
+      \ifXDU@Option@en
+        \XDU@make@titleenglish%
+        \XDU@make@title%
+      \else
+        \XDU@make@title%
+        \XDU@make@titleenglish%
+      \fi
     \else
-      \XDU@make@title%
-      \XDU@make@titleenglish%
+      \XDU@make@cover%
+      \ifXDU@Option@en
+        \XDU@make@titleenglish%
+        \XDU@make@title%
+      \else
+        \XDU@make@title%
+        \XDU@make@titleenglish%
+      \fi
+      \XDU@make@statementandcopyright%
     \fi
-    \XDU@make@statementandcopyright%
   \fi
   \frontmatter\pagenumbering{Roman}%
   \setlength{\baselineskip}{20pt}
@@ -1066,9 +1081,12 @@ By \par%
 {
   \ifXDU@Option@psd
   \else
-    \appendix
-    \renewcommand{\XDUchapter}{附录\xspace\Alph{chapter}}
-    \BODY
+    \ifXDU@Option@anonrvw
+    \else
+      \appendix
+      \renewcommand{\XDUchapter}{附录\xspace\Alph{chapter}}
+      \BODY
+    \fi
   \fi
 }
 
