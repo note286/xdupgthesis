@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{xdupgthesis}[2022/03/15 v4.2.0 Xidian University Postgraduate Thesis document class, modified by @note286, published in https://note286.github.io/xdupgthesis/]
+\ProvidesClass{xdupgthesis}[2022/03/19 v4.2.1 Xidian University Postgraduate Thesis document class, modified by @note286, published in https://note286.github.io/xdupgthesis/]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%   class and packages
@@ -214,7 +214,7 @@
 
 \RequirePackage[labelsep=quad]{caption}
 
-\RequirePackage{subfig}
+\RequirePackage[font=small]{subfig}
 
 \captionsetup[subfloat]{subrefformat=parens}
 
