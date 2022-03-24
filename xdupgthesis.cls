@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{xdupgthesis}[2022/03/19 v4.2.1 Xidian University Postgraduate Thesis document class, modified by @note286, published in https://note286.github.io/xdupgthesis/]
+\ProvidesClass{xdupgthesis}[2022/03/24 v4.2.2 Xidian University Postgraduate Thesis document class, modified by @note286, published in https://note286.github.io/xdupgthesis/]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%   class and packages
@@ -491,7 +491,7 @@ pdfsubject={\XDU@label@university\XDU@value@degreemark\XDU@value@cover@thesis}%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % redefine equation number format
-\renewcommand{\theequation}{\arabic{chapter}-\arabic{equation}}
+\renewcommand{\theequation}{{\thechapter}-\arabic{equation}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%    chinese  cover
