@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{xdupgthesis}[2022/03/24 v4.2.2 Xidian University Postgraduate Thesis document class, modified by @note286, published in https://note286.github.io/xdupgthesis/]
+\ProvidesClass{xdupgthesis}[2022/03/27 v4.2.3 Xidian University Postgraduate Thesis document class, modified by @note286, published in https://note286.github.io/xdupgthesis/]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%   class and packages
@@ -873,7 +873,7 @@ By \par%
     \parindent=0pt\XDU@toc@add{\XDU@toc@symbollist@title}%
     \XDU@zhtoc@add{符号对照表}
     \XDU@nchapter{\XDU@label@symbollist@title}\parindent=.5\ccwd%
-    \renewcommand{\arraystretch}{1.6666666667}
+    \renewcommand{\arraystretch}{1.6604400166}
     \renewcommand{\small}{\zihao{-4}}
     \begin{longtable}{#1}
     \ifXDU@Option@en
@@ -895,7 +895,7 @@ By \par%
     \parindent=0pt\XDU@toc@add{\XDU@toc@abbreviationlist@title}%
     \XDU@zhtoc@add{缩略语对照表}
     \XDU@nchapter{\XDU@label@abbreviationlist@title}\parindent=.5\ccwd%
-    \renewcommand{\arraystretch}{1.6666666667}
+    \renewcommand{\arraystretch}{1.6604400166}
     \renewcommand{\small}{\zihao{-4}}
     \begin{longtable}{#1}
     \ifXDU@Option@en

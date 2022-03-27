@@ -1797,7 +1797,7 @@ LaTeX Font Warning: Font shape `OMX/cmex/m/n' in size <10.53937> not available
 
 本模板基于`tabularx`环境实现了自定义符号对照表和缩略语对照表环境，用户只需要像使用表格一样去填写内容即可，支持跨页，模板中正文的示例已经更新，用户可参考示例填写。
 
-从模板示例中可以看出符号对照表和缩略语对照表内容字号为小四号，行距为固定值20磅，因此本模板设置符号对照表和缩略语对照表环境的行间距倍数为`1.6666666667`。
+从模板示例中可以看出符号对照表和缩略语对照表内容字号为小四号，行距为固定值20磅，因此本模板设置符号对照表和缩略语对照表环境的行间距倍数为`1.6604400166`。
 
 用户可自定义列宽参数，具体请参考[符号对照表](#符号对照表)和[缩略语对照表](#缩略语对照表)。
 
@@ -1819,6 +1819,7 @@ LaTeX Font Warning: Font shape `OMX/cmex/m/n' in size <10.53937> not available
 
 # 版本记录
 
+- `2022-03-27` [`v4.2.3`](https://github.com/note286/xdupgthesis/releases/tag/v4.2.3) 修正符号对照表和缩略语对照表行距。
 - `2022-03-24` [`v4.2.2`](https://github.com/note286/xdupgthesis/releases/tag/v4.2.2) 修正附录公式编号。
 - `2022-03-19` [`v4.2.1`](https://github.com/note286/xdupgthesis/releases/tag/v4.2.1) 修正子图caption字号。
 - `2022-03-15` [`v4.2.0`](https://github.com/note286/xdupgthesis/releases/tag/v4.2.0) subsubsection改为缩进两个字符。
