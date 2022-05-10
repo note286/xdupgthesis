@@ -1819,6 +1819,7 @@ LaTeX Font Warning: Font shape `OMX/cmex/m/n' in size <10.53937> not available
 
 # 版本记录
 
+- `2022-05-10` [`v4.2.4`](https://github.com/note286/xdupgthesis/releases/tag/v4.2.4) 修正参考文献引用命令为健壮命令。
 - `2022-03-27` [`v4.2.3`](https://github.com/note286/xdupgthesis/releases/tag/v4.2.3) 修正符号对照表和缩略语对照表行距。
 - `2022-03-24` [`v4.2.2`](https://github.com/note286/xdupgthesis/releases/tag/v4.2.2) 修正附录公式编号。
 - `2022-03-19` [`v4.2.1`](https://github.com/note286/xdupgthesis/releases/tag/v4.2.1) 修正子图caption字号。

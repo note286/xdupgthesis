@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{xdupgthesis}[2022/03/27 v4.2.3 Xidian University Postgraduate Thesis document class, modified by @note286, published in https://note286.github.io/xdupgthesis/]
+\ProvidesClass{xdupgthesis}[2022/05/10 v4.2.4 Xidian University Postgraduate Thesis document class, modified by @note286, published in https://note286.github.io/xdupgthesis/]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%   class and packages
@@ -224,8 +224,10 @@
   {\PassOptionsToPackage{square,super,comma}{natbib}}
   {}
 
-\newcommand\cites[1]{\cite{#1}}
-\newcommand\citen[1]{\setcitestyle{numbers}\cite{#1}\setcitestyle{super}}
+\RequirePackage{xparse}
+\NewDocumentCommand\cites{m}{\cite{#1}}
+\NewDocumentCommand\citen{m}{{\citestyle{numbers}\cite{#1}}}
+\NewDocumentCommand\parencite{m}{{\citestyle{numbers}\cite{#1}}}
 
 \RequirePackage{xurl}
 
@@ -235,7 +237,8 @@
 \hypersetup{%
 pdftitle={\XDU@value@thesis@title},%
 pdfauthor={\XDU@value@author@name},%
-pdfsubject={\XDU@label@university\XDU@value@degreemark\XDU@value@cover@thesis}%
+pdfsubject={\XDU@label@university\XDU@value@degreemark\XDU@value@cover@thesis},%
+pdfcreator={XeLaTeX with xdupgthesis class (@note286 in GitHub)}%
 }}
 
 %% config file
