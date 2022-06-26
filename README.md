@@ -1,3 +1,7 @@
+本项目不再维护，请使用[note286/xduts: 西安电子科技大学LaTeX套装](https://github.com/note286/xduts)。
+
+---
+
 <p align="center"><a href="https://github.com/note286/xdupgthesis"><img src="logo.svg" height="50px"></a></p>
 <p align="center">
 <a href="https://github.com/note286/xdupgthesis/blob/main/LICENSE"><img src="https://img.shields.io/github/license/note286/xdupgthesis"></a>
